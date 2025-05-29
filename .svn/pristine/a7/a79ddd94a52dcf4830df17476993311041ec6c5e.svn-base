@@ -1,0 +1,676 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccess.Model
+{
+    public class TransactionDataValidatioin
+    {
+        public static TransactionTransform GetTransformData(string EnforcementKey, string filePath, RequestResponseEntity logData)
+        {
+            TransactionTransform tranData = new TransactionTransform();
+            tranData.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            int? customerID = null;
+            string MeterName = null;
+            string parkingSpaceID;
+            string PlateNumber = null;
+
+            //Validate Input data
+            string[] values = EnforcementKey.Split('-');
+            /////Check existance of Customerid and metername as minimum/////////////////
+            if (values[0] == null) //CustomerrId
+            {
+                return tranData;
+            }
+            else
+            {
+                customerID = values[0].ToNullableInt();
+                if (customerID.HasValue == false)
+                {
+                    return tranData;
+                }
+            }
+
+            ///////////////////
+            TimeZoneInfo TZ = null;
+            if (customerID.Value == 4102)
+            {
+                TZ = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+                // TZ = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+            }
+            else
+            {
+                TZ = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+            }
+
+            ////Special Cases/////////////////////////////
+            if (customerID.Value == 4194)
+            {
+                string tempKey = EnforcementKey;   //e.g. sample 4194-7901-1-1--Expired
+                string[] tempValues = new string[5];
+                tempValues[0] = values[0];
+                tempValues[1] = string.Format("{0}-{1}", values[1], values[2]);
+                tempValues[2] = values[3];
+                tempValues[3] = values[4];
+                values = tempValues;
+            }
+            ////End Special Cases///////////////////////
+            /////Use MeterName/////////////////////////////////////////////
+            if (values[1] == null)
+            {
+                return tranData;
+            }
+            else
+            {
+                MeterName = values[1].ToString();
+                if (string.IsNullOrEmpty(MeterName))
+                {
+                    //return tranData;
+                }
+            }
+            /////End MeterName/////////////////////////////////////////////
+            //Special case ///
+            //If metername = 999999999 then simply return and no need to check
+            if (MeterName == "999999999".ToString())
+            {
+                tranData.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                logData.Request.CustomerId = customerID.ToString();
+                logData.Response = new ResponseEntity() { CustomerId = customerID.Value.ToString(), MeterId = MeterName, SpaceId = string.Empty, CityCurrentTime = DateTime.Now };
+                return tranData;
+            }
+            //End Special case ///
+
+
+
+            ////ParkingSpaceID/////////////////////////////////////////////////////////////////
+            if (values[2] == null)
+            {
+                return tranData;
+            }
+            else
+            {
+                parkingSpaceID = values[2].ToString();
+                if (string.IsNullOrEmpty(parkingSpaceID))
+                {
+                    //return tranData;
+                }
+            }
+            ////End ParkingSpaceID/////////////////////////////////////////////////////////////////
+            //Plate Number//
+            if (values[3] != null) //Plate Number
+            {
+                PlateNumber = values[3].ToString();
+                if (string.IsNullOrEmpty(PlateNumber))
+                {
+                    PlateNumber = null;
+                }
+            }
+            //End Plate Number//
+
+
+
+            try
+            {
+                Transaction data = TransactionDataValidatioin.GetData(customerID.Value, MeterName, parkingSpaceID, PlateNumber, EnforcementKey, filePath, logData);
+
+
+                if (data.TimeZoneId.HasValue)
+                    TZ = Utility.GetTimeZoneInfo(data.TimeZoneId.Value, filePath, customerID.Value.ToString());
+
+                //For South Miami : PayStationId. Others it is MeterID
+                tranData.MeterID = data.PayStationID.HasValue ? data.PayStationID.Value.ToString() : "0";
+                if (customerID.HasValue)
+                    if (customerID.Value == 4194)
+                    {
+                        var meternumberAndSpaceNo = (data.MeterName == null) ? string.Empty.Split('-') : data.MeterName.Split('-');
+                        if (meternumberAndSpaceNo.Length > 0)
+                            tranData.MeterName = meternumberAndSpaceNo[0];
+                        else
+                            tranData.MeterName = string.Empty;
+
+                        if (meternumberAndSpaceNo.Length > 1)
+                            tranData.SpaceNo = meternumberAndSpaceNo[1];
+                        else
+                            tranData.SpaceNo = string.Empty;
+                    }
+                    else
+                    {
+                        tranData.MeterName = (data.MeterName == null) ? string.Empty : data.MeterName;
+                        tranData.SpaceNo = data.ParkingSpaceID.ToString();
+                    }
+
+                tranData.MeterStreet = (data.MeterStreet == null) ? string.Empty : data.MeterStreet;
+
+                DateTime _MeterRTC = data.PresentMeterTime.HasValue ? data.PresentMeterTime.Value : DateTime.Now;
+                tranData.MeterRTC = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(_MeterRTC, TZ));
+
+                DateTime _SensorEventTime = data.SensorEventTime.HasValue ? data.SensorEventTime.Value : DateTime.Now;
+                tranData.MeterLastUpdateTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(_SensorEventTime, TZ));
+
+                tranData.SensorEventTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(_SensorEventTime, TZ));
+
+                DateTime _endTime = data.ExpiryTime.HasValue ? data.ExpiryTime.Value : DateTime.Now;
+                tranData.ExpiredTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(_endTime, TZ));
+
+                tranData.MeterExpiredMinutes = data.ExpiredMinutes.HasValue ? data.ExpiredMinutes.Value.ToString() : "0";
+                tranData.METERLOC_BLOCKNUMBER = (data.Block == null) ? string.Empty : data.Block;
+                tranData.METERLOC_STREETDIRECTION = (data.Direction == null) ? string.Empty : data.Direction;
+                tranData.METERLOC_STREETNAME = (data.MeterStreet == null) ? string.Empty : data.MeterStreet;
+                tranData.METERLOC_STREETTYPE = (data.StreetType == null) ? string.Empty : data.StreetType;
+                tranData.METERLOC_CROSSSTREET1 = (data.CrossStreet1 == null) ? string.Empty : data.CrossStreet1;
+                tranData.METERLOC_CROSSSTREET2 = (data.CrossStreet2 == null) ? string.Empty : data.CrossStreet2;
+                tranData.METERLOC_ENFORCEMENTHOURSDESC = (data.EnfHourDesc == null) ? string.Empty : data.EnfHourDesc;
+                tranData.LicensePlate = (data.PlateNumber == null) ? string.Empty : data.PlateNumber;
+                tranData.State = (data.LPLocation == null) ? string.Empty : data.LPLocation;
+                tranData.Make = (data.VMake == null) ? string.Empty : data.VMake;
+                tranData.Model = (data.VModel == null) ? string.Empty : data.VModel;
+                tranData.IsOccupied = Utility.getStatus((data.SpaceStatus == null) ? string.Empty : data.SpaceStatus).ToString();
+                tranData.EnforcementKey = (data.EnforcementKey == null) ? string.Empty : data.EnforcementKey;
+                tranData.MeterStatus = (data.MeterStatus == null) ? null : data.MeterStatus;
+
+                tranData.METERLOC_METERTYPE = (data.METERLOC_METERTYPE == null) ? null : data.METERLOC_METERTYPE;
+                tranData.ZoneName = (data.ZoneName == null) ? null : data.ZoneName;
+
+                tranData.ReturnCode = data.ReturnCode;
+
+
+
+                if (customerID == 7001 || customerID == 4210)
+                {
+                    logData.Response = new ResponseEntity() { CustomerId = customerID.Value.ToString(), MeterId = tranData.MeterName, SpaceId = tranData.SpaceNo, CityCurrentTime = data.PresentMeterTime.HasValue ? data.PresentMeterTime.Value : DateTime.Now };
+                }
+                else
+                {
+                    logData.Response = new ResponseEntity() { CustomerId = customerID.Value.ToString(), MeterId = tranData.MeterName, SpaceId = tranData.SpaceNo, CityCurrentTime = data.PresentMeterTime.HasValue ? data.PresentMeterTime.Value : DateTime.Now };
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetTransformData", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                tranData.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+
+            }
+            return tranData;
+        }
+
+        public static ChicagoTransactionTransform GetTransformDataChicago(string EnforcementKey, string filePath, RequestResponseEntity logData)
+        {
+            ChicagoTransactionTransform tranData = new ChicagoTransactionTransform();
+            tranData.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            int? customerID = null;
+            string MeterName = null;
+            string parkingSpaceID;
+            string PlateNumber = null;
+
+            //Validate Input data
+            string[] values = EnforcementKey.Split('-');
+            /////Check existance of Customerid and metername as minimum/////////////////
+            if (values[0] == null) //CustomerrId
+            {
+                return tranData;
+            }
+            else
+            {
+                customerID = values[0].ToNullableInt();
+                if (customerID.HasValue == false)
+                {
+                    return tranData;
+                }
+            }
+
+            ///////////////////
+            TimeZoneInfo TZ = null;
+            if (customerID.Value == 4102)
+            {
+                TZ = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+                // TZ = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+            }
+            else
+            {
+                TZ = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+            }
+
+
+            /////Use MeterName/////////////////////////////////////////////
+            if (values[1] == null)
+            {
+                return tranData;
+            }
+            else
+            {
+                MeterName = values[1].ToString();
+                if (string.IsNullOrEmpty(MeterName))
+                {
+                    //return tranData;
+                }
+            }
+            /////End MeterName/////////////////////////////////////////////
+            //Special case ///
+            //If metername = 999999999 then simply return and no need to check
+            if (MeterName == "999999999".ToString())
+            {
+                tranData.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                logData.Request.CustomerId = customerID.ToString();
+                logData.Response = new ResponseEntity() { CustomerId = customerID.Value.ToString(), MeterId = MeterName, SpaceId = string.Empty, CityCurrentTime = DateTime.Now };
+                return tranData;
+            }
+            //End Special case ///
+
+
+
+            ////ParkingSpaceID/////////////////////////////////////////////////////////////////
+            if (values[2] == null)
+            {
+                return tranData;
+            }
+            else
+            {
+                parkingSpaceID = values[2].ToString();
+                if (string.IsNullOrEmpty(parkingSpaceID))
+                {
+                    //return tranData;
+                }
+            }
+            ////End ParkingSpaceID/////////////////////////////////////////////////////////////////
+            //Plate Number//
+            if (values[3] == null)
+            {
+                return tranData;
+            }
+            else
+            {
+                PlateNumber = values[3].ToString();
+                if (string.IsNullOrEmpty(PlateNumber))
+                {
+                    return tranData;
+                }
+            }
+            //End Plate Number//
+
+            //State//
+            string stateName = null;
+            if (values[5] == null)
+            {
+
+            }
+            else
+            {
+                stateName = values[5].ToString();
+                if (string.IsNullOrEmpty(stateName))
+                {
+
+                }
+            }
+            //End State Name////
+
+            //rateNumber//
+            string rateNumber = null;
+            if (values[6] == null)
+            {
+
+            }
+            else
+            {
+                rateNumber = values[6].ToString();
+                if (string.IsNullOrEmpty(rateNumber))
+                {
+
+                }
+            }
+            //End rateNumber Name////
+
+            //receiptNumber//
+            string receiptNumber = null;
+            if (values[7] == null)
+            {
+
+            }
+            else
+            {
+                receiptNumber = values[7].ToString();
+                if (string.IsNullOrEmpty(receiptNumber))
+                {
+
+                }
+            }
+            //End receiptNumber Name////
+
+            try
+            {
+                Transaction data = TransactionDataValidatioin.GetDataChicago(customerID.Value, MeterName, parkingSpaceID, PlateNumber
+                    , receiptNumber, stateName, rateNumber
+                    , EnforcementKey, filePath, logData);
+
+
+                if (data.TimeZoneId.HasValue)
+                    TZ = Utility.GetTimeZoneInfo(data.TimeZoneId.Value, filePath, customerID.Value.ToString());
+
+                //For South Miami : PayStationId. Others it is MeterID
+                tranData.MeterID = data.PayStationID.HasValue ? data.PayStationID.Value.ToString() : "0";
+
+                tranData.MeterName = (data.MeterName == null) ? string.Empty : data.MeterName;
+                tranData.SpaceNo = data.ParkingSpaceID.ToString();
+
+                tranData.MeterStreet = (data.MeterStreet == null) ? string.Empty : data.MeterStreet;
+
+                DateTime _MeterRTC = data.PresentMeterTime.HasValue ? data.PresentMeterTime.Value : DateTime.Now;
+                tranData.MeterRTC = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(_MeterRTC, TZ));
+
+                DateTime _SensorEventTime = data.SensorEventTime.HasValue ? data.SensorEventTime.Value : DateTime.Now;
+                tranData.MeterLastUpdateTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(_SensorEventTime, TZ));
+
+                tranData.SensorEventTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(_SensorEventTime, TZ));
+
+                DateTime _endTime = data.ExpiryTime.HasValue ? data.ExpiryTime.Value : DateTime.Now;
+                tranData.ExpiredTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(_endTime, TZ));
+
+                tranData.MeterExpiredMinutes = data.ExpiredMinutes.HasValue ? data.ExpiredMinutes.Value.ToString() : "0";
+                tranData.METERLOC_BLOCKNUMBER = (data.Block == null) ? string.Empty : data.Block;
+                tranData.METERLOC_STREETDIRECTION = (data.Direction == null) ? string.Empty : data.Direction;
+                tranData.METERLOC_STREETNAME = (data.MeterStreet == null) ? string.Empty : data.MeterStreet;
+                tranData.METERLOC_STREETTYPE = (data.StreetType == null) ? string.Empty : data.StreetType;
+                tranData.METERLOC_CROSSSTREET1 = (data.CrossStreet1 == null) ? string.Empty : data.CrossStreet1;
+                tranData.METERLOC_CROSSSTREET2 = (data.CrossStreet2 == null) ? string.Empty : data.CrossStreet2;
+                tranData.METERLOC_ENFORCEMENTHOURSDESC = (data.EnfHourDesc == null) ? string.Empty : data.EnfHourDesc;
+                tranData.LicensePlate = (data.PlateNumber == null) ? string.Empty : data.PlateNumber;
+                tranData.State = (data.LPLocation == null) ? string.Empty : data.LPLocation;
+                tranData.Make = (data.VMake == null) ? string.Empty : data.VMake;
+                tranData.Model = (data.VModel == null) ? string.Empty : data.VModel;
+                tranData.IsOccupied = Utility.getStatus((data.SpaceStatus == null) ? string.Empty : data.SpaceStatus).ToString();
+                tranData.EnforcementKey = (data.EnforcementKey == null) ? string.Empty : data.EnforcementKey;
+                tranData.MeterStatus = (data.MeterStatus == null) ? null : data.MeterStatus;
+
+                tranData.METERLOC_METERTYPE = (data.METERLOC_METERTYPE == null) ? null : data.METERLOC_METERTYPE;
+                tranData.ZoneName = (data.ZoneName == null) ? null : data.ZoneName;
+                tranData.Recieptid = (data.Recieptid == null) ? null : data.Recieptid;
+                tranData.RateNumber = (data.RateNumber == null) ? null : data.RateNumber;
+
+                tranData.ReturnCode = data.ReturnCode;
+
+
+                logData.Response = new ResponseEntity() { CustomerId = customerID.Value.ToString(), MeterId = tranData.MeterName, SpaceId = tranData.SpaceNo, CityCurrentTime = data.PresentMeterTime.HasValue ? data.PresentMeterTime.Value : DateTime.Now };
+
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetTransformData", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                tranData.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+
+            }
+            return tranData;
+        }
+
+        private static Transaction GetData(int customerID, string MeterName, string parkingSpaceID, string PlateNumber, string EnforcementKey, string filePath, RequestResponseEntity logData)
+        {
+            string ZoneID = null;
+            string SpaceStatus = null;
+            Transaction data = new Transaction();
+            try
+            {
+                List<Transaction> transactionList = new List<Transaction>();
+
+                logData.Request.CustomerId = customerID.ToString();
+                logData.Request.SpaceId = parkingSpaceID.ToString();
+                if (customerID == 7001 || customerID == 4210)
+                {
+                    logData.Request.MeterId = MeterName;
+                    MeterName = null; // south Miami is not meter based but Space no
+                    transactionList = DataAccess.GetCitationData(customerID, ZoneID, MeterName, parkingSpaceID, PlateNumber, SpaceStatus);
+                }
+
+                else if (customerID == 7002)
+                {
+                    logData.Request.MeterId = MeterName;
+                    transactionList = DataAccess.GetCitationDataOthersWithPlateName(customerID, ZoneID, MeterName, parkingSpaceID, PlateNumber, SpaceStatus);
+                }
+
+                else
+                {
+                    logData.Request.MeterId = MeterName;
+                    if (customerID == 4194)
+                    {
+                        string constValue = "999999999";
+                        if (MeterName == constValue || MeterName == "0".ToString() || MeterName == "9999".ToString())
+                        {
+                            MeterName = null;
+                            if (parkingSpaceID != constValue)
+                            {
+                                MeterName = parkingSpaceID;
+                                parkingSpaceID = null;
+                            }
+                            else
+                            {
+                                parkingSpaceID = null;
+                            }
+                        }
+                        else
+                        {
+                            if (parkingSpaceID == constValue || parkingSpaceID == "0".ToString() || parkingSpaceID == "9999".ToString())
+                            {
+                                parkingSpaceID = null;
+                            }
+                        }
+
+                        transactionList = DataAccess.GetCitationDataOthers(customerID, ZoneID, MeterName,
+                            parkingSpaceID,
+                            PlateNumber, SpaceStatus);
+                    }
+                    else
+                        transactionList = DataAccess.GetCitationDataOthers(customerID, ZoneID, MeterName, parkingSpaceID, PlateNumber, SpaceStatus);
+                }
+
+
+                if (transactionList.Count > 0)
+                {
+                    data = transactionList[0];
+                }
+
+                if (transactionList.Count > 1)
+                {
+                    data.ReturnCode = ((int)ReturnCodeEnum.MoreRecordsExists).ToString();
+                }
+                else if (transactionList.Count == 0)
+                {
+                    data.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+                else
+                {
+                    data.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetData", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                data.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+                throw;
+            }
+            return data;
+        }
+
+        private static Transaction GetDataChicago(int customerID, string MeterName, string parkingSpaceID, string PlateNumber, string ReceiptId, string State, string RateNumber, string EnforcementKey, string filePath, RequestResponseEntity logData)
+        {
+            string ZoneID = null;
+            string SpaceStatus = null;
+            Transaction data = new Transaction();
+            try
+            {
+                List<Transaction> transactionList = new List<Transaction>();
+
+                logData.Request.CustomerId = customerID.ToString();
+                logData.Request.SpaceId = parkingSpaceID.ToString();
+
+
+                logData.Request.MeterId = MeterName;
+                transactionList = DataAccess.GetCitationDataOthersWithPlateNameChicago(customerID, ZoneID, MeterName, parkingSpaceID, PlateNumber, SpaceStatus, ReceiptId, State, RateNumber);
+
+
+
+
+
+                if (transactionList.Count > 0)
+                {
+                    data = transactionList[0];
+                }
+
+                if (transactionList.Count > 1)
+                {
+                    data.ReturnCode = ((int)ReturnCodeEnum.MoreRecordsExists).ToString();
+                }
+                else if (transactionList.Count == 0)
+                {
+                    data.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+                else
+                {
+                    data.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetData", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                data.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+                throw;
+            }
+            return data;
+        }
+
+
+
+        private static Transactions GetPaymentData(string customerId, string zoneId, string spaceId)
+        {
+            Transactions data = new Transactions();
+            int? customerID = Utility.NullableInt(customerId);
+            if (!customerID.HasValue)
+            {
+                data.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return data;
+            }
+
+            int? zoneID = Utility.NullableInt(zoneId);
+            int? spaceID = Utility.NullableInt(spaceId);
+
+            try
+            {
+                data.GetTransactions = DataAccess.GetCitationData(customerID.Value,
+                    zoneID.HasValue ? zoneID.Value.ToString() : null,
+                    null,
+                     spaceID.HasValue ? spaceID.Value.ToString() : null,
+                     null, null);
+
+                //if(zoneID.HasValue)
+                //{
+                //    //data.GetTransactions = DataAccess.GetCitationData(customerID.Value, zoneID.Value.ToString(), null, null, null, null);
+                //    data.GetTransactions = DataAccess.GetCitationData(customerID.Value, zoneID.Value.ToString(), null, null, null, null);
+                //}
+                //else
+                //{
+                //    data.GetTransactions = DataAccess.GetCitationData(customerID.Value, null, null, null, null, null);
+                //}
+
+
+                if (data.GetTransactions.Count == 0)
+                {
+                    data.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+                else
+                {
+                    data.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetPaymentData", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetPaymentTransformData", errorPath);
+                data.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+                throw;
+            }
+            return data;
+        }
+        public static PaymentsData GetPaymentTransformData(string customerId, string zoneId, string spaceId, string filePath)
+        {
+            //TimeZoneInfo TZ = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+
+            TimeZoneInfo TZ = null;
+            if (customerId == "4102")
+            {
+                TZ = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+                // TZ = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+            }
+            else
+            {
+                TZ = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+            }
+
+            PaymentsData paymentsData = new PaymentsData();
+            PaymentData tranData = null;
+            paymentsData.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+            try
+            {
+                Transactions datas = TransactionDataValidatioin.GetPaymentData(customerId, zoneId, spaceId);
+                paymentsData.ReturnCode = datas.ReturnCode;
+
+                if (datas.GetTransactions.FirstOrDefault<Transaction>() != default(Transaction))
+                    TZ = Utility.GetTimeZoneInfo(datas.GetTransactions.FirstOrDefault<Transaction>().TimeZoneId.Value, filePath, customerId);
+
+                foreach (var data in datas.GetTransactions)
+                {
+                    tranData = new PaymentData();
+                    tranData.MeterID = data.PayStationID.HasValue ? data.PayStationID.Value.ToString() : "0";
+                    tranData.MeterName = (data.MeterName == null) ? string.Empty : data.MeterName;
+                    tranData.SpaceNo = data.ParkingSpaceID.ToString();
+                    tranData.MeterStreet = (data.MeterStreet == null) ? string.Empty : data.MeterStreet;
+                    tranData.LicensePlate = (data.PlateNumber == null) ? string.Empty : data.PlateNumber;
+
+
+                    //payment date, payment amount, payment duration, expiry date.
+                    // Payment date: 
+                    tranData.PaymentDay = String.Format("{0:yyyyMMdd}", Utility.findGMTTime(data.SensorEventTime.HasValue ? data.SensorEventTime.Value : DateTime.Now, TZ));
+                    //data.SensorEventTime.HasValue ? data.SensorEventTime.Value.ToString("yyyy/MM/dd") : DateTime.Now.ToString("yyyy/MM/dd");
+                    //Expiry date
+                    //DateTime _endTime = data.ExpiryTime.HasValue ? data.ExpiryTime.Value : DateTime.Now;
+                    tranData.ExpiredTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(data.ExpiryTime.HasValue ? data.ExpiryTime.Value : DateTime.Now, TZ));
+
+                    //Payment date
+                    // DateTime _SensorEventTime = data.SensorEventTime.HasValue ? data.SensorEventTime.Value : DateTime.Now;
+                    tranData.PaymentTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(data.SensorEventTime.HasValue ? data.SensorEventTime.Value : DateTime.Now, TZ));
+
+
+
+                    // payment duration
+                    //Payment duration: SensorEventTime - expirytime
+                    tranData.PaymentDuration = Utility.calcOccTimeDiff(data.ExpiryTime.HasValue ? data.ExpiryTime.Value : DateTime.Now,
+                        data.SensorEventTime.HasValue ? data.SensorEventTime.Value : DateTime.Now);
+
+                    //payment amount
+                    tranData.AmountIncents = data.AmountIncents;
+                    paymentsData.PaymentTransactions.Add(tranData);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetPaymentData", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetPaymentData", errorPath);
+                paymentsData.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+            }
+            return paymentsData;
+        }
+    }
+}

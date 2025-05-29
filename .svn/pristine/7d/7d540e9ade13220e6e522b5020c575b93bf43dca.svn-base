@@ -1,0 +1,66 @@
+﻿using DataAccess.Model;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Runtime.Serialization.Json;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.Text;
+
+
+namespace CitationValidation
+{
+    public class ValidateCitation : IValidateCitation
+    {
+        public TransactionTransform GetCitationData(string enfKey)
+        {
+            RequestResponseEntity logData = new RequestResponseEntity();
+            logData.Request.CurrentUTCTime = DateTime.UtcNow;
+            logData.Request.RequestBody = OperationContext.Current.IncomingMessageHeaders.To.ToString();
+            if (OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] != null)
+            {
+                RemoteEndpointMessageProperty endpoint = OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+                logData.Request.IPAddress = endpoint.Address; 
+            }
+            var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+
+            string logFilePath = Path.Combine(appPath,  "LogRequestResponse");
+            try
+            {
+                string filePath = Path.Combine(appPath, "App_Data", "Timezones", "TimeZones.xml");
+                TransactionTransform dataObj =  TransactionDataValidatioin.GetTransformData(enfKey, filePath, logData);
+                logData.Response.ResponseBody = dataObj.GetJsonData();
+                logData.Response.CurrentUTCTime = DateTime.UtcNow;
+                logFilePath = Path.Combine(appPath, "LogRequestResponse",logData.Request.CustomerId);
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return dataObj;
+             }
+            catch(Exception ex)
+            {
+                string errorPath = Path.Combine(appPath, "App_Data", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                ex = null;
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString(), EnforcementKey="fromd catach" };
+            }
+        }
+
+
+        public string GetLogData(string customerId, string folderName)
+        {
+            string resonseData = string.Empty;
+            try
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                var logFilePath = Path.Combine(appPath, "LogRequestResponse", customerId, folderName +".txt");
+                resonseData = File.ReadAllText(logFilePath, Encoding.ASCII);
+            }
+            catch(Exception ex)
+            {
+                resonseData = "Opps error happend.";
+            }
+            return resonseData;
+        }
+    }
+}

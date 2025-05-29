@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.digitalpaytech.com/transactionData" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="TransactionDataService" targetNamespace="http://ws.digitalpaytech.com/transactionData" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://ws.digitalpaytech.com/transactionData" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="InfoServiceFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="shortErrorMessage" type="xs:string" />
+            <xs:element minOccurs="0" name="techImplementationDetails" type="xs:string" />
+            <xs:element name="errCode" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LocationRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LocationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="Locations" type="tns:LocationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaymentTypeRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element minOccurs="0" name="version" type="tns:VersionType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaymentTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="paymentType" nillable="true" type="tns:PaymentType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaystationRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PaystationResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="paystations" nillable="true" type="tns:PaystationType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProcessingStatusTypeRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProcessingStatusTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="processingStatusType" nillable="true" type="tns:ProcessingStatusType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransactionByUpdateDateRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="updateDateFrom" type="xs:dateTime" />
+            <xs:element name="updateDateTo" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="version" type="tns:VersionType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransactionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="transactionDataTypes" nillable="true" type="tns:TransactionDataType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransactionTypeRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TransactionTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="transactionType" nillable="true" type="tns:TransactionType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ProcessingStatusType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:byte" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaymentType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:byte" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PaystationType">
+        <xs:sequence>
+          <xs:element name="serialNumber" type="xs:string" />
+          <xs:element name="paystationName" type="xs:string" />
+          <xs:element name="locationId" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TransactionType">
+        <xs:sequence>
+          <xs:element name="id" type="xs:byte" />
+          <xs:element name="name" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TransactionDataType">
+        <xs:sequence>
+          <xs:element name="serialNumber" type="xs:string" />
+          <xs:element name="paystationName" type="xs:string" />
+          <xs:element name="settingName" type="xs:string" />
+          <xs:element name="paystationType" type="xs:string" />
+          <xs:element name="locationId" type="xs:int" />
+          <xs:element name="ticketNumber" type="xs:int" />
+          <xs:element name="stallNumber" type="xs:string" />
+          <xs:element name="purchasedDate" type="xs:dateTime" />
+          <xs:element name="expirationDate" type="xs:dateTime" />
+          <xs:element name="paymentType" type="xs:byte" />
+          <xs:element name="transactionType" type="xs:byte" />
+          <xs:element minOccurs="0" name="cardType" type="xs:string" />
+          <xs:element minOccurs="0" name="cardNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="cardProcessingAuthorizationNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="cardProcessingDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="cardProcessingStatus" type="xs:string" />
+          <xs:element minOccurs="0" name="cardProcessingReferenceNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="cardProcessingMerchantAccount" type="xs:string" />
+          <xs:element minOccurs="0" name="cardProcessingRetries" type="xs:int" />
+          <xs:element minOccurs="0" name="cardProcessingTransactionId" type="xs:string" />
+          <xs:element name="couponNumber" type="xs:string" />
+          <xs:element minOccurs="0" name="couponDiscountPercent" type="xs:int" />
+          <xs:element minOccurs="0" name="couponDiscountDollar" type="xs:float" />
+          <xs:element name="excessAmount" type="xs:float" />
+          <xs:element name="refundTicketAmount" type="xs:float" />
+          <xs:element name="refundChangeIssued" type="xs:float" />
+          <xs:element name="chargedAmount" type="xs:float" />
+          <xs:element name="totalCashAmount" type="xs:float" />
+          <xs:element minOccurs="0" name="totalCardAmount" type="xs:float" />
+          <xs:element minOccurs="0" name="rateId" type="xs:long" />
+          <xs:element minOccurs="0" name="rateName" type="xs:string" />
+          <xs:element minOccurs="0" name="rateValue" type="xs:float" />
+          <xs:element minOccurs="0" name="plateNumber" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LocationType">
+        <xs:sequence>
+          <xs:element name="locationId" type="xs:int" />
+          <xs:element name="locationName" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="VersionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="v1.0" />
+          <xs:enumeration value="v1.1" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getTransactionTypesResponse">
+    <wsdl:part name="TransactionTypeResponse" element="tns:TransactionTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessingStatusTypes">
+    <wsdl:part name="ProcessingStatusTypeRequest" element="tns:ProcessingStatusTypeRequest" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionByUpdateDateResponse">
+    <wsdl:part name="TransactionByUpdateDateResponse" element="tns:TransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPaymentTypesResponse">
+    <wsdl:part name="PaymentTypeResponse" element="tns:PaymentTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProcessingStatusTypesResponse">
+    <wsdl:part name="ProcessingStatusTypeResponse" element="tns:ProcessingStatusTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionTypes">
+    <wsdl:part name="TransactionTypeRequest" element="tns:TransactionTypeRequest" />
+  </wsdl:message>
+  <wsdl:message name="getLocationsResponse">
+    <wsdl:part name="LocationResponse" element="tns:LocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPaymentTypes">
+    <wsdl:part name="PaymentTypeRequest" element="tns:PaymentTypeRequest" />
+  </wsdl:message>
+  <wsdl:message name="getPaystations">
+    <wsdl:part name="PaystationRequest" element="tns:PaystationRequest" />
+  </wsdl:message>
+  <wsdl:message name="getTransactionByUpdateDate">
+    <wsdl:part name="TransactionByUpdateDateRequest" element="tns:TransactionByUpdateDateRequest" />
+  </wsdl:message>
+  <wsdl:message name="getPaystationsResponse">
+    <wsdl:part name="PaystationResponse" element="tns:PaystationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLocations">
+    <wsdl:part name="LocationRequest" element="tns:LocationRequest" />
+  </wsdl:message>
+  <wsdl:message name="InfoServiceFaultMessage">
+    <wsdl:part name="InfoServiceFaultMessage" element="tns:InfoServiceFault" />
+  </wsdl:message>
+  <wsdl:portType name="TransactionDataService">
+    <wsdl:operation name="getProcessingStatusTypes">
+      <wsdl:input name="getProcessingStatusTypes" message="tns:getProcessingStatusTypes" />
+      <wsdl:output name="getProcessingStatusTypesResponse" message="tns:getProcessingStatusTypesResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPaymentTypes">
+      <wsdl:input name="getPaymentTypes" message="tns:getPaymentTypes" />
+      <wsdl:output name="getPaymentTypesResponse" message="tns:getPaymentTypesResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPaystations">
+      <wsdl:input name="getPaystations" message="tns:getPaystations" />
+      <wsdl:output name="getPaystationsResponse" message="tns:getPaystationsResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionTypes">
+      <wsdl:input name="getTransactionTypes" message="tns:getTransactionTypes" />
+      <wsdl:output name="getTransactionTypesResponse" message="tns:getTransactionTypesResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionByUpdateDate">
+      <wsdl:input name="getTransactionByUpdateDate" message="tns:getTransactionByUpdateDate" />
+      <wsdl:output name="getTransactionByUpdateDateResponse" message="tns:getTransactionByUpdateDateResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getLocations">
+      <wsdl:input name="getLocations" message="tns:getLocations" />
+      <wsdl:output name="getLocationsResponse" message="tns:getLocationsResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TransactionDataServiceSoapBinding" type="tns:TransactionDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getProcessingStatusTypes">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/transactionData/getProcessingStatusTypes" style="document" />
+      <wsdl:input name="getProcessingStatusTypes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProcessingStatusTypesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPaymentTypes">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/transactionData/getPaymentTypes" style="document" />
+      <wsdl:input name="getPaymentTypes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPaymentTypesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPaystations">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/transactionData/getPaystations" style="document" />
+      <wsdl:input name="getPaystations">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPaystationsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionTypes">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/transactionData/getTransactionTypes" style="document" />
+      <wsdl:input name="getTransactionTypes">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTransactionTypesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionByUpdateDate">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/transactionData/getTransactionByPurchasedDate" style="document" />
+      <wsdl:input name="getTransactionByUpdateDate">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTransactionByUpdateDateResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLocations">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/transactionData/getLocations" style="document" />
+      <wsdl:input name="getLocations">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getLocationsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransactionDataService">
+    <wsdl:port name="TransactionDataServiceImplPort" binding="tns:TransactionDataServiceSoapBinding">
+      <soap:address location="https://iris.digitalpaytech.com/services/TransactionDataService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,232 @@
+﻿using DataAccess.Model;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccess
+{
+    public class PlateDataAccess
+    {
+        //public static List<PlateNo> GetPlateMatch(int customerID, string PlateNumber)
+        //{
+        //    List<PlateNo> plates = new List<PlateNo>();
+        //    SqlConnection connection = null;
+        //    try
+        //    {
+        //        connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Connector"].ToString());
+        //        SqlCommand sqlCommand = new SqlCommand();
+        //        sqlCommand.CommandType = CommandType.StoredProcedure;
+        //        //sqlCommand.CommandText = "Space_Plate_status_Zone";
+        //        sqlCommand.CommandText = "Space_Plate_status_Zone_v1";
+        //        sqlCommand.Parameters.AddWithValue("@customerID", customerID);
+        //        sqlCommand.Parameters.AddWithValue("@PlateNumber", PlateNumber);
+        //        sqlCommand.Connection = connection;
+        //        sqlCommand.CommandTimeout = 90;
+        //        connection.Open();
+        //        using (var reader = sqlCommand.ExecuteReader())
+        //        {
+        //            while (reader.Read())
+        //            {
+        //                var item = new PlateNo();
+        //                item.CustomerId = reader["CustomerId"] == System.DBNull.Value ? default(int?) : (Int32)reader["CustomerId"];
+        //                item.plate = reader["PlateNumber"] == System.DBNull.Value ? null : (string)reader["PlateNumber"];
+        //                item.PresentMeterTime = reader["PresentMeterTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["PresentMeterTime"];
+        //                item.ExpiryTime = reader["ExpiryTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["ExpiryTime"];
+        //                item.StateName = reader["ENFState"] == System.DBNull.Value ? null : (string)reader["ENFState"];
+        //                item.RateName = reader["RateNumber"] == System.DBNull.Value ? null : (string)reader["RateNumber"];
+        //                item.EnfType = reader["EnfType"] == System.DBNull.Value ? null : (string)reader["EnfType"];
+        //                item.SpaceStatus = reader["SpaceStatus"] == System.DBNull.Value ? null : (string)reader["SpaceStatus"];
+        //                item.ZoneName = reader["Zonename"] == System.DBNull.Value ? null : (string)reader["Zonename"];
+        //                if (string.IsNullOrWhiteSpace(item.StateName))
+        //                {
+        //                    item.plate = PlateNumber;
+        //                }
+        //                else
+        //                {
+        //                    item.plate = string.Format("{0}, [{1}]", PlateNumber, item.StateName);
+        //                }
+
+        //                if (DataRecordExtensions.HasColumn(reader, "Vendorname"))
+        //                    item.VendorName = reader["Vendorname"] == System.DBNull.Value ? null : (string)reader["Vendorname"];
+
+        //                item.Amount = reader["Amount"] == System.DBNull.Value ? default(decimal?) : (decimal)reader["Amount"];
+
+        //                item.ZoneId = reader["Zoneid"] == System.DBNull.Value ? default(int?) : (Int32)reader["Zoneid"];
+
+        //                item.ValidAnyZone = reader["ValidAnyZone"] == System.DBNull.Value ? default(bool?) : (bool)reader["ValidAnyZone"];
+                        
+        //                plates.Add(item);
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //    finally
+        //    {
+        //        if (connection.State == ConnectionState.Open)
+        //            connection.Close();
+        //    }
+        //    return plates;
+        //}
+
+        public static List<PlateNo> GetPlateMatch(int customerID, string PlateNumber)
+        {
+            if(customerID == 7056)
+                return GetPlateMatchPhili(customerID, PlateNumber);
+            else
+                return GetPlateMatchGeneric(customerID, PlateNumber);
+        }
+
+        private static List<PlateNo> GetPlateMatchGeneric(int customerID, string PlateNumber)
+        {
+            List<PlateNo> plates = new List<PlateNo>();
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Connector"].ToString());
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                //sqlCommand.CommandText = "Space_Plate_status_Zone";
+                //sqlCommand.CommandText = "Space_Plate_status_Zone_v1";
+                sqlCommand.CommandText = "Space_Plate_status_Zone_v2";
+                sqlCommand.Parameters.AddWithValue("@customerID", customerID);
+                sqlCommand.Parameters.AddWithValue("@PlateNumber", PlateNumber);
+                sqlCommand.Connection = connection;
+                sqlCommand.CommandTimeout = 90;
+                connection.Open();
+                using (var reader = sqlCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var item = new PlateNo();
+                        item.CustomerId = reader["CustomerId"] == System.DBNull.Value ? default(int?) : (Int32)reader["CustomerId"];
+                        item.plate = reader["PlateNumber"] == System.DBNull.Value ? null : (string)reader["PlateNumber"];
+                        item.PresentMeterTime = reader["PresentMeterTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["PresentMeterTime"];
+                        item.ExpiryTime = reader["ExpiryTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["ExpiryTime"];
+                        item.StateName = reader["ENFState"] == System.DBNull.Value ? null : (string)reader["ENFState"];
+                        item.RateName = reader["RateNumber"] == System.DBNull.Value ? null : (string)reader["RateNumber"];
+                        item.EnfType = reader["EnfType"] == System.DBNull.Value ? null : (string)reader["EnfType"];
+                        item.SpaceStatus = reader["SpaceStatus"] == System.DBNull.Value ? null : (string)reader["SpaceStatus"];
+                        item.ZoneName = reader["Zonename"] == System.DBNull.Value ? null : (string)reader["Zonename"];
+                        if (string.IsNullOrWhiteSpace(item.StateName))
+                        {
+                            item.plate = PlateNumber;
+                        }
+                        else
+                        {
+                            item.plate = string.Format("{0}, [{1}]", PlateNumber, item.StateName);
+                        }
+
+                        if (DataRecordExtensions.HasColumn(reader, "Vendorname"))
+                            item.VendorName = reader["Vendorname"] == System.DBNull.Value ? null : (string)reader["Vendorname"];
+
+                        item.Amount = reader["Amount"] == System.DBNull.Value ? default(decimal?) : (decimal)reader["Amount"];
+
+                        item.ZoneId = reader["Zoneid"] == System.DBNull.Value ? default(int?) : (Int32)reader["Zoneid"];
+
+                        item.ValidAnyZone = reader["ValidAnyZone"] == System.DBNull.Value ? default(bool?) : (bool)reader["ValidAnyZone"];
+
+                        plates.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+            return plates;
+        }
+        private static List<PlateNo> GetPlateMatchPhili(int customerID, string PlateNumber)
+        {
+            List<PlateNo> plates = new List<PlateNo>();
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Connector"].ToString());
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                //sqlCommand.CommandText = "Space_Plate_status_Zone";
+                //sqlCommand.CommandText = "Space_Plate_status_Zone_v1";
+                sqlCommand.CommandText = "Space_Plate_status_Zone_v2";
+                sqlCommand.Parameters.AddWithValue("@customerID", customerID);
+                sqlCommand.Parameters.AddWithValue("@PlateNumber", PlateNumber);
+                sqlCommand.Connection = connection;
+                sqlCommand.CommandTimeout = 90;
+                connection.Open();
+                using (var reader = sqlCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var item = new PlateNo();
+                        item.CustomerId = reader["CustomerId"] == System.DBNull.Value ? default(int?) : (Int32)reader["CustomerId"];
+                        item.plate = reader["PlateNumber"] == System.DBNull.Value ? null : (string)reader["PlateNumber"];
+                        item.PresentMeterTime = reader["PresentMeterTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["PresentMeterTime"];
+                        item.ExpiryTime = reader["ExpiryTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["ExpiryTime"];
+                        item.StateName = reader["ENFState"] == System.DBNull.Value ? null : (string)reader["ENFState"];
+                        item.RateName = reader["RateNumber"] == System.DBNull.Value ? null : (string)reader["RateNumber"];
+                        item.EnfType = reader["EnfType"] == System.DBNull.Value ? null : (string)reader["EnfType"];
+                        item.SpaceStatus = reader["SpaceStatus"] == System.DBNull.Value ? null : (string)reader["SpaceStatus"];
+                        item.ZoneName = reader["Zonename"] == System.DBNull.Value ? null : (string)reader["Zonename"];
+                        if (string.IsNullOrWhiteSpace(item.StateName))
+                        {
+                            item.plate = PlateNumber;
+                        }
+                        else
+                        {
+                            item.plate = string.Format("{0}, [{1}]", PlateNumber, item.StateName);
+                        }
+
+                        if (DataRecordExtensions.HasColumn(reader, "Vendorname"))
+                            item.VendorName = reader["Vendorname"] == System.DBNull.Value ? null : (string)reader["Vendorname"];
+
+                        item.Amount = reader["Amount"] == System.DBNull.Value ? default(decimal?) : (decimal)reader["Amount"];
+
+                        item.ZoneId = reader["Zoneid"] == System.DBNull.Value ? default(int?) : (Int32)reader["Zoneid"];
+
+                        item.ValidAnyZone = reader["ValidAnyZone"] == System.DBNull.Value ? default(bool?) : (bool)reader["ValidAnyZone"];
+
+                        if (DataRecordExtensions.HasColumn(reader, "AC1"))
+                            item.assignedClass = reader["AC1"] == System.DBNull.Value ? null : (string)reader["AC1"];
+
+                        if (DataRecordExtensions.HasColumn(reader, "AC2"))
+                            item.assignedClass2 = reader["AC2"] == System.DBNull.Value ? null : (string)reader["AC2"];
+
+                        if (DataRecordExtensions.HasColumn(reader, "AC3"))
+                            item.assignedClass3 = reader["AC3"] == System.DBNull.Value ? null : (string)reader["AC3"];
+
+                        if (DataRecordExtensions.HasColumn(reader, "LE"))
+                            item.VendorLpr = reader["LE"] == System.DBNull.Value ? null : (string)reader["LE"];
+
+                        if (DataRecordExtensions.HasColumn(reader, "ENFPermitNo"))
+                            item.ENFPermitNo = reader["ENFPermitNo"] == System.DBNull.Value ? null : (string)reader["ENFPermitNo"];
+                        
+
+                        plates.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+            return plates;
+        }
+    }
+}

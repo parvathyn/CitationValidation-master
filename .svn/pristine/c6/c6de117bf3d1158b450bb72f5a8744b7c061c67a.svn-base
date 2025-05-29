@@ -1,0 +1,37 @@
+﻿using System.Configuration;
+
+namespace DataAccess.Model.Parkeon
+{
+
+    [ConfigurationCollection(typeof(ParkeonCustomerElement))]
+    public class ParkeonCustomerElementCollection : ConfigurationElementCollection
+    {
+        public ParkeonCustomerElement this[int index]
+        {
+            get { return (ParkeonCustomerElement)BaseGet(index); }
+            set
+            {
+                if (BaseGet(index) != null)
+                    BaseRemoveAt(index);
+
+                BaseAdd(index, value);
+            }
+        }
+        protected override ConfigurationElement CreateNewElement()
+        {
+            return new ParkeonCustomerElement();
+        }
+
+        //protected override object GetElementKey(ConfigurationElement element)
+        //{
+        //    return ((ParkeonCustomerElement)element).CustomerId;
+        //}
+
+        protected override object GetElementKey(ConfigurationElement element)
+        {
+            return new { ((ParkeonCustomerElement)element).CustomerId, ((ParkeonCustomerElement)element).VendorId };
+        }
+
+    
+    }
+}

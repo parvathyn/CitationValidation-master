@@ -1,0 +1,69 @@
+﻿using System;
+
+namespace DataAccess.Model.PayByPhone
+{
+    public class PayByPhoneParameter
+    {
+        private int _vendorId;
+        private string _plate;
+        private string _patrollerId;
+        private int? _graceMinutes;
+        private DateTime? _asAtDateTime;
+        private int? _maxSize;
+        private string _coordinates;
+        private int? _accuracy;
+        private int _locationNo;
+        public PayByPhoneParameter(int vendorId, string plate, int? maxsize)
+        {
+            this._vendorId = vendorId;
+            this._plate = plate;
+            this._patrollerId = null;
+            this._graceMinutes = null;
+            this._asAtDateTime = null;
+            this._maxSize = maxsize;
+            this._coordinates = null;
+            this._accuracy = null;
+        }
+        public PayByPhoneParameter(int vendorId, int locationNo, int? maxsize)
+        {
+            this._vendorId = vendorId;
+            this._locationNo = locationNo;
+            this._patrollerId = null;
+            this._graceMinutes = null;
+            this._asAtDateTime = null;
+            this._maxSize = maxsize;
+            this._coordinates = null;
+            this._accuracy = null;
+        }
+
+        public int VendorId
+        {
+            get
+            {
+                return this._vendorId;
+            }
+        }
+        public string Plate
+        {
+            get
+            {
+                return this._plate;
+            }
+        }
+        public int? MaxSize
+        {
+            get
+            {
+                return this._maxSize;
+            }
+        }
+        public int LocationNo
+        {
+            get
+            {
+                return this._locationNo;
+            }
+        }
+
+    }
+}

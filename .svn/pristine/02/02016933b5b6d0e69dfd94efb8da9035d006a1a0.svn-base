@@ -1,0 +1,170 @@
+﻿using DataAccess.PangoProdService;
+using DataAccessDigital.PlateInfoService;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Serialization;
+
+namespace DataAccess.Model
+{
+    public class RequestResponseEntity
+    {
+        private Dictionary<VendorNames, VendorResponseEntity>  _vendorResponse;
+        private RequestEntity _RequestEntity;
+        private ResponseEntity _ResponseEntity;
+        public RequestResponseEntity()
+        {
+            _RequestEntity = new RequestEntity();
+            _ResponseEntity = new ResponseEntity();
+            _vendorResponse = new Dictionary<VendorNames, VendorResponseEntity>();
+        }
+        public DateTime StartTimeUTC { get; set; }
+        public DateTime EndTimeUTC { get; set; }
+        public RequestEntity Request
+        {
+            get { return _RequestEntity; }
+            set{ _RequestEntity = value; } 
+        }
+        public ResponseEntity Response 
+        {
+            get { return _ResponseEntity ;}
+            set {_ResponseEntity = value;} 
+        }
+
+        public Dictionary<VendorNames, VendorResponseEntity> VendorData
+        {
+            get { return this._vendorResponse; }
+        }
+    }
+
+    public class ReqResCommon
+    {
+        public string CustomerId { get; set; }
+        public string VendorId { get; set; }
+        public string MeterId { get; set; }
+        public string SpaceId { get; set; }
+        public string StallId { get; set; }
+        public DateTime CurrentUTCTime { get; set; }
+    }
+
+    public class RequestEntity : ReqResCommon
+    {
+        public string RequestBody { get; set; }
+        public string IPAddress { get; set; }
+    }
+
+    public class ResponseEntity : ReqResCommon
+    {
+        public DateTime CityCurrentTime { get; set; }
+        public string ResponseBody { get; set; }
+    }
+
+    public class VendorResponseEntity
+    {
+        private VendorNames _vendor;
+        private string _xmlandJsonData;
+        private Exception _generalException;
+        bool logEnable;
+        public VendorResponseEntity()
+        {
+           this.logEnable = false;
+        }
+
+        public VendorNames Vendor 
+        { 
+            get 
+                {
+                    return this._vendor;
+                }
+            set
+            {
+                this._vendor = value;
+            }
+        }
+        public Exception GeneralException
+        {
+            get
+            {
+                return this._generalException;
+            }
+            set
+            {
+                this._generalException = value;
+            }
+        }
+        public bool LogEnable
+        { 
+            get{return this.logEnable;}
+            set{this.logEnable = value;}
+        }
+        public string XmlandJsonData 
+        {
+            get { return this._xmlandJsonData; }
+            set { this._xmlandJsonData = value; }
+        }
+        public HttpStatusCode ResponseHttpStatusCode { get; set; }
+        public string RequestURL { get; set; }
+
+        public string ParkeonRequstBody { get; set; }
+        public string T2RequstBody { get; set; }
+
+
+        private PlateInfoByPlateResponse _t2response;
+        public PlateInfoByPlateResponse T2DitialResponse
+        {
+            get {  return this._t2response;}
+            set { this._t2response = value;}
+        }
+        public string T2DitialResponseString { get; set; }
+
+
+        public string PangoResponse
+        {
+            get;
+            set;
+        }
+
+        public string PangoRequestData { get; set; }
+    }
+
+    public class PlateNoRequest
+    {
+        public string CustomerId { get; set; }
+        public string PlateNo { get; set; }
+        public DateTime CurrentUTCTime { get; set; }
+        public string IPAddress { get; set; }
+        public string RequestURL { get; set; }
+    }
+    public class PlateNoResponse
+    {
+        public string ResponseBody { get; set; }
+        public DateTime CurrentUTCTime { get; set; }
+    }
+
+    public class PlateNoRequestResponse
+    {
+        private PlateNoRequest request;
+        private PlateNoResponse response;
+        public PlateNoRequestResponse()
+        {
+            request = new PlateNoRequest();
+            response = new PlateNoResponse();
+        }
+        public PlateNoRequest Request
+        {
+            get { return request; }
+            set { request = value; }
+        }
+        public PlateNoResponse Response
+        {
+            get { return response; }
+            set { response = value; }
+        }
+        public DateTime StartTimeUTC { get; set; }
+        public DateTime EndTimeUTC { get; set; }
+    }
+}

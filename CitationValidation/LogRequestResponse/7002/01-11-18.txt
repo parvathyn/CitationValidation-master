@@ -1,0 +1,41 @@
+
+Request : 
+EnfCustomerId : 7002	MeterId : 	SpaceId : 	UTC Time : 2018-01-11T11:52:41.3326810Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7002-3-11211-ILUE34-Expired 	
+
+Response : 
+EnfCustomerId : 7002	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-11T11:53:14.0495523Z 	CityCurrentTime : 2018-01-11T17:23:14.0245508+05:30 
+Response Data : {"EnforcementKey":"","ExpiredTime":"20180111_T222314Z","IsOccupied":"0","LicensePlate":"","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"0","MeterID":"","MeterLastUpdateTime":"20180111_T222314Z","MeterName":"","MeterRTC":"20180111_T222313Z","MeterStreet":"","Model":"","ReturnCode":"1","SensorEventTime":"20180111_T222314Z","SpaceNo":"","State":""} 
+Duration(in Seconds) : -32
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7002	MeterId : 	SpaceId : 	UTC Time : 2018-01-11T11:53:19.3806167Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7002-3-11211-ILUE34-Expired 	
+
+Response : 
+EnfCustomerId : 7002	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-11T11:53:40.9078474Z 	CityCurrentTime : 2018-01-11T17:23:40.9078474+05:30 
+Response Data : {"EnforcementKey":"","ExpiredTime":"20180111_T222340Z","IsOccupied":"0","LicensePlate":"","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"0","MeterID":"","MeterLastUpdateTime":"20180111_T222340Z","MeterName":"","MeterRTC":"20180111_T222340Z","MeterStreet":"","Model":"","ReturnCode":"1","SensorEventTime":"20180111_T222340Z","SpaceNo":"","State":""} 
+Duration(in Seconds) : -21
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7002	MeterId : 	SpaceId : 	UTC Time : 2018-01-11T11:53:44.3619055Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7002-3-11211-ILUE34-Expired 	
+
+Response : 
+EnfCustomerId : 7002	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-11T11:56:08.1051266Z 	CityCurrentTime : 2018-01-11T17:26:08.1051266+05:30 
+Response Data : {"EnforcementKey":"","ExpiredTime":"20180111_T222608Z","IsOccupied":"0","LicensePlate":"","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"0","MeterID":"","MeterLastUpdateTime":"20180111_T222608Z","MeterName":"","MeterRTC":"20180111_T222608Z","MeterStreet":"","Model":"","ReturnCode":"1","SensorEventTime":"20180111_T222608Z","SpaceNo":"","State":""} 
+Duration(in Seconds) : -23
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7002	MeterId : 	SpaceId : 	UTC Time : 2018-01-11T11:56:08.1251277Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7002-3-11211-ILUE34-Expired- 	
+
+Response : 
+EnfCustomerId : 7002	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-11T11:56:20.0938123Z 	CityCurrentTime : 2018-01-11T17:26:20.0938123+05:30 
+Response Data : {"EnforcementKey":"","ExpiredTime":"20180111_T222620Z","IsOccupied":"0","LicensePlate":"","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"0","MeterID":"","MeterLastUpdateTime":"20180111_T222620Z","MeterName":"","MeterRTC":"20180111_T222620Z","MeterStreet":"","Model":"","ReturnCode":"1","SensorEventTime":"20180111_T222620Z","SpaceNo":"","State":""} 
+Duration(in Seconds) : -11
+----------------------------------------------------------------------------------------------------------

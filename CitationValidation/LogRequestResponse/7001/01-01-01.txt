@@ -1,0 +1,11 @@
+
+Request : 
+EnfCustomerId : 7001	Meter Name : 1	SpaceId : 61A610	UTC Time : 2018-01-09T10:33:33.5717212Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-7001-1-61A610-- 	
+
+Response : 
+EnfCustomerId : 7001	Meter Name : 1	SpaceId : 61A610	StallId : 	Current UTC Time : 2018-01-09T10:33:33.6017212Z 	CityCurrentTime : 0001-01-01T00:00:00.0000000 
+Response Data : {"EnforcementKey":"PayBySpace-7001-1-61A610--","ExpiredTime":"-1","IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":null,"MeterLastUpdateTime":null,"MeterName":"1","MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"61A610","State":null} 
+Duration(in Seconds) : 0
+----------------------------------------------------------------------------------------------------------

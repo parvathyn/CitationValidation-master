@@ -1,0 +1,71 @@
+﻿using DataAccess.Model;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccess
+{
+    public class PlateDataAccess
+    {
+        public static List<PlateNo> GetPlateMatch(int customerID, string PlateNumber)
+        {
+            List<PlateNo> plates = new List<PlateNo>();
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Connector"].ToString());
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = "Space_Plate_status";
+                //sqlCommand.CommandText = "Space_Plate_status_Test";
+                sqlCommand.Parameters.AddWithValue("@customerID", customerID);
+                sqlCommand.Parameters.AddWithValue("@PlateNumber", PlateNumber);
+                sqlCommand.Connection = connection;
+                sqlCommand.CommandTimeout = 90;
+                connection.Open();
+                using (var reader = sqlCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var item = new PlateNo();
+                        item.CustomerId = reader["CustomerId"] == System.DBNull.Value ? default(int?) : (Int32)reader["CustomerId"];
+                        item.plate = reader["PlateNumber"] == System.DBNull.Value ? null : (string)reader["PlateNumber"];
+                        item.PresentMeterTime = reader["PresentMeterTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["PresentMeterTime"];
+                        item.ExpiryTime = reader["ExpiryTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["ExpiryTime"];
+                        item.StateName = reader["ENFState"] == System.DBNull.Value ? null : (string)reader["ENFState"];
+                        item.RateName = reader["RateNumber"] == System.DBNull.Value ? null : (string)reader["RateNumber"];
+                        item.EnfType = reader["EnfType"] == System.DBNull.Value ? null : (string)reader["EnfType"];
+                        item.SpaceStatus = reader["SpaceStatus"] == System.DBNull.Value ? null : (string)reader["SpaceStatus"];
+
+                        if (string.IsNullOrWhiteSpace(item.StateName))
+                        {
+                            item.plate = PlateNumber;
+                        }
+                        else
+                        {
+                            item.plate = string.Format("{0}, [{1}]", PlateNumber, item.StateName);
+                        }
+                       
+                        item.Amount = reader["Amount"] == System.DBNull.Value ? default(decimal?) : (decimal)reader["Amount"];
+                        plates.Add(item);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+            return plates;
+        }
+    }
+}

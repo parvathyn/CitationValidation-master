@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.digitalpaytech.com/stallInfo" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="StallInfoService" targetNamespace="http://ws.digitalpaytech.com/stallInfo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://ws.digitalpaytech.com/stallInfo" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="GroupRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GroupResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="groups" nillable="true" type="tns:GroupType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InfoServiceFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="shortErrorMessage" type="xs:string" />
+            <xs:element minOccurs="0" name="techImplementationDetails" type="xs:string" />
+            <xs:element name="errCode" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegionRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="regions" nillable="true" type="tns:RegionType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SettingRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SettingResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="settings" nillable="true" type="tns:SettingType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StallInfoByGroupRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="groupName" type="xs:string" />
+            <xs:element name="stallfrom" type="xs:int" />
+            <xs:element name="stallto" type="xs:int" />
+            <xs:element name="stallstatus" type="tns:Bystatus" />
+            <xs:element name="datetimeStamp" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StallInfoByRegionRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="region" type="xs:string" />
+            <xs:element name="stallfrom" type="xs:int" />
+            <xs:element name="stallto" type="xs:int" />
+            <xs:element name="stallstatus" type="tns:Bystatus" />
+            <xs:element name="datetimeStamp" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StallInfoBySettingRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="setting" type="xs:string" />
+            <xs:element name="stallfrom" type="xs:int" />
+            <xs:element name="stallto" type="xs:int" />
+            <xs:element name="stallstatus" type="tns:Bystatus" />
+            <xs:element name="datetimeStamp" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StallInfoRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="stallfrom" type="xs:int" />
+            <xs:element name="stallto" type="xs:int" />
+            <xs:element name="stallstatus" type="tns:Bystatus" />
+            <xs:element name="datetimeStamp" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="StallInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="stallInfos" nillable="true" type="tns:StallInfoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="SettingType">
+        <xs:sequence>
+          <xs:element name="settingName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegionType">
+        <xs:sequence>
+          <xs:element name="regionName" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StallInfoType">
+        <xs:sequence>
+          <xs:element name="expiryDate" type="xs:dateTime" />
+          <xs:element name="purchaseDate" type="xs:dateTime" />
+          <xs:element name="stallNumber" type="xs:string" />
+          <xs:element name="setting" type="xs:string" />
+          <xs:element name="status" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GroupType">
+        <xs:sequence>
+          <xs:element name="groupName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Bystatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="All" />
+          <xs:enumeration value="Valid" />
+          <xs:enumeration value="Expired" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getStallInfoByRegionResponse">
+    <wsdl:part name="StallInfoResponse" element="tns:StallInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSettingsResponse">
+    <wsdl:part name="SettingResponse" element="tns:SettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="InfoServiceFaultMessage">
+    <wsdl:part name="InfoServiceFaultMessage" element="tns:InfoServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="getStallInfoByGroup">
+    <wsdl:part name="StallInfoByGroupRequest" element="tns:StallInfoByGroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStallInfoResponse">
+    <wsdl:part name="StallInfoResponse" element="tns:StallInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStallInfoByRegion">
+    <wsdl:part name="StallInfoByRegionRequest" element="tns:StallInfoByRegionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getGroups">
+    <wsdl:part name="GroupRequest" element="tns:GroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="getRegionsResponse">
+    <wsdl:part name="RegionResponse" element="tns:RegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStallInfoBySetting">
+    <wsdl:part name="StallInfoBySettingRequest" element="tns:StallInfoBySettingRequest" />
+  </wsdl:message>
+  <wsdl:message name="getSettings">
+    <wsdl:part name="SettingRequest" element="tns:SettingRequest" />
+  </wsdl:message>
+  <wsdl:message name="getGroupsResponse">
+    <wsdl:part name="GroupResponse" element="tns:GroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRegions">
+    <wsdl:part name="RegionRequest" element="tns:RegionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getStallInfoBySettingResponse">
+    <wsdl:part name="StallInfoResponse" element="tns:StallInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStallInfoByGroupResponse">
+    <wsdl:part name="StallInfoResponse" element="tns:StallInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStallInfo">
+    <wsdl:part name="StallInfoRequest" element="tns:StallInfoRequest" />
+  </wsdl:message>
+  <wsdl:portType name="StallInfoService">
+    <wsdl:operation name="getSettings">
+      <wsdl:input name="getSettings" message="tns:getSettings" />
+      <wsdl:output name="getSettingsResponse" message="tns:getSettingsResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRegions">
+      <wsdl:input name="getRegions" message="tns:getRegions" />
+      <wsdl:output name="getRegionsResponse" message="tns:getRegionsResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStallInfoByGroup">
+      <wsdl:input name="getStallInfoByGroup" message="tns:getStallInfoByGroup" />
+      <wsdl:output name="getStallInfoByGroupResponse" message="tns:getStallInfoByGroupResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStallInfoByRegion">
+      <wsdl:input name="getStallInfoByRegion" message="tns:getStallInfoByRegion" />
+      <wsdl:output name="getStallInfoByRegionResponse" message="tns:getStallInfoByRegionResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGroups">
+      <wsdl:input name="getGroups" message="tns:getGroups" />
+      <wsdl:output name="getGroupsResponse" message="tns:getGroupsResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStallInfoBySetting">
+      <wsdl:input name="getStallInfoBySetting" message="tns:getStallInfoBySetting" />
+      <wsdl:output name="getStallInfoBySettingResponse" message="tns:getStallInfoBySettingResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStallInfo">
+      <wsdl:input name="getStallInfo" message="tns:getStallInfo" />
+      <wsdl:output name="getStallInfoResponse" message="tns:getStallInfoResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StallInfoServiceSoapBinding" type="tns:StallInfoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getSettings">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/stallInfo/getSettings" style="document" />
+      <wsdl:input name="getSettings">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getSettingsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRegions">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/stallInfo/getRegions" style="document" />
+      <wsdl:input name="getRegions">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRegionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStallInfoByGroup">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/stallInfo/getStallInfoByGroup" style="document" />
+      <wsdl:input name="getStallInfoByGroup">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStallInfoByGroupResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStallInfoByRegion">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/stallInfo/getStallInfoByRegion" style="document" />
+      <wsdl:input name="getStallInfoByRegion">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStallInfoByRegionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getGroups">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/stallInfo/getGroups" style="document" />
+      <wsdl:input name="getGroups">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getGroupsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStallInfoBySetting">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/stallInfo/getStallInfoBySetting" style="document" />
+      <wsdl:input name="getStallInfoBySetting">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStallInfoBySettingResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStallInfo">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/stallInfo/getStallInfo" style="document" />
+      <wsdl:input name="getStallInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getStallInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StallInfoService">
+    <wsdl:port name="StallInfoServiceImplPort" binding="tns:StallInfoServiceSoapBinding">
+      <soap:address location="https://iris.digitalpaytech.com/services/StallInfoService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

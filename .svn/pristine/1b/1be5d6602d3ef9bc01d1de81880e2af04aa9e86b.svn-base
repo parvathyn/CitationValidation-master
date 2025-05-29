@@ -1,0 +1,470 @@
+﻿using DataAccess;
+using DataAccess.Model;
+using DataAccess.Model.CitationValidation;
+using System;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Web;
+using System.Text;
+
+
+namespace CitationValidation
+{
+    public class ValidateCitation : IValidateCitation
+    {
+        #region RefreshServce 
+        public TransactionTransform GetCitationData(string enfKey)
+        {
+            RequestResponseEntity logData = new RequestResponseEntity();
+            logData.Request.CurrentUTCTime = DateTime.UtcNow;
+            logData.Request.RequestBody = OperationContext.Current.IncomingMessageHeaders.To.ToString();
+            if (OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] != null)
+            {
+                RemoteEndpointMessageProperty endpoint = OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+                logData.Request.IPAddress = endpoint.Address;
+            }
+
+            var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+
+
+            string logFilePath = Path.Combine(appPath, "LogRequestResponse");
+            try
+            {
+                string filePath = Path.Combine(appPath, "App_Data", "Timezones", "TimeZones.xml");
+
+                // TransactionTransform dataObj = TransactionDataValidatioin.GetTransformData(enfKey, filePath, logData);
+
+                //////////////////////////////////
+                TransactionTransform dataObj = new TransactionTransform();
+                int? customerId = this.GetCustomerId(enfKey);
+                if (customerId.HasValue)
+                {
+                    switch (customerId.Value)
+                    {
+                        case 7002: //CoralGables
+                            //dataObj = TransactionDataValidatioin.GetCoralGablesTransformData(enfKey, filePath, logData);
+                            dataObj = TransactionDataValidatioin.GetCoralGablesTransformDataOld(enfKey, filePath, logData);
+                            break;
+                        default:
+                            dataObj = TransactionDataValidatioin.GetTransformData(enfKey, filePath, logData);
+                            break;
+                    }
+                }
+                //////////////////////////////////
+
+                logData.Response.ResponseBody = dataObj.GetJsonData();
+                logData.Response.CurrentUTCTime = DateTime.UtcNow;
+                logFilePath = Path.Combine(appPath, "LogRequestResponse", logData.Request.CustomerId);
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return dataObj;
+            }
+            catch (Exception ex)
+            {
+                string errorPath = Path.Combine(appPath, "App_Data", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                ex = null;
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString(), EnforcementKey = "fromd catach" };
+            }
+        }
+
+        public ChicagoTransactionTransform GetChicagoCitationData(string enfKey)
+        {
+            RequestResponseEntity logData = new RequestResponseEntity();
+            logData.Request.CurrentUTCTime = DateTime.UtcNow;
+            logData.Request.RequestBody = OperationContext.Current.IncomingMessageHeaders.To.ToString();
+            if (OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] != null)
+            {
+                RemoteEndpointMessageProperty endpoint = OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+                logData.Request.IPAddress = endpoint.Address;
+            }
+            var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+
+            string logFilePath = Path.Combine(appPath, "LogRequestResponse");
+            try
+            {
+                string filePath = Path.Combine(appPath, "App_Data", "Timezones", "TimeZones.xml");
+
+                ChicagoTransactionTransform dataObj = TransactionDataValidatioin.GetTransformDataChicago(enfKey, filePath, logData);
+
+                logData.Response.ResponseBody = dataObj.GetJsonData();
+                logData.Response.CurrentUTCTime = DateTime.UtcNow;
+                logFilePath = Path.Combine(appPath, "LogRequestResponse", logData.Request.CustomerId);
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return dataObj;
+            }
+            catch (Exception ex)
+            {
+                string errorPath = Path.Combine(appPath, "App_Data", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                ex = null;
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return new ChicagoTransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString(), EnforcementKey = "fromd catach" };
+            }
+        }
+
+        public string GetLogData(string customerId, string folderName)
+        {
+            string resonseData = string.Empty;
+            try
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                var logFilePath = Path.Combine(appPath, "LogRequestResponse", customerId, folderName + ".txt");
+                resonseData = File.ReadAllText(logFilePath, Encoding.ASCII);
+            }
+            catch (Exception ex)
+            {
+                resonseData = "Opps error happend.";
+            }
+            return resonseData;
+        }
+
+        private int? GetCustomerId(string key)
+        {
+            string[] values = key.Split('-');
+            int? tempcustomerID = null;
+            if (values[0] == null) //CustomerrId
+            {
+
+            }
+            else
+            {
+                tempcustomerID = values[0].ToNullableInt();
+                if (tempcustomerID.HasValue == false)
+                {
+
+                }
+            }
+
+            return tempcustomerID;
+        }
+
+        #endregion
+        #region PlateNo
+        public PlateNos GetPlateNo(string customerId, string plateNo)
+        {
+            PlateNos plateNosObj = new PlateNos();
+            try
+            {
+                plateNosObj = new PlateFactory().GetData(Int32.Parse(customerId), plateNo);
+            }
+            catch (Exception ex)
+            {
+                plateNosObj.Candidate.Add(PlateFactory.GetErrorPlate);
+            }
+            return plateNosObj;
+        }
+        #endregion
+        #region RefreshServce- : PayBySpace & PayByPlate
+        /// <summary>
+        /// Key Structure : <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName>
+        /// For customers starting from August 11 ,2017: 
+        /// Customer : 7002	 , Coral Gables
+        /// </summary>
+        /// <param name="enfKey"><EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        public TransactionTransform GetCitationStatus(string enfKey)
+        {
+            RequestResponseEntity logData = new RequestResponseEntity();
+            logData.Request.CurrentUTCTime = DateTime.UtcNow;
+            logData.Request.RequestBody = OperationContext.Current.IncomingMessageHeaders.To.ToString();
+            if (OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] != null)
+            {
+                RemoteEndpointMessageProperty endpoint = OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+                logData.Request.IPAddress = endpoint.Address;
+            }
+
+         // var appPath = @"G:\Projects\Services-AutoIssueNEW\CitationValidation\CitationValidation\TestApplication";
+            var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+
+            string logFilePath = Path.Combine(appPath, "LogRequestResponse");
+            try
+            {
+                string filePath = Path.Combine(appPath, "App_Data", "Timezones", "TimeZones.xml");
+
+                ////////////////////////////////////////////
+                TransactionTransform dataObj = new TransactionTransform();
+                int? customerId = this.CheckCustomerId(enfKey);
+
+                if (customerId.HasValue)
+                {
+                    switch (customerId.Value)
+                    {
+                        case 7002: //CoralGables
+                            //dataObj = TransactionDataValidatioin.GetCoralGablesTransformData(enfKey, filePath, logData, CustomerTimes.GetCoralGablesTime);//Original
+                            dataObj = TransactionDataValidatioin.GetCoralGablesTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetCoralGablesTime);
+                            break;
+                        case 4120: //Atlanta : 
+                            //dataObj = TransactionDataValidatioin.GetAtlantaTransformData(enfKey, filePath, logData, CustomerTimes.GetAtlantaTime);
+                            //dataObj = TransactionDataValidatioin.GetAtlantaTransformDataV3(enfKey, filePath, logData, CustomerTimes.GetAtlantaTime);//Original
+                            dataObj = TransactionDataValidatioin.GetAtlantaTransformDataV4(enfKey, filePath, logData, CustomerTimes.GetAtlantaTime);
+                            break;
+                        case 7001: //South Miami
+                            //dataObj = TransactionDataValidatioin.GetSouthMiamiTransformData(enfKey, filePath, logData);
+                            //dataObj = TransactionDataValidatioin.GetSouthMiamiTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetSouthMiamiTime);//Original
+                            dataObj = TransactionDataValidatioin.GetSouthMiamiTransformDataV3(enfKey, filePath, logData, CustomerTimes.GetSouthMiamiTime);
+                            break;
+                        case 7013: //Raleigh
+                            dataObj = TransactionDataValidatioin.GetRaleighTransformData(enfKey, filePath, logData);
+                            break;
+                        case 4194: //	Birmingham, MI
+                            //dataObj = TransactionDataValidatioin.GetBirminghamMITransformData(enfKey, filePath, logData);
+                           // dataObj = TransactionDataValidatioin.GetBirminghamMITransformDataNew(enfKey, filePath, logData, CustomerTimes.GetBirminghamMITime);//Original
+                            dataObj = TransactionDataValidatioin.GetBirminghamMITransformDataNewV2(enfKey, filePath, logData, CustomerTimes.GetBirminghamMITime); //to Go
+                            break;
+                        case 8014: //Sharjah Municipality
+                            dataObj = TransactionDataValidatioin.GetSharjahMunicipalityTransformData(enfKey, filePath, logData);
+                            break;
+                        case 7025: //Indiana Borough
+                            //dataObj = TransactionDataValidatioin.GetIndianaBoroughTransformData(enfKey, filePath, logData);
+                            //dataObj = TransactionDataValidatioin.GetIndianaBoroughTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetSouthMiamiTime);//Original
+                            dataObj = TransactionDataValidatioin.GetIndianaBoroughTransformDataV3(enfKey, filePath, logData, CustomerTimes.GetSouthMiamiTime);//to Go
+                            break;
+                        case 7026: //Franklin
+                            dataObj = TransactionDataValidatioin.GetFranklinTransformData(enfKey, filePath, logData);
+                            break;
+                        case 7032: //Auburn
+                            //dataObj = TransactionDataValidatioin.GetAuburnTransformData(enfKey, filePath, logData, CustomerTimes.GetAuburnTime);//Original
+                            dataObj = TransactionDataValidatioin.GetAuburnTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetAuburnTime);
+                            //dataObj = TransactionDataValidatioin.GetAuburnTransformDataV3Test(enfKey, filePath, logData, CustomerTimes.GetAuburnTime);
+                            break;
+                        case 7009://Sunny Isles Beach
+                            //dataObj = TransactionDataValidatioin.GetSunnyIslesBeachTransformData(enfKey, filePath, logData);
+                           // dataObj = TransactionDataValidatioin.GetSunnyIslesBeachTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetSunnyIslesBeachTime);
+                            dataObj = TransactionDataValidatioin.GetSunnyIslesBeachTransformDataV3(enfKey, filePath, logData, CustomerTimes.GetSunnyIslesBeachTime);
+                            break;
+                        case 7007://Surfside
+                            //dataObj = TransactionDataValidatioin.GetSurfsideTransformData(enfKey, filePath, logData);
+                            //dataObj = TransactionDataValidatioin.GetSurfsideTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetSurfsideTime);
+                           // dataObj = TransactionDataValidatioin.GetSurfsideTransformDataV3(enfKey, filePath, logData, CustomerTimes.GetSurfsideTime); // Original
+                            dataObj = TransactionDataValidatioin.GetSurfsideTransformDataV4(enfKey, filePath, logData, CustomerTimes.GetSurfsideTime);
+                            break;
+                        case 7028: //SiouxCity
+                            //dataObj = TransactionDataValidatioin.GetSiouxCityTransformData(enfKey, filePath, logData);
+                           // dataObj = TransactionDataValidatioin.GetSiouxCityTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetSiouxCityTime);// Original
+                            dataObj = TransactionDataValidatioin.GetSiouxCityTransformDataV3(enfKey, filePath, logData, CustomerTimes.GetSiouxCityTime);//to Go
+                            break;
+                        case 7034://Detroit
+                            //dataObj = TransactionDataValidatioin.GetDetroitTransformData(enfKey, filePath, logData, CustomerTimes.GetDetroitTime);// Original
+                            dataObj = TransactionDataValidatioin.GetDetroitTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetDetroitTime);//to Go
+                            break;
+                        case 7008: //Bay Harbor
+                            //dataObj = TransactionDataValidatioin.GetBayHarborTransformData(enfKey, filePath, logData, CustomerTimes.GetBayHarborTime);
+                            //dataObj = TransactionDataValidatioin.GetBayHarborTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetBayHarborTime);// Original
+                            dataObj = TransactionDataValidatioin.GetBayHarborTransformDataV3(enfKey, filePath, logData, CustomerTimes.GetBayHarborTime);//to Go
+                            break;
+                        case 7006: //Metro Rail
+                            //dataObj = TransactionDataValidatioin.GetMetroRailTransformData(enfKey, filePath, logData, CustomerTimes.GetBayHarborTime);// Original
+                            dataObj = TransactionDataValidatioin.GetMetroRailTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetBayHarborTime);//to Go
+                            break;
+                        case 7038://Port Hood River 
+                            //dataObj = TransactionDataValidatioin.GetPortHoodRiverTransformData(enfKey, filePath, logData, CustomerTimes.GetPortHoodRiverTime);//Original
+                            dataObj = TransactionDataValidatioin.GetPortHoodRiverTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetPortHoodRiverTime);
+                            break;
+                        case 7029://RoyalOak
+                            //dataObj = TransactionDataValidatioin.GetRoyalOakTransformData(enfKey, filePath, logData);
+                            dataObj = TransactionDataValidatioin.GetRoyalOakTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetRoyalOakTime);
+                            break;
+                        case 7010://Tempe
+                            dataObj = TransactionDataValidatioin.GetTempeTransformData(enfKey, filePath, logData, CustomerTimes.GetTempeTime);
+                            break;
+                        case 7030://Tybee Island
+                            //dataObj = TransactionDataValidatioin.GetTybeeIslandTransformData(enfKey, filePath, logData, CustomerTimes.GetPortHoodRiverTime);//Original
+                            dataObj = TransactionDataValidatioin.GetTybeeIslandTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetPortHoodRiverTime);
+                            break;
+                        case 7003: //Miami Parking Authority
+                            //dataObj = TransactionDataValidatioin.GetMiamiParkingAuthorityTransformData(enfKey, filePath, logData, CustomerTimes.GetBayHarborTime);
+                           // dataObj = TransactionDataValidatioin.GetMiamiParkingAuthorityTransformDataV2(enfKey, filePath, logData, CustomerTimes.GetMPATime);//Original
+                            dataObj = TransactionDataValidatioin.GetMiamiParkingAuthorityTransformDataV3(enfKey, filePath, logData, CustomerTimes.GetMPATime);
+                            break;
+                        case 8016: //Abu Dhabi
+                            dataObj = TransactionDataValidatioin.GetAbuDhabiTransformData(enfKey, filePath, logData);
+                            break;
+                        case 4232: //Ardsley,NY
+                            dataObj = TransactionDataValidatioin.GetArdsleyNYTransformData(enfKey, filePath, logData);
+                            break;
+                        case 7004://MiamiBeach
+                            dataObj = TransactionDataValidatioin.GetMiamiBeachTransformData(enfKey, filePath, logData, CustomerTimes.GetMiamiBeachTime);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    logData.Response.ResponseBody = dataObj.GetJsonData();
+                    logData.Response.CurrentUTCTime = DateTime.UtcNow;
+                    logFilePath = Path.Combine(appPath, "LogRequestResponse", logData.Request.CustomerId);
+                    //RequestResponseLog.ReqResLog(logData, logFilePath);
+                    RequestResponseLog.ReqResLogV2(logData, logFilePath);
+                }
+                //////////////////////////////////
+
+                return dataObj;
+            }
+            catch (Exception ex)
+            {
+                string errorPath = Path.Combine(appPath, "App_Data", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationStatus", errorPath);
+                ex = null;
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString(), EnforcementKey = "" };
+            }
+        }
+
+        private int? CheckCustomerId(string key)
+        {
+            string[] values = key.Split('-');
+            int? tempcustomerID = null;
+            if (values[1] == null) //CustomerrId
+            {
+
+            }
+            else
+            {
+                tempcustomerID = values[1].ToNullableInt();
+                if (tempcustomerID.HasValue == false)
+                {
+
+                }
+            }
+
+            return tempcustomerID;
+        }
+        #endregion
+
+        #region Testing and rnd purpose
+        public Stream Test(string enfKey)
+        {
+            WebOperationContext.Current.OutgoingResponse.ContentType = "application/json; charset=utf-8";
+            RequestResponseEntity logData = new RequestResponseEntity();
+            logData.Request.CurrentUTCTime = DateTime.UtcNow;
+            logData.Request.RequestBody = OperationContext.Current.IncomingMessageHeaders.To.ToString();
+            if (OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] != null)
+            {
+                RemoteEndpointMessageProperty endpoint = OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+                logData.Request.IPAddress = endpoint.Address;
+            }
+            // var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+            var appPath = @"G:\Projects\Services-AutoIssueNEW\CitationValidation\CitationValidation\TestApplication";
+            string logFilePath = Path.Combine(appPath, "LogRequestResponse");
+            try
+            {
+                string filePath = Path.Combine(appPath, "App_Data", "Timezones", "TimeZones.xml");
+                DataAccess.Model.CitationValidation.CitationValidationGeneralFactory factory = null;
+                int? customerId = this.GetCustomerId(enfKey);
+                if (customerId.HasValue)
+                {
+                    switch (customerId.Value)
+                    {
+                        case 7012: //Chicago
+                            factory = new DataAccess.Model.CitationValidation.CitationValidationChicagoFactory(enfKey, customerId.Value, filePath, logData);
+                            break;
+                        case 7002: //CoralGables
+                            factory = new DataAccess.Model.CitationValidation.CitationValidationCoralGablesFactory(enfKey, customerId.Value, filePath, logData);
+                            break;
+                        case 7013: //Raleigh
+                            factory = new DataAccess.Model.CitationValidation.CitationValidationRaleighFactory(enfKey, customerId.Value, filePath, logData);
+                            break;
+                        case 7001:
+                            factory = new DataAccess.Model.CitationValidation.CitationValidationSouthMiamiFactory(enfKey, customerId.Value, filePath, logData);
+                            break;
+                        case 4194:
+                            factory = new DataAccess.Model.CitationValidation.CitationValidationBirminghamMIFactory(enfKey, customerId.Value, filePath, logData);
+                            break;
+                        default:
+                            break;
+                    }
+
+                    var dataObj = factory.GetTransformData();
+                    string jsonData = dataObj.GetJsonData();
+                    logData.Response.ResponseBody = jsonData;
+                    logData.Response.CurrentUTCTime = DateTime.UtcNow;
+                    logFilePath = Path.Combine(appPath, "LogRequestResponse", logData.Request.CustomerId);
+                    RequestResponseLog.ReqResLog(logData, logFilePath);
+                    MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonData));
+                    return ms;
+                }
+                else
+                {
+                    return HandleError(logFilePath, appPath, ref logData, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                return HandleError(logFilePath, appPath, ref logData, null);
+            }
+        }
+        public TransactionTransform GetCoralGablesCitationData(string enfKey)
+        {
+            RequestResponseEntity logData = new RequestResponseEntity();
+            logData.Request.CurrentUTCTime = DateTime.UtcNow;
+            logData.Request.RequestBody = OperationContext.Current.IncomingMessageHeaders.To.ToString();
+            if (OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] != null)
+            {
+                RemoteEndpointMessageProperty endpoint = OperationContext.Current.IncomingMessageProperties[RemoteEndpointMessageProperty.Name] as RemoteEndpointMessageProperty;
+                logData.Request.IPAddress = endpoint.Address;
+            }
+            var appPath = @"G:\Projects\Services-AutoIssueNEW\CitationValidation\CitationValidation\TestApplication";
+            //var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+
+            string logFilePath = Path.Combine(appPath, "LogRequestResponse");
+            try
+            {
+                string filePath = Path.Combine(appPath, "App_Data", "Timezones", "TimeZones.xml");
+
+                TransactionTransform dataObj = TransactionDataValidatioin.GetCoralGablesTransformDataOld(enfKey, filePath, logData);
+
+                logData.Response.ResponseBody = dataObj.GetJsonData();
+                logData.Response.CurrentUTCTime = DateTime.UtcNow;
+                logFilePath = Path.Combine(appPath, "LogRequestResponse", logData.Request.CustomerId);
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return dataObj;
+            }
+            catch (Exception ex)
+            {
+                string errorPath = Path.Combine(appPath, "App_Data", "Timezones");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                ex = null;
+                RequestResponseLog.ReqResLog(logData, logFilePath);
+                return new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString(), EnforcementKey = "fromd catach" };
+            }
+        }
+        private Stream HandleError(string logFilePath, string appPath, ref  RequestResponseEntity logData, Exception ex)
+        {
+            string errorPath = Path.Combine(appPath, "App_Data", "Timezones");
+            if (ex != null)
+            {
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+                ex = null;
+            }
+            RequestResponseLog.ReqResLog(logData, logFilePath);
+            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes((new TransactionPaymentDetail() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString(), EnforcementKey = "from catch" }).GetJsonData()));
+            return ms;
+        }
+        #endregion
+
+        public Stream getallactivepurchases(string firstParameter, string secondParamter)
+        {
+            var value = @"<ArrayOfValidParkingData/>";
+            Encoding encoding = Encoding.GetEncoding("ISO-8859-1");
+            WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";
+            byte[] returnBytes = null;
+            try
+            {
+                value = DataAccess.Model.Cale.CaleGenericFactory.GetAllActivePurchases(firstParameter, secondParamter);
+                returnBytes = encoding.GetBytes(value);
+                return new MemoryStream(returnBytes);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            //value.Position = 0;
+            returnBytes = encoding.GetBytes(value);
+            return new MemoryStream(returnBytes);
+        }
+       
+    }
+}

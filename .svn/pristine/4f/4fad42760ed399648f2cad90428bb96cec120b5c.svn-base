@@ -1,0 +1,171 @@
+﻿using System;
+
+namespace DataAccess.Model
+{
+    public class CustomerTime
+    {
+        public int CustomerId { get; set; }
+        public virtual DateTime? CurrentTime { get; set; }
+        public virtual TimeSpan TimeSpanDifferenceToUTC { get; set; }
+    }
+    public class AtlantaCustomerTime : CustomerTime
+    {
+        public override DateTime? CurrentTime
+        {
+            get
+            {
+                bool isDayLight = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+                if (isDayLight)
+                    return DateTime.UtcNow.Add(new TimeSpan(-4, 0, 0));
+                else
+                    return DateTime.UtcNow.Add(new TimeSpan(-5, 0, 0));
+            }
+        }
+        public override TimeSpan TimeSpanDifferenceToUTC
+        {
+            get
+            {
+                bool isDayLight = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+                if (isDayLight)
+                    return new TimeSpan(-4, 0, 0);
+                else
+                    return new TimeSpan(-5, 0, 0);
+            }
+        }
+    }
+    public class CoralGablesCustomerTime : CustomerTime
+    {
+        public override DateTime? CurrentTime
+        {
+            get
+            {
+                bool isDayLight = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+                if (isDayLight)
+                    return DateTime.UtcNow.Add(new TimeSpan(-4, 0, 0));
+                else
+                    return DateTime.UtcNow.Add(new TimeSpan(-5, 0, 0));
+            }
+        }
+        public override TimeSpan TimeSpanDifferenceToUTC
+        {
+            get
+            {
+                bool isDayLight = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+                if (isDayLight)
+                    return new TimeSpan(-4, 0, 0);
+                else
+                    return new TimeSpan(-5, 0, 0);
+            }
+        }
+    }
+    public class BirminghamMICustomerTime : CustomerTime
+    {
+        public override DateTime? CurrentTime
+        {
+            get
+            {
+                bool isDayLight = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+                if (isDayLight)
+                    return DateTime.UtcNow.Add(new TimeSpan(-4, 0, 0));
+                else
+                    return DateTime.UtcNow.Add(new TimeSpan(-5, 0, 0));
+            }
+        }
+        public override TimeSpan TimeSpanDifferenceToUTC
+        {
+            get
+            {
+                bool isDayLight = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+                if (isDayLight)
+                    return new TimeSpan(-4, 0, 0);
+                else
+                    return new TimeSpan(-5, 0, 0);
+            }
+        }
+    }
+    public class AuburnCustomerTime : CustomerTime
+    {
+        public override DateTime? CurrentTime
+        {
+            get
+            {
+                bool isDayLight = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+                if (isDayLight)
+                    return DateTime.UtcNow.Add(new TimeSpan(-4, 0, 0));
+                else
+                    return DateTime.UtcNow.Add(new TimeSpan(-5, 0, 0));
+            }
+        }
+        public override TimeSpan TimeSpanDifferenceToUTC
+        {
+            get
+            {
+                bool isDayLight = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+                if (isDayLight)
+                    return new TimeSpan(-4, 0, 0);
+                else
+                    return new TimeSpan(-5, 0, 0);
+            }
+        }
+    }
+
+    
+
+    public class CustomerTimes
+    {
+        public static CustomerTime GetAtlantaTime
+        {
+            get
+            {
+                return new AtlantaCustomerTime() { CustomerId = 4120 };
+            }
+        }
+
+        public static CustomerTime GetCoralGablesTime
+        {
+            get
+            {
+                return new CoralGablesCustomerTime() { CustomerId = 7002 };
+            }
+        }
+
+        public static CustomerTime GetBirminghamMITime
+        {
+            get
+            {
+                return new BirminghamMICustomerTime() { CustomerId = 4194 };
+            }
+        }
+
+        public static CustomerTime GetAuburnTime
+        {
+            get
+            {
+                return new AuburnCustomerTime() { CustomerId = 7032 };
+            }
+        }
+
+        public static CustomerTime GetCustomerTimeById(int customerId)
+        {
+            CustomerTime customerTime = null;
+            switch (customerId)
+            {
+                case 4120:
+                    customerTime = new AtlantaCustomerTime() { CustomerId = customerId };
+                    break;
+                case 7002:
+                    customerTime = new CoralGablesCustomerTime() { CustomerId = customerId };
+                    break;
+                case 4194:
+                    customerTime = new BirminghamMICustomerTime() { CustomerId = customerId };
+                    break;
+                case 7032:
+                    customerTime = new AuburnCustomerTime() { CustomerId = customerId };
+                    break;
+                default:
+                    break;
+            }
+            return customerTime;
+        }
+    }
+}

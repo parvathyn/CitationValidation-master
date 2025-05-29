@@ -1,0 +1,106 @@
+﻿using DataAccess.Model.PayByPhone;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccess.Model.PassportMonitoring
+{
+    public class LookUpLPNFactory
+    {
+        protected PassportMonitoringParameter _parameter;
+        protected PassportMonitoringCustomerElement _customer;
+        protected int customerId;
+
+        public LookUpLPNFactory(PassportMonitoringCustomerElement customer, string plateNo)
+        {
+            this._customer = customer;
+            this.customerId = Convert.ToInt32(customer.CustomerId);
+            var values = new NameValueCollection 
+            { 
+                {"apikey", customer.Token }, 
+                { "lpn", plateNo }
+            };
+
+            _parameter = new PassportMonitoringParameter()
+            {
+                uri = UrlBuilder.BuildUri(this._customer.BaseURL, values),
+                PlateNo = plateNo
+            };
+        }
+
+        protected virtual PassportMonitoringLookUpLPN GetPlateData()
+        {
+            PassportMonitoringLookUpLPN plateData = null;
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                HttpResponseMessage response = client.GetAsync(this._parameter.uri.ToString()).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonData = response.Content.ReadAsStringAsync().Result;
+                    try
+                    {
+                        var settings = new Newtonsoft.Json.JsonSerializerSettings()
+                        {
+                            DateTimeZoneHandling = DateTimeZoneHandling.Utc
+                        };
+                        plateData = JsonConvert.DeserializeObject<PassportMonitoringLookUpLPN>(jsonData, settings);
+                    }
+                    catch (Exception ex)
+                    {
+                        //Error happened
+                    }
+                }
+                else
+                {
+                    //Other than 200 error code
+                }
+            }
+            return plateData;
+        }
+
+        public TransactionTransform GetRefreshPlateData()
+        {
+            TransactionTransform refreshPlate = new TransactionTransform() { LicensePlate = this._parameter.PlateNo.ToString(), ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            PassportMonitoringLookUpLPN plateData = this.GetPlateData();
+            if (plateData != null)
+            {
+                if (plateData.Data != null && plateData.Status == (long)System.Net.HttpStatusCode.OK) // Have Entitlement data
+                {
+                    if (plateData.Data.Count > 0)
+                    {
+                        PassportPlate plate = plateData.Data.OrderByDescending(o => o.Exittime).FirstOrDefault<PassportPlate>();
+                        //refreshPlate.MeterExpiredMinutes = plate.ExpiredMinutes(CustomerTimes.GetCustomerTimeById(this.customerId), this._customer.GracePeriodInSecond.ToNullableInt()).ToString();
+
+                        refreshPlate.MeterExpiredMinutes = plate.ExpiredMinutes(this._customer.GracePeriodInSecond.ToNullableInt()).ToString();
+
+                        refreshPlate.LicensePlate = plate.Licenseplatenumber;
+                        refreshPlate.State = plate.Stateabbreviation;
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                    else
+                    {
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                        refreshPlate.MeterExpiredMinutes = "-1";
+                    }
+                }
+                else if (plateData.Status != (long)System.Net.HttpStatusCode.OK)
+                {
+                    refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    refreshPlate.MeterExpiredMinutes = "-1";
+                }
+
+            }
+            else
+            {
+                ///do nothing
+            }
+            return refreshPlate;
+        }
+    }
+}

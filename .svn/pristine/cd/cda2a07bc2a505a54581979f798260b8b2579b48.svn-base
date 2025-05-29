@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61AF28E2-B470-4386-AC0D-D53229B94969}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Services3.3.0.0.0\lib\net20\Microsoft.Web.Services3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="Model\Cale\ArrayOfValidParkingData.cs" />
+    <Compile Include="Model\Cale\CaleCustomerElement.cs" />
+    <Compile Include="Model\Cale\CaleCustomerElementCollection.cs" />
+    <Compile Include="Model\Cale\CaleCustomerRetriever.cs" />
+    <Compile Include="Model\Cale\CaleCustomerRetrieverSection.cs" />
+    <Compile Include="Model\Cale\CaleGenericFactory.cs" />
+    <Compile Include="Model\Cale\CaleParameter.cs" />
+    <Compile Include="Model\Cale\UrlList.cs" />
+    <Compile Include="Model\CitationValidation\CitationValidationGeneralFactory.cs" />
+    <Compile Include="Model\CitationValidation\TransactionPaymentDetail.cs" />
+    <Compile Include="Model\CustomerTime.cs" />
+    <Compile Include="Model\DataRecordExtensions.cs" />
+    <Compile Include="Model\ExceptionLogging.cs" />
+    <Compile Include="Model\Extentions.cs" />
+    <Compile Include="Model\KeyParameters.cs" />
+    <Compile Include="Model\Pango\PangoCustomerElement.cs" />
+    <Compile Include="Model\Pango\PangoCustomerElementCollection.cs" />
+    <Compile Include="Model\Pango\PangoCustomerRetriever.cs" />
+    <Compile Include="Model\Pango\PangoCustomerRetrieverSection.cs" />
+    <Compile Include="Model\Pango\PangoGenericFactory.cs" />
+    <Compile Include="Model\Pango\PangoParameter.cs" />
+    <Compile Include="Model\Parameters.cs" />
+    <Compile Include="Model\Parkeon\ParkeonCustomerElement.cs" />
+    <Compile Include="Model\Parkeon\ParkeonCustomerElementCollection.cs" />
+    <Compile Include="Model\Parkeon\ParkeonCustomerRetriever.cs" />
+    <Compile Include="Model\Parkeon\ParkeonCustomerRetrieverSection.cs" />
+    <Compile Include="Model\Parkeon\ParkeonException.cs" />
+    <Compile Include="Model\Parkeon\ParkeonRequest.cs" />
+    <Compile Include="Model\Parkeon\ParkeonResponsePlates.cs" />
+    <Compile Include="Model\Parkeon\ParkeonServiceAccess.cs" />
+    <Compile Include="Model\Parkeon\ServiceParameters.cs" />
+    <Compile Include="Model\Parkeon\TypeConditions.cs" />
+    <Compile Include="Model\Parkmobile\ParkingMobileDataType.cs" />
+    <Compile Include="Model\Parkmobile\ParkingRight.cs" />
+    <Compile Include="Model\Parkmobile\ParkmobileCustomerRetriever.cs" />
+    <Compile Include="Model\Parkmobile\ParkMobileData.cs" />
+    <Compile Include="Model\Parkmobile\ParkMobileGenericFactory.cs" />
+    <Compile Include="Model\Parkmobile\ParkMobileParameter.cs" />
+    <Compile Include="Model\Parkmobile\ParkmobileServiceParameter.cs" />
+    <Compile Include="Model\Parkmobile\PMCustomerElement.cs" />
+    <Compile Include="Model\Parkmobile\PMCustomerElementCollection.cs" />
+    <Compile Include="Model\Parkmobile\PMCustomerRetrieverSection.cs" />
+    <Compile Include="Model\Parkmobile\UrlBuilderParkMobile.cs" />
+    <Compile Include="Model\PayByPhone\Amount.cs" />
+    <Compile Include="Model\PayByPhone\CustomerElement.cs" />
+    <Compile Include="Model\PayByPhone\CustomerElementCollection.cs" />
+    <Compile Include="Model\PayByPhone\CustomerRetriever.cs" />
+    <Compile Include="Model\PayByPhone\CustomerRetrieverSection.cs" />
+    <Compile Include="Model\PayByPhone\Eligibility.cs" />
+    <Compile Include="Model\PayByPhone\Error.cs" />
+    <Compile Include="Model\PayByPhone\ParkingEntitlement.cs" />
+    <Compile Include="Model\PayByPhone\PatrollerPosition.cs" />
+    <Compile Include="Model\PayByPhone\PayByPhoneEntity.cs" />
+    <Compile Include="Model\PayByPhone\PayByPhoneGenericFactory.cs" />
+    <Compile Include="Model\PayByPhone\PayByPhoneParameter.cs" />
+    <Compile Include="Model\PayByPhone\ServiceParameter.cs" />
+    <Compile Include="Model\PayByPhone\UrlBuilder.cs" />
+    <Compile Include="Model\PaymentData.cs" />
+    <Compile Include="Model\PlateNo.cs" />
+    <Compile Include="Model\RequestResponseEntity.cs" />
+    <Compile Include="Model\RequestResponseLog.cs" />
+    <Compile Include="Model\ReturnCodeEnum.cs" />
+    <Compile Include="Model\SelectListItemCustom.cs" />
+    <Compile Include="Model\T2Digital\T2DigitalCustomerElement.cs" />
+    <Compile Include="Model\T2Digital\T2DigitalCustomerElementCollection.cs" />
+    <Compile Include="Model\T2Digital\T2DigitalCustomerRetriever.cs" />
+    <Compile Include="Model\T2Digital\T2DigitalCustomerRetrieverSection.cs" />
+    <Compile Include="Model\T2Digital\T2DigitalGenericFactory.cs" />
+    <Compile Include="Model\T2Digital\T2DigitalParameter.cs" />
+    <Compile Include="Model\TimeZones.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="Model\TransactionDataValidatioin.cs" />
+    <Compile Include="Model\TransactionTransform.cs" />
+    <Compile Include="Model\Utility.cs" />
+    <Compile Include="PlateDataAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PangoProdService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PlateInfoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\StallInfoService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TransactionDataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\PangoProdService\DataAccess.PangoProdService.AnswerDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PangoProdService\DataAccess.PangoProdService.ExpiredVehicle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PangoProdService\DataAccess.PangoProdService.LoginResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PangoProdService\DataAccess.PangoProdService.SpaceStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PangoProdService\wservice.wsdl" />
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getExpiredPlatesByGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getExpiredPlatesByRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getExpiredPlatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getPlateInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getRegionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getUpdatedValidPlatesByGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getUpdatedValidPlatesByRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getUpdatedValidPlatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getValidPlatesByGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getValidPlatesByRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.getValidPlatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.GroupType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.PlateInfoByPlateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.PlateInfoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\DataAccess.PlateInfoService.RegionType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PlateInfoService\PlateInfoService.wsdl" />
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.getGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.getRegionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.getSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.getStallInfoByGroupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.getStallInfoByRegionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.getStallInfoBySettingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.getStallInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.GroupType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.RegionType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.SettingType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\DataAccess.StallInfoService.StallInfoType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StallInfoService\StallInfoService.wsdl" />
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.getLocationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.getPaymentTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.getPaystationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.getProcessingStatusTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.getTransactionByUpdateDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.getTransactionTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.LocationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.PaymentType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.PaystationType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.ProcessingStatusType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.TransactionDataType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\DataAccess.TransactionDataService.TransactionType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TransactionDataService\TransactionDataService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TransactionDataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PangoProdService\" />
+    <WCFMetadataStorage Include="Service References\PlateInfoService\" />
+    <WCFMetadataStorage Include="Service References\StallInfoService\" />
+    <WCFMetadataStorage Include="Service References\TransactionDataService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PangoProdService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PangoProdService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PangoProdService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TransactionDataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TransactionDataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PlateInfoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PlateInfoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PlateInfoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StallInfoService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StallInfoService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\StallInfoService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

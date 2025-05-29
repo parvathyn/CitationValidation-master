@@ -1,0 +1,166 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+
+namespace DataAccess.Model
+{
+    [DataContract]
+    public class Transaction
+    {
+        [DataMember]
+        public string EnforcementKey { get; set; }
+
+        [DataMember]
+        public string CustomerId { get; set; }
+       // public int CustomerId { get; set; }
+
+        [DataMember]
+        public int ParkingSpaceID { get; set; }
+
+        [DataMember]
+        public string PlateNumber { get; set; }
+
+        [DataMember]
+        public string MeterName { get; set; }
+
+        [DataMember]
+        public double? Latitude { get; set; }
+        //public decimal? Latitude { get; set; }
+
+        [DataMember]
+        public double? Longitude { get; set; }
+        //public decimal? Longitude { get; set; }
+
+        [DataMember]
+        public string LPLocation { get; set; }
+        [DataMember]
+        public string VMake { get; set; }
+
+        [DataMember]
+        public string VModel { get; set; }
+
+        [DataMember]
+        public string VColour { get; set; }
+
+        [DataMember]
+        public string MeterStreet { get; set; }
+
+        [DataMember]
+        public string Location { get; set; }
+
+        [DataMember]
+        public int? EnfVendorStallId { get; set; }
+
+        [DataMember]
+        public DateTime? PresentMeterTime { get; set; }
+
+        [DataMember]
+        public string SpaceStatus { get; set; }
+
+        [DataMember]
+        public DateTime? SensorEventTime { get; set; }
+
+        [DataMember]
+        public int? ExpiredMinutes { get; set; }
+
+        [DataMember]
+        public decimal? AmountIncents { get; set; }
+
+        [DataMember]
+        public DateTime? ExpiryTime { get; set; }
+
+        [DataMember]
+        public int? TimeZoneId { get; set; }
+
+        [DataMember]
+        public int? PayStationID { get; set; }
+
+        [DataMember]
+        public int? ZoneID { get; set; }
+
+        [DataMember]
+        public string ZoneName { get; set; }
+
+        [DataMember]
+        public string Block { get; set; }
+
+        [DataMember]
+        public string Direction { get; set; }
+
+        [DataMember]
+        public string StreetType { get; set; }
+
+        [DataMember]
+        public string CrossStreet1 { get; set; }
+
+        [DataMember]
+        public string CrossStreet2 { get; set; }
+
+        [DataMember]
+        public int? DigiELType { get; set; }
+
+        [DataMember]
+        public string DigiErrorDescr { get; set; }
+
+        [DataMember]
+        public int? GeneticELType { get; set; }
+
+        [DataMember]
+        public string GeneticErrorDescr { get; set; }
+
+        [DataMember]
+        public int? PMELType { get; set; }
+
+        [DataMember]
+        public string PMErrorDescr { get; set; }
+
+        [DataMember]
+        public string EnfHourDesc { get; set; }
+
+        [DataMember]
+        public DateTime? MarkedSince { get; set; }
+
+        [DataMember]
+        public string HitDescription { get; set; }
+
+        [DataMember]
+        public string ReturnCode { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public int? MeterStatus { get; set; }
+
+        public long VendorId { get; set; }
+
+        [DataMember]
+        public string MeterId { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public string METERLOC_METERTYPE { get; set; }
+
+
+    }
+
+    [DataContract]
+    public class Transactions
+    {
+        private List<Transaction> _data;
+        public Transactions()
+        {
+            _data = new List<Transaction>();
+        }
+
+        public List<Transaction> GetTransactions
+        {
+            get{
+                return this._data;
+            }
+            set
+            {
+                this._data = value;
+            }
+        }
+        [DataMember]
+        public string ReturnCode { get; set; }
+    }
+}
+

@@ -1,0 +1,383 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+
+namespace DataAccess.Model
+{
+    public static class CustomerIds
+    {
+        public const int Chicago = 7012;
+    }
+
+    [DataContract]
+    public class PlateNo
+    {
+        [DataMember(Name = "$type", Order = 9)]
+        public string Ptype { get; set; }
+        [DataMember(Order = 1)]
+        public string plate { get; set; }
+        [DataMember(Order = 2)]
+        public double confidence { get; set; }
+        [DataMember(Order = 3, Name = "matchesTemplate")]
+        public int matches_template { get; set; }
+        [DataMember(Order = 4)]
+        public bool violation { get; set; }
+         [DataMember(Order = 5)]
+        public bool expired { get; set; }
+       [DataMember(Order = 6)]
+        public bool validPayments { get; set; }
+        [DataMember(Order = 7)]
+        public bool noMatches { get; set; }
+
+        private string _assignedClass;
+         [DataMember(Order = 8)]
+        public string assignedClass
+        {
+            get
+            {
+                return _assignedClass;
+            }
+            set
+            {
+                _assignedClass = value;
+            }
+        }
+
+        private PlateStatus _PlateStatus;
+        public PlateStatus PlateStatus
+        {
+            //Occupied // Expired //Vacant
+            get
+            {
+                if (string.IsNullOrEmpty(this.SpaceStatus))
+                    return _PlateStatus;
+
+                if (this.SpaceStatus.ToLower() == "Paid".ToLower())
+                    this._PlateStatus = Model.PlateStatus.Paid;
+                else if (this.SpaceStatus.ToLower() == "Expired".ToLower())
+                    this._PlateStatus = Model.PlateStatus.Expired;
+                else if (this.SpaceStatus.ToLower() == "Violation".ToLower())
+                    this._PlateStatus = Model.PlateStatus.Violated;
+                else if (this.SpaceStatus.ToLower() == "Permit".ToLower())
+                    this._PlateStatus = Model.PlateStatus.Permits;
+                else
+                    this._PlateStatus = Model.PlateStatus.NoMatch;
+
+                return _PlateStatus;
+
+            }
+            set { _PlateStatus = value; }
+        }
+
+        public string RateName { get; set; }
+        public int? CustomerId { get; set; }
+        public string LicPlateWithOutState { get; set; }
+        public string StateName { get; set; }
+        public DateTime? PresentMeterTime { get; set; }
+        public DateTime? ExpiryTime { get; set; }
+        public string EnfType { get; set; }
+        public string SpaceStatus { get; set; }
+        public string FullPlateNo
+        {
+            get
+            {
+                return string.Format("{0}, {1}", this.LicPlateWithOutState, this.StateName);
+            }
+        }
+    }
+
+    public enum PlateStatus
+    {
+        NoMatch = 0,
+        Violated = 1,
+        Expired = 2,
+        Paid = 3,
+        Permits = 4
+    }
+
+    public class PlateNos
+    {
+        private List<PlateNo> _listPlateNo;
+        public PlateNos()
+        {
+            _listPlateNo = new List<PlateNo>();
+        }
+        public List<PlateNo> Candidate
+        {
+            get
+            {
+                return this._listPlateNo;
+            }
+            set
+            {
+                this._listPlateNo = value;
+            }
+        }
+    }
+
+    public class PlateFactory
+    {
+        public PlateNos GetData(int customerID, string PlateNumber)
+        {
+            GeneralFactory genfact = null;
+            switch (customerID)
+            {
+                case CustomerIds.Chicago:
+                    genfact = new ChicagoFactor(customerID, PlateNumber);
+                    break;
+                default:
+                    genfact = new GeneralFactory(customerID, PlateNumber);
+                    break;
+            }
+            genfact.MatchPlate(PlateNumber, customerID);
+            return genfact.Plates;
+        }
+
+        public static PlateNo GetErrorPlate
+        {
+            get
+            {
+                return new PlateNo() { assignedClass = "error" };
+            }
+        }
+    }
+
+    public class GeneralFactory
+    {
+        private int _customerId;
+        private PlateNos _PlateNos;
+        private string _plateNo;
+        public GeneralFactory(int customerId, string plateNo)
+        {
+            _PlateNos = new PlateNos();
+            this._customerId = customerId;
+            this._plateNo = plateNo;
+        }
+
+        public PlateNos Plates
+        {
+            get
+            {
+                return this._PlateNos;
+            }
+            set
+            {
+                this._PlateNos = value;
+            }
+        }
+        public int CustomerId
+        {
+            get
+            {
+                return this._customerId;
+            }
+        }
+        public string PlateNo
+        {
+            get
+            {
+                return this._plateNo;
+            }
+            set
+            {
+                this._plateNo = value;
+            }
+        }
+
+
+        public virtual void MatchPlate(string plateValue, int customerID)
+        {
+            try
+            {
+                //Get Data from DB
+                this.GetRepositoryData(plateValue, customerID);
+
+                //If no record  add, NoMatch recrod
+                if (_PlateNos.Candidate.Count == 0)
+                {
+                    this._PlateNos.Candidate.Add(new PlateNo() { PlateStatus = PlateStatus.NoMatch, LicPlateWithOutState = plateValue });
+                }
+
+
+                //Occupied // Expired //Vacant
+                foreach (var plate in this.Plates.Candidate)
+                {
+                    switch (plate.PlateStatus)
+                    {
+                        case PlateStatus.NoMatch:
+                            this.FillNoMatchPlate(plate);
+                            break;
+                        case PlateStatus.Violated:
+                            this.FillViolated(plate);
+                            break;
+                        case PlateStatus.Expired:
+                            this.FillExpired(plate);
+                            break;
+                        case PlateStatus.Paid:
+                            this.FillPaid(plate);
+                            break;
+                        case PlateStatus.Permits:
+                            this.FillPermits(plate);
+                            break;
+                        default:
+                            this.FillNoMatchPlate(plate);
+                            break;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected virtual void GetRepositoryData(string plateValue, int customerID)
+        {
+            this.Plates.Candidate = PlateDataAccess.GetPlateMatch(customerID, plateValue);
+        }
+
+        protected virtual void FillNoMatchPlate(PlateNo plate)
+        {
+            plate.Ptype = "ANPR.Models.Candidate, ANPR";
+            plate.confidence = 0;
+            plate.matches_template = 0;
+            plate.violation = false;
+            plate.expired = false;
+            plate.validPayments = false;
+            plate.noMatches = true;
+            plate.assignedClass = "NoMatch";
+
+        }
+
+        protected virtual void FillPaid(PlateNo plate)
+        {
+            plate.Ptype = "ANPR.Models.Candidate, ANPR";
+            plate.confidence = 0;
+            plate.matches_template = 0;
+            plate.violation = false;
+            plate.expired = false;
+            plate.validPayments = true;
+            plate.noMatches = false;
+            plate.assignedClass = "Paid";
+
+        }
+
+        protected virtual void FillExpired(PlateNo plate)
+        {
+            plate.Ptype = "ANPR.Models.Candidate, ANPR";
+            plate.confidence = 0;
+            plate.matches_template = 0;
+            plate.violation = false;
+            plate.expired = true;
+            plate.validPayments = false;
+            plate.noMatches = false;
+            plate.assignedClass = "Expired";
+        }
+
+        protected virtual void FillViolated(PlateNo plate)
+        {
+            plate.Ptype = "ANPR.Models.Candidate, ANPR";
+            plate.confidence = 0;
+            plate.matches_template = 0;
+            plate.violation = true;
+            plate.expired = true;
+            plate.validPayments = false;
+            plate.noMatches = false;
+            plate.assignedClass = plate.EnfType;
+
+        }
+
+        protected virtual void FillPermits(PlateNo plate)
+        {
+            //Check permit status
+            plate.Ptype = "ANPR.Models.Candidate, ANPR";
+            plate.confidence = 0;
+            plate.matches_template = 0;
+            plate.violation = false;
+            plate.expired = false;
+            plate.validPayments = true;
+            plate.noMatches = false;
+            plate.assignedClass = "Permit";
+        }
+    }
+
+    public class ChicagoFactor : GeneralFactory
+    {
+        public ChicagoFactor(int customerId, string plateNo)
+            : base(customerId, plateNo)
+        {
+
+        }
+
+        public override void MatchPlate(string plateValue, int customerID)
+        {
+            try
+            {
+                //Get Data from DB
+                this.GetRepositoryData(plateValue, customerID);
+
+                //If no record  add, NoMatch recrod
+                if (this.Plates.Candidate.Count == 0)
+                {
+                    this.Plates.Candidate.Add(new PlateNo() { PlateStatus = PlateStatus.NoMatch, LicPlateWithOutState = plateValue });
+                }
+
+
+                foreach (var plate in this.Plates.Candidate)
+                {
+                    switch (plate.PlateStatus)
+                    {
+                        case PlateStatus.NoMatch:
+                            this.FillNoMatchPlate(plate);
+                            break;
+                        case PlateStatus.Violated:
+                            this.FillViolated(plate);
+                            break;
+                        case PlateStatus.Expired:
+                            this.FillExpired(plate);
+                            break;
+                        case PlateStatus.Paid:
+                            this.FillPaid(plate);
+                            break;
+                        case PlateStatus.Permits:
+                            this.FillPermits(plate);
+                            break;
+                        default:
+                            this.FillNoMatchPlate(plate);
+                            break;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        protected override void GetRepositoryData(string plateValue, int customerID)
+        {
+            base.GetRepositoryData(plateValue, customerID);
+        }
+        protected override void FillPaid(PlateNo plate)
+        {
+            base.FillPaid(plate);
+            plate.assignedClass = string.Format("{0}, {1}", "Paid", plate.RateName);
+        }
+        protected override void FillExpired(PlateNo plate)
+        {
+            base.FillExpired(plate);
+            plate.assignedClass = string.Format("{0}, {1}", "Expired", plate.RateName);
+        }
+        protected override void FillPermits(PlateNo plate)
+        {
+            base.FillPermits(plate);
+            plate.assignedClass = string.Format("{0}, {1}", "Permit", plate.RateName);
+        }
+        protected override void FillViolated(PlateNo plate)
+        {
+            base.FillViolated(plate);
+            plate.assignedClass = string.Format("{0}, {1}", plate.EnfType, plate.RateName);
+        }
+    }
+}

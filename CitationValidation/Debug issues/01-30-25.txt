@@ -1,0 +1,2026 @@
+
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-11	SpaceId : 	UTC Time : 2025-01-30T14:11:38.9054097Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-11-EVG3102-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 11	StallId : 	Current UTC Time : 2025-01-30T14:11:41.2797387Z 	CityCurrentTime : 2025-01-30T09:11:40.9373314Z 
+Response Data : {"EnforcementKey":"4194-7954-11-1--Expired","ExpiredTime":"20250130_T043348Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-518","MeterID":"32879","MeterLastUpdateTime":"20250130_T002348Z","MeterName":"7954","MeterRTC":"20250130_T131138Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T002348Z","SpaceNo":"11","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/11
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7955-8	SpaceId : 	UTC Time : 2025-01-30T14:34:22.4403634Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7955-8-H7A823-KY 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7955	SpaceId : 8	StallId : 	Current UTC Time : 2025-01-30T14:34:28.6443416Z 	CityCurrentTime : 2025-01-30T09:34:27.6083653Z 
+Response Data : {"EnforcementKey":"4194-7955-8-1--Expired","ExpiredTime":"20250130_T013154Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"POLICE","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-723","MeterID":"32893","MeterLastUpdateTime":"20250130_T004154Z","MeterName":"7955","MeterRTC":"20250130_T133422Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T004154Z","SpaceNo":"8","State":"CA","ZoneName":"7955"} 
+Duration(in Seconds) : -6
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7955/8
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-2	SpaceId : 	UTC Time : 2025-01-30T14:35:49.6690930Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-2-EML5366-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T14:35:52.0735618Z 	CityCurrentTime : 2025-01-30T09:35:51.9275678Z 
+Response Data : {"EnforcementKey":"4194-7954-2-1--Expired","ExpiredTime":"20250130_T013802Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-717","MeterID":"32871","MeterLastUpdateTime":"20250130_T000914Z","MeterName":"7954","MeterRTC":"20250130_T133549Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T000914Z","SpaceNo":"2","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7940-3	SpaceId : 	UTC Time : 2025-01-30T14:41:07.9155093Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7940-3-1NUL56-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7940	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T14:41:10.4012613Z 	CityCurrentTime : 2025-01-30T09:41:10.2229461Z 
+Response Data : {"EnforcementKey":"4194-7940-3-1--Expired","ExpiredTime":"20250130_T021100Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"210","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-690","MeterID":"32732","MeterLastUpdateTime":"20250130_T013211Z","MeterName":"7940","MeterRTC":"20250130_T134107Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T013211Z","SpaceNo":"3","State":"CA","ZoneName":"7940"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7940/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7940-4	SpaceId : 	UTC Time : 2025-01-30T14:41:33.6822444Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7940-4-ERS2292-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7940	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T14:41:38.1859230Z 	CityCurrentTime : 2025-01-30T09:41:38.0630636Z 
+Response Data : {"EnforcementKey":"4194-7940-4-1--Expired","ExpiredTime":"20250130_T020829Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"210","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-693","MeterID":"32733","MeterLastUpdateTime":"20250130_T005829Z","MeterName":"7940","MeterRTC":"20250130_T134133Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T005829Z","SpaceNo":"4","State":"CA","ZoneName":"7940"} 
+Duration(in Seconds) : -4
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7940/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7909-4	SpaceId : 	UTC Time : 2025-01-30T14:48:30.7153474Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7909-4-9PQB39-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7909	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T14:48:33.4560255Z 	CityCurrentTime : 2025-01-30T09:48:33.2051214Z 
+Response Data : {"EnforcementKey":"4194-7909-4-1--Expired","ExpiredTime":"20250130_T021337Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"275","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-695","MeterID":"32108","MeterLastUpdateTime":"20250129_T230337Z","MeterName":"7909","MeterRTC":"20250130_T134830Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T230337Z","SpaceNo":"4","State":"CA","ZoneName":"7909"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7909/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-23	SpaceId : 	UTC Time : 2025-01-30T14:53:06.2176322Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-23-5QBV88-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 23	StallId : 	Current UTC Time : 2025-01-30T14:53:08.7659237Z 	CityCurrentTime : 2025-01-30T09:53:08.5239050Z 
+Response Data : {"EnforcementKey":"4194-7979-23-1--Expired","ExpiredTime":"20250130_T014801Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-725","MeterID":"33096","MeterLastUpdateTime":"20250129_T225801Z","MeterName":"7979","MeterRTC":"20250130_T135306Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T225801Z","SpaceNo":"23","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/23
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7933-25	SpaceId : 	UTC Time : 2025-01-30T14:57:43.7013807Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7933-25-DYN3373-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7933	SpaceId : 25	StallId : 	Current UTC Time : 2025-01-30T14:57:46.2500110Z 	CityCurrentTime : 2025-01-30T09:57:46.0505644Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7933-25-DYN3373-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"DYN3373","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"69","MeterID":"7933","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"25","State":"MI","ZoneName":"7933"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7933/25
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T09:57:46.1202129\"","parkingRights":[{"parkingRightId":831491035,"signageZoneCode":"7933","internalZoneCode":"7933","supplierId":146079,"lpn":"DYN3373","lpnState":"MI","startDateLocal":"2025-01-30T09:57:42.0000000","startDateUtc":"2025-01-30T14:57:42.0000000Z","endDateLocal":"2025-01-30T10:57:42.0000000","endDateUtc":"2025-01-30T15:57:42.0000000Z","productDescription":"Cashless Parking","spaceNumber":"25","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T09:57:44.5130000","modifiedDateUtc":"2025-01-30T14:57:44.5130000Z","payedMinutes":60,"purchaseAmount":1.50,"productTypeId":1,"createdDateLocal":"2025-01-30T09:57:44.5130000","createdDateUtc":"2025-01-30T14:57:44.5130000Z","customField1":"","customField2":"","internalZoneCode2":"1467933"}],"totalCount":1,"resultCount":1} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7934-7	SpaceId : 	UTC Time : 2025-01-30T14:59:34.9660808Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7934-7-ERJ3005-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7934	SpaceId : 7	StallId : 	Current UTC Time : 2025-01-30T14:59:37.6336996Z 	CityCurrentTime : 2025-01-30T09:59:37.2866957Z 
+Response Data : {"EnforcementKey":"4194-7934-7-1--Expired","ExpiredTime":"20250130_T020140Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"265","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-718","MeterID":"32654","MeterLastUpdateTime":"20250129_T235140Z","MeterName":"7934","MeterRTC":"20250130_T135934Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T235140Z","SpaceNo":"7","State":"CA","ZoneName":"7934"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7934/7
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7934-13	SpaceId : 	UTC Time : 2025-01-30T15:01:29.3132048Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7934-13-3PUU09-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7934	SpaceId : 13	StallId : 	Current UTC Time : 2025-01-30T15:01:31.7828333Z 	CityCurrentTime : 2025-01-30T10:01:31.6719677Z 
+Response Data : {"EnforcementKey":"4194-7934-13-1--Expired","ExpiredTime":"20250129_T231704Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"215","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-884","MeterID":"32660","MeterLastUpdateTime":"20250129_T225504Z","MeterName":"7934","MeterRTC":"20250130_T140129Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T225504Z","SpaceNo":"13","State":"CA","ZoneName":"7934"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7934/13
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7914-29	SpaceId : 	UTC Time : 2025-01-30T15:03:07.2494127Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7914-29-9PXP45-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7914	SpaceId : 29	StallId : 	Current UTC Time : 2025-01-30T15:03:09.8434621Z 	CityCurrentTime : 2025-01-30T10:03:09.6364539Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7914-29-9PXP45-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"9PXP45","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"16","MeterID":"7914","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"29","State":"MI","ZoneName":"7914"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7914/29
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T10:03:09.6988954\"","parkingRights":[{"parkingRightId":831476884,"signageZoneCode":"7914","internalZoneCode":"7914","supplierId":146079,"lpn":"9PXP45","lpnState":"MI","startDateLocal":"2025-01-30T09:09:52.0000000","startDateUtc":"2025-01-30T14:09:52.0000000Z","endDateLocal":"2025-01-30T10:09:52.0000000","endDateUtc":"2025-01-30T15:09:52.0000000Z","productDescription":"Cashless Parking","spaceNumber":"29","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T09:09:53.9670000","modifiedDateUtc":"2025-01-30T14:09:53.9670000Z","payedMinutes":60,"purchaseAmount":1.50,"productTypeId":1,"createdDateLocal":"2025-01-30T09:09:53.9670000","createdDateUtc":"2025-01-30T14:09:53.9670000Z","customField1":"","customField2":"","internalZoneCode2":"1467914"}],"totalCount":1,"resultCount":1} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7917-3	SpaceId : 	UTC Time : 2025-01-30T15:14:44.0810001Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7917-3-LSPHD-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7917	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T15:14:46.5682093Z 	CityCurrentTime : 2025-01-30T10:14:46.3631959Z 
+Response Data : {"EnforcementKey":"4194-7917-3-1--Expired","ExpiredTime":"20250130_T140450Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON ALLEY","METERLOC_STREETNAME":"HAMILTON ALLEY","METERLOC_STREETTYPE":"HAMILTON ALLEY","Make":"","MeterExpiredMinutes":"-10","MeterID":"32215","MeterLastUpdateTime":"20250130_T133450Z","MeterName":"7917","MeterRTC":"20250130_T141444Z","MeterStreet":"HAMILTON ALLEY","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T133450Z","SpaceNo":"3","State":"CA","ZoneName":"7917"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7917/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7917-4	SpaceId : 	UTC Time : 2025-01-30T15:15:16.3868331Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7917-4-DPS733-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7917	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T15:15:18.7800347Z 	CityCurrentTime : 2025-01-30T10:15:18.6861992Z 
+Response Data : {"EnforcementKey":"4194-7917-4-1--Expired","ExpiredTime":"20250130_T135859Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON ALLEY","METERLOC_STREETNAME":"HAMILTON ALLEY","METERLOC_STREETTYPE":"HAMILTON ALLEY","Make":"","MeterExpiredMinutes":"-17","MeterID":"32216","MeterLastUpdateTime":"20250130_T133859Z","MeterName":"7917","MeterRTC":"20250130_T141516Z","MeterStreet":"HAMILTON ALLEY","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T133859Z","SpaceNo":"4","State":"CA","ZoneName":"7917"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7917/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7917-7	SpaceId : 	UTC Time : 2025-01-30T15:16:01.8179282Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7917-7-31ACJ8-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7917	SpaceId : 7	StallId : 	Current UTC Time : 2025-01-30T15:16:04.0300872Z 	CityCurrentTime : 2025-01-30T10:16:03.8581961Z 
+Response Data : {"EnforcementKey":"4194-7917-7-1--Expired","ExpiredTime":"20250130_T025306Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON ALLEY","METERLOC_STREETNAME":"HAMILTON ALLEY","METERLOC_STREETTYPE":"HAMILTON ALLEY","Make":"","MeterExpiredMinutes":"-683","MeterID":"32219","MeterLastUpdateTime":"20250130_T005319Z","MeterName":"7917","MeterRTC":"20250130_T141601Z","MeterStreet":"HAMILTON ALLEY","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T005319Z","SpaceNo":"7","State":"CA","ZoneName":"7917"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7917/7
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7917-9	SpaceId : 	UTC Time : 2025-01-30T15:16:31.4462518Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7917-9-AFK211-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7917	SpaceId : 9	StallId : 	Current UTC Time : 2025-01-30T15:16:34.0717088Z 	CityCurrentTime : 2025-01-30T10:16:33.9466699Z 
+Response Data : {"EnforcementKey":"4194-7917-9-1--Expired","ExpiredTime":"20250130_T001727Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON ALLEY","METERLOC_STREETNAME":"HAMILTON ALLEY","METERLOC_STREETTYPE":"HAMILTON ALLEY","Make":"","MeterExpiredMinutes":"-839","MeterID":"32221","MeterLastUpdateTime":"20250130_T000327Z","MeterName":"7917","MeterRTC":"20250130_T141631Z","MeterStreet":"HAMILTON ALLEY","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T000327Z","SpaceNo":"9","State":"CA","ZoneName":"7917"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7917/9
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7939-1	SpaceId : 	UTC Time : 2025-01-30T15:22:08.5247963Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7939-1-031D324-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7939	SpaceId : 1	StallId : 	Current UTC Time : 2025-01-30T15:22:10.7742471Z 	CityCurrentTime : 2025-01-30T10:22:10.4562738Z 
+Response Data : {"EnforcementKey":"4194-7939-1-1--Expired","ExpiredTime":"20250130_T011345Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"116","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"NotDefined","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S. OLD WOODWARD","METERLOC_STREETTYPE":"ST","Make":"","MeterExpiredMinutes":"-789","MeterID":"33404","MeterLastUpdateTime":"20250129_T220345Z","MeterName":"7939","MeterRTC":"20250130_T142208Z","MeterStreet":"S. OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T220345Z","SpaceNo":"1","State":"CA","ZoneName":"7939"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7939/1
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7939-7	SpaceId : 	UTC Time : 2025-01-30T15:23:47.2972497Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7939-7-DNZ7625-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7939	SpaceId : 7	StallId : 	Current UTC Time : 2025-01-30T15:23:49.3556001Z 	CityCurrentTime : 2025-01-30T10:23:49.1946545Z 
+Response Data : {"EnforcementKey":"4194-7939-7-1--Expired","ExpiredTime":"20250129_T220938Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"128","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-974","MeterID":"32711","MeterLastUpdateTime":"20250129_T215138Z","MeterName":"7939","MeterRTC":"20250130_T142347Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T215138Z","SpaceNo":"7","State":"CA","ZoneName":"7939"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7939/7
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7918-1	SpaceId : 	UTC Time : 2025-01-30T15:35:07.5470111Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7918-1-DUR293-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7918	SpaceId : 1	StallId : 	Current UTC Time : 2025-01-30T15:35:09.9189228Z 	CityCurrentTime : 2025-01-30T10:35:09.7029359Z 
+Response Data : {"EnforcementKey":"4194-7918-1-1--Occupied","ExpiredTime":"20250130_T145421Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"250","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"NotDefined","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N. OLD WOODWARD","METERLOC_STREETTYPE":"ST","Make":"","MeterExpiredMinutes":"19","MeterID":"33406","MeterLastUpdateTime":"20250130_T143421Z","MeterName":"7918","MeterRTC":"20250130_T143507Z","MeterStreet":"N. OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T143421Z","SpaceNo":"1","State":"CA","ZoneName":"7918"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7918/1
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7918-3	SpaceId : 	UTC Time : 2025-01-30T15:35:40.8376584Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7918-3-EQX3281-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7918	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T15:35:42.8195923Z 	CityCurrentTime : 2025-01-30T10:35:42.7143993Z 
+Response Data : {"EnforcementKey":"4194-7918-3-1--Expired","ExpiredTime":"20250130_T024925Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"260","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-706","MeterID":"32231","MeterLastUpdateTime":"20250130_T022925Z","MeterName":"7918","MeterRTC":"20250130_T143540Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T022925Z","SpaceNo":"3","State":"CA","ZoneName":"7918"} 
+Duration(in Seconds) : -1
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7918/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7918-4	SpaceId : 	UTC Time : 2025-01-30T15:36:05.3482312Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7918-4-DLV585-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7918	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T15:36:07.5012435Z 	CityCurrentTime : 2025-01-30T10:36:07.4074916Z 
+Response Data : {"EnforcementKey":"4194-7918-4-1--Expired","ExpiredTime":"20250130_T015715Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"260","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-759","MeterID":"32232","MeterLastUpdateTime":"20250130_T004715Z","MeterName":"7918","MeterRTC":"20250130_T143605Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T004715Z","SpaceNo":"4","State":"CA","ZoneName":"7918"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7918/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7918-7	SpaceId : 	UTC Time : 2025-01-30T15:38:34.7209607Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7918-7-DJZ7523-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7918	SpaceId : 7	StallId : 	Current UTC Time : 2025-01-30T15:38:37.1273436Z 	CityCurrentTime : 2025-01-30T10:38:36.9833417Z 
+Response Data : {"EnforcementKey":"4194-7918-7-1--Expired","ExpiredTime":"20250130_T013610Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"260","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-782","MeterID":"32235","MeterLastUpdateTime":"20250129_T230423Z","MeterName":"7918","MeterRTC":"20250130_T143834Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T230423Z","SpaceNo":"7","State":"CA","ZoneName":"7918"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7918/7
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7933-1	SpaceId : 	UTC Time : 2025-01-30T15:40:50.3265452Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7933-1-DPX4813-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7933	SpaceId : 1	StallId : 	Current UTC Time : 2025-01-30T15:40:52.3977066Z 	CityCurrentTime : 2025-01-30T10:40:52.2342927Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7933-1-DPX4813-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"EJX5666","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"74","MeterID":"7933","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"1","State":"MI","ZoneName":"7933"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7933/1
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T10:40:52.3122069\"","parkingRights":[{"parkingRightId":831486975,"signageZoneCode":"7933","internalZoneCode":"7933","supplierId":146079,"lpn":"EJX5666","lpnState":"MI","startDateLocal":"2025-01-30T09:45:26.0000000","startDateUtc":"2025-01-30T14:45:26.0000000Z","endDateLocal":"2025-01-30T11:45:26.0000000","endDateUtc":"2025-01-30T16:45:26.0000000Z","productDescription":"Cashless Parking","spaceNumber":"1","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T09:45:28.6230000","modifiedDateUtc":"2025-01-30T14:45:28.6230000Z","payedMinutes":120,"purchaseAmount":3.00,"productTypeId":1,"createdDateLocal":"2025-01-30T09:45:28.6230000","createdDateUtc":"2025-01-30T14:45:28.6230000Z","customField1":"","customField2":"","internalZoneCode2":"1467933"}],"totalCount":1,"resultCount":1} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7933-4	SpaceId : 	UTC Time : 2025-01-30T15:41:57.9441471Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7933-4-KKF4780-OH 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7933	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T15:41:59.9218032Z 	CityCurrentTime : 2025-01-30T10:41:59.8048191Z 
+Response Data : {"EnforcementKey":"4194-7933-4-1--Expired","ExpiredTime":"20250130_T015639Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"110","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"WILLITS","METERLOC_STREETNAME":"WILLITS","METERLOC_STREETTYPE":"WILLITS","Make":"","MeterExpiredMinutes":"-765","MeterID":"32624","MeterLastUpdateTime":"20250129_T234639Z","MeterName":"7933","MeterRTC":"20250130_T144157Z","MeterStreet":"WILLITS","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T234639Z","SpaceNo":"4","State":"CA","ZoneName":"7933"} 
+Duration(in Seconds) : -1
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7933/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7978-4	SpaceId : 	UTC Time : 2025-01-30T15:53:17.5055966Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7978-4-9NTS16-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7978	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T15:53:19.6521603Z 	CityCurrentTime : 2025-01-30T10:53:19.4764779Z 
+Response Data : {"EnforcementKey":"4194-7978-4-1--Expired","ExpiredTime":"20250130_T014733Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"300","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MERRILL","METERLOC_STREETNAME":"W MERRILL","METERLOC_STREETTYPE":"MERRILL","Make":"","MeterExpiredMinutes":"-786","MeterID":"33070","MeterLastUpdateTime":"20250129_T230733Z","MeterName":"7978","MeterRTC":"20250130_T145317Z","MeterStreet":"W MERRILL","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T230733Z","SpaceNo":"4","State":"CA","ZoneName":"7978"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7978/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7964-5	SpaceId : 	UTC Time : 2025-01-30T15:53:46.6442692Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7964-5-KBDK52-FL 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7964	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-30T15:53:48.6418641Z 	CityCurrentTime : 2025-01-30T10:53:48.5169091Z 
+Response Data : {"EnforcementKey":"4194-7964-5-1--Expired","ExpiredTime":"20250130_T010827Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"155","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"BATES","METERLOC_STREETNAME":"S BATES","METERLOC_STREETTYPE":"BATES","Make":"","MeterExpiredMinutes":"-825","MeterID":"32962","MeterLastUpdateTime":"20250129_T225827Z","MeterName":"7964","MeterRTC":"20250130_T145346Z","MeterStreet":"S BATES","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T225827Z","SpaceNo":"5","State":"CA","ZoneName":"7964"} 
+Duration(in Seconds) : -1
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7964/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7982-44	SpaceId : 	UTC Time : 2025-01-30T15:57:07.2669927Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7982-44-90AES8-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7982	SpaceId : 44	StallId : 	Current UTC Time : 2025-01-30T15:57:09.3445670Z 	CityCurrentTime : 2025-01-30T10:57:09.1873375Z 
+Response Data : {"EnforcementKey":"4194-7982-44-1--Expired","ExpiredTime":"20250130_T144550Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"LOT 7","METERLOC_STREETNAME":"LOT 7","METERLOC_STREETTYPE":"LOT 7","Make":"","MeterExpiredMinutes":"-12","MeterID":"33197","MeterLastUpdateTime":"20250130_T133950Z","MeterName":"7982","MeterRTC":"20250130_T145707Z","MeterStreet":"LOT 7","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T133950Z","SpaceNo":"44","State":"CA","ZoneName":"7982"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7982/44
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7962-8	SpaceId : 	UTC Time : 2025-01-30T16:10:00.2895913Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7962-8-ESW9134-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7962	SpaceId : 8	StallId : 	Current UTC Time : 2025-01-30T16:10:02.4207829Z 	CityCurrentTime : 2025-01-30T11:10:02.2517637Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7962-8-ESW9134-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7962","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"8","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7962/8
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7982-22	SpaceId : 	UTC Time : 2025-01-30T16:12:16.8401924Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7982-22-2PJL01-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7982	SpaceId : 22	StallId : 	Current UTC Time : 2025-01-30T16:12:18.9558156Z 	CityCurrentTime : 2025-01-30T11:12:18.7962128Z 
+Response Data : {"EnforcementKey":"4194-7982-22-1--Expired","ExpiredTime":"20250130_T002818Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"LOT 7","METERLOC_STREETNAME":"LOT 7","METERLOC_STREETTYPE":"LOT 7","Make":"","MeterExpiredMinutes":"-884","MeterID":"33175","MeterLastUpdateTime":"20250129_T223818Z","MeterName":"7982","MeterRTC":"20250130_T151216Z","MeterStreet":"LOT 7","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T223818Z","SpaceNo":"22","State":"CA","ZoneName":"7982"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7982/22
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7982-9	SpaceId : 	UTC Time : 2025-01-30T16:14:21.4903162Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7982-9-EDQ7558-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7982	SpaceId : 9	StallId : 	Current UTC Time : 2025-01-30T16:14:23.5637105Z 	CityCurrentTime : 2025-01-30T11:14:23.4231062Z 
+Response Data : {"EnforcementKey":"4194-7982-9-1--Expired","ExpiredTime":"20250130_T150459Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"LOT 7","METERLOC_STREETNAME":"LOT 7","METERLOC_STREETTYPE":"LOT 7","Make":"","MeterExpiredMinutes":"-10","MeterID":"33162","MeterLastUpdateTime":"20250130_T125459Z","MeterName":"7982","MeterRTC":"20250130_T151421Z","MeterStreet":"LOT 7","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T125459Z","SpaceNo":"9","State":"CA","ZoneName":"7982"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7982/9
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7971-6	SpaceId : 	UTC Time : 2025-01-30T16:18:15.9151380Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7971-6-60HSL0-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7971	SpaceId : 6	StallId : 	Current UTC Time : 2025-01-30T16:18:18.0106616Z 	CityCurrentTime : 2025-01-30T11:18:17.8496226Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7971-6-60HSL0-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7971","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"6","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7971/6
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-4	SpaceId : 	UTC Time : 2025-01-30T16:38:32.0642194Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-4-DVA159-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T16:38:34.6266666Z 	CityCurrentTime : 2025-01-30T11:38:34.3807684Z 
+Response Data : {"EnforcementKey":"4194-7954-4-1--Expired","ExpiredTime":"20250130_T000819Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-930","MeterID":"32872","MeterLastUpdateTime":"20250129_T215819Z","MeterName":"7954","MeterRTC":"20250130_T153832Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T215819Z","SpaceNo":"4","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7903-2	SpaceId : 	UTC Time : 2025-01-30T16:49:01.0509211Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7903-2-EKQ4098-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7903	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T16:49:03.2685343Z 	CityCurrentTime : 2025-01-30T11:49:02.9947091Z 
+Response Data : {"EnforcementKey":"4194-7903-2-1--Expired","ExpiredTime":"20250130_T003126Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"555","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-918","MeterID":"32056","MeterLastUpdateTime":"20250129_T224126Z","MeterName":"7903","MeterRTC":"20250130_T154901Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T224126Z","SpaceNo":"2","State":"CA","ZoneName":"7903"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7903/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7903-4	SpaceId : 	UTC Time : 2025-01-30T16:49:53.7306996Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7903-4-BRUS-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7903	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T16:49:55.7681940Z 	CityCurrentTime : 2025-01-30T11:49:55.6557917Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7903-4-BRUS-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"BRUS","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"27","MeterID":"7903","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"4","State":"MI","ZoneName":"7903"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7903/4
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T11:49:55.7137865\"","parkingRights":[{"parkingRightId":831513637,"signageZoneCode":"7903","internalZoneCode":"7903","supplierId":146079,"lpn":"BRUS","lpnState":"MI","startDateLocal":"2025-01-30T11:07:12.0000000","startDateUtc":"2025-01-30T16:07:12.0000000Z","endDateLocal":"2025-01-30T12:07:12.0000000","endDateUtc":"2025-01-30T17:07:12.0000000Z","productDescription":"Cashless Parking","spaceNumber":"4","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T11:07:14.0530000","modifiedDateUtc":"2025-01-30T16:07:14.0530000Z","payedMinutes":60,"purchaseAmount":1.50,"productTypeId":1,"createdDateLocal":"2025-01-30T11:07:14.0530000","createdDateUtc":"2025-01-30T16:07:14.0530000Z","customField1":"","customField2":"","internalZoneCode2":"1467903"}],"totalCount":1,"resultCount":1} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7903-8	SpaceId : 	UTC Time : 2025-01-30T16:52:44.1073298Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7903-8-BMU263-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7903	SpaceId : 8	StallId : 	Current UTC Time : 2025-01-30T16:52:46.2806879Z 	CityCurrentTime : 2025-01-30T11:52:46.1193250Z 
+Response Data : {"EnforcementKey":"4194-7903-8-1--Expired","ExpiredTime":"20250129_T183320Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"555","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-1279","MeterID":"32062","MeterLastUpdateTime":"20250129_T172920Z","MeterName":"7903","MeterRTC":"20250130_T155244Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T172920Z","SpaceNo":"8","State":"CA","ZoneName":"7903"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7903/8
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7903-3	SpaceId : 	UTC Time : 2025-01-30T16:54:21.6534618Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7903-3-JM50P-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7903	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T16:54:23.6681427Z 	CityCurrentTime : 2025-01-30T11:54:23.5585951Z 
+Response Data : {"EnforcementKey":"4194-7903-3-1--Occupied","ExpiredTime":"20250130_T175605Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"555","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"122","MeterID":"32057","MeterLastUpdateTime":"20250130_T154605Z","MeterName":"7903","MeterRTC":"20250130_T155421Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T154605Z","SpaceNo":"3","State":"CA","ZoneName":"7903"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7903/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7904-5	SpaceId : 	UTC Time : 2025-01-30T16:56:19.8852029Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7904-5-7NYX51-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7904	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-30T16:56:21.9663921Z 	CityCurrentTime : 2025-01-30T11:56:21.8063628Z 
+Response Data : {"EnforcementKey":"4194-7904-5-1--Expired","ExpiredTime":"20250129_T203514Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"555","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-1161","MeterID":"32076","MeterLastUpdateTime":"20250129_T182514Z","MeterName":"7904","MeterRTC":"20250130_T155619Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T182514Z","SpaceNo":"5","State":"CA","ZoneName":"7904"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7904/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7907-3	SpaceId : 	UTC Time : 2025-01-30T16:58:33.3080411Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7907-3-022D449-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7907	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T16:58:36.0414707Z 	CityCurrentTime : 2025-01-30T11:58:35.9191662Z 
+Response Data : {"EnforcementKey":"4194-7907-3-1--Expired","ExpiredTime":"20250130_T152353Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"401","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-35","MeterID":"32095","MeterLastUpdateTime":"20250130_T141353Z","MeterName":"7907","MeterRTC":"20250130_T155833Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T141353Z","SpaceNo":"3","State":"CA","ZoneName":"7907"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7907/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-2	SpaceId : 	UTC Time : 2025-01-30T17:32:22.6810886Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-2-ECT3599-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T17:32:25.3206546Z 	CityCurrentTime : 2025-01-30T12:32:25.0350127Z 
+Response Data : {"EnforcementKey":"4194-7954-2-1--Expired","ExpiredTime":"20250130_T162410Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-8","MeterID":"32871","MeterLastUpdateTime":"20250130_T153410Z","MeterName":"7954","MeterRTC":"20250130_T163222Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T153410Z","SpaceNo":"2","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-7	SpaceId : 	UTC Time : 2025-01-30T17:56:23.9741218Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-7-DWN3052-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 7	StallId : 	Current UTC Time : 2025-01-30T17:56:26.5730013Z 	CityCurrentTime : 2025-01-30T12:56:26.3630382Z 
+Response Data : {"EnforcementKey":"4194-7954-7-1--Expired","ExpiredTime":"20250130_T161028Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-46","MeterID":"32875","MeterLastUpdateTime":"20250130_T144028Z","MeterName":"7954","MeterRTC":"20250130_T165623Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T144028Z","SpaceNo":"7","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/7
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-9	SpaceId : 	UTC Time : 2025-01-30T17:57:32.7136996Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-9-BBS0DA-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 9	StallId : 	Current UTC Time : 2025-01-30T17:57:35.9847395Z 	CityCurrentTime : 2025-01-30T12:57:35.8647155Z 
+Response Data : {"EnforcementKey":"4194-7954-9-1--Expired","ExpiredTime":"20250130_T155847Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-59","MeterID":"32877","MeterLastUpdateTime":"20250130_T142847Z","MeterName":"7954","MeterRTC":"20250130_T165732Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T142847Z","SpaceNo":"9","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -3
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/9
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-2	SpaceId : 	UTC Time : 2025-01-30T18:00:17.4103349Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-2-2PFK51-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T18:00:19.9868923Z 	CityCurrentTime : 2025-01-30T13:00:19.7262040Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7979-2-2PFK51-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7979","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"2","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-3	SpaceId : 	UTC Time : 2025-01-30T18:00:46.7061644Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-3-ETZ7990-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T18:00:49.1770545Z 	CityCurrentTime : 2025-01-30T13:00:49.0250462Z 
+Response Data : {"EnforcementKey":"4194-7979-3-1--Expired","ExpiredTime":"20250130_T165223Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-8","MeterID":"33077","MeterLastUpdateTime":"20250130_T160223Z","MeterName":"7979","MeterRTC":"20250130_T170046Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T160223Z","SpaceNo":"3","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-14	SpaceId : 	UTC Time : 2025-01-30T18:03:34.5155277Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-14-MDWELL-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 14	StallId : 	Current UTC Time : 2025-01-30T18:03:37.4325460Z 	CityCurrentTime : 2025-01-30T13:03:37.1009924Z 
+Response Data : {"EnforcementKey":"4194-7979-14-1--Expired","ExpiredTime":"20250130_T170020Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-3","MeterID":"33088","MeterLastUpdateTime":"20250130_T163220Z","MeterName":"7979","MeterRTC":"20250130_T170334Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T163220Z","SpaceNo":"14","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/14
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7975-16	SpaceId : 	UTC Time : 2025-01-30T18:06:27.5378303Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7975-16-EWT0707-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7975	SpaceId : 16	StallId : 	Current UTC Time : 2025-01-30T18:06:30.4893746Z 	CityCurrentTime : 2025-01-30T13:06:30.3018279Z 
+Response Data : {"EnforcementKey":"4194-7975-16-1--Expired","ExpiredTime":"20250130_T164658Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"220","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MERRILL","METERLOC_STREETNAME":"E MERRILL","METERLOC_STREETTYPE":"MERRILL","Make":"","MeterExpiredMinutes":"-20","MeterID":"33052","MeterLastUpdateTime":"20250130_T160658Z","MeterName":"7975","MeterRTC":"20250130_T170627Z","MeterStreet":"E MERRILL","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T160658Z","SpaceNo":"16","State":"CA","ZoneName":"7975"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7975/16
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7940-7	SpaceId : 	UTC Time : 2025-01-30T18:09:55.0966095Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7940-7-MIDREAM-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7940	SpaceId : 7	StallId : 	Current UTC Time : 2025-01-30T18:09:57.5967863Z 	CityCurrentTime : 2025-01-30T13:09:57.3808061Z 
+Response Data : {"EnforcementKey":"4194-7940-7-1--Expired","ExpiredTime":"20250130_T164113Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"210","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-28","MeterID":"32736","MeterLastUpdateTime":"20250130_T155113Z","MeterName":"7940","MeterRTC":"20250130_T170955Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T155113Z","SpaceNo":"7","State":"CA","ZoneName":"7940"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7940/7
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7980-12	SpaceId : 	UTC Time : 2025-01-30T18:14:26.8553776Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7980-12-BME041-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7980	SpaceId : 12	StallId : 	Current UTC Time : 2025-01-30T18:14:30.6412044Z 	CityCurrentTime : 2025-01-30T13:14:30.4224685Z 
+Response Data : {"EnforcementKey":"4194-7980-12-1--Expired","ExpiredTime":"20250130_T014313Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"240","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-931","MeterID":"33116","MeterLastUpdateTime":"20250129_T232313Z","MeterName":"7980","MeterRTC":"20250130_T171426Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T232313Z","SpaceNo":"12","State":"CA","ZoneName":"7980"} 
+Duration(in Seconds) : -3
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7980/12
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7909-3	SpaceId : 	UTC Time : 2025-01-30T18:15:33.9673508Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7909-3-TPH2380-VA 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7909	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T18:15:36.6381928Z 	CityCurrentTime : 2025-01-30T13:15:36.4500756Z 
+Response Data : {"EnforcementKey":"4194-7909-3-1--Expired","ExpiredTime":"20250130_T163409Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"275","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-41","MeterID":"32107","MeterLastUpdateTime":"20250130_T154409Z","MeterName":"7909","MeterRTC":"20250130_T171533Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T154409Z","SpaceNo":"3","State":"CA","ZoneName":"7909"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7909/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7924-2	SpaceId : 	UTC Time : 2025-01-30T18:16:58.9079805Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7924-2-SALBABY-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7924	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T18:17:01.1222968Z 	CityCurrentTime : 2025-01-30T13:17:00.8933870Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7924-2-SALBABY-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7924","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"2","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7924/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7975-10	SpaceId : 	UTC Time : 2025-01-30T18:18:12.8394118Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7975-10-EBU1679-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7975	SpaceId : 10	StallId : 	Current UTC Time : 2025-01-30T18:18:14.9851144Z 	CityCurrentTime : 2025-01-30T13:18:14.8266190Z 
+Response Data : {"EnforcementKey":"4194-7975-10-1--Expired","ExpiredTime":"20250130_T163049Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"250","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MERRILL","METERLOC_STREETNAME":"E MERRILL","METERLOC_STREETTYPE":"MERRILL","Make":"","MeterExpiredMinutes":"-48","MeterID":"33047","MeterLastUpdateTime":"20250130_T150449Z","MeterName":"7975","MeterRTC":"20250130_T171812Z","MeterStreet":"E MERRILL","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T150449Z","SpaceNo":"10","State":"CA","ZoneName":"7975"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7975/10
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7964-2	SpaceId : 	UTC Time : 2025-01-30T18:18:56.4626839Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7964-2-SALBABY-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7964	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T18:18:58.5892493Z 	CityCurrentTime : 2025-01-30T13:18:58.4633010Z 
+Response Data : {"EnforcementKey":"4194-7964-2-1--Expired","ExpiredTime":"20250130_T145101Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"155","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"BATES","METERLOC_STREETNAME":"S BATES","METERLOC_STREETTYPE":"BATES","Make":"","MeterExpiredMinutes":"-147","MeterID":"32959","MeterLastUpdateTime":"20250130_T143101Z","MeterName":"7964","MeterRTC":"20250130_T171856Z","MeterStreet":"S BATES","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T143101Z","SpaceNo":"2","State":"CA","ZoneName":"7964"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7964/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7933-27	SpaceId : 	UTC Time : 2025-01-30T18:22:32.2578307Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7933-27-74AAW2-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7933	SpaceId : 27	StallId : 	Current UTC Time : 2025-01-30T18:22:34.7056273Z 	CityCurrentTime : 2025-01-30T13:22:34.5338012Z 
+Response Data : {"EnforcementKey":"4194-7933-27-1--Expired","ExpiredTime":"20250130_T154728Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"101","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"WILLITS","METERLOC_STREETNAME":"WILLITS","METERLOC_STREETTYPE":"WILLITS","Make":"","MeterExpiredMinutes":"-95","MeterID":"32645","MeterLastUpdateTime":"20250130_T145728Z","MeterName":"7933","MeterRTC":"20250130_T172232Z","MeterStreet":"WILLITS","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T145728Z","SpaceNo":"27","State":"CA","ZoneName":"7933"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7933/27
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-5	SpaceId : 	UTC Time : 2025-01-30T18:23:54.4287728Z 
+IP Address :68.105.90.78 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-5-9PXP45-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-30T18:23:56.7749431Z 	CityCurrentTime : 2025-01-30T13:23:56.4693099Z 
+Response Data : {"EnforcementKey":"4194-7979-5-1--Expired","ExpiredTime":"20250130_T005737Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-986","MeterID":"33079","MeterLastUpdateTime":"20250129_T231737Z","MeterName":"7979","MeterRTC":"20250130_T172354Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T231737Z","SpaceNo":"5","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-5	SpaceId : 	UTC Time : 2025-01-30T18:23:57.6792132Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-5-75AEK4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-30T18:23:59.8604715Z 	CityCurrentTime : 2025-01-30T13:23:59.7024123Z 
+Response Data : {"EnforcementKey":"4194-7979-5-1--Expired","ExpiredTime":"20250130_T005737Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-986","MeterID":"33079","MeterLastUpdateTime":"20250129_T231737Z","MeterName":"7979","MeterRTC":"20250130_T172357Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T231737Z","SpaceNo":"5","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7933-30	SpaceId : 	UTC Time : 2025-01-30T18:24:32.9000530Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7933-30-ESH4219-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7933	SpaceId : 30	StallId : 	Current UTC Time : 2025-01-30T18:24:35.3340556Z 	CityCurrentTime : 2025-01-30T13:24:35.1880194Z 
+Response Data : {"EnforcementKey":"4194-7933-30-1--Expired","ExpiredTime":"20250130_T163950Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"101","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"WILLITS","METERLOC_STREETNAME":"WILLITS","METERLOC_STREETTYPE":"WILLITS","Make":"","MeterExpiredMinutes":"-45","MeterID":"32648","MeterLastUpdateTime":"20250130_T152950Z","MeterName":"7933","MeterRTC":"20250130_T172432Z","MeterStreet":"WILLITS","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T152950Z","SpaceNo":"30","State":"CA","ZoneName":"7933"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7933/30
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7984-3	SpaceId : 	UTC Time : 2025-01-30T18:26:42.6429295Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7984-3-DNB987-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7984	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T18:26:44.7659521Z 	CityCurrentTime : 2025-01-30T13:26:44.6222633Z 
+Response Data : {"EnforcementKey":"4194-7984-3-1--Expired","ExpiredTime":"20250130_T162136Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"185","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"OAKLAND","METERLOC_STREETTYPE":"OAKLAND","Make":"","MeterExpiredMinutes":"-65","MeterID":"33206","MeterLastUpdateTime":"20250130_T141136Z","MeterName":"7984","MeterRTC":"20250130_T172642Z","MeterStreet":"OAKLAND","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T141136Z","SpaceNo":"3","State":"CA","ZoneName":"7984"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7984/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-21	SpaceId : 	UTC Time : 2025-01-30T18:26:51.3725022Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-21-9PMK99-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 21	StallId : 	Current UTC Time : 2025-01-30T18:26:53.5964559Z 	CityCurrentTime : 2025-01-30T13:26:53.3455689Z 
+Response Data : {"EnforcementKey":"4194-7979-21-1--Expired","ExpiredTime":"20250130_T151015Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-136","MeterID":"33094","MeterLastUpdateTime":"20250130_T134514Z","MeterName":"7979","MeterRTC":"20250130_T172651Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T134514Z","SpaceNo":"21","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/21
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7985-2	SpaceId : 	UTC Time : 2025-01-30T18:28:16.7337898Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7985-2-EVD6979-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7985	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T18:28:18.8686671Z 	CityCurrentTime : 2025-01-30T13:28:18.7065882Z 
+Response Data : {"EnforcementKey":"4194-7985-2-1--Expired","ExpiredTime":"20250130_T151902Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"233","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"OAKLAND","METERLOC_STREETTYPE":"OAKLAND","Make":"","MeterExpiredMinutes":"-129","MeterID":"33210","MeterLastUpdateTime":"20250130_T150702Z","MeterName":"7985","MeterRTC":"20250130_T172816Z","MeterStreet":"OAKLAND","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T150702Z","SpaceNo":"2","State":"CA","ZoneName":"7985"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7985/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7980-12	SpaceId : 	UTC Time : 2025-01-30T18:29:02.4214957Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7980-12-BME041-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7980	SpaceId : 12	StallId : 	Current UTC Time : 2025-01-30T18:29:04.6489780Z 	CityCurrentTime : 2025-01-30T13:29:04.4174121Z 
+Response Data : {"EnforcementKey":"4194-7980-12-1--Expired","ExpiredTime":"20250130_T014313Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"240","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-946","MeterID":"33116","MeterLastUpdateTime":"20250129_T232313Z","MeterName":"7980","MeterRTC":"20250130_T172902Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T232313Z","SpaceNo":"12","State":"CA","ZoneName":"7980"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7980/12
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7914-29	SpaceId : 	UTC Time : 2025-01-30T18:30:19.2269092Z 
+IP Address :68.105.90.78 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7914-29-9PXP45-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7914	SpaceId : 29	StallId : 	Current UTC Time : 2025-01-30T18:30:21.5195357Z 	CityCurrentTime : 2025-01-30T13:30:21.2276483Z 
+Response Data : {"EnforcementKey":"4194-7914-29-1--Expired","ExpiredTime":"20250130_T161821Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"200","METERLOC_CROSSSTREET1":"Location","METERLOC_CROSSSTREET2":"Location","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"NotDefined","METERLOC_STREETDIRECTION":"HAMILTON","METERLOC_STREETNAME":"Hamilton ROW","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-72","MeterID":"33588","MeterLastUpdateTime":"20250130_T150821Z","MeterName":"7914","MeterRTC":"20250130_T173019Z","MeterStreet":"Hamilton ROW","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T150821Z","SpaceNo":"29","State":"CA","ZoneName":"7914"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7914/29
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7914-15	SpaceId : 	UTC Time : 2025-01-30T18:31:02.0544357Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7914-15-EPX0887-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7914	SpaceId : 15	StallId : 	Current UTC Time : 2025-01-30T18:31:04.2437165Z 	CityCurrentTime : 2025-01-30T13:31:04.0562241Z 
+Response Data : {"EnforcementKey":"4194-7914-15-1--Expired","ExpiredTime":"20250130_T170508Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"500","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON","METERLOC_STREETNAME":"Hamilton ROW","METERLOC_STREETTYPE":"WOODWARD AVENUE","Make":"","MeterExpiredMinutes":"-26","MeterID":"32189","MeterLastUpdateTime":"20250130_T155508Z","MeterName":"7914","MeterRTC":"20250130_T173102Z","MeterStreet":"Hamilton ROW","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T155508Z","SpaceNo":"15","State":"CA","ZoneName":"7914"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7914/15
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7915-3	SpaceId : 	UTC Time : 2025-01-30T18:33:39.8723670Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7915-3-6MKJ80-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7915	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T18:33:42.0383220Z 	CityCurrentTime : 2025-01-30T13:33:41.8694429Z 
+Response Data : {"EnforcementKey":"4194-7915-3-1--Expired","ExpiredTime":"20250130_T010633Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"LOT 9","METERLOC_STREETNAME":"LOT 9","METERLOC_STREETTYPE":"LOT 9","Make":"","MeterExpiredMinutes":"-987","MeterID":"32204","MeterLastUpdateTime":"20250130_T004233Z","MeterName":"7915","MeterRTC":"20250130_T173339Z","MeterStreet":"LOT 9","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T004233Z","SpaceNo":"3","State":"CA","ZoneName":"7915"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7915/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7914-18	SpaceId : 	UTC Time : 2025-01-30T18:35:39.3702207Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7914-18-EXV0051-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7914	SpaceId : 18	StallId : 	Current UTC Time : 2025-01-30T18:35:41.6609763Z 	CityCurrentTime : 2025-01-30T13:35:41.3891368Z 
+Response Data : {"EnforcementKey":"4194-7914-18-1--Expired","ExpiredTime":"20250130_T151815Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"395","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON","METERLOC_STREETNAME":"Hamilton ROW","METERLOC_STREETTYPE":"HAMILTON","Make":"","MeterExpiredMinutes":"-137","MeterID":"32192","MeterLastUpdateTime":"20250130_T144815Z","MeterName":"7914","MeterRTC":"20250130_T173539Z","MeterStreet":"Hamilton ROW","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T144815Z","SpaceNo":"18","State":"CA","ZoneName":"7914"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7914/18
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7914-22	SpaceId : 	UTC Time : 2025-01-30T18:37:23.9690526Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7914-22-ECD0360-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7914	SpaceId : 22	StallId : 	Current UTC Time : 2025-01-30T18:37:26.1682679Z 	CityCurrentTime : 2025-01-30T13:37:25.9943875Z 
+Response Data : {"EnforcementKey":"4194-7914-22-1--Expired","ExpiredTime":"20250130_T154704Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"377","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON","METERLOC_STREETNAME":"Hamilton ROW","METERLOC_STREETTYPE":"HAMILTON","Make":"","MeterExpiredMinutes":"-110","MeterID":"32196","MeterLastUpdateTime":"20250130_T152304Z","MeterName":"7914","MeterRTC":"20250130_T173723Z","MeterStreet":"Hamilton ROW","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T152304Z","SpaceNo":"22","State":"CA","ZoneName":"7914"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7914/22
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7914-27	SpaceId : 	UTC Time : 2025-01-30T18:39:13.6520024Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7914-27-2QPH69-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7914	SpaceId : 27	StallId : 	Current UTC Time : 2025-01-30T18:39:15.8494397Z 	CityCurrentTime : 2025-01-30T13:39:15.6622758Z 
+Response Data : {"EnforcementKey":"4194-7914-27-1--Expired","ExpiredTime":"20250130_T153035Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"221","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON","METERLOC_STREETNAME":"Hamilton ROW","METERLOC_STREETTYPE":"HAMILTON","Make":"","MeterExpiredMinutes":"-129","MeterID":"32201","MeterLastUpdateTime":"20250130_T141804Z","MeterName":"7914","MeterRTC":"20250130_T173913Z","MeterStreet":"Hamilton ROW","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T141804Z","SpaceNo":"27","State":"CA","ZoneName":"7914"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7914/27
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7923-4	SpaceId : 	UTC Time : 2025-01-30T19:03:21.2119117Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7923-4-7NXU19-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7923	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T19:03:23.5249277Z 	CityCurrentTime : 2025-01-30T14:03:23.2294849Z 
+Response Data : {"EnforcementKey":"4194-7923-4-1--Occupied","ExpiredTime":"20250130_T185228Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"526","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"49","MeterID":"32285","MeterLastUpdateTime":"20250130_T180228Z","MeterName":"7923","MeterRTC":"20250130_T180321Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T180228Z","SpaceNo":"4","State":"CA","ZoneName":"7923"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7923/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7923-7	SpaceId : 	UTC Time : 2025-01-30T19:04:44.9430732Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7923-7-7QMU72-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7923	SpaceId : 7	StallId : 	Current UTC Time : 2025-01-30T19:04:47.1906710Z 	CityCurrentTime : 2025-01-30T14:04:46.9936651Z 
+Response Data : {"EnforcementKey":"4194-7923-7-1--Expired","ExpiredTime":"20250130_T043134Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"526","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-813","MeterID":"32288","MeterLastUpdateTime":"20250130_T015134Z","MeterName":"7923","MeterRTC":"20250130_T180444Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T015134Z","SpaceNo":"7","State":"CA","ZoneName":"7923"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7923/7
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-2	SpaceId : 	UTC Time : 2025-01-30T19:08:57.2408918Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7928-2-EDM7455-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T19:08:59.4980792Z 	CityCurrentTime : 2025-01-30T14:08:59.3340318Z 
+Response Data : {"EnforcementKey":"4194-7928-2-1--Expired","ExpiredTime":"20250129_T231813Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"885","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-1130","MeterID":"32507","MeterLastUpdateTime":"20250129_T215313Z","MeterName":"7928","MeterRTC":"20250130_T180857Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T215313Z","SpaceNo":"2","State":"CA","ZoneName":"7928"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7928/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-5	SpaceId : 	UTC Time : 2025-01-30T19:10:31.5108761Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7928-5-EXC1873-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-30T19:10:34.1182546Z 	CityCurrentTime : 2025-01-30T14:10:34.0170997Z 
+Response Data : {"EnforcementKey":"4194-7928-5-1--Expired","ExpiredTime":"20250129_T193434Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"885","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-1356","MeterID":"32510","MeterLastUpdateTime":"20250129_T185434Z","MeterName":"7928","MeterRTC":"20250130_T181031Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T185434Z","SpaceNo":"5","State":"CA","ZoneName":"7928"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7928/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-10	SpaceId : 	UTC Time : 2025-01-30T19:12:44.7841051Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7928-10-6JVW41-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 10	StallId : 	Current UTC Time : 2025-01-30T19:12:46.9908407Z 	CityCurrentTime : 2025-01-30T14:12:46.8358508Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7928-10-6JVW41-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7928","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"10","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7928/10
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7933-20	SpaceId : 	UTC Time : 2025-01-30T19:23:52.6699556Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7933-20-EEH081-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7933	SpaceId : 20	StallId : 	Current UTC Time : 2025-01-30T19:23:55.0569747Z 	CityCurrentTime : 2025-01-30T14:23:54.7873730Z 
+Response Data : {"EnforcementKey":"4194-7933-20-1--Expired","ExpiredTime":"20250130_T005540Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"300","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"WILLITS","METERLOC_STREETNAME":"WILLITS","METERLOC_STREETTYPE":"WILLITS","Make":"","MeterExpiredMinutes":"-1048","MeterID":"32638","MeterLastUpdateTime":"20250130_T004140Z","MeterName":"7933","MeterRTC":"20250130_T182352Z","MeterStreet":"WILLITS","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T004140Z","SpaceNo":"20","State":"CA","ZoneName":"7933"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7933/20
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7981-4	SpaceId : 	UTC Time : 2025-01-30T19:25:09.9048263Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7981-4-69ADU1-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7981	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T19:25:12.3250026Z 	CityCurrentTime : 2025-01-30T14:25:12.0199915Z 
+Response Data : {"EnforcementKey":"4194-7981-4-1--Expired","ExpiredTime":"20250130_T170915Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"320","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-76","MeterID":"33131","MeterLastUpdateTime":"20250130_T164515Z","MeterName":"7981","MeterRTC":"20250130_T182509Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T164515Z","SpaceNo":"4","State":"CA","ZoneName":"7981"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7981/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7981-16	SpaceId : 	UTC Time : 2025-01-30T19:26:17.9156633Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7981-16-JN96N-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7981	SpaceId : 16	StallId : 	Current UTC Time : 2025-01-30T19:26:20.1264086Z 	CityCurrentTime : 2025-01-30T14:26:20.0170376Z 
+Response Data : {"EnforcementKey":"4194-7981-16-1--Expired","ExpiredTime":"20250130_T155429Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"320","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-152","MeterID":"33143","MeterLastUpdateTime":"20250130_T150429Z","MeterName":"7981","MeterRTC":"20250130_T182617Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T150429Z","SpaceNo":"16","State":"CA","ZoneName":"7981"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7981/16
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7981-12	SpaceId : 	UTC Time : 2025-01-30T19:27:20.5341476Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7981-12-5NLS24-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7981	SpaceId : 12	StallId : 	Current UTC Time : 2025-01-30T19:27:22.7370900Z 	CityCurrentTime : 2025-01-30T14:27:22.6278038Z 
+Response Data : {"EnforcementKey":"4194-7981-12-1--Expired","ExpiredTime":"20250130_T174754Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"320","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-40","MeterID":"33139","MeterLastUpdateTime":"20250130_T165754Z","MeterName":"7981","MeterRTC":"20250130_T182720Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T165754Z","SpaceNo":"12","State":"CA","ZoneName":"7981"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7981/12
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7981-12	SpaceId : 	UTC Time : 2025-01-30T19:27:22.7058205Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7981-12-5NLS24-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7981	SpaceId : 12	StallId : 	Current UTC Time : 2025-01-30T19:27:24.8590957Z 	CityCurrentTime : 2025-01-30T14:27:24.7653412Z 
+Response Data : {"EnforcementKey":"4194-7981-12-1--Expired","ExpiredTime":"20250130_T174754Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"320","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-40","MeterID":"33139","MeterLastUpdateTime":"20250130_T165754Z","MeterName":"7981","MeterRTC":"20250130_T182722Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T165754Z","SpaceNo":"12","State":"CA","ZoneName":"7981"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7981/12
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7978-9	SpaceId : 	UTC Time : 2025-01-30T19:28:23.3485561Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7978-9-EPW8405-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7978	SpaceId : 9	StallId : 	Current UTC Time : 2025-01-30T19:28:25.5728589Z 	CityCurrentTime : 2025-01-30T14:28:25.4518448Z 
+Response Data : {"EnforcementKey":"4194-7978-9-1--Expired","ExpiredTime":"20250130_T010140Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"Blk","METERLOC_CROSSSTREET1":"Location","METERLOC_CROSSSTREET2":"Location","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"NotDefined","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"Location","METERLOC_STREETTYPE":"Street","Make":"","MeterExpiredMinutes":"-1047","MeterID":"33753","MeterLastUpdateTime":"20250130_T004140Z","MeterName":"7978","MeterRTC":"20250130_T182823Z","MeterStreet":"Location","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T004140Z","SpaceNo":"9","State":"CA","ZoneName":"7978"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7978/9
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7934-5	SpaceId : 	UTC Time : 2025-01-30T19:31:01.1280005Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7934-5-MBBH28-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7934	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-30T19:31:03.4489111Z 	CityCurrentTime : 2025-01-30T14:31:03.2612750Z 
+Response Data : {"EnforcementKey":"4194-7934-5-1--Expired","ExpiredTime":"20250130_T164318Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"265","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-108","MeterID":"32652","MeterLastUpdateTime":"20250130_T153318Z","MeterName":"7934","MeterRTC":"20250130_T183101Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T153318Z","SpaceNo":"5","State":"CA","ZoneName":"7934"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7934/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7934-9	SpaceId : 	UTC Time : 2025-01-30T19:32:40.4862171Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7934-9-ESX9145-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7934	SpaceId : 9	StallId : 	Current UTC Time : 2025-01-30T19:32:42.6869487Z 	CityCurrentTime : 2025-01-30T14:32:42.5470004Z 
+Response Data : {"EnforcementKey":"4194-7934-9-1--Expired","ExpiredTime":"20250130_T174110Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"233","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-51","MeterID":"32656","MeterLastUpdateTime":"20250130_T163110Z","MeterName":"7934","MeterRTC":"20250130_T183240Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T163110Z","SpaceNo":"9","State":"CA","ZoneName":"7934"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7934/9
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7968-2	SpaceId : 	UTC Time : 2025-01-30T19:36:48.8722336Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7968-2-DD67898-MN 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7968	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T19:36:51.0624356Z 	CityCurrentTime : 2025-01-30T14:36:50.9293198Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7968-2-DD67898-MN","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"DD67898","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"329","MeterID":"7968","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"2","State":"MI","ZoneName":"7968"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7968/2
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T14:36:51.008064\"","parkingRights":[{"parkingRightId":831592659,"signageZoneCode":"7968","internalZoneCode":"7968","supplierId":146079,"lpn":"DD67898","lpnState":"MI","startDateLocal":"2025-01-30T13:56:42.0000000","startDateUtc":"2025-01-30T18:56:42.0000000Z","endDateLocal":"2025-01-30T19:56:42.0000000","endDateUtc":"2025-01-31T00:56:42.0000000Z","productDescription":"Cashless Parking","spaceNumber":"2","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T13:56:50.1330000","modifiedDateUtc":"2025-01-30T18:56:50.1330000Z","payedMinutes":360,"purchaseAmount":9.00,"productTypeId":1,"createdDateLocal":"2025-01-30T13:56:50.1330000","createdDateUtc":"2025-01-30T18:56:50.1330000Z","customField1":"","customField2":"","internalZoneCode2":"1467968"}],"totalCount":1,"resultCount":1} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7968-3	SpaceId : 	UTC Time : 2025-01-30T19:37:32.5331113Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7968-3-EFF0699-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7968	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T19:37:35.2369692Z 	CityCurrentTime : 2025-01-30T14:37:35.1229698Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7968-3-EFF0699-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"EFF0699","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"241","MeterID":"7968","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"3","State":"MI","ZoneName":"7968"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7968/3
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T14:37:35.216017\"","parkingRights":[{"parkingRightId":831608026,"signageZoneCode":"7968","internalZoneCode":"7968","supplierId":146079,"lpn":"EFF0699","lpnState":"MI","startDateLocal":"2025-01-30T14:29:07.0000000","startDateUtc":"2025-01-30T19:29:07.0000000Z","endDateLocal":"2025-01-30T18:29:07.0000000","endDateUtc":"2025-01-30T23:29:07.0000000Z","productDescription":"Cashless Parking","spaceNumber":"3","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T14:29:08.4800000","modifiedDateUtc":"2025-01-30T19:29:08.4800000Z","payedMinutes":240,"purchaseAmount":6.00,"productTypeId":1,"createdDateLocal":"2025-01-30T14:29:08.4800000","createdDateUtc":"2025-01-30T19:29:08.4800000Z","customField1":"","customField2":"","internalZoneCode2":"1467968"}],"totalCount":1,"resultCount":1} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7917-4	SpaceId : 	UTC Time : 2025-01-30T19:41:07.8679900Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7917-4-DPS733-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7917	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-30T19:41:10.1652158Z 	CityCurrentTime : 2025-01-30T14:41:09.9680703Z 
+Response Data : {"EnforcementKey":"4194-7917-4-1--Expired","ExpiredTime":"20250130_T172947Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"HAMILTON ALLEY","METERLOC_STREETNAME":"HAMILTON ALLEY","METERLOC_STREETTYPE":"HAMILTON ALLEY","Make":"","MeterExpiredMinutes":"-72","MeterID":"32216","MeterLastUpdateTime":"20250130_T151947Z","MeterName":"7917","MeterRTC":"20250130_T184107Z","MeterStreet":"HAMILTON ALLEY","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T151947Z","SpaceNo":"4","State":"CA","ZoneName":"7917"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7917/4
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-17	SpaceId : 	UTC Time : 2025-01-30T19:44:10.6611102Z 
+IP Address :174.236.37.168 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-17-ELZ9975-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 17	StallId : 	Current UTC Time : 2025-01-30T19:44:12.9118989Z 	CityCurrentTime : 2025-01-30T14:44:12.7328465Z 
+Response Data : {"EnforcementKey":"4194-7954-17-1--Expired","ExpiredTime":"20250130_T182458Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-20","MeterID":"32885","MeterLastUpdateTime":"20250130_T180458Z","MeterName":"7954","MeterRTC":"20250130_T184410Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T180458Z","SpaceNo":"17","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/17
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7939-10	SpaceId : 	UTC Time : 2025-01-30T19:45:32.1496573Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7939-10-EBQ2569-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7939	SpaceId : 10	StallId : 	Current UTC Time : 2025-01-30T19:45:34.4818437Z 	CityCurrentTime : 2025-01-30T14:45:34.2648518Z 
+Response Data : {"EnforcementKey":"4194-7939-10-1--Occupied","ExpiredTime":"20250130_T190859Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"142","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"23","MeterID":"32714","MeterLastUpdateTime":"20250130_T184459Z","MeterName":"7939","MeterRTC":"20250130_T184532Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T184459Z","SpaceNo":"10","State":"CA","ZoneName":"7939"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7939/10
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7910-13	SpaceId : 	UTC Time : 2025-01-30T19:49:56.2553774Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7910-13-DD67464-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7910	SpaceId : 13	StallId : 	Current UTC Time : 2025-01-30T19:49:58.4630293Z 	CityCurrentTime : 2025-01-30T14:49:58.2360427Z 
+Response Data : {"EnforcementKey":"4194-7910-13-1--Expired","ExpiredTime":"20250130_T173453Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"115","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-75","MeterID":"32133","MeterLastUpdateTime":"20250130_T162453Z","MeterName":"7910","MeterRTC":"20250130_T184956Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T162453Z","SpaceNo":"13","State":"CA","ZoneName":"7910"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7910/13
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7933-1	SpaceId : 	UTC Time : 2025-01-30T19:57:01.5274627Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7933-1-91AAT1-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7933	SpaceId : 1	StallId : 	Current UTC Time : 2025-01-30T19:57:03.6243942Z 	CityCurrentTime : 2025-01-30T14:57:03.4723865Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7933-1-91AAT1-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7933","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"1","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7933/1
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7982-30	SpaceId : 	UTC Time : 2025-01-30T20:08:38.9906116Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7982-30-EQD7711-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7982	SpaceId : 30	StallId : 	Current UTC Time : 2025-01-30T20:08:42.1778250Z 	CityCurrentTime : 2025-01-30T15:08:41.7128268Z 
+Response Data : {"EnforcementKey":"4194-7982-30-1--Expired","ExpiredTime":"20250130_T174557Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"LOT 7","METERLOC_STREETNAME":"LOT 7","METERLOC_STREETTYPE":"LOT 7","Make":"","MeterExpiredMinutes":"-83","MeterID":"33183","MeterLastUpdateTime":"20250130_T133557Z","MeterName":"7982","MeterRTC":"20250130_T190838Z","MeterStreet":"LOT 7","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T133557Z","SpaceNo":"30","State":"CA","ZoneName":"7982"} 
+Duration(in Seconds) : -3
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7982/30
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7982-39	SpaceId : 	UTC Time : 2025-01-30T20:09:41.5525736Z 
+IP Address :174.236.37.10 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7982-39-IEXIST-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7982	SpaceId : 39	StallId : 	Current UTC Time : 2025-01-30T20:09:43.6536363Z 	CityCurrentTime : 2025-01-30T15:09:43.5276269Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7982-39-IEXIST-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7982","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"39","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7982/39
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7923-5	SpaceId : 	UTC Time : 2025-01-30T20:31:43.5101346Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7923-5-JJJJJ-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7923	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-30T20:31:45.8132466Z 	CityCurrentTime : 2025-01-30T15:31:45.5896206Z 
+Response Data : {"EnforcementKey":"4194-7923-5-1--Expired","ExpiredTime":"20250130_T190813Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"526","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-23","MeterID":"32286","MeterLastUpdateTime":"20250130_T165813Z","MeterName":"7923","MeterRTC":"20250130_T193143Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T165813Z","SpaceNo":"5","State":"CA","ZoneName":"7923"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7923/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7981-16	SpaceId : 	UTC Time : 2025-01-30T21:39:59.0128231Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7981-16-EPM7939-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7981	SpaceId : 16	StallId : 	Current UTC Time : 2025-01-30T21:40:01.3170647Z 	CityCurrentTime : 2025-01-30T16:40:01.1162332Z 
+Response Data : {"EnforcementKey":"4194-7981-16-1--Expired","ExpiredTime":"20250130_T155429Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"320","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-285","MeterID":"33143","MeterLastUpdateTime":"20250130_T150429Z","MeterName":"7981","MeterRTC":"20250130_T203959Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T150429Z","SpaceNo":"16","State":"CA","ZoneName":"7981"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7981/16
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-1	SpaceId : 	UTC Time : 2025-01-30T21:43:04.1445166Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-1-EDM6937-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 1	StallId : 	Current UTC Time : 2025-01-30T21:43:06.6814508Z 	CityCurrentTime : 2025-01-30T16:43:06.4647579Z 
+Response Data : {"EnforcementKey":"4194-7979-1-1--Expired","ExpiredTime":"20250130_T195824Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-45","MeterID":"33075","MeterLastUpdateTime":"20250130_T182824Z","MeterName":"7979","MeterRTC":"20250130_T204304Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T182824Z","SpaceNo":"1","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/1
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7982-41	SpaceId : 	UTC Time : 2025-01-30T21:51:39.6237307Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7982-41-EFE4437-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7982	SpaceId : 41	StallId : 	Current UTC Time : 2025-01-30T21:51:42.3006060Z 	CityCurrentTime : 2025-01-30T16:51:42.1073869Z 
+Response Data : {"EnforcementKey":"4194-7982-41-1--Expired","ExpiredTime":"20250130_T203702Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"LOT 7","METERLOC_STREETNAME":"LOT 7","METERLOC_STREETTYPE":"LOT 7","Make":"","MeterExpiredMinutes":"-14","MeterID":"33194","MeterLastUpdateTime":"20250130_T183102Z","MeterName":"7982","MeterRTC":"20250130_T205139Z","MeterStreet":"LOT 7","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T183102Z","SpaceNo":"41","State":"CA","ZoneName":"7982"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7982/41
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7926-42	SpaceId : 	UTC Time : 2025-01-30T21:54:54.4662381Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7926-42-EWH1851-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7926	SpaceId : 42	StallId : 	Current UTC Time : 2025-01-30T21:54:57.1123963Z 	CityCurrentTime : 2025-01-30T16:54:56.8935196Z 
+Response Data : {"EnforcementKey":"4194-7926-42-1--Expired","ExpiredTime":"20250130_T201057Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"768","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-44","MeterID":"32478","MeterLastUpdateTime":"20250130_T184657Z","MeterName":"7926","MeterRTC":"20250130_T205454Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T184657Z","SpaceNo":"42","State":"CA","ZoneName":"7926"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7926/42
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7963-3	SpaceId : 	UTC Time : 2025-01-30T21:55:25.3669155Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7963-3-22335A-WI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7963	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-30T21:55:27.9145257Z 	CityCurrentTime : 2025-01-30T16:55:27.7986791Z 
+Response Data : {"EnforcementKey":"4194-7963-3-1--Expired","ExpiredTime":"20250130_T203245Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"200","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"BATES","METERLOC_STREETNAME":"S BATES","METERLOC_STREETTYPE":"BATES","Make":"","MeterExpiredMinutes":"-23","MeterID":"32950","MeterLastUpdateTime":"20250130_T182245Z","MeterName":"7963","MeterRTC":"20250130_T205525Z","MeterStreet":"S BATES","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T182245Z","SpaceNo":"3","State":"CA","ZoneName":"7963"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7963/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7926-28	SpaceId : 	UTC Time : 2025-01-30T21:56:31.5985108Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7926-28-DXL2254-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7926	SpaceId : 28	StallId : 	Current UTC Time : 2025-01-30T21:56:34.6176495Z 	CityCurrentTime : 2025-01-30T16:56:34.3816374Z 
+Response Data : {"EnforcementKey":"4194-7926-28-1--Expired","ExpiredTime":"20250130_T181444Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"790","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-162","MeterID":"32464","MeterLastUpdateTime":"20250130_T165244Z","MeterName":"7926","MeterRTC":"20250130_T205631Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T165244Z","SpaceNo":"28","State":"CA","ZoneName":"7926"} 
+Duration(in Seconds) : -3
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7926/28
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7963-5	SpaceId : 	UTC Time : 2025-01-30T21:56:54.1135626Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7963-5-DE33496-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7963	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-30T21:56:56.6451503Z 	CityCurrentTime : 2025-01-30T16:56:56.5624584Z 
+Response Data : {"EnforcementKey":"4194-7963-5-1--Expired","ExpiredTime":"20250130_T155417Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"200","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"BATES","METERLOC_STREETNAME":"S BATES","METERLOC_STREETTYPE":"BATES","Make":"","MeterExpiredMinutes":"-302","MeterID":"32952","MeterLastUpdateTime":"20250130_T144417Z","MeterName":"7963","MeterRTC":"20250130_T205654Z","MeterStreet":"S BATES","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T144417Z","SpaceNo":"5","State":"CA","ZoneName":"7963"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7963/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7926-36	SpaceId : 	UTC Time : 2025-01-30T22:54:39.6265099Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7926-36-ENL0456-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7926	SpaceId : 36	StallId : 	Current UTC Time : 2025-01-30T22:54:42.2896488Z 	CityCurrentTime : 2025-01-30T17:54:42.0553732Z 
+Response Data : {"EnforcementKey":"4194-7926-36-1--Expired","ExpiredTime":"20250130_T214440Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"800","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-10","MeterID":"32472","MeterLastUpdateTime":"20250130_T203440Z","MeterName":"7926","MeterRTC":"20250130_T215439Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T203440Z","SpaceNo":"36","State":"CA","ZoneName":"7926"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7926/36
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7926-35	SpaceId : 	UTC Time : 2025-01-30T22:55:28.2478525Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7926-35-GD72M-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7926	SpaceId : 35	StallId : 	Current UTC Time : 2025-01-30T22:55:31.0604812Z 	CityCurrentTime : 2025-01-30T17:55:30.8886916Z 
+Response Data : {"EnforcementKey":"4194-7926-35-1--Expired","ExpiredTime":"20250130_T175545Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"800","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-240","MeterID":"32471","MeterLastUpdateTime":"20250130_T154545Z","MeterName":"7926","MeterRTC":"20250130_T215528Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T154545Z","SpaceNo":"35","State":"CA","ZoneName":"7926"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7926/35
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7926-12	SpaceId : 	UTC Time : 2025-01-30T22:56:24.0464548Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7926-12-BL31RG-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7926	SpaceId : 12	StallId : 	Current UTC Time : 2025-01-30T22:56:26.6207056Z 	CityCurrentTime : 2025-01-30T17:56:26.4746941Z 
+Response Data : {"EnforcementKey":"4194-7926-12-1--Expired","ExpiredTime":"20250130_T205545Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"700","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-61","MeterID":"32448","MeterLastUpdateTime":"20250130_T200945Z","MeterName":"7926","MeterRTC":"20250130_T215624Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T200945Z","SpaceNo":"12","State":"CA","ZoneName":"7926"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7926/12
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7926-34	SpaceId : 	UTC Time : 2025-01-30T22:57:13.5228953Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7926-34-DSN3477-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7926	SpaceId : 34	StallId : 	Current UTC Time : 2025-01-30T22:57:16.1517215Z 	CityCurrentTime : 2025-01-30T17:57:15.9747201Z 
+Response Data : {"EnforcementKey":"4194-7926-34-1--Expired","ExpiredTime":"20250130_T161047Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"800","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-347","MeterID":"32470","MeterLastUpdateTime":"20250130_T140047Z","MeterName":"7926","MeterRTC":"20250130_T215713Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T140047Z","SpaceNo":"34","State":"CA","ZoneName":"7926"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7926/34
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7926-20	SpaceId : 	UTC Time : 2025-01-30T22:59:27.2145903Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7926-20-44AGJ9-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7926	SpaceId : 20	StallId : 	Current UTC Time : 2025-01-30T22:59:30.4230297Z 	CityCurrentTime : 2025-01-30T17:59:30.2820087Z 
+Response Data : {"EnforcementKey":"4194-7926-20-1--Expired","ExpiredTime":"20250130_T215608Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"724","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-3","MeterID":"32456","MeterLastUpdateTime":"20250130_T210608Z","MeterName":"7926","MeterRTC":"20250130_T215927Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T210608Z","SpaceNo":"20","State":"CA","ZoneName":"7926"} 
+Duration(in Seconds) : -3
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7926/20
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7926-26	SpaceId : 	UTC Time : 2025-01-30T23:00:21.0339441Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7926-26-EJT4163-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7926	SpaceId : 26	StallId : 	Current UTC Time : 2025-01-30T23:00:24.2025719Z 	CityCurrentTime : 2025-01-30T18:00:24.0249160Z 
+Response Data : {"EnforcementKey":"4194-7926-26-1--Expired","ExpiredTime":"20250130_T212946Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"768","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-31","MeterID":"32462","MeterLastUpdateTime":"20250130_T204246Z","MeterName":"7926","MeterRTC":"20250130_T220021Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T204246Z","SpaceNo":"26","State":"CA","ZoneName":"7926"} 
+Duration(in Seconds) : -3
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7926/26
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7904-6	SpaceId : 	UTC Time : 2025-01-30T23:05:35.0294016Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7904-6-DE85804-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7904	SpaceId : 6	StallId : 	Current UTC Time : 2025-01-30T23:05:37.8850505Z 	CityCurrentTime : 2025-01-30T18:05:37.6872047Z 
+Response Data : {"EnforcementKey":"4194-7904-6-1--Expired","ExpiredTime":"20250130_T211215Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"555","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"S","METERLOC_STREETNAME":"S OLD WOODWARD","METERLOC_STREETTYPE":"S OLD WOODWARD","Make":"","MeterExpiredMinutes":"-53","MeterID":"32077","MeterLastUpdateTime":"20250130_T190215Z","MeterName":"7904","MeterRTC":"20250130_T220535Z","MeterStreet":"S OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T190215Z","SpaceNo":"6","State":"CA","ZoneName":"7904"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7904/6
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7982-2	SpaceId : 	UTC Time : 2025-01-30T23:21:01.7556289Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7982-2-ESP0070-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7982	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-30T23:21:04.4557624Z 	CityCurrentTime : 2025-01-30T18:21:04.2177661Z 
+Response Data : {"EnforcementKey":"4194-7982-2-1--Expired","ExpiredTime":"20250130_T195008Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"LOT 7","METERLOC_STREETNAME":"LOT 7","METERLOC_STREETTYPE":"LOT 7","Make":"","MeterExpiredMinutes":"-151","MeterID":"33155","MeterLastUpdateTime":"20250130_T190008Z","MeterName":"7982","MeterRTC":"20250130_T222101Z","MeterStreet":"LOT 7","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T190008Z","SpaceNo":"2","State":"CA","ZoneName":"7982"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7982/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-24	SpaceId : 	UTC Time : 2025-01-30T23:28:39.0752095Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-24-EJC9578-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 24	StallId : 	Current UTC Time : 2025-01-30T23:28:41.9731626Z 	CityCurrentTime : 2025-01-30T18:28:41.5281680Z 
+Response Data : {"EnforcementKey":"4194-7979-24-1--Expired","ExpiredTime":"20250130_T214251Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-46","MeterID":"33097","MeterLastUpdateTime":"20250130_T205251Z","MeterName":"7979","MeterRTC":"20250130_T222839Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T205251Z","SpaceNo":"24","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/24
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-39	SpaceId : 	UTC Time : 2025-01-30T23:51:20.3503734Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-39-9NQL50-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 39	StallId : 	Current UTC Time : 2025-01-30T23:51:22.7373662Z 	CityCurrentTime : 2025-01-30T18:51:22.5124191Z 
+Response Data : {"EnforcementKey":"4194-7931-39-1--Expired","ExpiredTime":"20250130_T022758Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"369","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-1224","MeterID":"32597","MeterLastUpdateTime":"20250129_T231758Z","MeterName":"7931","MeterRTC":"20250130_T225120Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T231758Z","SpaceNo":"39","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/39
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-37	SpaceId : 	UTC Time : 2025-01-30T23:52:53.7612883Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-37-4QQS34-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 37	StallId : 	Current UTC Time : 2025-01-30T23:52:56.0097096Z 	CityCurrentTime : 2025-01-30T18:52:55.8557261Z 
+Response Data : {"EnforcementKey":"4194-7931-37-1--Expired","ExpiredTime":"20250130_T020238Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"369","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-1250","MeterID":"32595","MeterLastUpdateTime":"20250129_T235238Z","MeterName":"7931","MeterRTC":"20250130_T225253Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T235238Z","SpaceNo":"37","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/37
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-37	SpaceId : 	UTC Time : 2025-01-30T23:53:00.3184761Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-37-4QQS34-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 37	StallId : 	Current UTC Time : 2025-01-30T23:53:02.6232576Z 	CityCurrentTime : 2025-01-30T18:53:02.4642157Z 
+Response Data : {"EnforcementKey":"4194-7931-37-1--Expired","ExpiredTime":"20250130_T020238Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"369","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-1251","MeterID":"32595","MeterLastUpdateTime":"20250129_T235238Z","MeterName":"7931","MeterRTC":"20250130_T225300Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250129_T235238Z","SpaceNo":"37","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/37
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-36	SpaceId : 	UTC Time : 2025-01-30T23:53:56.5708272Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-36-EPK9371-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 36	StallId : 	Current UTC Time : 2025-01-30T23:53:58.8259730Z 	CityCurrentTime : 2025-01-30T18:53:58.6697108Z 
+Response Data : {"EnforcementKey":"4194-7931-36-1--Expired","ExpiredTime":"20250130_T220959Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"369","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-44","MeterID":"32594","MeterLastUpdateTime":"20250130_T202959Z","MeterName":"7931","MeterRTC":"20250130_T225356Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T202959Z","SpaceNo":"36","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/36
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-34	SpaceId : 	UTC Time : 2025-01-30T23:54:53.3707297Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-34-8PQA47-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 34	StallId : 	Current UTC Time : 2025-01-30T23:54:55.6238435Z 	CityCurrentTime : 2025-01-30T18:54:55.4512785Z 
+Response Data : {"EnforcementKey":"4194-7931-34-1--Expired","ExpiredTime":"20250130_T215615Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"BOOTH PARK","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-58","MeterID":"32592","MeterLastUpdateTime":"20250130_T204615Z","MeterName":"7931","MeterRTC":"20250130_T225453Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T204615Z","SpaceNo":"34","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/34
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-27	SpaceId : 	UTC Time : 2025-01-30T23:57:38.8289117Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-27-EXP9029-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 27	StallId : 	Current UTC Time : 2025-01-30T23:57:41.0584831Z 	CityCurrentTime : 2025-01-30T18:57:40.8775696Z 
+Response Data : {"EnforcementKey":"4194-7931-27-1--Expired","ExpiredTime":"20250130_T225524Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"BOOTH PARK","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-2","MeterID":"32585","MeterLastUpdateTime":"20250130_T204524Z","MeterName":"7931","MeterRTC":"20250130_T225738Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T204524Z","SpaceNo":"27","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/27
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-26	SpaceId : 	UTC Time : 2025-01-30T23:58:34.8816652Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-26-4NDK82-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 26	StallId : 	Current UTC Time : 2025-01-30T23:58:38.2294318Z 	CityCurrentTime : 2025-01-30T18:58:38.0858584Z 
+Response Data : {"EnforcementKey":"4194-7931-26-1--Expired","ExpiredTime":"20250130_T215208Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"BOOTH PARK","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-66","MeterID":"32584","MeterLastUpdateTime":"20250130_T210308Z","MeterName":"7931","MeterRTC":"20250130_T225834Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T210308Z","SpaceNo":"26","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -3
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/26
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-20	SpaceId : 	UTC Time : 2025-01-30T23:59:56.3266583Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-20-6PRJ59-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 20	StallId : 	Current UTC Time : 2025-01-30T23:59:58.5639828Z 	CityCurrentTime : 2025-01-30T18:59:58.4229756Z 
+Response Data : {"EnforcementKey":"4194-7931-20-1--Expired","ExpiredTime":"20250130_T185830Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"BOOTH PARK","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-241","MeterID":"32578","MeterLastUpdateTime":"20250130_T181830Z","MeterName":"7931","MeterRTC":"20250130_T225956Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T181830Z","SpaceNo":"20","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/20
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-17	SpaceId : 	UTC Time : 2025-01-31T00:01:05.4406714Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-17-25AEF1-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 17	StallId : 	Current UTC Time : 2025-01-31T00:01:08.3645476Z 	CityCurrentTime : 2025-01-30T19:01:08.2319156Z 
+Response Data : {"EnforcementKey":"4194-7931-17-1--Expired","ExpiredTime":"20250130_T192622Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"BOOTH PARK","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-215","MeterID":"32575","MeterLastUpdateTime":"20250130_T174622Z","MeterName":"7931","MeterRTC":"20250130_T230105Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T174622Z","SpaceNo":"17","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/17
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-14	SpaceId : 	UTC Time : 2025-01-31T00:02:07.9310165Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-14-ERS6206-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 14	StallId : 	Current UTC Time : 2025-01-31T00:02:10.9284222Z 	CityCurrentTime : 2025-01-30T19:02:10.7381739Z 
+Response Data : {"EnforcementKey":"4194-7931-14-1--Expired","ExpiredTime":"20250130_T190914Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"BOOTH PARK","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-233","MeterID":"32572","MeterLastUpdateTime":"20250130_T165914Z","MeterName":"7931","MeterRTC":"20250130_T230207Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T165914Z","SpaceNo":"14","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/14
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-13	SpaceId : 	UTC Time : 2025-01-31T00:03:18.0896374Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-13-5PXC30-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 13	StallId : 	Current UTC Time : 2025-01-31T00:03:20.2879573Z 	CityCurrentTime : 2025-01-30T19:03:20.1618808Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7931-13-5PXC30-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7931","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"13","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/13
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-6	SpaceId : 	UTC Time : 2025-01-31T00:06:13.0117974Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-6-DTH5070-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 6	StallId : 	Current UTC Time : 2025-01-31T00:06:15.2158207Z 	CityCurrentTime : 2025-01-30T19:06:15.0588437Z 
+Response Data : {"EnforcementKey":"4194-7954-6-1--Occupied","ExpiredTime":"20250130_T233438Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"28","MeterID":"32874","MeterLastUpdateTime":"20250130_T230438Z","MeterName":"7954","MeterRTC":"20250130_T230613Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T230438Z","SpaceNo":"6","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/6
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7956-3	SpaceId : 	UTC Time : 2025-01-31T00:08:48.1123522Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7956-3-55358-MD 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7956	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-31T00:08:50.3186547Z 	CityCurrentTime : 2025-01-30T19:08:50.1926599Z 
+Response Data : {"EnforcementKey":"4194-7956-3-1--Expired","ExpiredTime":"20250130_T184825Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"159","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-260","MeterID":"32901","MeterLastUpdateTime":"20250130_T163825Z","MeterName":"7956","MeterRTC":"20250130_T230848Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T163825Z","SpaceNo":"3","State":"CA","ZoneName":"7956"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7956/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7956-4	SpaceId : 	UTC Time : 2025-01-31T00:09:34.7928685Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7956-4-DD25809-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7956	SpaceId : 4	StallId : 	Current UTC Time : 2025-01-31T00:09:37.1163710Z 	CityCurrentTime : 2025-01-30T19:09:37.0323647Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7956-4-DD25809-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"DD35809MI","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"82","MeterID":"7956","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"4","State":"MI","ZoneName":"7956"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7956/4
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T19:09:37.0930474\"","parkingRights":[{"parkingRightId":831706628,"signageZoneCode":"7956","internalZoneCode":"7956","supplierId":146079,"lpn":"DD35809MI","lpnState":"MI","startDateLocal":"2025-01-30T18:21:55.0000000","startDateUtc":"2025-01-30T23:21:55.0000000Z","endDateLocal":"2025-01-30T20:21:55.0000000","endDateUtc":"2025-01-31T01:21:55.0000000Z","productDescription":"Cashless Parking","spaceNumber":"4","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T18:21:57.1230000","modifiedDateUtc":"2025-01-30T23:21:57.1230000Z","payedMinutes":120,"purchaseAmount":3.00,"productTypeId":1,"createdDateLocal":"2025-01-30T18:21:57.1230000","createdDateUtc":"2025-01-30T23:21:57.1230000Z","customField1":"","customField2":"","internalZoneCode2":"1467956"},{"parkingRightId":831694346,"signageZoneCode":"7956","internalZoneCode":"7956","supplierId":146079,"lpn":"ENS9606","lpnState":"MI","startDateLocal":"2025-01-30T17:52:00.0000000","startDateUtc":"2025-01-30T22:52:00.0000000Z","endDateLocal":"2025-01-30T19:52:00.0000000","endDateUtc":"2025-01-31T00:52:00.0000000Z","productDescription":"Cashless Parking","spaceNumber":"4","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T17:52:02.6770000","modifiedDateUtc":"2025-01-30T22:52:02.6770000Z","payedMinutes":120,"purchaseAmount":3.00,"productTypeId":1,"createdDateLocal":"2025-01-30T17:52:02.6770000","createdDateUtc":"2025-01-30T22:52:02.6770000Z","customField1":"","customField2":"","internalZoneCode2":"1467956"}],"totalCount":2,"resultCount":2} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7923-18	SpaceId : 	UTC Time : 2025-01-31T00:10:43.0662437Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7923-18-KO7O-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7923	SpaceId : 18	StallId : 	Current UTC Time : 2025-01-31T00:10:45.4106977Z 	CityCurrentTime : 2025-01-30T19:10:45.1606728Z 
+Response Data : {"EnforcementKey":"4194-7923-18-1--Expired","ExpiredTime":"20250130_T215623Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"576","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-74","MeterID":"32298","MeterLastUpdateTime":"20250130_T194634Z","MeterName":"7923","MeterRTC":"20250130_T231043Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T194634Z","SpaceNo":"18","State":"CA","ZoneName":"7923"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7923/18
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7923-7	SpaceId : 	UTC Time : 2025-01-31T00:13:19.5310027Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7923-7-224747-IL 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7923	SpaceId : 7	StallId : 	Current UTC Time : 2025-01-31T00:13:21.8568865Z 	CityCurrentTime : 2025-01-30T19:13:21.6748822Z 
+Response Data : {"EnforcementKey":"4194-7923-7-1--Expired","ExpiredTime":"20250130_T215237Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"526","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-81","MeterID":"32288","MeterLastUpdateTime":"20250130_T202837Z","MeterName":"7923","MeterRTC":"20250130_T231319Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T202837Z","SpaceNo":"7","State":"CA","ZoneName":"7923"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7923/7
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7921-9	SpaceId : 	UTC Time : 2025-01-31T00:15:23.9038310Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7921-9-ORJ822-IL 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7921	SpaceId : 9	StallId : 	Current UTC Time : 2025-01-31T00:15:26.1189656Z 	CityCurrentTime : 2025-01-30T19:15:26.0102135Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7921-9-ORJ822-IL","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"ORJ822","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"100","MeterID":"7921","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"9","State":"OK","ZoneName":"7921"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7921/9
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T19:15:26.0752287\"","parkingRights":[{"parkingRightId":831715992,"signageZoneCode":"7921","internalZoneCode":"7921","supplierId":146079,"lpn":"ORJ822","lpnState":"OK","startDateLocal":"2025-01-30T18:46:09.0000000","startDateUtc":"2025-01-30T23:46:09.0000000Z","endDateLocal":"2025-01-30T20:46:09.0000000","endDateUtc":"2025-01-31T01:46:09.0000000Z","productDescription":"Cashless Parking","spaceNumber":"9","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T18:46:11.0930000","modifiedDateUtc":"2025-01-30T23:46:11.0930000Z","payedMinutes":120,"purchaseAmount":3.00,"productTypeId":1,"createdDateLocal":"2025-01-30T18:46:11.0930000","createdDateUtc":"2025-01-30T23:46:11.0930000Z","customField1":"","customField2":"","internalZoneCode2":"1467921"}],"totalCount":1,"resultCount":1} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7982-38	SpaceId : 	UTC Time : 2025-01-31T00:24:19.9019397Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7982-38-DG1-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7982	SpaceId : 38	StallId : 	Current UTC Time : 2025-01-31T00:24:22.2025198Z 	CityCurrentTime : 2025-01-30T19:24:21.9795334Z 
+Response Data : {"EnforcementKey":"4194-7982-38-1--Occupied","ExpiredTime":"20250131_T001403Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"NULL","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"LOT 7","METERLOC_STREETNAME":"LOT 7","METERLOC_STREETTYPE":"LOT 7","Make":"","MeterExpiredMinutes":"50","MeterID":"33191","MeterLastUpdateTime":"20250130_T232403Z","MeterName":"7982","MeterRTC":"20250130_T232419Z","MeterStreet":"LOT 7","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T232403Z","SpaceNo":"38","State":"CA","ZoneName":"7982"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7982/38
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7919-30	SpaceId : 	UTC Time : 2025-01-31T00:26:42.1427611Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7919-30-8MGE42-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7919	SpaceId : 30	StallId : 	Current UTC Time : 2025-01-31T00:26:44.7008814Z 	CityCurrentTime : 2025-01-30T19:26:44.5446245Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7919-30-8MGE42-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"8MGE42","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"104","MeterID":"7919","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"30","State":"MI","ZoneName":"7919"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7919/30
+Http Status : OK
+Response  : {"resultTimeStampLocal":"\"2025-01-30T19:26:44.6203431\"","parkingRights":[{"parkingRightId":831678736,"signageZoneCode":"7919","internalZoneCode":"7919","supplierId":146079,"lpn":"8MGE42","lpnState":"MI","startDateLocal":"2025-01-30T17:14:45.0000000","startDateUtc":"2025-01-30T22:14:45.0000000Z","endDateLocal":"2025-01-30T21:00:45.0000000","endDateUtc":"2025-01-31T02:00:45.0000000Z","productDescription":"Cashless Parking","spaceNumber":"30","timeZone":"Eastern Standard Time","permit":"","modifiedDate":"2025-01-30T17:14:47.4070000","modifiedDateUtc":"2025-01-30T22:14:47.4070000Z","payedMinutes":226,"purchaseAmount":5.65,"productTypeId":1,"createdDateLocal":"2025-01-30T17:14:47.4070000","createdDateUtc":"2025-01-30T22:14:47.4070000Z","customField1":"","customField2":"","internalZoneCode2":"1467919"}],"totalCount":1,"resultCount":1} 
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7919-17	SpaceId : 	UTC Time : 2025-01-31T00:28:35.5075719Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7919-17-LL55L-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7919	SpaceId : 17	StallId : 	Current UTC Time : 2025-01-31T00:28:38.3658037Z 	CityCurrentTime : 2025-01-30T19:28:38.2240366Z 
+Response Data : {"EnforcementKey":"4194-7919-17-1--Expired","ExpiredTime":"20250130_T190433Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"350","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-264","MeterID":"32256","MeterLastUpdateTime":"20250130_T175433Z","MeterName":"7919","MeterRTC":"20250130_T232835Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T175433Z","SpaceNo":"17","State":"CA","ZoneName":"7919"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7919/17
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-45	SpaceId : 	UTC Time : 2025-01-31T00:30:28.4892715Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-45-EPG7255-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 45	StallId : 	Current UTC Time : 2025-01-31T00:30:31.0361590Z 	CityCurrentTime : 2025-01-30T19:30:30.8012182Z 
+Response Data : {"EnforcementKey":"4194-7931-45-1--Expired","ExpiredTime":"20250130_T194529Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"369","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-225","MeterID":"32603","MeterLastUpdateTime":"20250130_T173529Z","MeterName":"7931","MeterRTC":"20250130_T233028Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T173529Z","SpaceNo":"45","State":"CA","ZoneName":"7931"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/45
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7931-44	SpaceId : 	UTC Time : 2025-01-31T00:31:11.2141196Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7931-44-DSP1791-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7931	SpaceId : 44	StallId : 	Current UTC Time : 2025-01-31T00:31:13.6334616Z 	CityCurrentTime : 2025-01-30T19:31:13.4827162Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7931-44-DSP1791-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7931","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"44","State":null} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7931/44
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7980-2	SpaceId : 	UTC Time : 2025-01-31T00:45:23.8151830Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7980-2-DD88401-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7980	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-31T00:45:26.0818651Z 	CityCurrentTime : 2025-01-30T19:45:25.8848623Z 
+Response Data : {"EnforcementKey":"4194-7980-2-1--Expired","ExpiredTime":"20250130_T232524Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"SHAIN PARK","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-20","MeterID":"33107","MeterLastUpdateTime":"20250130_T211524Z","MeterName":"7980","MeterRTC":"20250130_T234523Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T211524Z","SpaceNo":"2","State":"CA","ZoneName":"7980"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7980/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-3	SpaceId : 	UTC Time : 2025-01-31T00:48:21.1983649Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-3-EPB5390-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 3	StallId : 	Current UTC Time : 2025-01-31T00:48:23.5095545Z 	CityCurrentTime : 2025-01-30T19:48:23.3105802Z 
+Response Data : {"EnforcementKey":"4194-7979-3-1--Expired","ExpiredTime":"20250130_T233230Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-16","MeterID":"33077","MeterLastUpdateTime":"20250130_T230230Z","MeterName":"7979","MeterRTC":"20250130_T234821Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T230230Z","SpaceNo":"3","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/3
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-13	SpaceId : 	UTC Time : 2025-01-31T00:50:02.4051187Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7979-13-ATC5639-WI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 13	StallId : 	Current UTC Time : 2025-01-31T00:50:04.6049758Z 	CityCurrentTime : 2025-01-30T19:50:04.4305017Z 
+Response Data : {"EnforcementKey":"4194-7979-13-1--Expired","ExpiredTime":"20250130_T234058Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"151","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-10","MeterID":"33087","MeterLastUpdateTime":"20250130_T213058Z","MeterName":"7979","MeterRTC":"20250130_T235002Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T213058Z","SpaceNo":"13","State":"CA","ZoneName":"7979"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7979/13
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7934-5	SpaceId : 	UTC Time : 2025-01-31T00:54:24.6326028Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7934-5-MBBH28-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7934	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-31T00:54:26.9061608Z 	CityCurrentTime : 2025-01-30T19:54:26.7307262Z 
+Response Data : {"EnforcementKey":"4194-7934-5-1--Expired","ExpiredTime":"20250130_T164318Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"265","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-431","MeterID":"32652","MeterLastUpdateTime":"20250130_T153318Z","MeterName":"7934","MeterRTC":"20250130_T235424Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T153318Z","SpaceNo":"5","State":"CA","ZoneName":"7934"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7934/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7934-2	SpaceId : 	UTC Time : 2025-01-31T00:55:19.1641768Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7934-2-ETC2228-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7934	SpaceId : 2	StallId : 	Current UTC Time : 2025-01-31T00:55:21.4157216Z 	CityCurrentTime : 2025-01-30T19:55:21.3184577Z 
+Response Data : {"EnforcementKey":"4194-7934-2-1--Expired","ExpiredTime":"20250130_T234624Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"275","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-9","MeterID":"32649","MeterLastUpdateTime":"20250130_T230424Z","MeterName":"7934","MeterRTC":"20250130_T235519Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T230424Z","SpaceNo":"2","State":"CA","ZoneName":"7934"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7934/2
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7918-10	SpaceId : 	UTC Time : 2025-01-31T00:57:58.0316111Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7918-10-EEM0907-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7918	SpaceId : 10	StallId : 	Current UTC Time : 2025-01-31T00:58:00.2437918Z 	CityCurrentTime : 2025-01-30T19:58:00.0567431Z 
+Response Data : {"EnforcementKey":"4194-7918-10-1--Expired","ExpiredTime":"20250130_T235137Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"280","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-6","MeterID":"32238","MeterLastUpdateTime":"20250130_T230937Z","MeterName":"7918","MeterRTC":"20250130_T235758Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T230937Z","SpaceNo":"10","State":"CA","ZoneName":"7918"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7918/10
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7918-5	SpaceId : 	UTC Time : 2025-01-31T00:59:14.2830378Z 
+IP Address :174.236.39.212 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7918-5-DXB4698-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7918	SpaceId : 5	StallId : 	Current UTC Time : 2025-01-31T00:59:16.4358522Z 	CityCurrentTime : 2025-01-30T19:59:16.3419808Z 
+Response Data : {"EnforcementKey":"4194-7918-5-1--Expired","ExpiredTime":"20250130_T232433Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"260","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"-35","MeterID":"32233","MeterLastUpdateTime":"20250130_T222433Z","MeterName":"7918","MeterRTC":"20250130_T235914Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T222433Z","SpaceNo":"5","State":"CA","ZoneName":"7918"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7918/5
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7981-10	SpaceId : 	UTC Time : 2025-01-31T01:10:15.1197124Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7981-10-1QFJ42-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7981	SpaceId : 10	StallId : 	Current UTC Time : 2025-01-31T01:10:17.3721057Z 	CityCurrentTime : 2025-01-30T20:10:17.1689749Z 
+Response Data : {"EnforcementKey":"4194-7981-10-1--Expired","ExpiredTime":"20250130_T225842Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"320","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-72","MeterID":"33137","MeterLastUpdateTime":"20250130_T220842Z","MeterName":"7981","MeterRTC":"20250131_T001015Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T220842Z","SpaceNo":"10","State":"CA","ZoneName":"7981"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7981/10
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7981-9	SpaceId : 	UTC Time : 2025-01-31T01:10:58.1798221Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7981-9-EJQ1349-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7981	SpaceId : 9	StallId : 	Current UTC Time : 2025-01-31T01:11:00.3530312Z 	CityCurrentTime : 2025-01-30T20:11:00.2280671Z 
+Response Data : {"EnforcementKey":"4194-7981-9-1--Expired","ExpiredTime":"20250130_T235416Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"320","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-16","MeterID":"33136","MeterLastUpdateTime":"20250130_T220918Z","MeterName":"7981","MeterRTC":"20250131_T001058Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T220918Z","SpaceNo":"9","State":"CA","ZoneName":"7981"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7981/9
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7954-16	SpaceId : 	UTC Time : 2025-01-31T01:30:57.2024291Z 
+IP Address :174.240.147.215 
+Request Data : http://cs-www61-4/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7954-16-N584138-LA 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7954	SpaceId : 16	StallId : 	Current UTC Time : 2025-01-31T01:30:59.5147422Z 	CityCurrentTime : 2025-01-30T20:30:59.3599720Z 
+Response Data : {"EnforcementKey":"4194-7954-16-1--Expired","ExpiredTime":"20250131_T000421Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"333","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"PIERCE","METERLOC_STREETNAME":"PIERCE","METERLOC_STREETTYPE":"PIERCE","Make":"","MeterExpiredMinutes":"-26","MeterID":"32884","MeterLastUpdateTime":"20250130_T224421Z","MeterName":"7954","MeterRTC":"20250131_T003057Z","MeterStreet":"PIERCE","Model":"","ReturnCode":"0","SensorEventTime":"20250130_T224421Z","SpaceNo":"16","State":"CA","ZoneName":"7954"} 
+Duration(in Seconds) : -2
+
+Vendor  : ParkMobile 
+Http Request : https://api.parkmobile.io/nforceapi/parkingrights/zone/7954/16
+Http Status : NotFound
+Response  :  
+----------------------------------------------------------------------------------------------------------

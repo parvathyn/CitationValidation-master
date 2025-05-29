@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginWithMode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginWithModeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginWithModeResult" type="tns:LoginResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LoginResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="city" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckPlateNumberWithUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PlateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPlateNumberWithUserNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithUserNameAndZone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PlateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithUserNameAndZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPlateNumberWithUserNameAndZoneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithUserNameAndZone_ex1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PlateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithUserNameAndZone_ex1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPlateNumberWithUserNameAndZone_ex1Result" type="tns:AnswerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AnswerDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="city_state" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isPaying" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="plate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="start_time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="end_time" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="usingPermit" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="permitName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckPlateNumberWithUserNameAndZone_ex2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PlateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithUserNameAndZone_ex2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPlateNumberWithUserNameAndZone_ex2Result" type="tns:ArrayOfAnswerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnswerDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AnswerDetails" nillable="true" type="tns:AnswerDetails" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckPlateNumberWithUserNameAndZone_ex3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="device_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="officerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PlateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithUserNameAndZone_ex3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPlateNumberWithUserNameAndZone_ex3Result" type="tns:ArrayOfAnswerDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpiredVehiclesWithUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Timeout" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="zoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExpiredVehiclesWithUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExpiredVehiclesWithUserNameResult" type="tns:ArrayOfExpiredVehicle" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExpiredVehicle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExpiredVehicle" nillable="true" type="tns:ExpiredVehicle" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExpiredVehicle">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="car_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="zone" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckPlateNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PlateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPlateNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithZone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PlateNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPlateNumberWithZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPlateNumberWithZoneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZoneLists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZoneListsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZoneListsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetParkingSpacesStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CityID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParkingSpacesStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetParkingSpacesStatusResult" type="tns:ArrayOfSpaceStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSpaceStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SpaceStatus" nillable="true" type="tns:SpaceStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SpaceStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="space_number" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="parking_status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetParkedCarsList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParkedCarsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetParkedCarsListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveVehicles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Zone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Vehicle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveVehiclesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveVehiclesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="LoginResult" nillable="true" type="tns:LoginResult" />
+      <s:element name="AnswerDetails" nillable="true" type="tns:AnswerDetails" />
+      <s:element name="ArrayOfAnswerDetails" nillable="true" type="tns:ArrayOfAnswerDetails" />
+      <s:element name="ArrayOfExpiredVehicle" nillable="true" type="tns:ArrayOfExpiredVehicle" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ArrayOfSpaceStatus" nillable="true" type="tns:ArrayOfSpaceStatus" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginWithModeSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginWithMode" />
+  </wsdl:message>
+  <wsdl:message name="LoginWithModeSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginWithModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserName" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameAndZone" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameAndZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex1SoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameAndZone_ex1" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex1SoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameAndZone_ex1Response" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex2SoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameAndZone_ex2" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex2SoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameAndZone_ex2Response" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex3SoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameAndZone_ex3" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex3SoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithUserNameAndZone_ex3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetExpiredVehiclesWithUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExpiredVehiclesWithUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetExpiredVehiclesWithUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExpiredVehiclesWithUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumber" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithZone" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPlateNumberWithZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneListsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZoneLists" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneListsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZoneListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetParkingSpacesStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetParkingSpacesStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetParkingSpacesStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetParkingSpacesStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetParkedCarsListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetParkedCarsList" />
+  </wsdl:message>
+  <wsdl:message name="GetParkedCarsListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetParkedCarsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveVehiclesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveVehicles" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveVehiclesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveVehiclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginWithModeHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginWithModeHttpGetOut">
+    <wsdl:part name="Body" element="tns:LoginResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZoneHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZoneHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex1HttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex1HttpGetOut">
+    <wsdl:part name="Body" element="tns:AnswerDetails" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex2HttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex2HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnswerDetails" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex3HttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="device_id" type="s:string" />
+    <wsdl:part name="officerID" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex3HttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnswerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetExpiredVehiclesWithUserNameHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Timeout" type="s:string" />
+    <wsdl:part name="zoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExpiredVehiclesWithUserNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfExpiredVehicle" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberHttpGetIn">
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithZoneHttpGetIn">
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithZoneHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneListsHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneListsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetParkingSpacesStatusHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+    <wsdl:part name="CityID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParkingSpacesStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSpaceStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetParkedCarsListHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParkedCarsListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveVehiclesHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+    <wsdl:part name="Vehicle" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveVehiclesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginWithModeHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginWithModeHttpPostOut">
+    <wsdl:part name="Body" element="tns:LoginResult" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZoneHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZoneHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex1HttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex1HttpPostOut">
+    <wsdl:part name="Body" element="tns:AnswerDetails" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex2HttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex2HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnswerDetails" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex3HttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="device_id" type="s:string" />
+    <wsdl:part name="officerID" type="s:string" />
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithUserNameAndZone_ex3HttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAnswerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetExpiredVehiclesWithUserNameHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Timeout" type="s:string" />
+    <wsdl:part name="zoneNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetExpiredVehiclesWithUserNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfExpiredVehicle" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberHttpPostIn">
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithZoneHttpPostIn">
+    <wsdl:part name="PlateNumber" type="s:string" />
+    <wsdl:part name="StateCode" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckPlateNumberWithZoneHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneListsHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetZoneListsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetParkingSpacesStatusHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+    <wsdl:part name="CityID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParkingSpacesStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSpaceStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetParkedCarsListHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParkedCarsListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveVehiclesHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="Zone" type="s:string" />
+    <wsdl:part name="Vehicle" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveVehiclesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:portType name="wServiceSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithMode">
+      <wsdl:input message="tns:LoginWithModeSoapIn" />
+      <wsdl:output message="tns:LoginWithModeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserName">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameSoapIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZoneSoapIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex1">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex1SoapIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex2">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex2SoapIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex3">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex3SoapIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredVehiclesWithUserName">
+      <wsdl:input message="tns:GetExpiredVehiclesWithUserNameSoapIn" />
+      <wsdl:output message="tns:GetExpiredVehiclesWithUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumber">
+      <wsdl:input message="tns:CheckPlateNumberSoapIn" />
+      <wsdl:output message="tns:CheckPlateNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithZone">
+      <wsdl:input message="tns:CheckPlateNumberWithZoneSoapIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneLists">
+      <wsdl:input message="tns:GetZoneListsSoapIn" />
+      <wsdl:output message="tns:GetZoneListsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParkingSpacesStatus">
+      <wsdl:input message="tns:GetParkingSpacesStatusSoapIn" />
+      <wsdl:output message="tns:GetParkingSpacesStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParkedCarsList">
+      <wsdl:input message="tns:GetParkedCarsListSoapIn" />
+      <wsdl:output message="tns:GetParkedCarsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehicles">
+      <wsdl:input message="tns:GetActiveVehiclesSoapIn" />
+      <wsdl:output message="tns:GetActiveVehiclesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wServiceHttpGet">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpGetIn" />
+      <wsdl:output message="tns:LoginHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithMode">
+      <wsdl:input message="tns:LoginWithModeHttpGetIn" />
+      <wsdl:output message="tns:LoginWithModeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserName">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameHttpGetIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZoneHttpGetIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZoneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex1">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex1HttpGetIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex2">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex2HttpGetIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex3">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex3HttpGetIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex3HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredVehiclesWithUserName">
+      <wsdl:input message="tns:GetExpiredVehiclesWithUserNameHttpGetIn" />
+      <wsdl:output message="tns:GetExpiredVehiclesWithUserNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumber">
+      <wsdl:input message="tns:CheckPlateNumberHttpGetIn" />
+      <wsdl:output message="tns:CheckPlateNumberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithZone">
+      <wsdl:input message="tns:CheckPlateNumberWithZoneHttpGetIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithZoneHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneLists">
+      <wsdl:input message="tns:GetZoneListsHttpGetIn" />
+      <wsdl:output message="tns:GetZoneListsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParkingSpacesStatus">
+      <wsdl:input message="tns:GetParkingSpacesStatusHttpGetIn" />
+      <wsdl:output message="tns:GetParkingSpacesStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParkedCarsList">
+      <wsdl:input message="tns:GetParkedCarsListHttpGetIn" />
+      <wsdl:output message="tns:GetParkedCarsListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehicles">
+      <wsdl:input message="tns:GetActiveVehiclesHttpGetIn" />
+      <wsdl:output message="tns:GetActiveVehiclesHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="wServiceHttpPost">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginHttpPostIn" />
+      <wsdl:output message="tns:LoginHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithMode">
+      <wsdl:input message="tns:LoginWithModeHttpPostIn" />
+      <wsdl:output message="tns:LoginWithModeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserName">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameHttpPostIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZoneHttpPostIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZoneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex1">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex1HttpPostIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex2">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex2HttpPostIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex3">
+      <wsdl:input message="tns:CheckPlateNumberWithUserNameAndZone_ex3HttpPostIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithUserNameAndZone_ex3HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredVehiclesWithUserName">
+      <wsdl:input message="tns:GetExpiredVehiclesWithUserNameHttpPostIn" />
+      <wsdl:output message="tns:GetExpiredVehiclesWithUserNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumber">
+      <wsdl:input message="tns:CheckPlateNumberHttpPostIn" />
+      <wsdl:output message="tns:CheckPlateNumberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithZone">
+      <wsdl:input message="tns:CheckPlateNumberWithZoneHttpPostIn" />
+      <wsdl:output message="tns:CheckPlateNumberWithZoneHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneLists">
+      <wsdl:input message="tns:GetZoneListsHttpPostIn" />
+      <wsdl:output message="tns:GetZoneListsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParkingSpacesStatus">
+      <wsdl:input message="tns:GetParkingSpacesStatusHttpPostIn" />
+      <wsdl:output message="tns:GetParkingSpacesStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParkedCarsList">
+      <wsdl:input message="tns:GetParkedCarsListHttpPostIn" />
+      <wsdl:output message="tns:GetParkedCarsListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehicles">
+      <wsdl:input message="tns:GetActiveVehiclesHttpPostIn" />
+      <wsdl:output message="tns:GetActiveVehiclesHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wServiceSoap" type="tns:wServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithMode">
+      <soap:operation soapAction="http://tempuri.org/LoginWithMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserName">
+      <soap:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone">
+      <soap:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserNameAndZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex1">
+      <soap:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserNameAndZone_ex1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex2">
+      <soap:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserNameAndZone_ex2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex3">
+      <soap:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserNameAndZone_ex3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredVehiclesWithUserName">
+      <soap:operation soapAction="http://tempuri.org/GetExpiredVehiclesWithUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumber">
+      <soap:operation soapAction="http://tempuri.org/CheckPlateNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithZone">
+      <soap:operation soapAction="http://tempuri.org/CheckPlateNumberWithZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneLists">
+      <soap:operation soapAction="http://tempuri.org/GetZoneLists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParkingSpacesStatus">
+      <soap:operation soapAction="http://tempuri.org/GetParkingSpacesStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParkedCarsList">
+      <soap:operation soapAction="http://tempuri.org/GetParkedCarsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehicles">
+      <soap:operation soapAction="http://tempuri.org/GetActiveVehicles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wServiceSoap12" type="tns:wServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithMode">
+      <soap12:operation soapAction="http://tempuri.org/LoginWithMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserName">
+      <soap12:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone">
+      <soap12:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserNameAndZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex1">
+      <soap12:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserNameAndZone_ex1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex2">
+      <soap12:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserNameAndZone_ex2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex3">
+      <soap12:operation soapAction="http://tempuri.org/CheckPlateNumberWithUserNameAndZone_ex3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredVehiclesWithUserName">
+      <soap12:operation soapAction="http://tempuri.org/GetExpiredVehiclesWithUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumber">
+      <soap12:operation soapAction="http://tempuri.org/CheckPlateNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithZone">
+      <soap12:operation soapAction="http://tempuri.org/CheckPlateNumberWithZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneLists">
+      <soap12:operation soapAction="http://tempuri.org/GetZoneLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParkingSpacesStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetParkingSpacesStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParkedCarsList">
+      <soap12:operation soapAction="http://tempuri.org/GetParkedCarsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehicles">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveVehicles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wServiceHttpGet" type="tns:wServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithMode">
+      <http:operation location="/LoginWithMode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserName">
+      <http:operation location="/CheckPlateNumberWithUserName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone">
+      <http:operation location="/CheckPlateNumberWithUserNameAndZone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex1">
+      <http:operation location="/CheckPlateNumberWithUserNameAndZone_ex1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex2">
+      <http:operation location="/CheckPlateNumberWithUserNameAndZone_ex2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex3">
+      <http:operation location="/CheckPlateNumberWithUserNameAndZone_ex3" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredVehiclesWithUserName">
+      <http:operation location="/GetExpiredVehiclesWithUserName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumber">
+      <http:operation location="/CheckPlateNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithZone">
+      <http:operation location="/CheckPlateNumberWithZone" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneLists">
+      <http:operation location="/GetZoneLists" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParkingSpacesStatus">
+      <http:operation location="/GetParkingSpacesStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParkedCarsList">
+      <http:operation location="/GetParkedCarsList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehicles">
+      <http:operation location="/GetActiveVehicles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wServiceHttpPost" type="tns:wServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Login">
+      <http:operation location="/Login" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginWithMode">
+      <http:operation location="/LoginWithMode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserName">
+      <http:operation location="/CheckPlateNumberWithUserName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone">
+      <http:operation location="/CheckPlateNumberWithUserNameAndZone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex1">
+      <http:operation location="/CheckPlateNumberWithUserNameAndZone_ex1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex2">
+      <http:operation location="/CheckPlateNumberWithUserNameAndZone_ex2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithUserNameAndZone_ex3">
+      <http:operation location="/CheckPlateNumberWithUserNameAndZone_ex3" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpiredVehiclesWithUserName">
+      <http:operation location="/GetExpiredVehiclesWithUserName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumber">
+      <http:operation location="/CheckPlateNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPlateNumberWithZone">
+      <http:operation location="/CheckPlateNumberWithZone" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZoneLists">
+      <http:operation location="/GetZoneLists" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParkingSpacesStatus">
+      <http:operation location="/GetParkingSpacesStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParkedCarsList">
+      <http:operation location="/GetParkedCarsList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveVehicles">
+      <http:operation location="/GetActiveVehicles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wService">
+    <wsdl:port name="wServiceSoap" binding="tns:wServiceSoap">
+      <soap:address location="http://pango.mypango.com/EnforcementSVC/wservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wServiceSoap12" binding="tns:wServiceSoap12">
+      <soap12:address location="http://pango.mypango.com/EnforcementSVC/wservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wServiceHttpGet" binding="tns:wServiceHttpGet">
+      <http:address location="http://pango.mypango.com/EnforcementSVC/wservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wServiceHttpPost" binding="tns:wServiceHttpPost">
+      <http:address location="http://pango.mypango.com/EnforcementSVC/wservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

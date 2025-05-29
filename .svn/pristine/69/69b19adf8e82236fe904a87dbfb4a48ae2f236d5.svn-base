@@ -1,0 +1,12 @@
+﻿
+namespace DataAccess.Model.Cale
+{
+    public class UrlList
+    {
+        public static string GetPlateStatusURL(CaleCustomerElement customer, CaleParameter parameter)
+        {
+            return string.Format("{0}/cwo2exportservice/Enforcement/4/EnforcementService.svc/get/{1}/{2}", customer.BaseURL, parameter.PlateNo,0);
+            //http://<hostname>/cwo2exportservice/Enforcement/4/EnforcementService.svc/get/{code}/{includeMinutesExpired}
+        }
+    }
+}

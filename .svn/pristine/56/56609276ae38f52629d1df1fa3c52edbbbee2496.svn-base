@@ -1,0 +1,114 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Specialized;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+
+namespace DataAccess.Model.PayByPhone
+{
+    public class PayByPhoneGenericFactory
+    {
+        protected PayByPhoneParameter _parameter;
+        protected ServiceParameter _serviceParameter;
+        protected CustomerElement _customer;
+        protected Uri uri;
+        protected int customerId;
+
+        public PayByPhoneGenericFactory(CustomerElement customer, string plateNo)
+        {
+            this._customer = customer;
+            this.customerId = Convert.ToInt32(customer.CustomerId);
+            this._parameter = new PayByPhoneParameter(Convert.ToInt32(customer.VendorId), plateNo, 1);
+            this._serviceParameter = new ServiceParameter() { UserName = customer.UserName, UserPassword = customer.UserPassword };
+            var values = new NameValueCollection 
+            { 
+                {"vendorId",  this._parameter.VendorId.ToString() }, 
+                { "plate",  this._parameter.Plate },
+                { "graceMinutes", string.Empty },
+                { "patrollerId", string.Empty },
+                { "asAtDateTime", string.Empty },
+                { "maxSize",  this._parameter.MaxSize.HasValue ?  this._parameter.MaxSize.Value.ToString() : string.Empty }
+            };
+            uri = UrlBuilder.BuildUri(this._customer.BaseURL, values);
+        }
+
+        //public PayByPhoneGenericFactory(CustomerElement customer, int locationNo)
+        //{
+        //    this._customer = customer;
+        //    this.customerId = Convert.ToInt32(customer.CustomerId);
+        //    this._parameter = new PayByPhoneParameter(Convert.ToInt32(customer.VendorId), locationNo, 1);
+        //    this._serviceParameter = new ServiceParameter() { UserName = customer.UserName, UserPassword = customer.UserPassword };
+        //    var values = new NameValueCollection 
+        //    { 
+        //        {"vendorId",  this._parameter.VendorId.ToString() }, 
+        //        { "location",  this._parameter.LocationNo.ToString() },
+        //        { "graceMinutes", string.Empty },
+        //        { "asAtDateTime", string.Empty },
+        //        { "maxSize",  this._parameter.MaxSize.HasValue ?  this._parameter.MaxSize.Value.ToString() : string.Empty },
+        //        { "patrollerId", string.Empty }
+        //    };
+        //    uri = UrlBuilder.BuildUri(this._customer.BaseURL, values);
+        //}
+
+        protected virtual PayByPhoneEntity GetPlateData()
+        {
+            PayByPhoneEntity plateData = null;
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                var byteArray = Encoding.ASCII.GetBytes(string.Format("{0}:{1}", this._serviceParameter.UserName, this._serviceParameter.UserPassword));
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                HttpResponseMessage response = client.GetAsync(this.uri.ToString()).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonData = response.Content.ReadAsStringAsync().Result;
+                    try
+                    {
+                        var settings = new Newtonsoft.Json.JsonSerializerSettings()
+                        {
+                            DateTimeZoneHandling = DateTimeZoneHandling.Utc
+                        };
+                        plateData = JsonConvert.DeserializeObject<PayByPhoneEntity>(jsonData, settings);
+                    }
+                    catch (Exception ex)
+                    {
+                        //Error happened
+                    }
+                }
+                else
+                {
+                    //Other than 200 error code
+                }
+            }
+            return plateData;
+        }
+
+        public TransactionTransform GetRefreshPlateData()
+        {
+            TransactionTransform refreshPlate = new TransactionTransform() { LicensePlate = this._parameter.Plate, ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            PayByPhoneEntity plateData = this.GetPlateData();
+            if (plateData != null)
+            {
+                if (plateData.errors.Count == 0) //Check Error existance
+                {
+                    if (plateData.parkingEntitlements.Count > 0) // Have Entitlement data
+                    {
+                        ParkingEntitlement latestEntitlement = plateData.parkingEntitlements.OrderByDescending(o => o.endDateTime.Value).FirstOrDefault<ParkingEntitlement>();
+                        refreshPlate.MeterExpiredMinutes = latestEntitlement.ExpiredMinutes(CustomerTimes.GetCustomerTimeById(this.customerId)).ToString();
+                        refreshPlate.SpaceNo = latestEntitlement.locationNumber;
+                        refreshPlate.State = latestEntitlement.vehicleState;
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                    else
+                    {
+                        // Have No Entitlement data
+                        refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                }
+            }
+            return refreshPlate;
+        }
+    }
+}

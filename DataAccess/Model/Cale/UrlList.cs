@@ -1,0 +1,32 @@
+﻿
+namespace DataAccess.Model.Cale
+{
+    public class UrlList
+    {
+        public static string GetPlateStatusURL(CaleCustomerElement customer, CaleParameter parameter)
+        {
+            return string.Format("{0}/cwo2exportservice/Enforcement/4/EnforcementService.svc/get/{1}/{2}", customer.BaseURL, parameter.PlateNo,0);
+            //http://<hostname>/cwo2exportservice/Enforcement/4/EnforcementService.svc/get/{code}/{includeMinutesExpired}
+        }
+
+
+        public static string GetPlateStatusURLSchema5(CaleCustomerElement customer, CaleParameter parameter)
+        {
+            return string.Format("{0}/cwo2exportservice/Enforcement/5/EnforcementService.svc/get/{1}/{2}", customer.BaseURL, parameter.PlateNo, 0);
+            //http://<hostname>/cwo2exportservice/Enforcement/4/EnforcementService.svc/get/{code}/{includeMinutesExpired}
+        }
+
+        public static string GetAllActivePurchasesURL(string baseURL, string firstParameter, string secondParamter)
+        {
+            return string.Format("{0}/cwo2exportservice/Enforcement/4/EnforcementService.svc/getallactivepurchases/{1}/{2}", baseURL, firstParameter, secondParamter);
+          
+            ////https://webservice.mdc.dmz.caleaccess.com/CWO2EXPORTSERVICE:443/Enforcement/4/EnforcementService.svc/getallactivepurchases/301/1440
+            ////baseURL = https://webservice.mdc.dmz.caleaccess.com
+            /////CWO2EXPORTSERVICE:443/Enforcement/4/EnforcementService.svc/getallactivepurchases/301/1440
+
+        }
+
+
+
+    }
+}

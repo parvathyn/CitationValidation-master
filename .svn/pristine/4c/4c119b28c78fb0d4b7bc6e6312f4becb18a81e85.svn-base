@@ -1,0 +1,207 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
+
+namespace DataAccess.Model.Parkeon
+{
+    public class ParkeonServiceAccess
+    {
+        private ServiceParameters serviceParameters = null;
+        private KeyParameter keyParameter = null;
+        private ParkeonCustomerElement parkeonCustomerElement = null;
+
+        public string Name { get; set; }
+        private bool dropMe = false;
+        public ParkeonServiceAccess(ServiceParameters parameters, KeyParameter keyParameter)
+        {
+            this.serviceParameters = parameters;
+            this.keyParameter = keyParameter;
+        }
+
+        public ParkeonServiceAccess(ServiceParameters parameters, KeyParameter keyParameter, ParkeonCustomerElement parkeonCustomerElement)
+        {
+            this.serviceParameters = parameters;
+            this.keyParameter = keyParameter;
+            this.parkeonCustomerElement = parkeonCustomerElement;
+        }
+
+        public ServiceParameters ServiceParam
+        {
+            get
+            {
+                return this.serviceParameters;
+            }
+        }
+
+        public KeyParameter KeyParam
+        {
+            get
+            {
+                return this.keyParameter;
+            }
+        }
+
+
+        public void ProcessRequest(ref TransactionTransform transformData, TypeConditions typeCondition, TimeZoneInfo TZ, ref  DateTime? currentTime)
+        {
+            List<ParkeonResponsePlates> platePayments = null;
+            try
+            {
+                //Prepare requst Data  //2016-04-27 12:41:54 in UTC
+                string endTime = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+                string startTime = DateTime.UtcNow.AddHours(-24).ToString("yyyy-MM-dd HH:mm:ss");
+
+                //Get Data
+                platePayments = this.GetPlatePurchases(startTime, endTime, keyParameter.PlateNumber, typeCondition);
+
+                if (platePayments.Count() > 0)
+                {
+                 
+                    //get latest record
+                   ParkeonResponsePlates latestPayment =  platePayments.OrderByDescending(o => o.EndDateDTCustomer).FirstOrDefault<ParkeonResponsePlates>();
+                   //transformData.MeterExpiredMinutes = latestPayment.ExpiredMinutes.ToString();
+                   transformData.MeterExpiredMinutes = latestPayment.CalExpiredMinutes(Convert.ToInt32(this.parkeonCustomerElement.GracePeriodInSecond)).ToString();
+                   transformData.LicensePlate = keyParameter.PlateNumber;
+                   transformData.ExpiredTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(latestPayment.EndDateDTCustomer, TZ));
+                   transformData.MeterLastUpdateTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(latestPayment.StartDateDTCustomer, TZ));
+                   transformData.SensorEventTime = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(latestPayment.StartDateDTCustomer, TZ));
+                   transformData.MeterRTC = String.Format("{0:yyyyMMdd_THHmmssZ}", Utility.findGMTTime(latestPayment.PresentMeterTime, TZ));
+                   transformData.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                   currentTime = latestPayment.PresentMeterTime;
+                }
+                else
+                {
+                    transformData.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+            }
+            catch (ParkeonException parkex)
+            {
+                transformData.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+                throw parkex;
+            }
+            catch (Exception ex)
+            {
+                transformData.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+                throw ex;
+            }
+        }
+
+        private List<ParkeonResponsePlates> GetPlatePurchases(string startTime, string endTime, string plateNumber, TypeConditions typeCondition)
+        {
+            List<ParkeonResponsePlates> zonelist = new List<ParkeonResponsePlates>();
+            try
+            {
+                string plt = "\"" + plateNumber + "\"";
+                string statt = "\"" + startTime + "\"";
+                var reqObj = new ParkeonRequest()
+                {
+                    TypeCondition = typeCondition.ToString(),
+                    //<condition>plate_number=”8GT5G” AND zone_id=”371”</condition>
+                    //Condition = string.Format("{0}{1}{2}", "plate_number", "=", plt),
+                    Condition = string.Format("{0}{1}{2} AND {3}{4}{5}", "plate_number", "=", plt, "start_date", ">=", statt),
+                    OrderByCondition = string.Empty,
+                    Sortcondition = string.Empty,
+                    Limit = string.Empty
+                };
+
+                using (var client = new HttpClient())
+                {
+                    System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+                    var httpContent = new StringContent(reqObj.GetXmlTextData(), Encoding.UTF8, "application/xml");
+                    var byteArray = Encoding.ASCII.GetBytes(string.Format("{0}:{1}", this.serviceParameters.userName, this.serviceParameters.userPassword));
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    HttpResponseMessage response = client.PostAsync(this.serviceParameters.URI, httpContent).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string xmlData = response.Content.ReadAsStringAsync().Result;
+                        XDocument xml = XDocument.Parse(xmlData);
+                        var currentNode = xml.Descendants().Where(x => x.Name.LocalName.ToLower() == "Result".ToLower()).FirstOrDefault().Value;
+                        xml = null;
+                        XmlDocument xmlDoc = new XmlDocument();
+                        xmlDoc.LoadXml(currentNode);
+                        XmlNode rowsInformationNode = xmlDoc.SelectSingleNode("/rows");
+
+                        // <response>No result found!</response>
+                        foreach (XmlNode item in rowsInformationNode)
+                        {
+                            foreach (XmlNode subitem in item.ChildNodes)
+                            {
+                                if (subitem.Name.ToLower() == "response".ToLower())
+                                {
+                                    return zonelist;
+                                }
+                                //Exit for loop. There would be only one record for : No result found!
+                                break;
+                            }
+                            //Exit for loop. There would be only one record for : No result found!
+                            break;
+                        }
+                        /////////////////////////
+
+                        ParkeonResponsePlates plate = null;
+                        foreach (XmlNode item in rowsInformationNode)
+                        {
+                            plate = new ParkeonResponsePlates();
+                            foreach (XmlNode subitem in item.ChildNodes)
+                            {
+                                switch (subitem.Name.ToLower())
+                                {
+                                    case "end_date":
+                                        plate.end_date = subitem.InnerText;
+                                        break;
+                                    case "plate_number":
+                                        plate.plate_number = subitem.InnerText;
+                                        break;
+                                    case "session_id":
+                                        plate.session_id = subitem.InnerText;
+                                        break;
+                                    case "start_date":
+                                        plate.start_date = subitem.InnerText;
+                                        break;
+                                    case "type":
+                                        plate.type = subitem.InnerText;
+                                        break;
+                                    case "zone_id":
+                                        plate.zone_id = subitem.InnerText;
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            } //End row
+                            zonelist.Add(plate);
+                        } //End rows 
+                    }
+                    else
+                    {
+                        throw new ParkeonException(response.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return zonelist;
+        }
+
+        #region IDisposable Members
+
+        public void Dispose()
+        {
+
+        }
+
+        #endregion
+        public bool DropMe
+        {
+            get { return this.dropMe; }
+            set { this.dropMe = value; }
+        }
+    }
+}

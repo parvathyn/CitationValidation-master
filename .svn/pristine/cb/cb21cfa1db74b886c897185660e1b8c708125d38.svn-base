@@ -1,0 +1,38 @@
+﻿using System;
+
+namespace DataAccess.Model.Parkmobile
+{
+    public class ParkingRight
+    {
+        public int? parkingRightId { get; set; }
+        public string signageZoneCode { get; set; }
+        public string internalZoneCode { get; set; }
+        public int? supplierId { get; set; }
+        public string lpn { get; set; }
+        public string lpnState { get; set; }
+        public DateTime? startDateLocal { get; set; }
+        public DateTime? endDateLocal { get; set; }
+        public string productDescription { get; set; }
+        public string spaceNumber { get; set; }
+        public string timeZone { get; set; }
+        public string permit { get; set; }
+        public DateTime? modifiedDate { get; set; }
+        public int? payedMinutes { get; set; }
+        public double? purchaseAmount { get; set; }
+        public int? productTypeId { get; set; }
+        public string customField1 { get; set; }
+        public string customField2 { get; set; }
+        public string internalZoneCode2 { get; set; }
+        public int ExpiredMinutes(CustomerTime customerTime, int? gracePeriodInSeconds)
+        {
+            if (this.endDateLocal.HasValue)
+            {
+                return (int)this.endDateLocal.Value.AddSeconds(gracePeriodInSeconds.Value).Subtract(customerTime.CurrentTime.Value).TotalMinutes;
+            }
+            else
+            {
+                return (-1);
+            }
+        }
+    }
+}

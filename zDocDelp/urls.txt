@@ -1,0 +1,565 @@
+new in AWS--
+http://localhost/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-4280-CO0809N2-02A-77-plate-ST-830011
+
+http://localhost/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-4280-CO0809N2-02A-77-plate-ST-830011
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7014-999999-999-040GJZ-AZ
+
+
+http://localhost/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7008-99999-9999-acb5814-NY-Expired
+http://localhost/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7008-99999-9999-acb5814-NY-Expired
+
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-4337-99999-99999-261PCF-IA
+ 
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetPlateNo/7086/JLHN11
+
+
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetPlateNo/7002/Y09HFN
+http://pems.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+--works
+http://localhost/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+http://localhost/MobilePlateStatusv2/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+http://localhost/MobilePlateStatusv1/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+
+http://3.220.24.253/MobilePlateStatusv1/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+
+http://localhost/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7008-99999-9999-acb5814-NY-Expired
+http://localhost/CitationValidationv2/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7008-99999-9999-acb5814-NY-Expired
+------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7056-999999-999-KKM3171- 
+
+--Sandeigo
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7014-999999-999-KKM3171- 
+
+http://pems.pemsportal.com/CitationValidationTest/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7014-999999-999-KKM3171- 
+http://pems.pemsportal.com/CitationValidationTest/CitationValidation.ValidateCitation.svc/GetLogData/7014/08-10-23
+
+
+7058://Sanibel X3	
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7056-999999-999-KKM3171- 	
+----------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7028-H429-1-BIZ548-IA 	
+-------------------
+http://pems.pemsportal.com/CitationValidationZone/CitationValidation.ValidateCitation.svc/GetCitationStatus/{0}
+http://pems.pemsportal.com/CitationValidationZone/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7034---TESTCURR1--C
+
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetPlateNo/7034/TESTFUTR3/E
+http://pems.pemsportal.com/MobilePlateStatusZone/CitationValidation.ValidateCitation.svc/GetPlateNo/7034/TESTZXND/A
+
+http://pems.pemsportal.com/MobilePlateStatusZone/CitationValidation.ValidateCitation.svc/GetPlateNo/7034/TESTZXND
+------------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-8070-1231A-1--Expired
+-----------------------------------
+
+----Chilllkotehe---------------
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7081-999999-999-999-HHD3532-OH
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7081-999999-999-999-JEL9392-OH
+
+-----------------------------
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetLogData/4280/10-08-21
+
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-4280-CO0809N2-02A-77-plate-ST-830011
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-4280-CO0809N2-02A-77-plate-ST-830011
+
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-4280-09COMAE1-03A-1--Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-4280-1231A-ABC---Expired  --Passed :no space error check
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-4280-999999999-ABC-1--Expired --Passed :if meter has have 999999999
+--------------------------
+
+http://pems.pemsportal.com/MobilePayByPlateListViewV1/?cityid=7001
+
+var appPath = @"G:\Projects\Services-AutoIssueNEW\CitationValidation\CitationValidation\TestApplication";
+
+var appPath = @"G:\Projects\CitationValidation\CitationValidation\";
+   var appPath = @"G:\Projects\CitationValidation\CitationValidation\";
+
+G:\Projects\CitationValidation\CitationValidation\App_Data\Timezones\
+
+Local : C:\HostingService\CitationValidation
+SIT  (point PDrod DB): C:\inetpub\wwwroot\CitservicepaybyPlate_Space\CitationValidation
+SIT Statging (Point SIT DB): C:\inetpub\wwwroot\CitservicepaybyPlate_Space\CitationValidationStaging
+7003
+-------------------------------------------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7072-99999-9999-HWP1393-
+
+-----------------Park Mobile Chagnes to AWS------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7010-99999-9999-HWP1393-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7056-999999-999-KKM3171- 	
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7056-999999-999-Y52JDY-
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7056-999999-999-Y52JDY--Zone
+
+http://pems.pemsportal.com/CitationValidationTest/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7056-999999-999-JDS7028-AL-921210
+http://pems.pemsportal.com/CitationValidationV2/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7056-999999-999-H75NRC-NJ-977115 	
+
+http://172.21.6.80/CitationValidationV2/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7056-999999-999-H75NRC-NJ-977115 
+ 
+
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7960-5-DDS0382-MI
+ http://cs-www61-4.dt.sec/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4194-7960-5-DDS0382-MI
+
+
+----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7006-NULL-NULL-BADL05-Occupied
+-----------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-8070-1231A-1--Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-8070-STV3007-7--Expired
+http://pems-sit.pemsportal.com/CitationValidationV2/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-8070-STV3007-7--Expired
+----------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-4135-1231A-1--Expired
+-----------------------------------------------------------------
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4176-NULL-NULL-BADL05-Occupied
+----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7036-NULL-NULL-BADL05-Occupied
+-----------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7056-NULL-NULL-GTF5187-Occupied
+-------------------------------------------------------------------------------------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7010-PR-100-1--
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7010-BL-406-1-7ZGJ121-Expired
+----------------------------------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4232-D-101a-1--Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4232-D-101a-1--Expired
+-----------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-8016-001-1--
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-8016-001-1--
+
+----------------------
+-----------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4195-AUL1-1--
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-4195-AUL2-1--
+------------7003-----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7003-NULL-NULL-JQQQ07-Occupied
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7003-99999-9999-HDRX37-NY-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetLogData/7003/08-21-18
+-------------------------------7029-RoyalOk----------------------------
+http://pems-sit.pemsportal.com/CitationValidationStaging//CitationValidation.ValidateCitation.svc/GetLogData/7029/06-04-18
+http://www02100061/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7029-R48-48-BHK8411-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7029-R48-48-BHK8411-Expired
+http://localhost:82/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-7028-DJ1-1-CLA924-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging//CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7029-SW2-2-BRR189-Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-7028-DJ1-1-CLA924-Expired
+
+-------------------------------7028-SiouxCity-----------------7034-----------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7032-99999-9999-acb5814-Expired
+
+--------------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4265-99999-9999-acb5814--
+------------------------------------
+
+http://www02100061/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-7028-B1130-1--
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-7028-B1130-1--
+http://localhost:82/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-7028-DJ1-1-CLA924-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging//CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-7028-B1130-1--
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-7028-DJ1-1-CLA924-Expired
+
+http://172.21.6.80/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYSPACE-7028-DJ1-1-CLA924-Expired
+---------------------4194--------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7979-1-VGD4-MI 
+
+--------------7032----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7032-99999-9999-dzx5218-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7032-99999-9999-acb5814-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7032-99999-9999-acb5814-NY-Expired
+
+--------------7008----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7008-99999-9999-dzx5218-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7008-99999-9999-acb5814-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7008-99999-9999-acb5814-NY-Expired
+--------------7003----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7003-99999-9999-dzx5218-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7003-99999-9999-acb5814-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7008-99999-9999-acb5814-NY-Expired
+
+--------------7009----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7009-99999-9999-HWP1393-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7009-99999-9999-HWP1393-Expired
+-----------------------------------4140-------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4140-NULL-NULL-AJF1401-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-4140-NULL-NULL-AJF1401-Expired
+--------------7034----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7034-99999-9999-DPZ9238--
+
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7034-99999-9999-DPZ9238--
+
+--------------7038----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7038-99999-9999-DPZ9238--
+
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7038-99999-9999-MN8692--
+--------------7030----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7030-99999-9999-DPZ9238--
+
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7030-99999-9999-MN8692--
+--------------7007----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7007-99999-9999-HWP1393-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7007-99999-9999-HWP1393-Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7007-99999-9999-HWP1393-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7007-99999-9999-HWP1393-Expired
+--------------7009----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7009-99999-9999-HWP1393-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7009-99999-9999-HWP1393-Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7009-99999-9999-HWP1393-Expired
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-7009-99999-9999-HWP1393-Expired
+--------------7026----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7026-99999-9999-HWP1393-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7026-99999-9999-HWP1393-Expired
+
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus//PayByPlate-7026-99999-9999-HWP1393-Expired
+
+--------------7025----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-JYP5361-Expired
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-FAJ5766-Expired
+
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus//PayByPlate-7025-99999-9999-FAJ5766-Expired
+
+-------------4120 new------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus//PAYBYPLATE-4120-999999-999-999-3S67Z5-TN
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-4120-10100402-Wall%20St-51006-CJL8508--
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetLogData/4120/01-10-18
+
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus//PayByPlate-4120-10100402-Wall%20St-51006-CJL8508--
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/PayByPlate-4120-10100402-Wall%20St-51006-CJL8508--
+
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-7001-999999999-100--
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-7001-999999999-100--
+
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayByPlate-4120-10100402-Wall%20St-51006-CGN5123--
+-------------7001 new------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-7001-999999999-9999999--
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-7001-999999999-100--
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-7001-999999999-100--
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-7001-999999999-100--
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-7001-999999999-100--
+
+
+---------Sarja ME-------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-8014-002-2--
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-8014-002-2--
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PayBySpace-8014-002-2--
+
+-------------------------------------------------------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-7001-4483-100--Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-100--Expired
+
+
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-7013-MOR 1-101--Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-MOR 1-101--Expired
+
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayBySpace-4194-7901-1-1--Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-4194-7901-1-1--Expired
+
+-------------------------------------------------------------------------------------
+
+-------7012------------------------------
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7012-920101-1-811KVM-Expired
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svcGetChicagoCitationData/7012-225404-1-Z141998-Expired-IL-$4.00
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetChicagoCitationData/7012-225404-1-Z141998-Expired-IL-$4.00
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetChicagoCitationData/7012-225404-1-Z141998-Expired-IL-$4.00
+
+
+exec [SpacePlateTxnFinal_Railegh_Metername_Chicago_test] 7012
+
+/*
+7012-380612-1-Q889036-Expired-IL-$2.00
+7012-257417-1-7052645-Expired-IL-$4.00
+7012-202405-1-Z328418-Expired-IL-$4.00
+7012-213403-1-Z328418-Expired-IL-$4.00
+7012-250411-1-Z328418-Expired-IL-$4.00
+7012-230406-1-Q286325-Expired-IL-$4.00
+7012-451111-1-Q286325-Expired-IL-$2.00
+*/
+ --Key --{Customerid}  -  {metername}  -  {spaceid}  -  {LicensePlateNo}  - {spacestatus} '-'{State}'-'{rateName}
+ {Customerid}  -  zoneId(null)  - {metername}  -  {spaceid}  -  {LicensePlateNo}  - {spacestatus} '-'{State}'-'{rateName}
+exec [SpacePlateTxnFinal_Railegh_Metername_Chicago_test] 7012,NULL,'225404','1','Z141998',NULL,'IL','$0.50'
+exec [SpacePlateTxnFinal_Railegh_Metername_Chicago_test] 7012,NULL,'225404','1','Z141998',NULL,'IL',NULL
+-----------------Customer Id : 7001-------------
+SP : SpacePlateTxnFinal
+	exec SpacePlateTxnFinal 7001
+Parameters Sample : (only customerId and SpaceNo valid others are not valid)
+	7001-4483-100--Expired  
+	7001-4483-101--Expired
+	7001-4483-102--Expired
+	7001-4483-103--Expired
+	7001-4483-104--Expired
+	7001-4483-105--Expired
+Validaiton URLs:
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-100--Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-100--Expired
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-100--Expired  
+LOG URLs:
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetLogData/7001/06-27-17
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetLogData/7001/06-27-17
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-100--Expired 
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetLogData/7001/04-24-17
+-----------------EndCustomer Id : 7001----------
+
+-----------------Customer Id : 7002-------------
+SP : SpacePlateTxnFinal_Railegh_Metername_CoralGables
+	exec SpacePlateTxnFinal 7001
+Parameters Sample : 
+	7002-3-11210-436YLJ-Expired
+	7002-3-11210-BZB9856-Occupied
+	7002-3-11210-CBT3949-Expired
+	7002-3-11210-DR000-Expired
+Validaiton URLs:
+pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7002-9999-9999-EBY9328
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7002-9999-9999-EBY9328
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7002-3-11210-436YLJ-Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7002-3-11210-436YLJ-Expired
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7002-3-11210-436YLJ-Expired
+LOG URLs:
+-----------------EndCustomer Id : 7002----------
+
+-----------------Customer Id : 4102-------------
+SP : SpacePlateTxnFinal_Railegh_Metername_Test
+	exec SpacePlateTxnFinal 7001
+Parameters Sample : 
+	4102-799-1--Expired
+	4102-800-1--Occupied
+	4102-699-1--Expired
+	4102-700-1--Expired
+Validaiton URLs:
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-799-1--Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-799-1--Expired
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4102-799-1--Expired
+LOG URLs:
+-----------------EndCustomer Id : 4102----------
+-----------------Customer Id : 4194-------------
+SP : 4194-7925-24-1--Expired
+Parameters Sample : 
+4194-7980-20-1--Expired
+4194-7980-21-1--Expired
+4194-7980-22-1--Expired
+4194-7980-23-1--Expired
+4194-7981-1-1--Expired
+Validaiton URLs:
+
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4194-7980-20-1--Expired
+-----------------EndCustomer Id : 4194----------
+
+
+
+
+
+
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-20620-332--
+
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-20620-332--
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-20620-332--
+
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7002-3-11210-156YLF-Expired
+
+-----------------Raleigh----------------------
+SPACE NO : 332
+MeterNme : CAB 1
+Meter Id : 20620
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-20620-332--
+
+-------------------------------------
+SPACE NO : 174
+MeterNme : BLT 9
+Meter Id : 20495
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-20495-174--
+----------------------------
+SPACE NO : 323
+MeterNme : DAV 11
+Meter Id : 20675
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-20675-323--
+-------------------------------------------
+SPACE NO : 125
+MeterNme : DAW 1
+Meter Id : 20282
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-20282-125--
+-----------------End of Raleigh----------------------
+
+
+--------------------------South Maiami--------------------
+SPACE NO : 101
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-101--
+----------------------------------------------
+SPACE NO : 102
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-102--
+
+----------------------------------------------
+SPACE NO : 600
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4494-600--Expired
+
+--------------------------ENd South Maiami--------------------
+
+http://pems-sit.pemsportal.com/PaymentInfo/PaymentInfo.PaymentInfo.svc
+
+http://pems-sit.pemsportal.com/PaymentInfo/PaymentInfo.PaymentInfo.svc/Payment/7001/1
+http://pems-sit.pemsportal.com/PaymentInfo/PaymentInfo.PaymentInfo.svc/PaymentBySpace/7001/1/110
+
+http://64.132.70.129/CitServ/citationsmiamiService.svc/GetCitationData/7001-175-820--Expired
+---------------------------------------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/mex
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-50003-1--Expired
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationData/7001-21047-600--Expired
+
+http://localhost:82/
+
+http://192.168.3.157:82/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-21047-600--Expired
+
+
+http://localhost:82/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-21047-600--Expired
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-21047-600--Expired
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7013-21047-101--Expired
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32008-1--
+
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetLogData/7001/04-24-17
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetLogData/7001/04-24-17
+
+C:\HostingService\CitationValidation\LogRequestResponse\4102\04-24-2017
+
+--1570---
+http://192.168.3.157:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-21047-600--Expired
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-50003-1--
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetLogData/4102/04-24-17
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetLogData/4102/04-24-17
+
+--------------------------------
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32008-1--
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32009-1--
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32010-1--
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32011-1--
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc//GetLogData/4102/04-24-17
+
+
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32008-1--
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32009-1--
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32010-1--
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-32011-1--
+
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetLogData/4102/04-24-17
+http://pems.pemsportal.com/CitationValidation.ValidateCitation.svc//GetLogData/4102/04-24-17
+---------------------------------------------
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7013-19572-101--
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7013-20361-101--
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7013-21047-101--
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7013-21115-101--
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7013-28134-101--
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc//GetLogData/7013/04-24-17
+
+-------------------------------------------------------------------
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-103--Occupied
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-104--Expired
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-105--Expired
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-106--Expired
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-107--Expired
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7002-3-11210-156YLF-Expired
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc//GetLogData/7001/04-24-17
+
+
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-103--Occupied
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-104--Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-105--Expired
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-106--Expired
+
+http://pems.pemsportal.com/CitationValidation.ValidateCitation.svc//GetLogData/7001/04-24-17
+--------------------------------------
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4194-32019-1--
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetLogData/4102/4194-32020-1--
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetLogData/4102/4194-32021-1--
+after changes as space id as meterid
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4194-999999999-32019--
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetLogData/4102/4194-999999999-32020--
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetLogData/4102/4194-999999999-32021--
+
+--------------------------------------
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-102--Occupied
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4102-LOT 54-40--Expired
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4194-7901-1-1--Expired
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7013-MOR 1-101--Expired
+
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-102--Occupied
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4102-LOT 54-40--Expired
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/4194-7901-1-1--Expired
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationData/7013-MOR 1-101--Expired
+
+
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7001-4483-102--Occupied
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4102-LOT 54-40--Expired
+
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/4194-7901-1-1--Expired
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetCitationData/7013-MOR 1-101--Expired
+
+
+-----------------------------------Chicago----------------
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetChicagoCitationData/7012-388601-1-464LWA-Occupied-AL-40841160-
+http://emqos-049:82/CitationValidation.ValidateCitation.svc/GetChicagoCitationData/7012-999999999-1-464LWA-Occupied-AL-40841160-
+
+
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetChicagoCitationData/7012-388601-1-464LWA-Occupied-AL-40841160-
+http://pems-sit.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetChicagoCitationData/7012-999999999-1-464LWA-Occupied-AL-40841160-
+
+
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetChicagoCitationData/7012-388601-1-464LWA-Occupied-AL-40841160-
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetChicagoCitationData/7012-999999999-1-464LWA-Occupied-AL-40841160-
+----------------------------------PlateNo----------------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetPlateNo/7002/Y09HFN
+http://pems.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+
+http://172.21.6.80/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+
+http://pems-sit.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/Y09HFN
+--------------------------------------------------------------------------
+http://pems.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+http://pems.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateLogData/7002/07-24-19
+
+
+http://pems.pemsportal.com/MobilePlateStatusNew/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+http://pems.pemsportal.com/MobilePlateStatusNew/CitationValidation.ValidateCitation.svc/GetPlateLogData/7002/07-24-19
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetPlateNo/7002/Y09HFN
+
+  <add customerId="7056" name="Philadelphia" userName="ws_phillycivicsmart" userPassword="STi5Riql"  gracePeriodInSecond="0" baseURL="https://nforce.parkmobile.us/nforceapi/parkingrights/"></add>
+--------------------------
+SELECT a.Vehicleid,b.LPNumber 
+AS PlateNumber, a.StartDateTime, a.ExpiryDateTime 
+FROM paybycellplatetxn a WITH (NOLOCK) 
+JOIN 
+parkvehicle b WITH (NOLOCK) ON
+a.vehicleid=b.vehicleid 
+WHERE a.customerid = 7056 AND CAST(a.TransDateTime AS DATE) = '2020-10-21'

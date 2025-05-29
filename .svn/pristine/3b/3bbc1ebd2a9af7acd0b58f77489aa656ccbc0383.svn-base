@@ -1,0 +1,135 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Text;
+
+namespace DataAccess.Model
+{
+    [DataContract]
+    public class Permit
+    {
+        [DataMember]
+        public string permitNo { get; set; }
+
+        [DataMember]
+        public string permitType { get; set; }
+
+        [DataMember]
+        public string permitSource { get; set; }
+
+        [DataMember]
+        public string permitZoneId { get; set; }
+
+        [DataMember]
+        public string permitZoneName { get; set; }
+
+        [DataMember]
+        public string permitStartDateTime { get; set; }
+
+        [DataMember]
+        public string permitEndDateTime { get; set; }
+
+        [DataMember]
+        public string PermitTxnDateTime { get; set; }
+
+        [DataMember]
+        public string PermitTxnReferenceId { get; set; }
+
+      
+
+
+        public DateTime? StartDateTime { get; set; }
+        public DateTime? EndDateTime { get; set; }
+        public DateTime? TxnDateTime { get; set; }
+
+    }
+
+    [DataContract]
+    [Serializable]
+    public class Permits
+    {
+        private List<Permit> _listPermit;
+        public Permits()
+        {
+            _listPermit = new List<Permit>();
+        }
+
+        [DataMember(Name = "Permits")]
+        public List<Permit> Candidate
+        {
+            get
+            {
+                return this._listPermit;
+            }
+            set
+            {
+                this._listPermit = value;
+            }
+        }
+
+        [DataMember(EmitDefaultValue = false)]
+        public bool? Error { get; set; }
+
+        public string GetJsonData()
+        {
+            using (MemoryStream mem = new MemoryStream())
+            {
+                DataContractJsonSerializer ser =
+                new DataContractJsonSerializer(typeof(Permits));
+
+                ser.WriteObject(mem, this);
+                string data =
+               Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
+                return data;
+            }
+        }
+    }
+
+    public class PermitFactory
+    {
+        private Permits permit;
+        public PermitFactory()
+        {
+            permit = new Permits();
+        }
+        public Permits GetData(int customerID, string PlateNumber)
+        {
+            try
+            {
+                this.MatchPermit(PlateNumber, customerID);
+                return permit;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void MatchPermit(string plateValue, int customerID)
+        {
+            try
+            {
+                this.GetRepositoryData(plateValue, customerID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected  void GetRepositoryData(string plateValue, int customerID)
+        {
+            this.permit = PermitDataAccess.GetPermitMatch(customerID, plateValue);
+        }
+
+        public static Permits GetErrorPermit
+        {
+            get
+            {
+                return new Permits() { Error = true };
+            }
+        }
+    }
+}

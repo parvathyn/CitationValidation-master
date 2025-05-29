@@ -1,0 +1,41 @@
+
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-01-12T15:59:01.4602995Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10103135 - Pryor St-51031-136UVA-Expired-GA-1 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-12T16:09:08.3296208Z 	CityCurrentTime : 2018-01-12T11:09:08.3121206Z 
+Response Data : {"EnforcementKey":null,"ExpiredTime":"20180111_T200902Z","IsOccupied":null,"LicensePlate":"136UVA","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1195","MeterID":null,"MeterLastUpdateTime":"20180111_T190902Z","MeterName":null,"MeterRTC":"20180112_T160908Z","MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":"20180111_T190902Z","SpaceNo":null,"State":null} 
+Duration(in Seconds) : -6
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-01-12T16:09:12.5271323Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10103135 - Pryor St-51031-136UVA-Expired-GA-1 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-12T16:33:22.1164573Z 	CityCurrentTime : 2018-01-12T11:33:22.1164573Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10103135 - Pryor St-51031-136UVA-Expired-GA-1","ExpiredTime":"20180111_T201402Z","IsOccupied":"1","LicensePlate":"136UVA","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Mitchell","METERLOC_CROSSSTREET2":"Trinity","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"Pryor","METERLOC_STREETTYPE":"Pryor","Make":"","MeterExpiredMinutes":"-1203","MeterID":"","MeterLastUpdateTime":"20180111_T190902Z","MeterName":"","MeterRTC":"20180112_T161725Z","MeterStreet":"Pryor","Model":"","ReturnCode":"0","SensorEventTime":"20180111_T190902Z","SpaceNo":"","State":"GA","ZoneName":"AREA 101"} 
+Duration(in Seconds) : -9
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-01-12T16:33:51.5929877Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10308639 - Walton St-51086-1487LS-GA-1 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-12T16:34:25.1235027Z 	CityCurrentTime : 2018-01-12T11:34:25.1235027Z 
+Response Data : {"EnforcementKey":null,"ExpiredTime":"20180111_T234028Z","IsOccupied":null,"LicensePlate":"1487LS","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1008","MeterID":null,"MeterLastUpdateTime":"20180111_T204758Z","MeterName":null,"MeterRTC":"20180112_T163425Z","MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":"20180111_T204758Z","SpaceNo":null,"State":null} 
+Duration(in Seconds) : -33
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-01-12T16:34:33.6572379Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10308639 - Walton St-51086-1487LS-GA-1 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-12T16:35:00.1382444Z 	CityCurrentTime : 2018-01-12T11:34:48.3905640Z 
+Response Data : {"EnforcementKey":null,"ExpiredTime":"20180111_T234028Z","IsOccupied":null,"LicensePlate":"1487LS","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1009","MeterID":null,"MeterLastUpdateTime":"20180111_T204758Z","MeterName":null,"MeterRTC":"20180112_T163448Z","MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":"20180111_T204758Z","SpaceNo":null,"State":null} 
+Duration(in Seconds) : -26
+----------------------------------------------------------------------------------------------------------

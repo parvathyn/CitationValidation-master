@@ -1,0 +1,151 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DataAccess.PangoProdService;
+
+namespace DataAccess.Model.Pango
+{
+    public class PangoGenericFactory
+    {
+        protected PangoParameter _parameter;
+        protected PangoCustomerElement _customer;
+        protected int customerId;
+        protected wServiceSoapClient _service;
+
+        public PangoGenericFactory(PangoCustomerElement customer, string plateNo, string state)
+        {
+            this._customer = customer;
+            this.customerId = Convert.ToInt32(customer.CustomerId);
+            this._parameter = new PangoParameter(plateNo, state);
+            _service = new wServiceSoapClient();
+        }
+
+        public virtual TransactionTransform GetPlateData()
+        {
+            TransactionTransform refreshPlate = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            AnswerDetails pangoData = null;
+            try
+            {
+                AnswerDetails[] data = this._service.CheckPlateNumberWithUserNameAndZone_ex3(
+                    this._customer.UserName,
+                    this._customer.UserPassword,
+                    string.Empty,
+                    string.Empty,
+                    this._parameter.PlateNo,
+                    this._parameter.State,
+                    string.Empty
+                    );
+
+                if (data != null)
+                {
+                    if (data.Length > 0)
+                    {
+                        pangoData = data[0];
+                        refreshPlate.SpaceNo = pangoData.permitName;
+                        refreshPlate.ZoneName = pangoData.zone;
+                        //refreshPlate.LicensePlate = pangoData.plate;
+                        //refreshPlate.State = pangoData.state;
+                        refreshPlate.LicensePlate = this._parameter.PlateNo;
+                        refreshPlate.State = this._parameter.State;
+                        if (pangoData.isPaying == true)
+                        {
+                            //refreshPlate.LicensePlate = pangoData.plate;
+                            //refreshPlate.State = pangoData.state;
+                            refreshPlate.MeterExpiredMinutes = this._parameter.ExpiredMinutes(CustomerTimes.GetCustomerTimeById(this.customerId), this._customer.GracePeriodInSecond.ToNullableInt(), pangoData.end_time).ToString();
+                        }
+                        else
+                        {
+                            refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                        }
+
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                    else
+                    {
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                        refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                    }
+                }
+                else
+                {
+                    refreshPlate.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                    refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+                //Nothing to do.
+            }
+
+            return refreshPlate;
+        }
+
+        public virtual TransactionTransform GetPlateData(ref VendorResponseEntity venderResonse)
+        {
+            TransactionTransform refreshPlate = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            AnswerDetails pangoData = null;
+            try
+            {
+                AnswerDetails[] data = this._service.CheckPlateNumberWithUserNameAndZone_ex3(
+                    this._customer.UserName,
+                    this._customer.UserPassword,
+                    string.Empty,
+                    string.Empty,
+                    this._parameter.PlateNo,
+                    this._parameter.State,
+                    string.Empty
+                    );
+               
+
+                if (data != null)
+                {
+                    venderResonse.PangoResponse = data;
+                    if (data.Length > 0)
+                    {
+                        pangoData = data[0];
+                        refreshPlate.SpaceNo = pangoData.permitName;
+                        refreshPlate.ZoneName = pangoData.zone;
+                        //refreshPlate.LicensePlate = pangoData.plate;
+                        //refreshPlate.State = pangoData.state;
+                        refreshPlate.LicensePlate = this._parameter.PlateNo;
+                        refreshPlate.State = this._parameter.State;
+                        if (pangoData.isPaying == true)
+                        {
+                            //refreshPlate.LicensePlate = pangoData.plate;
+                            //refreshPlate.State = pangoData.state;
+                            refreshPlate.MeterExpiredMinutes = this._parameter.ExpiredMinutes(CustomerTimes.GetCustomerTimeById(this.customerId), this._customer.GracePeriodInSecond.ToNullableInt(), pangoData.end_time).ToString();
+                        }
+                        else
+                        {
+                            refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                        }
+
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                    else
+                    {
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                        refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                    }
+                }
+                else
+                {
+                    venderResonse.PangoResponse = null;
+                    refreshPlate.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                    refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                venderResonse.GeneralException = ex;
+                refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Error).ToString();
+                //Nothing to do.
+            }
+
+            return refreshPlate;
+        }
+    }
+}

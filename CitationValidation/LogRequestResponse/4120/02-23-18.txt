@@ -1,0 +1,261 @@
+
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T09:14:19.4407088Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CJL8508-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T09:14:41.2979590Z 	CityCurrentTime : 2018-02-23T04:14:33.4255087Z 
+Response Data : {"EnforcementKey":null,"ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":null,"MeterID":null,"MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"1","SensorEventTime":null,"SpaceNo":null,"State":null} 
+Duration(in Seconds) : -21
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T09:29:51.2751792Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CJL8508-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T09:30:22.4989651Z 	CityCurrentTime : 2018-02-23T04:30:05.8400122Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-CJL8508--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"0","State":null} 
+Duration(in Seconds) : -31
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:08:13.0884381Z 
+IP Address :127.0.0.1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-BWS8467-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:08:31.3444823Z 	CityCurrentTime : 2018-02-23T05:08:25.7141602Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-BWS8467--","ExpiredTime":"20180223_T140459Z","IsOccupied":"1","LicensePlate":"BWS8467","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"West Peachtree","METERLOC_CROSSSTREET2":"Spring","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"Ivan Allen","METERLOC_STREETTYPE":"Ivan Allen","Make":"","MeterExpiredMinutes":"236","MeterID":"","MeterLastUpdateTime":"20180223_T050334Z","MeterName":"","MeterRTC":"20180223_T100817Z","MeterStreet":"Ivan Allen","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T050334Z","SpaceNo":"","State":"GA","ZoneName":"AREA 104"} 
+Duration(in Seconds) : -18
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:09:54.7286957Z 
+IP Address :127.0.0.1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-PJC5896-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:10:24.1903797Z 	CityCurrentTime : 2018-02-23T05:10:12.2816986Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-PJC5896--","ExpiredTime":"20180223_T131523Z","IsOccupied":"1","LicensePlate":"PJC5896","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Williams","METERLOC_CROSSSTREET2":"Spring ","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"8th","METERLOC_STREETTYPE":"8th","Make":"","MeterExpiredMinutes":"186","MeterID":"","MeterLastUpdateTime":"20180223_T095523Z","MeterName":"","MeterRTC":"20180223_T100954Z","MeterStreet":"8th","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T095523Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -29
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:11:34.8927436Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-PJC5896-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:12:14.6700188Z 	CityCurrentTime : 2018-02-23T05:11:46.4524048Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-PJC5896--","ExpiredTime":"20180223_T131523Z","IsOccupied":"1","LicensePlate":"PJC5896","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Williams","METERLOC_CROSSSTREET2":"Spring ","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"8th","METERLOC_STREETTYPE":"8th","Make":"","MeterExpiredMinutes":"184","MeterID":"","MeterLastUpdateTime":"20180223_T095523Z","MeterName":"","MeterRTC":"20180223_T101134Z","MeterStreet":"8th","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T095523Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -39
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:12:39.2092121Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-PJC5896-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:13:14.7202421Z 	CityCurrentTime : 2018-02-23T05:12:50.7408706Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-PJC5896--","ExpiredTime":"20180223_T131523Z","IsOccupied":"1","LicensePlate":"PJC5896","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Williams","METERLOC_CROSSSTREET2":"Spring ","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"8th","METERLOC_STREETTYPE":"8th","Make":"","MeterExpiredMinutes":"183","MeterID":"","MeterLastUpdateTime":"20180223_T095523Z","MeterName":"","MeterRTC":"20180223_T101237Z","MeterStreet":"8th","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T095523Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -35
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:13:34.9893753Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-PJC5896-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:14:07.5882399Z 	CityCurrentTime : 2018-02-23T05:13:48.8971708Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-PJC5896--","ExpiredTime":"20180223_T131523Z","IsOccupied":"1","LicensePlate":"PJC5896","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Williams","METERLOC_CROSSSTREET2":"Spring ","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"8th","METERLOC_STREETTYPE":"8th","Make":"","MeterExpiredMinutes":"182","MeterID":"","MeterLastUpdateTime":"20180223_T095523Z","MeterName":"","MeterRTC":"20180223_T101335Z","MeterStreet":"8th","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T095523Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -32
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:23:04.3183938Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:23:28.6177836Z 	CityCurrentTime : 2018-02-23T05:23:14.0059478Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"341","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"MD","ZoneName":"51065"} 
+Duration(in Seconds) : -24
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:23:35.3729033Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:24:37.6434644Z 	CityCurrentTime : 2018-02-23T05:23:39.4841379Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":"20180223_T160459Z","IsOccupied":"1","LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Peachtree Place","METERLOC_CROSSSTREET2":"8th","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"Spring","METERLOC_STREETTYPE":"Spring","Make":"","MeterExpiredMinutes":"341","MeterID":"","MeterLastUpdateTime":"20180223_T050036Z","MeterName":"","MeterRTC":"20180223_T102333Z","MeterStreet":"Spring","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T050036Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -2
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:22:08.4611995Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:24:39.8524741Z 	CityCurrentTime : 2018-02-23T05:22:15.5946069Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":"20180223_T160459Z","IsOccupied":"1","LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Peachtree Place","METERLOC_CROSSSTREET2":"8th","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"Spring","METERLOC_STREETTYPE":"Spring","Make":"","MeterExpiredMinutes":"342","MeterID":"","MeterLastUpdateTime":"20180223_T050036Z","MeterName":"","MeterRTC":"20180223_T102208Z","MeterStreet":"Spring","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T050036Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -31
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:28:01.7563897Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:28:32.9051702Z 	CityCurrentTime : 2018-02-23T05:28:09.1418110Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":"20180223_T160459Z","IsOccupied":"1","LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Peachtree Place","METERLOC_CROSSSTREET2":"8th","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"Spring","METERLOC_STREETTYPE":"Spring","Make":"","MeterExpiredMinutes":"337","MeterID":"","MeterLastUpdateTime":"20180223_T050036Z","MeterName":"","MeterRTC":"20180223_T102759Z","MeterStreet":"Spring","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T050036Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -31
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:28:38.5613408Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:28:45.7547522Z 	CityCurrentTime : 2018-02-23T05:28:44.1366597Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"336","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"MD","ZoneName":"51065"} 
+Duration(in Seconds) : -7
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T10:28:50.6098636Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T10:28:59.1523522Z 	CityCurrentTime : 2018-02-23T05:28:55.7301565Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":"20180223_T160459Z","IsOccupied":"1","LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Peachtree Place","METERLOC_CROSSSTREET2":"8th","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"Spring","METERLOC_STREETTYPE":"Spring","Make":"","MeterExpiredMinutes":"336","MeterID":"","MeterLastUpdateTime":"20180223_T050036Z","MeterName":"","MeterRTC":"20180223_T102849Z","MeterStreet":"Spring","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T050036Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -8
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:37:04.1271815Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-BWS8467-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:38:04.1126125Z 	CityCurrentTime : 2018-02-23T06:38:02.2975087Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-BWS8467--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"BWS8467","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"146","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"GA","ZoneName":"51595"} 
+Duration(in Seconds) : -59
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:36:27.9651132Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:38:04.1976174Z 	CityCurrentTime : 2018-02-23T06:38:03.0255503Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"266","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"MD","ZoneName":"51065"} 
+Duration(in Seconds) : -36
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:38:02.1424998Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:38:04.6046406Z 	CityCurrentTime : 2018-02-23T06:38:03.4795763Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"266","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"MD","ZoneName":"51065"} 
+Duration(in Seconds) : -2
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:38:27.0891997Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-BWS8467-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:38:36.1757194Z 	CityCurrentTime : 2018-02-23T06:38:34.7326368Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-BWS8467--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"BWS8467","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"146","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"GA","ZoneName":"51595"} 
+Duration(in Seconds) : -9
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:38:40.4579303Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-2BT6709-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:38:46.4172711Z 	CityCurrentTime : 2018-02-23T06:38:45.0391923Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-2BT6709--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"2BT6709","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"146","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"5","State":"AL","ZoneName":"51022"} 
+Duration(in Seconds) : -5
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:38:48.5463829Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-7AN7799-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:38:54.4427201Z 	CityCurrentTime : 2018-02-23T06:38:53.4206616Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-7AN7799--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"7AN7799","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"266","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"MD","ZoneName":"51065"} 
+Duration(in Seconds) : -5
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:39:04.9608318Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CGQ3431-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:39:13.4493162Z 	CityCurrentTime : 2018-02-23T06:39:12.1482418Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-CGQ3431--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"CGQ3431","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"145","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"GA","ZoneName":"51094"} 
+Duration(in Seconds) : -8
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:39:36.0294098Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CGX6754-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:39:44.4608909Z 	CityCurrentTime : 2018-02-23T06:39:43.3838293Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-CGX6754--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"CGX6754","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"265","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"GA","ZoneName":"51108"} 
+Duration(in Seconds) : -8
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:39:50.3459664Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CGX6754-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:39:58.1474115Z 	CityCurrentTime : 2018-02-23T06:39:57.0783503Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-CGX6754--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"CGX6754","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"265","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"GA","ZoneName":"51108"} 
+Duration(in Seconds) : -7
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:56:39.2006046Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-BWS8467-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:56:52.8043821Z 	CityCurrentTime : 2018-02-23T06:56:47.6980901Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-BWS8467--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"BWS8467","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"128","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"GA","ZoneName":"51595"} 
+Duration(in Seconds) : -13
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:56:47.1770603Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-2BT6709-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:56:53.0863983Z 	CityCurrentTime : 2018-02-23T06:56:51.4663056Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-2BT6709--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"2BT6709","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"128","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"5","State":"AL","ZoneName":"51022"} 
+Duration(in Seconds) : -5
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T11:56:50.5732545Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CGX6754-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T11:56:58.4767066Z 	CityCurrentTime : 2018-02-23T06:56:57.7136629Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-CGX6754--","ExpiredTime":null,"IsOccupied":null,"LicensePlate":"CGX6754","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"248","MeterID":"0","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"","State":"GA","ZoneName":"51108"} 
+Duration(in Seconds) : -7
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-02-23T12:09:49.0375569Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-PJC5896-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-02-23T12:10:02.4943255Z 	CityCurrentTime : 2018-02-23T07:10:00.4932110Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-PJC5896--","ExpiredTime":"20180223_T131523Z","IsOccupied":"1","LicensePlate":"PJC5896","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Williams","METERLOC_CROSSSTREET2":"Spring ","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"8th","METERLOC_STREETTYPE":"8th","Make":"","MeterExpiredMinutes":"66","MeterID":"","MeterLastUpdateTime":"20180223_T095523Z","MeterName":"","MeterRTC":"20180223_T120949Z","MeterStreet":"8th","Model":"","ReturnCode":"0","SensorEventTime":"20180223_T095523Z","SpaceNo":"","State":"GA","ZoneName":"AREA 202"} 
+Duration(in Seconds) : -13
+----------------------------------------------------------------------------------------------------------

@@ -1,0 +1,12 @@
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/Permits/7002/Y09HFN
+http://pems.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/Permits/7002/BEXG62
+
+
+
+http://pems-sit.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/Permits/7056/32032PD
+
+http://pems-sit.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/Permits/7056/test1
+
+http://pems-sit.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/Permits/7056/test2
+
+http://pems-sit.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/Permits/7056/test3

@@ -1,0 +1,31 @@
+
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-01-10T06:22:30.9878547Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CFH7790-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-10T06:22:50.3089598Z 	CityCurrentTime : 2018-01-10T01:22:45.0706602Z 
+Response Data : {"EnforcementKey":"PayByPlate-4120-10100402-Wall St-51006-CFH7790--","ExpiredTime":"20180110_T072519Z","IsOccupied":"1","LicensePlate":"CFH7790","METERLOC_BLOCKNUMBER":"Block","METERLOC_CROSSSTREET1":"Piedmont","METERLOC_CROSSSTREET2":"Jessie Hill Jr","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"Direction","METERLOC_STREETNAME":"Armstrong","METERLOC_STREETTYPE":"Armstrong","Make":"","MeterExpiredMinutes":"63","MeterID":"","MeterLastUpdateTime":"20180110_T061249Z","MeterName":"","MeterRTC":"20180110_T062234Z","MeterStreet":"Armstrong","Model":"","ReturnCode":"0","SensorEventTime":"20180110_T061249Z","SpaceNo":"","State":"GA","ZoneName":"AREA 102"} 
+Duration(in Seconds) : -19
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-01-10T06:22:56.8830145Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CFH7790-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-10T06:25:31.3728497Z 	CityCurrentTime : 2018-01-10T01:23:42.2696093Z 
+Response Data : {"EnforcementKey":null,"ExpiredTime":"20180110_T072019Z","IsOccupied":null,"LicensePlate":"CFH7790","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"61","MeterID":null,"MeterLastUpdateTime":"20180110_T061249Z","MeterName":null,"MeterRTC":"20180110_T062342Z","MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":"20180110_T061249Z","SpaceNo":null,"State":null} 
+Duration(in Seconds) : -34
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	UTC Time : 2018-01-10T06:29:20.8864568Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4120-10100402-Wall St-51006-CFH7790-- 	
+
+Response : 
+EnfCustomerId : 4120	MeterId : 	SpaceId : 	StallId : 	Current UTC Time : 2018-01-10T06:30:11.0953286Z 	CityCurrentTime : 2018-01-10T01:30:00.7577373Z 
+Response Data : {"EnforcementKey":null,"ExpiredTime":"20180110_T072019Z","IsOccupied":null,"LicensePlate":"CFH7790","METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"55","MeterID":null,"MeterLastUpdateTime":"20180110_T061249Z","MeterName":null,"MeterRTC":"20180110_T063000Z","MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":"20180110_T061249Z","SpaceNo":null,"State":null} 
+Duration(in Seconds) : -50
+----------------------------------------------------------------------------------------------------------

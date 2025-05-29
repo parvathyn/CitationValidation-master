@@ -1,0 +1,678 @@
+﻿using DataAccessDigital;
+using DataAccessDigital.PlateInfoService;
+using DataAccessDigital.TransactionDataService;
+using DataAccessDigital.StallInfoService;
+using Microsoft.Web.Services3.Security.Tokens;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Selectors;
+using System.IdentityModel.Tokens;
+using System.Linq;
+using System.Net.Http;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Description;
+using System.ServiceModel.Security;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
+using System.IO;
+
+namespace DataAccess.Model.T2Digital
+{
+    internal class CustomSecurityTokenManager : ClientCredentialsSecurityTokenManager
+    {
+        #region ---------- Constructors ----------
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomSecurityTokenManager"/> class. 
+        /// </summary>
+        /// <param name="credentials">
+        /// The <see cref="ClientCredentials"/>.
+        /// </param>
+        public CustomSecurityTokenManager(CustomCredentials credentials)
+            : base(credentials)
+        {
+        }
+
+        #endregion
+
+        #region ---------- Methods ----------
+
+        /// <summary>
+        /// Creates a security token serializer.
+        /// </summary>
+        /// <param name="version">
+        /// The <see cref="SecurityTokenVersion"/> of the security token.
+        /// </param>
+        /// <returns>
+        /// The <see cref="SecurityTokenSerializer"/>.
+        /// </returns>
+        public override SecurityTokenSerializer CreateSecurityTokenSerializer(SecurityTokenVersion version)
+        {
+            return new CustomTokenSerializer(SecurityVersion.WSSecurity11);
+        }
+
+        #endregion
+    }
+    internal class CustomTokenSerializer : WSSecurityTokenSerializer
+    {
+        #region ---------- Constructors ----------
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomTokenSerializer"/> class. 
+        /// </summary>
+        /// <param name="securityVersion">
+        /// The <see cref="SecurityVersion"/>.
+        /// </param>
+        public CustomTokenSerializer(SecurityVersion securityVersion)
+            : base(securityVersion)
+        {
+        }
+
+        #endregion
+
+        #region ---------- Methods ----------
+
+        /// <summary>
+        /// Writes the token core with a specified security token using the specified 
+        /// <see cref="XmlWriter"/>.
+        /// </summary>
+        /// <param name="writer">
+        /// The specified <see cref="XmlWriter"/>.
+        /// </param>
+        /// <param name="token">
+        /// The <see cref="SecurityToken"/>.
+        /// </param>
+        protected override void WriteTokenCore(XmlWriter writer, System.IdentityModel.Tokens.SecurityToken token)
+        {
+            var unToken = (UserNameSecurityToken)token;
+            writer.WriteRaw(
+                @"<o:UsernameToken u:Id=""" + token.Id + @""">
+				<o:Username>" + unToken.UserName + @"</o:Username>
+				<o:Password Type=""http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText"">" + unToken.Password + @"</o:Password>
+				</o:UsernameToken>
+				");
+        }
+
+        #endregion
+    }
+    public class CustomCredentials : ClientCredentials
+    {
+        #region ---------- Constructors ----------
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomCredentials"/> class. 
+        /// </summary>
+        public CustomCredentials()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomCredentials"/> class. 
+        /// </summary>
+        /// <param name="customCredentials">
+        /// A <see cref="ClientCredentials"/>. All properties of the newly-constructed instance
+        /// reflect the values of this parameter.
+        /// </param>
+        protected CustomCredentials(CustomCredentials customCredentials)
+            : base(customCredentials)
+        {
+        }
+
+        #endregion
+
+        #region ---------- Methods ----------
+
+        /// <summary>
+        /// Creates a security token manager for this instance. This method is rarely called
+        /// explicitly; it is primarily used in extensibility scenarios and is called by the system
+        /// itself.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="CustomSecurityTokenManager"/> for this <see cref="ClientCredentials"/>
+        /// instance.
+        /// </returns>
+        public override System.IdentityModel.Selectors.SecurityTokenManager CreateSecurityTokenManager()
+        {
+            return new CustomSecurityTokenManager(this);
+        }
+
+        /// <summary>
+        /// Creates a new copy of this <see cref="ClientCredentials"/> instance.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="ClientCredentials"/> instance.
+        /// </returns>
+        protected override ClientCredentials CloneCore()
+        {
+            return new CustomCredentials(this);
+        }
+
+        #endregion
+    }
+
+    public enum ServiceType
+    {
+        StallInfo = 1,
+        PlateInfo = 4,
+        TransactionData = 5
+    }
+    public class ServiceParameters
+    {
+        public string userName { get; set; }
+        public string userPassword { get; set; }
+        public ServiceType serviceType { get; set; }
+        public string token { get; set; }
+        public long customerId { get; set; }
+        public long vendorId { get; set; }
+        public string MethodName { get; set; }
+        public string Value { get; set; }
+        public TimeZoneInfo CustomerTimeZoneInfo { get; set; }
+    }
+    public class T2DigitalGenericFactory
+    {
+        private CustomCredentials credentials;
+        private PlateInfoServiceClient plateInfoClient;
+        private TransactionDataServiceClient tranDataClient;
+        private StallInfoServiceClient stallInfoClient;
+        protected T2DigitalParameter _parameter;
+        protected T2DigitalCustomerElement _customer;
+        protected int customerId;
+        protected ServiceType _serviceType;
+        public T2DigitalGenericFactory(T2DigitalCustomerElement customer, string plateNo, string state)
+        {
+            this._serviceType = customer.ServiceToAccess;
+            this._customer = customer;
+            this.customerId = Convert.ToInt32(customer.CustomerId);
+            this._parameter = new T2DigitalParameter(plateNo);
+            credentials = new CustomCredentials();
+            credentials.UserName.UserName = customer.UserName;
+            credentials.UserName.Password = customer.UserPassword;
+            switch (this._serviceType)
+            {
+                case ServiceType.PlateInfo:
+                    InitializePlateInfo();
+                    break;
+                case ServiceType.TransactionData:
+                    InitializeTransactionDataInfo();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public T2DigitalGenericFactory(T2DigitalCustomerElement customer, int stallNo)
+        {
+            this._serviceType = customer.ServiceToAccess;
+            this._customer = customer;
+            this.customerId = Convert.ToInt32(customer.CustomerId);
+            this._parameter = new T2DigitalParameter();
+            this._parameter.StallNo = stallNo;
+            credentials = new CustomCredentials();
+            credentials.UserName.UserName = customer.UserName;
+            credentials.UserName.Password = customer.UserPassword;
+            switch (this._serviceType)
+            {
+                case ServiceType.StallInfo:
+                    InitializeStallInfo();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public TransactionTransform GetRefreshPlateData()
+        {
+            TransactionTransform refreshPlate = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            refreshPlate.LicensePlate = this._parameter.PlateNo;
+            if (this._serviceType == ServiceType.PlateInfo)
+            {
+                try
+                {
+                    var request = new PlateInfoByPlateRequest { token = this._customer.Token, plateNumber = this._parameter.PlateNo };
+                    PlateInfoByPlateResponse item = this.plateInfoClient.getPlateInfo(request);
+                    if (item != null)
+                    {
+                        if (item.plateInfo != null)
+                        {
+                            if (item.plateInfo.expiryDate == DateTime.MinValue)
+                            {
+                                refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                                refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                            }
+                            else
+                            {
+                                refreshPlate.ZoneName = item.plateInfo.regionName;
+                                refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                                refreshPlate.MeterExpiredMinutes = this._parameter.ExpiredMinutes(this._customer.GracePeriodInSecond.ToNullableInt(), item.plateInfo.expiryDate).ToString();
+                            }
+                        }
+                        else
+                        {
+                            refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                            refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                        }
+                    }
+                    else
+                    {
+                        refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                }
+                catch (System.ServiceModel.FaultException<TimeoutException> timeoutEx)
+                {
+                    //this.LogServiceAccess(true, "TimeOut Exception", timeoutEx.StackTrace, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+
+                catch (System.ServiceModel.FaultException<DataAccessDigital.PlateInfoService.InfoServiceFault> info)
+                {
+                    //this.LogServiceAccess(true, info.Detail.shortErrorMessage, info.Detail.shortErrorMessage, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+                catch (System.ServiceModel.CommunicationException commEx)
+                {
+                    //this.LogServiceAccess(true, "Communication Exception", commEx.StackTrace, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+                catch (Exception ex)
+                {
+                    //this.LogServiceAccess(true, "Exception", ex.StackTrace, (int)LogProcess.DigitalAccess);
+                }
+                finally
+                {
+                    this.DisposePlateInfo();
+                }
+            }
+            return refreshPlate;
+        }
+
+        public TransactionTransform GetRefreshStallNo()
+        {
+            TransactionTransform refreshStallNo = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            refreshStallNo.SpaceNo = this._parameter.StallNo.ToString();
+            if (this._serviceType == ServiceType.StallInfo)
+            {
+                try
+                {
+                    var request = new StallInfoRequest
+                    {
+                        token = this._customer.Token,
+                        stallfrom = this._parameter.StallNo,
+                        stallto = this._parameter.StallNo,
+                        stallstatus = Bystatus.All,
+                        datetimeStamp = DateTime.UtcNow,
+                        gracePeriod = 0
+                    };
+                    StallInfoType[] items = this.stallInfoClient.getStallInfo(request);
+                    if (items != null)
+                    {
+                        if (items.GetLength(0) > 0)
+                        {
+                            StallInfoType item = items.OrderByDescending(t => t.expiryDate).FirstOrDefault();
+                            if (item != null)
+                            {
+                                if (item.expiryDate == DateTime.MinValue)
+                                {
+                                    refreshStallNo.MeterExpiredMinutes = (-1).ToString();
+                                    refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                                }
+                                else
+                                {
+                                    refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                                    refreshStallNo.MeterExpiredMinutes = this._parameter.ExpiredMinutes(this._customer.GracePeriodInSecond.ToNullableInt(), item.expiryDate).ToString();
+                                }
+                            }
+                            else
+                            {
+                                refreshStallNo.MeterExpiredMinutes = (-1).ToString();
+                                refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                            }
+                        }
+                        else
+                        {
+                            refreshStallNo.MeterExpiredMinutes = (-1).ToString();
+                            refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                        }
+                    }
+                    else
+                    {
+                        refreshStallNo.MeterExpiredMinutes = (-1).ToString();
+                        refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                }
+                catch (System.ServiceModel.FaultException<TimeoutException> timeoutEx)
+                {
+                    //this.LogServiceAccess(true, "TimeOut Exception", timeoutEx.StackTrace, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+
+                catch (System.ServiceModel.FaultException<DataAccessDigital.PlateInfoService.InfoServiceFault> info)
+                {
+                    //this.LogServiceAccess(true, info.Detail.shortErrorMessage, info.Detail.shortErrorMessage, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+                catch (System.ServiceModel.CommunicationException commEx)
+                {
+                    //this.LogServiceAccess(true, "Communication Exception", commEx.StackTrace, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+                catch (Exception ex)
+                {
+                    //this.LogServiceAccess(true, "Exception", ex.StackTrace, (int)LogProcess.DigitalAccess);
+                }
+                finally
+                {
+                    this.DisposeStallInfo();
+                }
+            }
+            return refreshStallNo;
+        }
+
+        public TransactionTransform GetRefreshPlateData(ref VendorResponseEntity venderResonse)
+        {
+            TransactionTransform refreshPlate = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            refreshPlate.LicensePlate = this._parameter.PlateNo;
+            if (this._serviceType == ServiceType.PlateInfo)
+            {
+                try
+                {
+                    var request = new PlateInfoByPlateRequest { token = this._customer.Token, plateNumber = this._parameter.PlateNo };
+                    venderResonse.RequestURL = this.plateInfoClient.Endpoint.Address.ToString();
+                    XmlSerializer xsrequest = new XmlSerializer(typeof(PlateInfoByPlateRequest));
+                    using (var sww = new StringWriter())
+                    {
+                        using (XmlWriter writer = XmlWriter.Create(sww))
+                        {
+                            xsrequest.Serialize(writer, request);
+                            venderResonse.T2RequstBody = sww.ToString(); // Your XML
+                        }
+                    }
+                    PlateInfoByPlateResponse item = this.plateInfoClient.getPlateInfo(request);
+                  
+                    if (item != null)
+                    {
+                        venderResonse.ResponseHttpStatusCode = System.Net.HttpStatusCode.OK;
+                        xsrequest = new XmlSerializer(item.GetType());
+                        using (var sww = new StringWriter())
+                        {
+                            using (XmlWriter writer = XmlWriter.Create(sww))
+                            {
+                                xsrequest.Serialize(writer, item);
+                                venderResonse.T2DitialResponseString = sww.ToString(); // Your XML
+                            }
+                        }
+
+                        if (item.plateInfo != null)
+                        {
+                            venderResonse.T2DitialResponse = item;
+                            if (item.plateInfo.expiryDate == DateTime.MinValue)
+                            {
+                                refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                                refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                            }
+                            else
+                            {
+                                refreshPlate.ZoneName = item.plateInfo.regionName;
+                                refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                                refreshPlate.MeterExpiredMinutes = this._parameter.ExpiredMinutes(this._customer.GracePeriodInSecond.ToNullableInt(), item.plateInfo.expiryDate).ToString();
+                            }
+                        }
+                        else
+                        {
+                            refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                            refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                        }
+                    }
+                    else
+                    {
+                        venderResonse.T2DitialResponseString = null;
+                        refreshPlate.MeterExpiredMinutes = (-1).ToString();
+                        refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                }
+                catch (System.ServiceModel.FaultException<TimeoutException> timeoutEx)
+                {
+                    venderResonse.GeneralException = timeoutEx;
+                    //this.LogServiceAccess(true, "TimeOut Exception", timeoutEx.StackTrace, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+
+                catch (System.ServiceModel.FaultException<DataAccessDigital.PlateInfoService.InfoServiceFault> info)
+                {
+                    venderResonse.GeneralException = info;
+                    //this.LogServiceAccess(true, info.Detail.shortErrorMessage, info.Detail.shortErrorMessage, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+                catch (System.ServiceModel.CommunicationException commEx)
+                {
+                    venderResonse.GeneralException = commEx;
+                    //this.LogServiceAccess(true, "Communication Exception", commEx.StackTrace, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+                catch (Exception ex)
+                {
+                    venderResonse.GeneralException = ex;
+                    //this.LogServiceAccess(true, "Exception", ex.StackTrace, (int)LogProcess.DigitalAccess);
+                }
+                finally
+                {
+                    this.DisposePlateInfo();
+                }
+            }
+            return refreshPlate;
+        }
+        public TransactionTransform GetRefreshStallNo(ref VendorResponseEntity venderResonse)
+        {
+            TransactionTransform refreshStallNo = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            refreshStallNo.SpaceNo = this._parameter.StallNo.ToString();
+            if (this._serviceType == ServiceType.StallInfo)
+            {
+                try
+                {
+                    var request = new StallInfoRequest
+                    {
+                        token = this._customer.Token,
+                        stallfrom = this._parameter.StallNo,
+                        stallto = this._parameter.StallNo,
+                        stallstatus = Bystatus.All,
+                        datetimeStamp = DateTime.UtcNow,
+                        gracePeriod = 0
+                    };
+                    venderResonse.RequestURL = this.stallInfoClient.Endpoint.Address.ToString();
+                    XmlSerializer xsrequest = new XmlSerializer(typeof(StallInfoRequest));
+                    using (var sww = new StringWriter())
+                    {
+                        using (XmlWriter writer = XmlWriter.Create(sww))
+                        {
+                            xsrequest.Serialize(writer, request);
+                            venderResonse.T2RequstBody = sww.ToString(); // Your XML
+                        }
+                    }
+                    StallInfoType[] items = this.stallInfoClient.getStallInfo(request);
+                    venderResonse.ResponseHttpStatusCode = System.Net.HttpStatusCode.OK;
+                    xsrequest = new XmlSerializer(items.GetType());
+                    using (var sww = new StringWriter())
+                    {
+                        using (XmlWriter writer = XmlWriter.Create(sww))
+                        {
+                            xsrequest.Serialize(writer, items);
+                            venderResonse.T2DitialResponseString = sww.ToString(); // Your XML
+                        }
+                    }
+                    if (items != null)
+                    {
+                        if (items.GetLength(0) > 0)
+                        {
+                            StallInfoType item = items.OrderByDescending(t => t.expiryDate).FirstOrDefault();
+                            if (item != null)
+                            {
+                                if (item.expiryDate == DateTime.MinValue)
+                                {
+                                    refreshStallNo.MeterExpiredMinutes = (-1).ToString();
+                                    refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                                }
+                                else
+                                {
+                                    refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                                    refreshStallNo.MeterExpiredMinutes = this._parameter.ExpiredMinutes(this._customer.GracePeriodInSecond.ToNullableInt(), item.expiryDate).ToString();
+                                }
+                            }
+                            else
+                            {
+                                refreshStallNo.MeterExpiredMinutes = (-1).ToString();
+                                refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                            }
+                        }
+                        else
+                        {
+                            refreshStallNo.MeterExpiredMinutes = (-1).ToString();
+                            refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                        }
+                    }
+                    else
+                    {
+                        refreshStallNo.MeterExpiredMinutes = (-1).ToString();
+                        refreshStallNo.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                    }
+                }
+                catch (System.ServiceModel.FaultException<TimeoutException> timeoutEx)
+                {
+                    venderResonse.GeneralException = timeoutEx;
+                    //this.LogServiceAccess(true, "TimeOut Exception", timeoutEx.StackTrace, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+
+                catch (System.ServiceModel.FaultException<DataAccessDigital.PlateInfoService.InfoServiceFault> info)
+                {
+                    venderResonse.GeneralException = info;
+                    //this.LogServiceAccess(true, info.Detail.shortErrorMessage, info.Detail.shortErrorMessage, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+                catch (System.ServiceModel.CommunicationException commEx)
+                {
+                    venderResonse.GeneralException = commEx;
+                    //this.LogServiceAccess(true, "Communication Exception", commEx.StackTrace, (int)ErrorCode.ConnectionOrTimeOutFailed);
+                }
+                catch (Exception ex)
+                {
+                    venderResonse.GeneralException = ex;
+                    //this.LogServiceAccess(true, "Exception", ex.StackTrace, (int)LogProcess.DigitalAccess);
+                }
+                finally
+                {
+                    this.DisposeStallInfo();
+                }
+            }
+            return refreshStallNo;
+        }
+
+
+        protected void InitializePlateInfo()
+        {
+            try
+            {
+                plateInfoClient = new PlateInfoServiceClient();
+                plateInfoClient.Endpoint.Behaviors.Remove<ClientCredentials>();
+                plateInfoClient.Endpoint.Behaviors.Add(credentials);
+
+                var elements = plateInfoClient.Endpoint.Binding.CreateBindingElements();
+                elements.Find<SecurityBindingElement>().IncludeTimestamp = false;
+                plateInfoClient.Endpoint.Binding = new CustomBinding(elements);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+        protected void InitializeTransactionDataInfo()
+        {
+            try
+            {
+                tranDataClient = new TransactionDataServiceClient();
+                tranDataClient.Endpoint.Behaviors.Remove<ClientCredentials>();
+                tranDataClient.Endpoint.Behaviors.Add(credentials);
+
+                var elements = tranDataClient.Endpoint.Binding.CreateBindingElements();
+                elements.Find<SecurityBindingElement>().IncludeTimestamp = false;
+                tranDataClient.Endpoint.Binding = new CustomBinding(elements);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        protected void InitializeStallInfo()
+        {
+            try
+            {
+                stallInfoClient = new StallInfoServiceClient();
+                stallInfoClient.Endpoint.Behaviors.Remove<ClientCredentials>();
+                stallInfoClient.Endpoint.Behaviors.Add(credentials);
+
+                var elements = stallInfoClient.Endpoint.Binding.CreateBindingElements();
+                elements.Find<SecurityBindingElement>().IncludeTimestamp = false;
+                stallInfoClient.Endpoint.Binding = new CustomBinding(elements);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        protected void DisposePlateInfo()
+        {
+            if (plateInfoClient != null)
+            {
+                try
+                {
+                    if (plateInfoClient.State != CommunicationState.Faulted)
+                    {
+                        plateInfoClient.Close();
+                    }
+                }
+                finally
+                {
+                    if (plateInfoClient.State != CommunicationState.Closed)
+                    {
+                        plateInfoClient.Abort();
+                    }
+                    plateInfoClient = null;
+                }
+            }
+        }
+        protected void DisposeTransactionDataInfo()
+        {
+            if (tranDataClient != null)
+            {
+                try
+                {
+                    if (tranDataClient.State != CommunicationState.Faulted)
+                    {
+                        tranDataClient.Close();
+                    }
+                }
+                finally
+                {
+                    if (tranDataClient.State != CommunicationState.Closed)
+                    {
+                        tranDataClient.Abort();
+                    }
+                    tranDataClient = null;
+                }
+            }
+        }
+        protected void DisposeStallInfo()
+        {
+            if (stallInfoClient != null)
+            {
+                try
+                {
+                    if (stallInfoClient.State != CommunicationState.Faulted)
+                    {
+                        stallInfoClient.Close();
+                    }
+                }
+                finally
+                {
+                    if (stallInfoClient.State != CommunicationState.Closed)
+                    {
+                        stallInfoClient.Abort();
+                    }
+                    stallInfoClient = null;
+                }
+            }
+        }
+    }
+}

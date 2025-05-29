@@ -1,0 +1,1481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetTransactionsFromDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateFrom" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionsFromDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionsFromDateResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransactionByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionByIDResult" type="tns:TransactionObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransactionObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MachineTransactionSerialNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TariffCode" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountCharged" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountPaid" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpaceZone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpaceNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegistrationNumberState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AuthorizationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlateZone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionDateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndDateTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListofTransactionTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListofTransactionTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListofTransactionTypesResult" type="tns:ArrayOfTransactionTypeListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTransactionTypeListObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransactionTypeListObject" nillable="true" type="tns:TransactionTypeListObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransactionTypeListObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionTypeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionTypeName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListofPaymentTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListofPaymentTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListofPaymentTypesResult" type="tns:ArrayOfPaymentTypeListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPaymentTypeListObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentTypeListObject" nillable="true" type="tns:PaymentTypeListObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentTypeListObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentTypeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentTypeName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetListofTariffs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListofTariffsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListofTariffsResult" type="tns:ArrayOfTariffListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTariffListObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TariffListObject" nillable="true" type="tns:TariffListObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TariffListObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TariffID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TariffName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionTypes" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentTypes" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" nillable="true" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" nillable="true" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionsResult" type="tns:ArrayOfTransactionObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTransactionObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransactionObject" nillable="true" type="tns:TransactionObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPayByPlateZoneList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPayByPlateZoneListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPayByPlateZoneListResult" type="tns:ArrayOfPayByPlateZone" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPayByPlateZone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PayByPlateZone" nillable="true" type="tns:PayByPlateZone" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PayByPlateZone">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ZoneID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZoneName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetZonePayByPlateInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zoneid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZonePayByPlateInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZonePayByPlateInfoResult" type="tns:ArrayOfZonePayByPlateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfZonePayByPlateInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ZonePayByPlateInfo" nillable="true" type="tns:ZonePayByPlateInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ZonePayByPlateInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ZoneID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZoneName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineTransactionSerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionTariffCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="GracePeriod" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountPaid" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionStartTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetZonePayByPlateInfoByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZoneID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDateTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetZonePayByPlateInfoByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetZonePayByPlateInfoByDateResult" type="tns:ArrayOfZonePayByPlateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPlateExpired">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Plate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ZoneIDList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPlateExpiredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPlateExpiredResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceZoneList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceZoneListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpaceZoneListResult" type="tns:ArrayOfSpaceZone" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSpaceZone">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SpaceZone" nillable="true" type="tns:SpaceZone" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SpaceZone">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ZoneID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstSpace" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastSpace" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GracePeriodMinutes" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSpaceNumbersFromAllZones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceNumbersFromAllZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpaceNumbersFromAllZonesResult" type="tns:ArrayOfSpaceInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSpaceInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SpaceInfo" nillable="true" type="tns:SpaceInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SpaceInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ZoneID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpaceNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountPaid" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArrivalTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiryTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSpaceNumbersByZone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZoneID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceNumbersByZoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpaceNumbersByZoneResult" type="tns:ArrayOfSpaceInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSpaceExpired">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ZoneID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SpaceNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsSpaceExpiredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsSpaceExpiredResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassedXML">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceConfigurationData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassedXML">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceConfigurationDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpaceConfigurationDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassedXML">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpaceDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassedXML">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSpaceTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSpaceTransactionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistrations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassedXML">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistrationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegistrationsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistrationTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassedXML">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistrationTransactionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegistrationTransactionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistrationTransactionsByDateProcessed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PassedXML">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRegistrationTransactionsByDateProcessedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRegistrationTransactionsByDateProcessedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachineGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachineGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMachineGroupsResult" type="tns:ArrayOfMachineGroupDetail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMachineGroupDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MachineGroupDetail" nillable="true" type="tns:MachineGroupDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MachineGroupDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MachineGroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineGroupDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPayByPlateGroup" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayByPlateZoneName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPayBySpaceGroup" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayBySpaceZoneName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MachinesCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMachines">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineGroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachinesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMachinesResult" type="tns:ArrayOfGetMachine" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGetMachine">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GetMachine" nillable="true" type="tns:GetMachine" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GetMachine">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MachineId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMachinesAllStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachinesAllStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMachinesAllStatusResult" type="tns:ArrayOfMachineStatusOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMachineStatusOutput">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MachineStatusOutput" nillable="true" type="tns:MachineStatusOutput" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MachineStatusOutput">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MachineId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Enabled" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastCommunicationDateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastRealTimeCommunicationDateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastStatusCommunicationDateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastTransactionCommunicationDateTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMachineStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineGroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMachineStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMachineStatusResult" type="tns:ArrayOfMachineStatusOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MachineGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineGroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MachineGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MachineGroupsResult" type="tns:ArrayOfMachineGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMachineGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MachineGroup" nillable="true" type="tns:MachineGroup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MachineGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MachineGroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MachineGroupDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MachineStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MachineGroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MachineStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MachineStatusResult" type="tns:ArrayOfMachineStatusOutput" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Authenticate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClientGUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTransactionsFromDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionsFromDate" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsFromDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionsFromDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionByID" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListofTransactionTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListofTransactionTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetListofTransactionTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListofTransactionTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListofPaymentTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListofPaymentTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetListofPaymentTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListofPaymentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListofTariffsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListofTariffs" />
+  </wsdl:message>
+  <wsdl:message name="GetListofTariffsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListofTariffsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPayByPlateZoneListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPayByPlateZoneList" />
+  </wsdl:message>
+  <wsdl:message name="GetPayByPlateZoneListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPayByPlateZoneListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZonePayByPlateInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZonePayByPlateInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetZonePayByPlateInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZonePayByPlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetZonePayByPlateInfoByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetZonePayByPlateInfoByDate" />
+  </wsdl:message>
+  <wsdl:message name="GetZonePayByPlateInfoByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetZonePayByPlateInfoByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPlateExpiredSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPlateExpired" />
+  </wsdl:message>
+  <wsdl:message name="IsPlateExpiredSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPlateExpiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceZoneListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpaceZoneList" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceZoneListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpaceZoneListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceNumbersFromAllZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpaceNumbersFromAllZones" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceNumbersFromAllZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpaceNumbersFromAllZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceNumbersByZoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpaceNumbersByZone" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceNumbersByZoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpaceNumbersByZoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsSpaceExpiredSoapIn">
+    <wsdl:part name="parameters" element="tns:IsSpaceExpired" />
+  </wsdl:message>
+  <wsdl:message name="IsSpaceExpiredSoapOut">
+    <wsdl:part name="parameters" element="tns:IsSpaceExpiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceConfigurationDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpaceConfigurationData" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceConfigurationDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpaceConfigurationDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpaceData" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpaceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSpaceTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetSpaceTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSpaceTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegistrations" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegistrationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegistrationTransactions" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegistrationTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationTransactionsByDateProcessedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRegistrationTransactionsByDateProcessed" />
+  </wsdl:message>
+  <wsdl:message name="GetRegistrationTransactionsByDateProcessedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRegistrationTransactionsByDateProcessedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMachineGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMachineGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMachinesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMachines" />
+  </wsdl:message>
+  <wsdl:message name="GetMachinesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMachinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMachinesAllStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMachinesAllStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetMachinesAllStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMachinesAllStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMachineStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetMachineStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMachineStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="MachineGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:MachineGroups" />
+  </wsdl:message>
+  <wsdl:message name="MachineGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:MachineGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MachineStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:MachineStatus" />
+  </wsdl:message>
+  <wsdl:message name="MachineStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:MachineStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapIn">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OutgoingSoap">
+    <wsdl:operation name="GetTransactionsFromDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return transactions id's for a given date</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionsFromDateSoapIn" />
+      <wsdl:output message="tns:GetTransactionsFromDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return the transaction for a given id</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionByIDSoapIn" />
+      <wsdl:output message="tns:GetTransactionByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListofTransactionTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all Transaction types</wsdl:documentation>
+      <wsdl:input message="tns:GetListofTransactionTypesSoapIn" />
+      <wsdl:output message="tns:GetListofTransactionTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListofPaymentTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns all payment types represented in all transactions data received.</wsdl:documentation>
+      <wsdl:input message="tns:GetListofPaymentTypesSoapIn" />
+      <wsdl:output message="tns:GetListofPaymentTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListofTariffs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Tariffs</wsdl:documentation>
+      <wsdl:input message="tns:GetListofTariffsSoapIn" />
+      <wsdl:output message="tns:GetListofTariffsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method provides the transaction data with payment information for all historical transactions unlogged from the machines.</wsdl:documentation>
+      <wsdl:input message="tns:GetTransactionsSoapIn" />
+      <wsdl:output message="tns:GetTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPayByPlateZoneList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns a list of all Pay By Plate zones within the system. Please use the ids returned in the list to interrogate for plates. If the authentication key is invalid or there are no zones then there are no results.</wsdl:documentation>
+      <wsdl:input message="tns:GetPayByPlateZoneListSoapIn" />
+      <wsdl:output message="tns:GetPayByPlateZoneListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZonePayByPlateInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return all unique registrations within a specified zone id indicating their Expiry date/time within that zone. The Zone ID specified must come from the GetPayByPlateZoneList method.</wsdl:documentation>
+      <wsdl:input message="tns:GetZonePayByPlateInfoSoapIn" />
+      <wsdl:output message="tns:GetZonePayByPlateInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZonePayByPlateInfoByDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return all unique registrations and expiry times within a specified zone id and the expiry times are greater than the date time specified. The Zone ID specified must come from the GetPayByPlateZoneList method.</wsdl:documentation>
+      <wsdl:input message="tns:GetZonePayByPlateInfoByDateSoapIn" />
+      <wsdl:output message="tns:GetZonePayByPlateInfoByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPlateExpired">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method checks a Registration/License plate has expired within the zone or zones within the specified zone ID list. If the plate does not exists it will return as expired.</wsdl:documentation>
+      <wsdl:input message="tns:IsPlateExpiredSoapIn" />
+      <wsdl:output message="tns:IsPlateExpiredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceZoneList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a list of zones with their configuration details. If the authentication key is invalid or there are no zones available then there are no results</wsdl:documentation>
+      <wsdl:input message="tns:GetSpaceZoneListSoapIn" />
+      <wsdl:output message="tns:GetSpaceZoneListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceNumbersFromAllZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a list of zones and spaces with the last transaction details for each space. The zone is a unique Zone ID obtained from the GetSpaceZoneList method. If the authentication key is invalid or there are no zones/spaces available then there are no results</wsdl:documentation>
+      <wsdl:input message="tns:GetSpaceNumbersFromAllZonesSoapIn" />
+      <wsdl:output message="tns:GetSpaceNumbersFromAllZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceNumbersByZone">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return a list of spaces based upon the zone id specified with the last transaction details for each space. The zone is a unique Zone ID obtained from the GetSpaceZoneList method. If the authentication key is invalid or there are no zones/spaces available then there are no results</wsdl:documentation>
+      <wsdl:input message="tns:GetSpaceNumbersByZoneSoapIn" />
+      <wsdl:output message="tns:GetSpaceNumbersByZoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSpaceExpired">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method checks if a Zone/Space has expired within the zone or zones within the specified zone ID list. If the Zone/Space does not exit it will return as expired.</wsdl:documentation>
+      <wsdl:input message="tns:IsSpaceExpiredSoapIn" />
+      <wsdl:output message="tns:IsSpaceExpiredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will return data from the relevant webASLAN database tables.Tables which are parameter based will return results based on the standard, partial or full parameters passed, all other tables can only be called with standard data.</wsdl:documentation>
+      <wsdl:input message="tns:GetDataSoapIn" />
+      <wsdl:output message="tns:GetDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceConfigurationData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method provides the space configuration data setup within webASLAN.</wsdl:documentation>
+      <wsdl:input message="tns:GetSpaceConfigurationDataSoapIn" />
+      <wsdl:output message="tns:GetSpaceConfigurationDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method provides the space data for space transactions purchased within webASLAN base on the time expired.</wsdl:documentation>
+      <wsdl:input message="tns:GetSpaceDataSoapIn" />
+      <wsdl:output message="tns:GetSpaceDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceTransactions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method provides the space data for space transactions purchased within webASLAN based on the parameters passed.</wsdl:documentation>
+      <wsdl:input message="tns:GetSpaceTransactionsSoapIn" />
+      <wsdl:output message="tns:GetSpaceTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method provides the transaction data for registration transactions purchased within webASLAN based on the parameters passed.</wsdl:documentation>
+      <wsdl:input message="tns:GetRegistrationsSoapIn" />
+      <wsdl:output message="tns:GetRegistrationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationTransactions">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method provides the transaction data for registration transactions purchased within webASLAN based on the parameters passed.</wsdl:documentation>
+      <wsdl:input message="tns:GetRegistrationTransactionsSoapIn" />
+      <wsdl:output message="tns:GetRegistrationTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationTransactionsByDateProcessed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method provides the transaction data for registration transactions purchased based on the parameters passed, with dates being filtered on transaction processed date.</wsdl:documentation>
+      <wsdl:input message="tns:GetRegistrationTransactionsByDateProcessedSoapIn" />
+      <wsdl:output message="tns:GetRegistrationTransactionsByDateProcessedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns machines groups.</wsdl:documentation>
+      <wsdl:input message="tns:GetMachineGroupsSoapIn" />
+      <wsdl:output message="tns:GetMachineGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachines">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns a list of machines from a group within the system.</wsdl:documentation>
+      <wsdl:input message="tns:GetMachinesSoapIn" />
+      <wsdl:output message="tns:GetMachinesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachinesAllStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns the status of all machines.</wsdl:documentation>
+      <wsdl:input message="tns:GetMachinesAllStatusSoapIn" />
+      <wsdl:output message="tns:GetMachinesAllStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns the status of a machine.</wsdl:documentation>
+      <wsdl:input message="tns:GetMachineStatusSoapIn" />
+      <wsdl:output message="tns:GetMachineStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MachineGroups">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">[DEPRECATED: please use GetMachineGroups instead] This method returns machines groups.</wsdl:documentation>
+      <wsdl:input message="tns:MachineGroupsSoapIn" />
+      <wsdl:output message="tns:MachineGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MachineStatus">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">[DEPRECATED: please use GetMachineStatus instead] This method the status of a machine.</wsdl:documentation>
+      <wsdl:input message="tns:MachineStatusSoapIn" />
+      <wsdl:output message="tns:MachineStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is used to generate a secure authentication key and is passed in with all other methods. Username: Username of account, Password: Password for account, SiteCode: A 6 character site code as supplied by Metric.&lt;/param&gt;&lt;param name=ClientGUID&gt;A unique GUID generated by your system.&lt;/param&gt;, The key lasts for 24 hours from time of issue.  For bulk data entry you may find it easier to use the same Authentication key for the run of data you are passing to the API.  For greater security but higher data overheads generate a new key each time you access a method in the API.When you request a new Authentication key the previous key becomes invalid.</wsdl:documentation>
+      <wsdl:input message="tns:AuthenticateSoapIn" />
+      <wsdl:output message="tns:AuthenticateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OutgoingSoap" type="tns:OutgoingSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTransactionsFromDate">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionsFromDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByID">
+      <soap:operation soapAction="http://tempuri.org/GetTransactionByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofTransactionTypes">
+      <soap:operation soapAction="http://tempuri.org/GetListofTransactionTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofPaymentTypes">
+      <soap:operation soapAction="http://tempuri.org/GetListofPaymentTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofTariffs">
+      <soap:operation soapAction="http://tempuri.org/GetListofTariffs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <soap:operation soapAction="http://tempuri.org/GetTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayByPlateZoneList">
+      <soap:operation soapAction="http://tempuri.org/GetPayByPlateZoneList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZonePayByPlateInfo">
+      <soap:operation soapAction="http://tempuri.org/GetZonePayByPlateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZonePayByPlateInfoByDate">
+      <soap:operation soapAction="http://tempuri.org/GetZonePayByPlateInfoByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPlateExpired">
+      <soap:operation soapAction="http://tempuri.org/IsPlateExpired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceZoneList">
+      <soap:operation soapAction="http://tempuri.org/GetSpaceZoneList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceNumbersFromAllZones">
+      <soap:operation soapAction="http://tempuri.org/GetSpaceNumbersFromAllZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceNumbersByZone">
+      <soap:operation soapAction="http://tempuri.org/GetSpaceNumbersByZone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSpaceExpired">
+      <soap:operation soapAction="http://tempuri.org/IsSpaceExpired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceConfigurationData">
+      <soap:operation soapAction="http://tempuri.org/GetSpaceConfigurationData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceData">
+      <soap:operation soapAction="http://tempuri.org/GetSpaceData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceTransactions">
+      <soap:operation soapAction="http://tempuri.org/GetSpaceTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrations">
+      <soap:operation soapAction="http://tempuri.org/GetRegistrations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationTransactions">
+      <soap:operation soapAction="http://tempuri.org/GetRegistrationTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationTransactionsByDateProcessed">
+      <soap:operation soapAction="http://tempuri.org/GetRegistrationTransactionsByDateProcessed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineGroups">
+      <soap:operation soapAction="http://tempuri.org/GetMachineGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachines">
+      <soap:operation soapAction="http://tempuri.org/GetMachines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachinesAllStatus">
+      <soap:operation soapAction="http://tempuri.org/GetMachinesAllStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineStatus">
+      <soap:operation soapAction="http://tempuri.org/GetMachineStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MachineGroups">
+      <soap:operation soapAction="http://tempuri.org/MachineGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MachineStatus">
+      <soap:operation soapAction="http://tempuri.org/MachineStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OutgoingSoap12" type="tns:OutgoingSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTransactionsFromDate">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionsFromDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByID">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactionByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofTransactionTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetListofTransactionTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofPaymentTypes">
+      <soap12:operation soapAction="http://tempuri.org/GetListofPaymentTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListofTariffs">
+      <soap12:operation soapAction="http://tempuri.org/GetListofTariffs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <soap12:operation soapAction="http://tempuri.org/GetTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPayByPlateZoneList">
+      <soap12:operation soapAction="http://tempuri.org/GetPayByPlateZoneList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZonePayByPlateInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetZonePayByPlateInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZonePayByPlateInfoByDate">
+      <soap12:operation soapAction="http://tempuri.org/GetZonePayByPlateInfoByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPlateExpired">
+      <soap12:operation soapAction="http://tempuri.org/IsPlateExpired" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceZoneList">
+      <soap12:operation soapAction="http://tempuri.org/GetSpaceZoneList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceNumbersFromAllZones">
+      <soap12:operation soapAction="http://tempuri.org/GetSpaceNumbersFromAllZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceNumbersByZone">
+      <soap12:operation soapAction="http://tempuri.org/GetSpaceNumbersByZone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsSpaceExpired">
+      <soap12:operation soapAction="http://tempuri.org/IsSpaceExpired" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap12:operation soapAction="http://tempuri.org/GetData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceConfigurationData">
+      <soap12:operation soapAction="http://tempuri.org/GetSpaceConfigurationData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceData">
+      <soap12:operation soapAction="http://tempuri.org/GetSpaceData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSpaceTransactions">
+      <soap12:operation soapAction="http://tempuri.org/GetSpaceTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrations">
+      <soap12:operation soapAction="http://tempuri.org/GetRegistrations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationTransactions">
+      <soap12:operation soapAction="http://tempuri.org/GetRegistrationTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRegistrationTransactionsByDateProcessed">
+      <soap12:operation soapAction="http://tempuri.org/GetRegistrationTransactionsByDateProcessed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineGroups">
+      <soap12:operation soapAction="http://tempuri.org/GetMachineGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachines">
+      <soap12:operation soapAction="http://tempuri.org/GetMachines" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachinesAllStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetMachinesAllStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetMachineStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MachineGroups">
+      <soap12:operation soapAction="http://tempuri.org/MachineGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MachineStatus">
+      <soap12:operation soapAction="http://tempuri.org/MachineStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://tempuri.org/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Outgoing">
+    <wsdl:port name="OutgoingSoap" binding="tns:OutgoingSoap">
+      <soap:address location="http://idex.mi-office.com/Mi-Xchange/service/soap/v2018.2/outgoing.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OutgoingSoap12" binding="tns:OutgoingSoap12">
+      <soap12:address location="http://idex.mi-office.com/Mi-Xchange/service/soap/v2018.2/outgoing.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

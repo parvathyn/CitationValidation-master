@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.digitalpaytech.com/plateInfo" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="PlateInfoService" targetNamespace="http://ws.digitalpaytech.com/plateInfo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://ws.digitalpaytech.com/plateInfo" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ExpiredPlateInfoByGroupRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="groupName" type="xs:string" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExpiredPlateInfoByRegionRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="region" type="xs:string" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ExpiredPlateInfoRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GroupRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GroupResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="groups" nillable="true" type="tns:GroupType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InfoServiceFault">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="shortErrorMessage" type="xs:string" />
+            <xs:element minOccurs="0" name="techImplementationDetails" type="xs:string" />
+            <xs:element name="errCode" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PlateInfoByGroupRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="groupName" type="xs:string" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PlateInfoByPlateRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="plateNumber" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PlateInfoByPlateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="plateInfo" type="tns:PlateInfoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PlateInfoByRegionRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="region" type="xs:string" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PlateInfoRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element minOccurs="0" name="gracePeriod" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PlateInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="plateInfos" nillable="true" type="tns:PlateInfoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegionRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RegionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="regions" nillable="true" type="tns:RegionType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdatedPlateInfoByGroupRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="groupName" type="xs:string" />
+            <xs:element name="lastCallDate" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdatedPlateInfoByRegionRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="region" type="xs:string" />
+            <xs:element name="lastCallDate" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdatedPlateInfoRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="token" type="xs:string" />
+            <xs:element name="lastCallDate" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="PlateInfoType">
+        <xs:sequence>
+          <xs:element name="expiryDate" type="xs:dateTime" />
+          <xs:element name="purchasedDate" type="xs:dateTime" />
+          <xs:element name="plateNumber" type="xs:string" />
+          <xs:element name="regionName" type="xs:string" />
+          <xs:element name="status" type="tns:StatusType" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GroupType">
+        <xs:sequence>
+          <xs:element name="groupName" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RegionType">
+        <xs:sequence>
+          <xs:element name="regionName" type="xs:string" />
+          <xs:element name="description" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="StatusType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Valid" />
+          <xs:enumeration value="Expired" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getUpdatedValidPlatesByGroup">
+    <wsdl:part name="UpdatedPlateInfoByGroupRequest" element="tns:UpdatedPlateInfoByGroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="getPlateInfo">
+    <wsdl:part name="PlateInfoByPlateRequest" element="tns:PlateInfoByPlateRequest" />
+  </wsdl:message>
+  <wsdl:message name="InfoServiceFaultMessage">
+    <wsdl:part name="InfoServiceFaultMessage" element="tns:InfoServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="getPlateInfoResponse">
+    <wsdl:part name="PlateInfoByPlateResponse" element="tns:PlateInfoByPlateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGroups">
+    <wsdl:part name="GroupRequest" element="tns:GroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="getRegionsResponse">
+    <wsdl:part name="RegionResponse" element="tns:RegionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUpdatedValidPlatesByGroupResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExpiredPlatesByGroup">
+    <wsdl:part name="ExpiredPlateInfoByGroupRequest" element="tns:ExpiredPlateInfoByGroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="getExpiredPlatesByRegion">
+    <wsdl:part name="ExpiredPlateInfoByRegionRequest" element="tns:ExpiredPlateInfoByRegionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getUpdatedValidPlatesByRegionResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValidPlatesByGroupResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRegions">
+    <wsdl:part name="RegionRequest" element="tns:RegionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getGroupsResponse">
+    <wsdl:part name="GroupResponse" element="tns:GroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUpdatedValidPlatesByRegion">
+    <wsdl:part name="UpdatedPlateInfoByRegionRequest" element="tns:UpdatedPlateInfoByRegionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getExpiredPlates">
+    <wsdl:part name="ExpiredPlateInfoRequest" element="tns:ExpiredPlateInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="getValidPlatesByGroup">
+    <wsdl:part name="PlateInfoByGroupRequest" element="tns:PlateInfoByGroupRequest" />
+  </wsdl:message>
+  <wsdl:message name="getUpdatedValidPlates">
+    <wsdl:part name="UpdatedPlateInfoRequest" element="tns:UpdatedPlateInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="getValidPlatesByRegion">
+    <wsdl:part name="PlateInfoByRegionRequest" element="tns:PlateInfoByRegionRequest" />
+  </wsdl:message>
+  <wsdl:message name="getExpiredPlatesResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValidPlatesResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValidPlates">
+    <wsdl:part name="PlateInfoRequest" element="tns:PlateInfoRequest" />
+  </wsdl:message>
+  <wsdl:message name="getUpdatedValidPlatesResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExpiredPlatesByRegionResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getExpiredPlatesByGroupResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValidPlatesByRegionResponse">
+    <wsdl:part name="PlateInfoResponse" element="tns:PlateInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PlateInfoService">
+    <wsdl:operation name="getUpdatedValidPlatesByGroup">
+      <wsdl:input name="getUpdatedValidPlatesByGroup" message="tns:getUpdatedValidPlatesByGroup" />
+      <wsdl:output name="getUpdatedValidPlatesByGroupResponse" message="tns:getUpdatedValidPlatesByGroupResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getValidPlatesByGroup">
+      <wsdl:input name="getValidPlatesByGroup" message="tns:getValidPlatesByGroup" />
+      <wsdl:output name="getValidPlatesByGroupResponse" message="tns:getValidPlatesByGroupResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUpdatedValidPlates">
+      <wsdl:input name="getUpdatedValidPlates" message="tns:getUpdatedValidPlates" />
+      <wsdl:output name="getUpdatedValidPlatesResponse" message="tns:getUpdatedValidPlatesResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlateInfo">
+      <wsdl:input name="getPlateInfo" message="tns:getPlateInfo" />
+      <wsdl:output name="getPlateInfoResponse" message="tns:getPlateInfoResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getValidPlatesByRegion">
+      <wsdl:input name="getValidPlatesByRegion" message="tns:getValidPlatesByRegion" />
+      <wsdl:output name="getValidPlatesByRegionResponse" message="tns:getValidPlatesByRegionResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGroups">
+      <wsdl:input name="getGroups" message="tns:getGroups" />
+      <wsdl:output name="getGroupsResponse" message="tns:getGroupsResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExpiredPlatesByGroup">
+      <wsdl:input name="getExpiredPlatesByGroup" message="tns:getExpiredPlatesByGroup" />
+      <wsdl:output name="getExpiredPlatesByGroupResponse" message="tns:getExpiredPlatesByGroupResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExpiredPlatesByRegion">
+      <wsdl:input name="getExpiredPlatesByRegion" message="tns:getExpiredPlatesByRegion" />
+      <wsdl:output name="getExpiredPlatesByRegionResponse" message="tns:getExpiredPlatesByRegionResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRegions">
+      <wsdl:input name="getRegions" message="tns:getRegions" />
+      <wsdl:output name="getRegionsResponse" message="tns:getRegionsResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getValidPlates">
+      <wsdl:input name="getValidPlates" message="tns:getValidPlates" />
+      <wsdl:output name="getValidPlatesResponse" message="tns:getValidPlatesResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUpdatedValidPlatesByRegion">
+      <wsdl:input name="getUpdatedValidPlatesByRegion" message="tns:getUpdatedValidPlatesByRegion" />
+      <wsdl:output name="getUpdatedValidPlatesByRegionResponse" message="tns:getUpdatedValidPlatesByRegionResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExpiredPlates">
+      <wsdl:input name="getExpiredPlates" message="tns:getExpiredPlates" />
+      <wsdl:output name="getExpiredPlatesResponse" message="tns:getExpiredPlatesResponse" />
+      <wsdl:fault name="InfoServiceFaultMessage" message="tns:InfoServiceFaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PlateInfoServiceSoapBinding" type="tns:PlateInfoService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getUpdatedValidPlatesByGroup">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getUpdatedValidPlatesByGroup" style="document" />
+      <wsdl:input name="getUpdatedValidPlatesByGroup">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getUpdatedValidPlatesByGroupResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getValidPlatesByGroup">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getValidPlatesByGroup" style="document" />
+      <wsdl:input name="getValidPlatesByGroup">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getValidPlatesByGroupResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdatedValidPlates">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getUpdatedValidPlates" style="document" />
+      <wsdl:input name="getUpdatedValidPlates">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getUpdatedValidPlatesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPlateInfo">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getPlateInfo" style="document" />
+      <wsdl:input name="getPlateInfo">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPlateInfoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getValidPlatesByRegion">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getValidPlatesByRegion" style="document" />
+      <wsdl:input name="getValidPlatesByRegion">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getValidPlatesByRegionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getGroups">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getGroups" style="document" />
+      <wsdl:input name="getGroups">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getGroupsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExpiredPlatesByGroup">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getExpiredPlatesByGroup" style="document" />
+      <wsdl:input name="getExpiredPlatesByGroup">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getExpiredPlatesByGroupResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExpiredPlatesByRegion">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getExpiredPlatesByRegion" style="document" />
+      <wsdl:input name="getExpiredPlatesByRegion">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getExpiredPlatesByRegionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRegions">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getRegions" style="document" />
+      <wsdl:input name="getRegions">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRegionsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getValidPlates">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getValidPlates" style="document" />
+      <wsdl:input name="getValidPlates">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getValidPlatesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUpdatedValidPlatesByRegion">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getUpdatedValidPlatesByRegion" style="document" />
+      <wsdl:input name="getUpdatedValidPlatesByRegion">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getUpdatedValidPlatesByRegionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getExpiredPlates">
+      <soap:operation soapAction="http://ws.digitalpaytech.com/plateInfo/getExpiredPlates" style="document" />
+      <wsdl:input name="getExpiredPlates">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getExpiredPlatesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InfoServiceFaultMessage">
+        <soap:fault use="literal" name="InfoServiceFaultMessage" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PlateInfoService">
+    <wsdl:port name="PlateInfohttpPort" binding="tns:PlateInfoServiceSoapBinding">
+      <soap:address location="https://iris.digitalpaytech.com/services/PlateInfoService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

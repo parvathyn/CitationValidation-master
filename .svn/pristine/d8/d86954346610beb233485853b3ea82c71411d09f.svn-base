@@ -1,0 +1,26 @@
+﻿
+using System;
+namespace DataAccess.Model
+{
+    public static class Extentions
+    {
+        public static int? ToNullableInt(this string s)
+        {
+            int i;
+            if (int.TryParse(s, out i)) return i;
+            return null;
+        }
+
+        public static DateTime? ToNullableDate(this String dateString)
+        {
+            if (String.IsNullOrEmpty((dateString ?? "").Trim()))
+                return null;
+
+            DateTime resultDate;
+            if (DateTime.TryParse(dateString, out resultDate))
+                return resultDate;
+
+            return null;
+        }
+    }
+}

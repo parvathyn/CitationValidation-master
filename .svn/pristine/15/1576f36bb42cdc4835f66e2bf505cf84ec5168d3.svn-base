@@ -1,0 +1,236 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Serialization;
+
+namespace DataAccess.Model.Cale
+{
+    public class CaleGenericFactory
+    {
+        protected CaleParameter _parameter;
+        protected CaleCustomerElement _customer;
+        protected int customerId;
+        protected string currentURL = string.Empty;
+
+        public CaleGenericFactory(CaleCustomerElement customer, string plateNo, string state)
+        {
+            this._customer = customer;
+            this.customerId = Convert.ToInt32(customer.CustomerId);
+            this._parameter = new CaleParameter(plateNo, state);
+        }
+
+        public TransactionTransform GetRefreshPlateData()
+        {
+            using (var client = new HttpClient())
+            {
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+                TransactionTransform refreshPlate = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+                try
+                {
+                    var currentURL = UrlList.GetPlateStatusURL(this._customer, this._parameter);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    var byteArray = Encoding.ASCII.GetBytes(string.Format("{0}:{1}", this._customer.UserName, this._customer.UserPassword));
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    HttpResponseMessage response = client.GetAsync(currentURL).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string xmlData = response.Content.ReadAsStringAsync().Result;
+                        XmlSerializer serlializer = new XmlSerializer(typeof(ArrayOfValidParkingData));
+                        ArrayOfValidParkingData data = (ArrayOfValidParkingData)serlializer.Deserialize(new StringReader(xmlData));
+                        if (data != null)
+                        {
+                            if (data.ValidParkingData != null)
+                            {
+                                refreshPlate.LicensePlate = data.ValidParkingData.Code;
+                                refreshPlate.MeterExpiredMinutes = this._parameter.ExpiredMinutes(this._customer.GracePeriodInSecond.ToNullableInt(), data.ValidParkingData.EndDateUtc).ToString();
+                                //////
+                                if (!string.IsNullOrWhiteSpace(data.ValidParkingData.Zone))
+                                    refreshPlate.ZoneName = data.ValidParkingData.Zone;
+                            }
+                            else
+                            {
+                                refreshPlate.LicensePlate = this._parameter.PlateNo;
+                                refreshPlate.MeterExpiredMinutes = "-1";
+                            }
+                            refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                        }
+                    }
+                    else
+                    {
+                        //Error in status code. Do nothing
+                    }
+                }
+                catch (Exception ex)
+                {
+                    string v = ex.Message;
+                }
+                return refreshPlate;
+            }
+        }
+        public TransactionTransform GetRefreshPlateData(ref VendorResponseEntity venderResonse)
+        {
+            TransactionTransform refreshPlate = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                    var currentURL = UrlList.GetPlateStatusURL(this._customer, this._parameter);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    var byteArray = Encoding.ASCII.GetBytes(string.Format("{0}:{1}", this._customer.UserName, this._customer.UserPassword));
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    venderResonse.RequestURL = currentURL;
+                    HttpResponseMessage response = client.GetAsync(currentURL).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        try
+                        {
+                            string xmlData = response.Content.ReadAsStringAsync().Result;
+                            venderResonse.XmlandJsonData = xmlData;
+                            venderResonse.ResponseHttpStatusCode = response.StatusCode;
+                            XmlSerializer serlializer = new XmlSerializer(typeof(ArrayOfValidParkingData));
+                            ArrayOfValidParkingData data = (ArrayOfValidParkingData)serlializer.Deserialize(new StringReader(xmlData));
+                            if (data != null)
+                            {
+                                if (data.ValidParkingData != null)
+                                {
+                                    refreshPlate.LicensePlate = data.ValidParkingData.Code;
+                                    refreshPlate.MeterExpiredMinutes = this._parameter.ExpiredMinutes(this._customer.GracePeriodInSecond.ToNullableInt(), data.ValidParkingData.EndDateUtc).ToString();
+                                    //////
+                                    if (!string.IsNullOrWhiteSpace(data.ValidParkingData.Zone))
+                                        refreshPlate.ZoneName = data.ValidParkingData.Zone;
+                                }
+                                else
+                                {
+                                    refreshPlate.LicensePlate = this._parameter.PlateNo;
+                                    refreshPlate.MeterExpiredMinutes = "-1";
+                                }
+                                refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            venderResonse.GeneralException = ex;
+                        }
+                    }
+                    else
+                    {
+                        venderResonse.ResponseHttpStatusCode = response.StatusCode;
+                        //Error in status code. Do nothing
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                venderResonse.GeneralException = ex;
+            }
+            return refreshPlate;
+        }
+        public TransactionTransform GetRefreshPlateDataPhiladelphia(ref VendorResponseEntity venderResonse)
+        {
+            TransactionTransform refreshPlate = new TransactionTransform() { ReturnCode = ((int)ReturnCodeEnum.Error).ToString() };
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+
+                    var currentURL = UrlList.GetPlateStatusURL(this._customer, this._parameter);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    var byteArray = Encoding.ASCII.GetBytes(string.Format("{0}:{1}", this._customer.UserName, this._customer.UserPassword));
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    venderResonse.RequestURL = currentURL;
+                    HttpResponseMessage response = client.GetAsync(currentURL).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        try
+                        {
+                            string xmlData = response.Content.ReadAsStringAsync().Result;
+                            venderResonse.XmlandJsonData = xmlData;
+                            venderResonse.ResponseHttpStatusCode = response.StatusCode;
+                            XmlSerializer serlializer = new XmlSerializer(typeof(ArrayOfValidParkingData));
+                            ArrayOfValidParkingData data = (ArrayOfValidParkingData)serlializer.Deserialize(new StringReader(xmlData));
+                            if (data != null)
+                            {
+                                if (data.ValidParkingData != null)
+                                {
+                                    refreshPlate.LicensePlate = data.ValidParkingData.Code;
+                                    refreshPlate.MeterExpiredMinutes = this._parameter.ExpiredMinutes(this._customer.GracePeriodInSecond.ToNullableInt(), data.ValidParkingData.EndDateUtc).ToString();
+                                    //////
+                                    if (!string.IsNullOrWhiteSpace(data.ValidParkingData.Article.Name))
+                                        refreshPlate.ZoneName = data.ValidParkingData.Zone;
+                                }
+                                else
+                                {
+                                    refreshPlate.LicensePlate = this._parameter.PlateNo;
+                                    refreshPlate.MeterExpiredMinutes = "-1";
+                                }
+                                refreshPlate.ReturnCode = ((int)ReturnCodeEnum.Success).ToString();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            venderResonse.GeneralException = ex;
+                        }
+                    }
+                    else
+                    {
+                        venderResonse.ResponseHttpStatusCode = response.StatusCode;
+                        //Error in status code. Do nothing
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                venderResonse.GeneralException = ex;
+            }
+            return refreshPlate;
+        }
+
+        public static string GetAllActivePurchases(string firstParameter, string secondParameter)
+        {
+
+            string xmlData = string.Empty;
+            using (var client = new HttpClient())
+            {
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+                try
+                {
+                    var baseURL = @"https://webservice.mdc.dmz.caleaccess.com";
+                    string UserName = @"e_Duncan_2826";
+                    string UserPassword = @"6_%g9jdaYm";
+                    var currentURL = UrlList.GetAllActivePurchasesURL(baseURL, firstParameter, secondParameter);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    var byteArray = Encoding.ASCII.GetBytes(string.Format("{0}:{1}", UserName, UserPassword));
+                    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+                    HttpResponseMessage response = client.GetAsync(currentURL).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        xmlData = response.Content.ReadAsStringAsync().Result;
+                    }
+                    else if (response.StatusCode == HttpStatusCode.BadGateway || response.StatusCode == HttpStatusCode.Forbidden)
+                    {
+
+                    }
+                    else
+                    {
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+            return xmlData;
+
+        }
+    }
+}

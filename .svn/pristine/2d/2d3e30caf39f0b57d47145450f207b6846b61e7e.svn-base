@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitationValidation", "CitationValidation\CitationValidation.csproj", "{43D47508-4646-4C55-BE68-731A8F998F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{61AF28E2-B470-4386-AC0D-D53229B94969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentInfo", "PaymentInfo\PaymentInfo.csproj", "{D5D70674-7785-4B1E-B481-DD0435664ACB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43D47508-4646-4C55-BE68-731A8F998F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D47508-4646-4C55-BE68-731A8F998F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D47508-4646-4C55-BE68-731A8F998F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D47508-4646-4C55-BE68-731A8F998F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61AF28E2-B470-4386-AC0D-D53229B94969}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61AF28E2-B470-4386-AC0D-D53229B94969}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61AF28E2-B470-4386-AC0D-D53229B94969}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61AF28E2-B470-4386-AC0D-D53229B94969}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5D70674-7785-4B1E-B481-DD0435664ACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5D70674-7785-4B1E-B481-DD0435664ACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5D70674-7785-4B1E-B481-DD0435664ACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5D70674-7785-4B1E-B481-DD0435664ACB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

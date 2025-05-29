@@ -1,0 +1,41 @@
+﻿{
+
+    "status": true,
+
+    "error": "",
+
+    "plates": {
+
+        "id": "19",
+
+        "plate_number": "kelevra",
+
+        "plate_state": null,
+
+        "reservation_id": "8617187",
+
+        "user_id": "36365",
+
+        "date_start_time": "2019-04-15 00:00:00",
+
+        "date_end_time": "2019-04-15 23:59:00",
+
+        "source": "Website",
+
+        "updated": "2019-04-15 21:53:53",
+
+        "date_created": "2019-04-15 14:51:57",
+
+        "amount": "15",
+
+        "tx_seq": "8617187",
+
+        "lot_number": "0",
+
+        "zone": "1",
+
+        "receipt_id": null
+
+    }
+
+}

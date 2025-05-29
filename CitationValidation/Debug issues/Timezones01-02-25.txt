@@ -1,0 +1,115 @@
+-----------Exception Details on  2/1/2025 8:28:28 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 2/1/2025 8:28:28 AM
+
+Error Line No : ne 9875
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetTybeeIslandWithPlateName(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 3260
+   at DataAccess.Model.TransactionDataValidatioin.GetDataTybeeIsland(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 9875
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  2/1/2025 8:35:19 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 2/1/2025 8:35:19 AM
+
+Error Line No : ne 9875
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetTybeeIslandWithPlateName(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 3260
+   at DataAccess.Model.TransactionDataValidatioin.GetDataTybeeIsland(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 9875
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  2/1/2025 10:41:28 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 2/1/2025 10:41:28 AM
+
+Error Line No : ne 9875
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetTybeeIslandWithPlateName(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 3260
+   at DataAccess.Model.TransactionDataValidatioin.GetDataTybeeIsland(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 9875
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  2/1/2025 1:25:18 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 2/1/2025 1:25:18 PM
+
+Error Line No : ne 9875
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetTybeeIslandWithPlateName(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 3260
+   at DataAccess.Model.TransactionDataValidatioin.GetDataTybeeIsland(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 9875
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  2/1/2025 4:42:54 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 2/1/2025 4:42:54 PM
+
+Error Line No : ne 4307
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetSunnyIslesBeachCitationData(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 1472
+   at DataAccess.Model.TransactionDataValidatioin.GetDataSunnyIslesBeach(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 4307
+--------------------------------*End*------------------------------------------

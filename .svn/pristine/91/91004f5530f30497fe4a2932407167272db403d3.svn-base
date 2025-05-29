@@ -1,0 +1,77 @@
+﻿using DataAccess.Model;
+using System;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace DataAccess
+{
+    public class PermitDataAccess
+    {
+        public static Permits GetPermitMatch(int customerID, string PlateNumber)
+        {
+            Permits permits = new Permits();
+            SqlConnection connection = null;
+            try
+            {
+                connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Connector"].ToString());
+                SqlCommand sqlCommand = new SqlCommand();
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.CommandText = "spPlatePermit";
+                sqlCommand.Parameters.AddWithValue("@customerID", customerID);
+                sqlCommand.Parameters.AddWithValue("@plateNo", PlateNumber);
+                sqlCommand.Connection = connection;
+                sqlCommand.CommandTimeout = 30;
+                connection.Open();
+                using (var reader = sqlCommand.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var item = new Permit();
+                        item.permitNo = reader["permitNo"] == System.DBNull.Value ? null : (string)reader["permitNo"];
+                        item.permitType = reader["permitType"] == System.DBNull.Value ? null : (string)reader["permitType"];
+                        item.permitSource = reader["permitSource"] == System.DBNull.Value ? null : (string)reader["permitSource"];
+                        item.permitZoneId = reader["permitZoneId"] == System.DBNull.Value ? null : (string)reader["permitZoneId"];
+                        item.permitZoneName = reader["permitZoneName"] == System.DBNull.Value ? null : (string)reader["permitZoneName"];
+                        item.PermitTxnReferenceId = reader["PermitTxnReferenceId"] == System.DBNull.Value ? null : (string)reader["PermitTxnReferenceId"];
+
+                        item.StartDateTime = reader["permitStartDateTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["permitStartDateTime"];
+                        item.permitStartDateTime = DateTimeJson.ToString(item.StartDateTime);
+
+                        item.EndDateTime = reader["permitEndDateTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["permitEndDateTime"];
+                        item.permitEndDateTime = DateTimeJson.ToString(item.EndDateTime);
+
+                        item.TxnDateTime = reader["PermitTxnDateTime"] == System.DBNull.Value ? default(DateTime?) : (DateTime)reader["PermitTxnDateTime"];
+                        item.PermitTxnDateTime = DateTimeJson.ToString(item.TxnDateTime);
+
+                        permits.Candidate.Add(item);
+                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+            return permits;
+        }
+
+        public static class DateTimeJson
+        {
+            public static string ToString(DateTime? value)
+            {
+                if (value.HasValue)
+                {
+                    // return value.Value.ToString("o");
+                    return DateTime.SpecifyKind(value.Value, DateTimeKind.Utc).ToString("O");
+                }
+                else
+                    return string.Empty;
+            }
+        }
+    }
+}

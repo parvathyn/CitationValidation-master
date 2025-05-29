@@ -1,0 +1,12 @@
+<publishData>
+  <publishTarget publishUrl="C:\HostingService\PaymentInfo\">
+    <file relUrl="App_Data\Timezones/TimeZones.xml" publishTime="02/01/2017 11:34:36" />
+    <file relUrl="bin/PaymentInfo.pdb" publishTime="02/02/2017 12:31:56" />
+    <file relUrl="Web.config" publishTime="02/01/2017 15:07:41" />
+    <file relUrl="bin/DataAccess.pdb" publishTime="02/02/2017 12:31:49" />
+    <file relUrl="bin/DataAccess.dll" publishTime="02/02/2017 12:31:49" />
+    <file relUrl="PaymentInfo.PaymentInfo.svc" publishTime="02/02/2017 12:31:56" />
+    <file relUrl="bin/PaymentInfo.dll.config" publishTime="02/01/2017 15:07:41" />
+    <file relUrl="bin/PaymentInfo.dll" publishTime="02/02/2017 12:31:56" />
+  </publishTarget>
+</publishData>

@@ -1,0 +1,134 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Text;
+
+namespace DataAccess.Model
+{
+
+    [DataContract]
+    public class Payment
+    {
+        [DataMember]
+        public string permitNo { get; set; }
+
+        [DataMember]
+        public string permitType { get; set; }
+
+        [DataMember]
+        public string permitSource { get; set; }
+
+        [DataMember]
+        public string permitZoneId { get; set; }
+
+        [DataMember]
+        public string permitZoneName { get; set; }
+
+        [DataMember]
+        public string permitStartDateTime { get; set; }
+
+        [DataMember]
+        public string permitEndDateTime { get; set; }
+
+        [DataMember]
+        public string PermitTxnDateTime { get; set; }
+
+        [DataMember]
+        public string PermitTxnReferenceId { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public bool? Error { get; set; }
+
+
+        public DateTime? StartDateTime { get; set; }
+        public DateTime? EndDateTime { get; set; }
+        public DateTime? TxnDateTime { get; set; }
+
+    }
+
+    [DataContract]
+    [Serializable]
+    public class Payments
+    {
+        private List<Payment> _listPermit;
+        public Payments()
+        {
+            _listPermit = new List<Payment>();
+        }
+
+        [DataMember(Name = "Payment")]
+        public List<Payment> Candidate
+        {
+            get
+            {
+                return this._listPermit;
+            }
+            set
+            {
+                this._listPermit = value;
+            }
+        }
+
+        public string GetJsonData()
+        {
+            using (MemoryStream mem = new MemoryStream())
+            {
+                DataContractJsonSerializer ser =
+                new DataContractJsonSerializer(typeof(Permits));
+
+                ser.WriteObject(mem, this);
+                string data =
+               Encoding.UTF8.GetString(mem.ToArray(), 0, (int)mem.Length);
+                return data;
+            }
+        }
+    }
+
+    public class PaymentFactory
+    {
+        private Payments payment;
+        public PaymentFactory()
+        {
+            payment = new Payments();
+        }
+        public Payments GetData(int customerID, string PlateNumber)
+        {
+            try
+            {
+                this.MatchPermit(PlateNumber, customerID);
+                return payment;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void MatchPermit(string plateValue, int customerID)
+        {
+            try
+            {
+                this.GetRepositoryData(plateValue, customerID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        protected void GetRepositoryData(string plateValue, int customerID)
+        {
+            //this.permit = PermitDataAccess.GetPermitMatch(customerID, plateValue);
+        }
+
+        public static Payment GetErrorPermit
+        {
+            get
+            {
+                return new Payment() { Error = true };
+            }
+        }
+    }
+}

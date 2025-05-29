@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <section name="ExcludeAssetSection" type="System.Configuration.NameValueSectionHandler" />
+    <section name="payByPhone" type="DataAccess.Model.PayByPhone.CustomerRetrieverSection,DataAccess"/>
+    <section name="parkmobile" type="DataAccess.Model.Parkmobile.PMCustomerRetrieverSection,DataAccess"/>
+  </configSections>
+  <connectionStrings>
+    <!--<add name="Connector" connectionString="Server=sql0210229; Initial Catalog=Pems_Us_pro;User Id=Duncan; Password=n0_Pr3ssure;Connection Timeout=2000" providerName="System.Data.SqlClient" />-->
+
+    <add name="Connector" connectionString="Server=172.21.2.181; Initial Catalog=PEMS_US_PRO;User Id=sampathg; Password=.Dotnetteam;Connection Timeout=120" providerName="System.Data.SqlClient" />
+
+  </connectionStrings>
+  <appSettings>
+    <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  <system.web>
+    <compilation debug="true" />
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+  <!-- When deploying the service library project, the content of the config file must be added to the host's 
+  app.config file. System.Configuration does not support config files for libraries. -->
+  <system.serviceModel>
+    <services>
+      <service name="CitationValidation.ValidateCitation">
+        <host>
+          <baseAddresses>
+            <add baseAddress="http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/" />
+          </baseAddresses>
+        </host>
+        <!-- Service Endpoints -->
+        <!-- Unless fully qualified, address is relative to base address supplied above -->
+        <endpoint address="" binding="webHttpBinding" contract="CitationValidation.IValidateCitation" behaviorConfiguration="webBehavior">
+          <identity>
+            <dns value="localhost" />
+          </identity>
+        </endpoint>
+        <!--<endpoint address="" binding="basicHttpBinding" contract="CitationValidation.IValidateCitation">
+          <identity>
+            <dns value="localhost" />
+          </identity>
+        </endpoint>-->
+        <!-- Metadata Endpoints -->
+        <!-- The Metadata Exchange endpoint is used by the service to describe itself to clients. -->
+        <!-- This endpoint does not use a secure binding and should be secured or removed before deployment -->
+        <endpoint address="mex" binding="mexHttpBinding" contract="IMetadataExchange" />
+      </service>
+    </services>
+    <behaviors>
+      <endpointBehaviors>
+        <behavior name="webBehavior">
+          <webHttp helpEnabled="true" />
+        </behavior>
+      </endpointBehaviors>
+      <serviceBehaviors>
+        <behavior>
+          <!-- To avoid disclosing metadata information, 
+          set the values below to false before deployment -->
+          <serviceMetadata httpGetEnabled="True" httpsGetEnabled="True" />
+          <!-- To receive exception details in faults for debugging purposes, 
+          set the value below to true.  Set to false before deployment 
+          to avoid disclosing exception information -->
+          <serviceDebug includeExceptionDetailInFaults="False" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+  </system.serviceModel>
+  <ExcludeAssetSection>
+    <add key="7001" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,948,949,950,951" />
+  </ExcludeAssetSection>
+  <payByPhone>
+    <customers>
+      <add customerId="7002" name="CoralGables"  vendorId="4341" userName="civic1" userPassword="smart123"  baseURL="https://api.paybyphone.com/enforcement/v2/parking/byPlate/"></add>
+    </customers>
+  </payByPhone>
+  <parkmobile>
+    <customers>
+      <add customerId="4194" name="BirminghamMI" userName="ws_birminghamcs" userPassword="PHesw4fu"  gracePeriodInSecond="600" baseURL="https://api.parkmobile.us/nforceapi/parkingrights/"></add>
+      <add customerId="4120" name="Atlanta" userName="ws_atlantacivicsmart" userPassword="T7kpRg!"  gracePeriodInSecond="300" baseURL="https://api.parkmobile.us/nforceapi/parkingrights/"></add>
+    </customers>
+  </parkmobile>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>

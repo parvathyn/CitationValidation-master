@@ -1,0 +1,394 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccess.Model.Cale
+{
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schema.caleaccess.com/cwo2exportservice/Enforcement/4/")]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "http://schema.caleaccess.com/cwo2exportservice/Enforcement/4/", IsNullable = false)]
+    public partial class ArrayOfValidParkingData
+    {
+        private ArrayOfValidParkingDataValidParkingData validParkingDataField;
+        public ArrayOfValidParkingDataValidParkingData ValidParkingData
+        {
+            get
+            {
+                return this.validParkingDataField;
+            }
+            set
+            {
+                this.validParkingDataField = value;
+            }
+        }
+    }
+
+
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schema.caleaccess.com/cwo2exportservice/Enforcement/4/")]
+    public partial class ArrayOfValidParkingDataValidParkingData
+    {
+
+        private ArrayOfValidParkingDataValidParkingDataArticle articleField;
+
+        private string codeField;
+
+        private object containsTerminalOutOfCommunicationField;
+
+        private ArrayOfValidParkingDataValidParkingDataCoordinate coordinateField;
+
+        private System.DateTime dateChangedUtcField;
+
+        private System.DateTime dateCreatedUtcField;
+
+        private System.DateTime endDateUtcField;
+
+        private bool isExpiredField;
+
+        private object parkingSpaceIDField;
+
+        private object postPaymentNetworkNameField;
+
+        private object postPaymentTransactionIDField;
+
+        private object postPaymentTransactionStatusKeyField;
+
+        private System.DateTime startDateUtcField;
+
+        private ArrayOfValidParkingDataValidParkingDataTariff tariffField;
+
+        private string ticketNumberField;
+
+        private string zoneField;
+
+
+        public ArrayOfValidParkingDataValidParkingDataArticle Article
+        {
+            get
+            {
+                return this.articleField;
+            }
+            set
+            {
+                this.articleField = value;
+            }
+        }
+
+
+        public string Code
+        {
+            get
+            {
+                return this.codeField;
+            }
+            set
+            {
+                this.codeField = value;
+            }
+        }
+
+
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
+        public object ContainsTerminalOutOfCommunication
+        {
+            get
+            {
+                return this.containsTerminalOutOfCommunicationField;
+            }
+            set
+            {
+                this.containsTerminalOutOfCommunicationField = value;
+            }
+        }
+
+
+        public ArrayOfValidParkingDataValidParkingDataCoordinate Coordinate
+        {
+            get
+            {
+                return this.coordinateField;
+            }
+            set
+            {
+                this.coordinateField = value;
+            }
+        }
+
+
+        public System.DateTime DateChangedUtc
+        {
+            get
+            {
+                return this.dateChangedUtcField;
+            }
+            set
+            {
+                this.dateChangedUtcField = value;
+            }
+        }
+
+
+        public System.DateTime DateCreatedUtc
+        {
+            get
+            {
+                return this.dateCreatedUtcField;
+            }
+            set
+            {
+                this.dateCreatedUtcField = value;
+            }
+        }
+
+
+        public System.DateTime EndDateUtc
+        {
+            get
+            {
+                return this.endDateUtcField;
+            }
+            set
+            {
+                this.endDateUtcField = value;
+            }
+        }
+
+
+        public bool IsExpired
+        {
+            get
+            {
+                return this.isExpiredField;
+            }
+            set
+            {
+                this.isExpiredField = value;
+            }
+        }
+
+
+        public object ParkingSpaceID
+        {
+            get
+            {
+                return this.parkingSpaceIDField;
+            }
+            set
+            {
+                this.parkingSpaceIDField = value;
+            }
+        }
+
+
+        public object PostPaymentNetworkName
+        {
+            get
+            {
+                return this.postPaymentNetworkNameField;
+            }
+            set
+            {
+                this.postPaymentNetworkNameField = value;
+            }
+        }
+
+
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
+        public object PostPaymentTransactionID
+        {
+            get
+            {
+                return this.postPaymentTransactionIDField;
+            }
+            set
+            {
+                this.postPaymentTransactionIDField = value;
+            }
+        }
+
+
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
+        public object PostPaymentTransactionStatusKey
+        {
+            get
+            {
+                return this.postPaymentTransactionStatusKeyField;
+            }
+            set
+            {
+                this.postPaymentTransactionStatusKeyField = value;
+            }
+        }
+
+
+        public System.DateTime StartDateUtc
+        {
+            get
+            {
+                return this.startDateUtcField;
+            }
+            set
+            {
+                this.startDateUtcField = value;
+            }
+        }
+
+
+        public ArrayOfValidParkingDataValidParkingDataTariff Tariff
+        {
+            get
+            {
+                return this.tariffField;
+            }
+            set
+            {
+                this.tariffField = value;
+            }
+        }
+
+
+        public string TicketNumber
+        {
+            get
+            {
+                return this.ticketNumberField;
+            }
+            set
+            {
+                this.ticketNumberField = value;
+            }
+        }
+
+
+        public string Zone
+        {
+            get
+            {
+                return this.zoneField;
+            }
+            set
+            {
+                this.zoneField = value;
+            }
+        }
+    }
+
+
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schema.caleaccess.com/cwo2exportservice/Enforcement/4/")]
+    public partial class ArrayOfValidParkingDataValidParkingDataArticle
+    {
+
+        private string idField;
+
+        private string nameField;
+
+
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+
+        public string Name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+    }
+
+
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schema.caleaccess.com/cwo2exportservice/Enforcement/4/")]
+    public partial class ArrayOfValidParkingDataValidParkingDataCoordinate
+    {
+
+        private string latitudeField;
+
+        private string longitudeField;
+
+
+        public string Latitude
+        {
+            get
+            {
+                return this.latitudeField;
+            }
+            set
+            {
+                this.latitudeField = value;
+            }
+        }
+
+
+        public string Longitude
+        {
+            get
+            {
+                return this.longitudeField;
+            }
+            set
+            {
+                this.longitudeField = value;
+            }
+        }
+    }
+
+
+
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "http://schema.caleaccess.com/cwo2exportservice/Enforcement/4/")]
+    public partial class ArrayOfValidParkingDataValidParkingDataTariff
+    {
+
+        private string idField;
+
+        private string nameField;
+
+
+        public string Id
+        {
+            get
+            {
+                return this.idField;
+            }
+            set
+            {
+                this.idField = value;
+            }
+        }
+
+
+        public string Name
+        {
+            get
+            {
+                return this.nameField;
+            }
+            set
+            {
+                this.nameField = value;
+            }
+        }
+    }
+
+}

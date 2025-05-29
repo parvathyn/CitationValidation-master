@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DataAccess.Model
+{
+    public class RequestResponseEntity
+    {
+        private RequestEntity _RequestEntity;
+        private ResponseEntity _ResponseEntity;
+        public RequestResponseEntity()
+        {
+            _RequestEntity = new RequestEntity();
+            _ResponseEntity = new ResponseEntity();
+        }
+        public DateTime StartTimeUTC { get; set; }
+        public DateTime EndTimeUTC { get; set; }
+        public RequestEntity Request
+        {
+            get { return _RequestEntity; }
+            set{ _RequestEntity = value; } 
+        }
+        public ResponseEntity Response 
+        {
+            get { return _ResponseEntity ;}
+            set {_ResponseEntity = value;} 
+        }
+    }
+
+    public class ReqResCommon
+    {
+        public string CustomerId { get; set; }
+        public string VendorId { get; set; }
+        public string MeterId { get; set; }
+        public string SpaceId { get; set; }
+        public string StallId { get; set; }
+        public DateTime CurrentUTCTime { get; set; }
+    }
+
+    public class RequestEntity : ReqResCommon
+    {
+        public string RequestBody { get; set; }
+        public string IPAddress { get; set; }
+    }
+
+    public class ResponseEntity : ReqResCommon
+    {
+        public DateTime CityCurrentTime { get; set; }
+        public string ResponseBody { get; set; }
+    }
+
+    public class VendorRequestResponseEntity
+    {
+
+    }
+}

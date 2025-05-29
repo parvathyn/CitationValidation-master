@@ -1,0 +1,23 @@
+﻿using System.Configuration;
+
+namespace DataAccess.Model.Parkeon
+{
+    public class ParkeonCustomerRetriever
+    {
+        public static ParkeonCustomerRetrieverSection _Config = ConfigurationManager.GetSection("parkeon") as ParkeonCustomerRetrieverSection;
+        public static ParkeonCustomerElementCollection GetCustomers()
+        {
+            return _Config.Customers;
+        }
+
+        public static ParkeonCustomerElement GetCustomer(int customerId)
+        {
+            foreach (ParkeonCustomerElement item in _Config.Customers)
+            {
+                if (item.CustomerId == customerId.ToString())
+                    return item;
+            }
+            return null;
+        }
+    }
+}

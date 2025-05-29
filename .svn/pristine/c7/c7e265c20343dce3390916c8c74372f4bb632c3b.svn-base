@@ -1,0 +1,46 @@
+<publishData>
+  <publishTarget publishUrl="C:\HostingService\CitationValidation\">
+    <file relUrl="CitationValidation.ValidateCitation.svc" publishTime="06/28/2017 09:34:25" />
+    <file relUrl="Web.config" publishTime="06/21/2017 15:51:33" />
+    <file relUrl="bin/DataAccess.pdb" publishTime="06/28/2017 09:24:26" />
+    <file relUrl="bin/DataAccess.dll" publishTime="06/28/2017 09:24:26" />
+    <file relUrl="bin/CitationValidation.dll.config" publishTime="06/21/2017 15:51:33" />
+    <file relUrl="bin/CitationValidation.dll" publishTime="06/28/2017 09:34:25" />
+    <file relUrl="bin/System.Web.dll" publishTime="09/26/2012 03:16:08" />
+    <file relUrl="App_Data\Timezones/TimeZones.xml" publishTime="01/02/2017 11:01:47" />
+    <file relUrl="bin/CitationValidation.pdb" publishTime="06/28/2017 09:34:25" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Ananga\MobilePaymentApplication\SIT\Test-April-24\">
+    <file relUrl="CitationValidation.ValidateCitation.svc" publishTime="04/24/2017 18:24:00" />
+    <file relUrl="Web.config" publishTime="03/30/2017 18:39:34" />
+    <file relUrl="bin/DataAccess.pdb" publishTime="04/24/2017 18:20:14" />
+    <file relUrl="bin/DataAccess.dll" publishTime="04/24/2017 18:20:14" />
+    <file relUrl="bin/CitationValidation.dll.config" publishTime="03/30/2017 18:39:34" />
+    <file relUrl="bin/CitationValidation.dll" publishTime="04/24/2017 18:23:59" />
+    <file relUrl="bin/System.Web.dll" publishTime="09/26/2012 03:16:08" />
+    <file relUrl="App_Data\Timezones/TimeZones.xml" publishTime="01/02/2017 11:01:47" />
+    <file relUrl="bin/CitationValidation.pdb" publishTime="04/24/2017 18:23:59" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\HostingService\CitationValidation-April-4-4-107\">
+    <file relUrl="CitationValidation.ValidateCitation.svc" publishTime="04/04/2017 10:52:42" />
+    <file relUrl="bin/System.Web.dll" publishTime="09/26/2012 03:16:08" />
+    <file relUrl="Web.config" publishTime="03/30/2017 18:39:34" />
+    <file relUrl="bin/DataAccess.pdb" publishTime="04/04/2017 10:52:36" />
+    <file relUrl="bin/DataAccess.dll" publishTime="04/04/2017 10:52:36" />
+    <file relUrl="bin/CitationValidation.dll.config" publishTime="03/30/2017 18:39:34" />
+    <file relUrl="bin/CitationValidation.dll" publishTime="04/04/2017 10:52:36" />
+    <file relUrl="App_Data\Timezones/TimeZones.xml" publishTime="01/02/2017 11:01:47" />
+    <file relUrl="bin/CitationValidation.pdb" publishTime="04/04/2017 10:52:36" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\HostingService\CitationValidation-March-30-2-107\">
+    <file relUrl="CitationValidation.ValidateCitation.svc" publishTime="03/30/2017 18:39:43" />
+    <file relUrl="Web.config" publishTime="03/30/2017 18:39:34" />
+    <file relUrl="bin/DataAccess.pdb" publishTime="03/30/2017 18:35:30" />
+    <file relUrl="bin/DataAccess.dll" publishTime="03/30/2017 18:35:30" />
+    <file relUrl="bin/CitationValidation.dll.config" publishTime="03/30/2017 18:39:34" />
+    <file relUrl="bin/CitationValidation.dll" publishTime="03/30/2017 18:39:38" />
+    <file relUrl="bin/System.Web.dll" publishTime="09/26/2012 03:16:08" />
+    <file relUrl="App_Data\Timezones/TimeZones.xml" publishTime="01/02/2017 11:01:47" />
+    <file relUrl="bin/CitationValidation.pdb" publishTime="03/30/2017 18:39:38" />
+  </publishTarget>
+</publishData>

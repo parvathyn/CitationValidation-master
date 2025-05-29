@@ -1,0 +1,1073 @@
+-----------Exception Details on  1/30/2025 8:00:28 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 8:00:28 AM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 11:06:51 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 11:06:51 AM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 11:06:59 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 11:06:59 AM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 11:42:01 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 11:42:01 AM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 11:42:56 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 11:42:56 AM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 11:44:09 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 11:44:09 AM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 11:45:45 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 11:45:45 AM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 11:46:58 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 11:46:58 AM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 1:26:35 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 1:26:35 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 1:29:31 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 1:29:31 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 1:47:33 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 1:47:33 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 3:11:30 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 3:11:30 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 3:11:43 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 3:11:43 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 3:12:30 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 3:12:30 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 3:33:37 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 3:33:37 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:02:31 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:02:31 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:05:47 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:05:47 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:28:59 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:28:59 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:29:45 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:29:45 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:30:37 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:30:37 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:31:19 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:31:19 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:31:53 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:31:53 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:32:40 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:32:40 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 4:33:25 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 4:33:25 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 5:54:56 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 5:54:56 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:16:00 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:16:00 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:16:43 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:16:43 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:38:33 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:38:33 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:39:08 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:39:08 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:40:15 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:40:15 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:41:18 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:41:18 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:42:14 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:42:14 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:42:48 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:42:48 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:44:34 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:44:34 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:45:14 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:45:14 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:46:13 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:46:13 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 6:54:44 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 6:54:44 PM
+
+Error Line No : line 24
+
+Error Message: UnauthorizedAccessException
+
+Exception Type: System.UnauthorizedAccessException
+
+Error Location : Access to the path 'D:\Csroot\CitationValidation\LogRequestResponse\01-01-01.txt' is denied.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   at System.IO.StreamWriter..ctor(String path, Boolean append)
+   at System.IO.File.AppendText(String path)
+   at DataAccess.Model.RequestResponseLog.<ReqResLog>d__0.MoveNext() in D:\Projects\CitationValidation\DataAccess\Model\RequestResponseLog.cs:line 24
+--------------------------------*End*------------------------------------------

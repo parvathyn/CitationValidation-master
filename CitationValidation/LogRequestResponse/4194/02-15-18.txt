@@ -1,0 +1,81 @@
+
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-1	SpaceId : 	UTC Time : 2018-02-15T09:45:56.7935385Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7979-1-VGD4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-15T09:46:01.3648000Z 	CityCurrentTime : 2018-02-15T04:46:00.4270000 
+Response Data : {"EnforcementKey":"4194-7979-1-1--","ExpiredTime":"20180215_T201601Z","IsOccupied":"0","LicensePlate":"","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"MARTIN","METERLOC_STREETNAME":"MARTIN","METERLOC_STREETTYPE":"MARTIN","Make":"","MeterExpiredMinutes":"-1","MeterID":"33075","MeterLastUpdateTime":"20180215_T201601Z","MeterName":"7979","MeterRTC":"20180215_T094600Z","MeterStreet":"MARTIN","Model":"","ReturnCode":"0","SensorEventTime":"20180215_T201601Z","SpaceNo":"1","State":"","ZoneName":"7979"} 
+Duration(in Seconds) : -4
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7979-1	SpaceId : 	UTC Time : 2018-02-15T10:08:19.2971812Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7979-1-VGD4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7979	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-15T10:08:32.4709347Z 	CityCurrentTime : 2018-02-15T05:08:29.3857582Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7979-1-VGD4-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7926","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"36","State":null} 
+Duration(in Seconds) : -13
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-36	SpaceId : 	UTC Time : 2018-02-15T10:14:16.5232378Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7928-36-VGD4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 36	StallId : 	Current UTC Time : 2018-02-15T10:18:54.4771358Z 	CityCurrentTime : 2018-02-15T05:17:49.4134144Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7928-36-VGD4-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7928","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"7928","State":null} 
+Duration(in Seconds) : -37
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-36	SpaceId : 	UTC Time : 2018-02-15T10:23:20.5495799Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7928-36-VGD4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 36	StallId : 	Current UTC Time : 2018-02-15T10:25:48.0410159Z 	CityCurrentTime : 2018-02-15T05:25:26.7707993Z 
+Response Data : {"EnforcementKey":"PAYBYSPACE-4194-7928-36-VGD4-MI","ExpiredTime":null,"IsOccupied":null,"LicensePlate":null,"METERLOC_BLOCKNUMBER":null,"METERLOC_CROSSSTREET1":null,"METERLOC_CROSSSTREET2":null,"METERLOC_ENFORCEMENTHOURSDESC":null,"METERLOC_STREETDIRECTION":null,"METERLOC_STREETNAME":null,"METERLOC_STREETTYPE":null,"Make":null,"MeterExpiredMinutes":"-1","MeterID":"7928","MeterLastUpdateTime":null,"MeterName":null,"MeterRTC":null,"MeterStreet":null,"Model":null,"ReturnCode":"0","SensorEventTime":null,"SpaceNo":"7928","State":null} 
+Duration(in Seconds) : -27
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-36	SpaceId : 	UTC Time : 2018-02-15T10:31:49.6247800Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7928-36-VGD4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 36	StallId : 	Current UTC Time : 2018-02-15T10:33:39.3600560Z 	CityCurrentTime : 2018-02-15T05:32:30.3421084Z 
+Response Data : {"EnforcementKey":"4194-7928-36-1--Occupied","ExpiredTime":"20180215_T115942Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"535","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"88","MeterID":"32540","MeterLastUpdateTime":"20180214_T234943Z","MeterName":"7928","MeterRTC":"20180215_T103157Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20180214_T234943Z","SpaceNo":"36","State":"","ZoneName":"7928"} 
+Duration(in Seconds) : -49
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-36	SpaceId : 	UTC Time : 2018-02-15T10:33:47.4472088Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7928-36-VGD4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 36	StallId : 	Current UTC Time : 2018-02-15T10:34:14.6037616Z 	CityCurrentTime : 2018-02-15T05:33:56.5107267Z 
+Response Data : {"EnforcementKey":"4194-7928-36-1--Occupied","ExpiredTime":"20180215_T115942Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"535","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"86","MeterID":"32540","MeterLastUpdateTime":"20180214_T234943Z","MeterName":"7928","MeterRTC":"20180215_T103352Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20180214_T234943Z","SpaceNo":"36","State":"","ZoneName":"7928"} 
+Duration(in Seconds) : -27
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-36	SpaceId : 	UTC Time : 2018-02-15T10:39:24.2422295Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7928-36-VGD4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 36	StallId : 	Current UTC Time : 2018-02-15T10:41:04.8639842Z 	CityCurrentTime : 2018-02-15T05:39:35.6778830Z 
+Response Data : {"EnforcementKey":"4194-7928-36-1--Occupied","ExpiredTime":"20180215_T115942Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"535","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"80","MeterID":"32540","MeterLastUpdateTime":"20180214_T234943Z","MeterName":"7928","MeterRTC":"20180215_T103931Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20180214_T234943Z","SpaceNo":"36","State":"","ZoneName":"7928"} 
+Duration(in Seconds) : -40
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 4194	MeterId : 7928-36	SpaceId : 	UTC Time : 2018-02-15T10:41:10.2650604Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYSPACE-4194-7928-36-VGD4-MI 	
+
+Response : 
+EnfCustomerId : 4194	MeterId : 7928	SpaceId : 36	StallId : 	Current UTC Time : 2018-02-15T10:43:24.5307389Z 	CityCurrentTime : 2018-02-15T05:41:17.3274633Z 
+Response Data : {"EnforcementKey":"4194-7928-36-1--Occupied","ExpiredTime":"20180215_T115942Z","IsOccupied":"1","LicensePlate":"","METERLOC_BLOCKNUMBER":"535","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_METERTYPE":"SSM","METERLOC_STREETDIRECTION":"N","METERLOC_STREETNAME":"N OLD WOODWARD","METERLOC_STREETTYPE":"N OLD WOODWARD","Make":"","MeterExpiredMinutes":"78","MeterID":"32540","MeterLastUpdateTime":"20180214_T234943Z","MeterName":"7928","MeterRTC":"20180215_T104113Z","MeterStreet":"N OLD WOODWARD","Model":"","ReturnCode":"0","SensorEventTime":"20180214_T234943Z","SpaceNo":"36","State":"","ZoneName":"7928"} 
+Duration(in Seconds) : -14
+----------------------------------------------------------------------------------------------------------

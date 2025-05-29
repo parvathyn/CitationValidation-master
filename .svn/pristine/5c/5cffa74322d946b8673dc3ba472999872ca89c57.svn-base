@@ -1,0 +1,419 @@
+﻿using System;
+using System.IO;
+using System.Text;
+
+namespace DataAccess.Model
+{
+    public class RequestResponseLog
+    {
+        public static async void ReqResLog(RequestResponseEntity data, string filepath)
+        {
+            try
+            {
+                if (!Directory.Exists(filepath))
+                {
+                    Directory.CreateDirectory(filepath);
+                }
+                //filepath = Path.Combine(filepath, DateTime.Today.ToString("MM-dd-yy") + ".txt");   //Date in running server Time
+                //filepath = Path.Combine(filepath, DateTime.UtcNow.ToString("MM-dd-yy") + ".txt");   //Date in running UTC Time
+                filepath = Path.Combine(filepath, data.Response.CityCurrentTime.ToString("MM-dd-yy") + ".txt");   //Date in Customer Time
+                if (!File.Exists(filepath))
+                {
+                    File.Create(filepath).Dispose();
+                }
+                using (StreamWriter sw = File.AppendText(filepath))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(Environment.NewLine);
+                    sb.Append("Request : ").Append(Environment.NewLine);
+                    sb.AppendFormat("EnfCustomerId : {0}", data.Request.CustomerId).Append("\t");
+                    if (data.Response.CustomerId != "7001")
+                        sb.AppendFormat("MeterId : {0}", data.Request.MeterId).Append("\t");
+                    else
+                        sb.AppendFormat("Meter Name : {0}", data.Request.MeterId).Append("\t");
+                    sb.AppendFormat("SpaceId : {0}", data.Request.SpaceId).Append("\t");
+                    sb.AppendFormat("UTC Time : {0} ", data.Request.CurrentUTCTime.ToString("O")).Append(Environment.NewLine);
+                    sb.AppendFormat("IP Address :{0} ", data.Request.IPAddress).Append(Environment.NewLine);
+                    sb.AppendFormat("Request Data : {0} ", data.Request.RequestBody).Append("\t");
+
+                    sb.Append(Environment.NewLine).Append(Environment.NewLine).Append("Response : ").Append(Environment.NewLine);
+                    sb.AppendFormat("EnfCustomerId : {0}", data.Response.CustomerId).Append("\t");
+                    if (data.Response.CustomerId != "7001")
+                        sb.AppendFormat("MeterId : {0}", data.Response.MeterId).Append("\t");
+                    else
+                        sb.AppendFormat("Meter Name : {0}", data.Response.MeterId).Append("\t");
+                    sb.AppendFormat("SpaceId : {0}", data.Response.SpaceId).Append("\t");
+                    sb.AppendFormat("StallId : {0}", data.Response.StallId).Append("\t");
+                    sb.AppendFormat("Current UTC Time : {0} ", data.Response.CurrentUTCTime.ToString("O")).Append("\t");
+                    sb.AppendFormat("CityCurrentTime : {0} ", data.Response.CityCurrentTime.ToString("O")).Append(Environment.NewLine);
+                    sb.AppendFormat("Response Data : {0} ", data.Response.ResponseBody).Append(Environment.NewLine);
+                    sb.Append("Duration(in Seconds) : ").Append(data.Request.CurrentUTCTime.Subtract(data.Response.CurrentUTCTime).Seconds.ToString());
+                    sb.Append(Environment.NewLine);
+                    sb.Append("----------------------------------------------------------------------------------------------------------");
+                    await sw.WriteAsync(sb.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetData");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+            }
+        }
+
+        public static async void ReqResLog(RequestResponseEntity data, string filepath, Exception exCaught)
+        {
+            try
+            {
+                if (!Directory.Exists(filepath))
+                {
+                    Directory.CreateDirectory(filepath);
+                }
+                //filepath = Path.Combine(filepath, DateTime.Today.ToString("MM-dd-yy") + ".txt");   //Date in running server Time
+                //filepath = Path.Combine(filepath, DateTime.UtcNow.ToString("MM-dd-yy") + ".txt");   //Date in running UTC Time
+                filepath = Path.Combine(filepath, data.Response.CityCurrentTime.ToString("MM-dd-yy") + ".txt");   //Date in Customer Time
+                if (!File.Exists(filepath))
+                {
+                    File.Create(filepath).Dispose();
+                }
+                using (StreamWriter sw = File.AppendText(filepath))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(Environment.NewLine);
+                    sb.Append("Request : ").Append(Environment.NewLine);
+                    sb.AppendFormat("EnfCustomerId : {0}", data.Request.CustomerId).Append("\t");
+                    if (data.Response.CustomerId != "7001")
+                        sb.AppendFormat("MeterId : {0}", data.Request.MeterId).Append("\t");
+                    else
+                        sb.AppendFormat("Meter Name : {0}", data.Request.MeterId).Append("\t");
+                    sb.AppendFormat("SpaceId : {0}", data.Request.SpaceId).Append("\t");
+                    sb.AppendFormat("UTC Time : {0} ", data.Request.CurrentUTCTime.ToString("O")).Append(Environment.NewLine);
+                    sb.AppendFormat("IP Address :{0} ", data.Request.IPAddress).Append(Environment.NewLine);
+                    sb.AppendFormat("Request Data : {0} ", data.Request.RequestBody).Append("\t");
+
+                    sb.Append(Environment.NewLine).Append(Environment.NewLine).Append("Response : ").Append(Environment.NewLine);
+                    sb.AppendFormat("EnfCustomerId : {0}", data.Response.CustomerId).Append("\t");
+                    if (data.Response.CustomerId != "7001")
+                        sb.AppendFormat("MeterId : {0}", data.Response.MeterId).Append("\t");
+                    else
+                        sb.AppendFormat("Meter Name : {0}", data.Response.MeterId).Append("\t");
+                    sb.AppendFormat("SpaceId : {0}", data.Response.SpaceId).Append("\t");
+                    sb.AppendFormat("StallId : {0}", data.Response.StallId).Append("\t");
+                    sb.AppendFormat("Current UTC Time : {0} ", data.Response.CurrentUTCTime.ToString("O")).Append("\t");
+                    sb.AppendFormat("CityCurrentTime : {0} ", data.Response.CityCurrentTime.ToString("O")).Append(Environment.NewLine);
+                    sb.AppendFormat("Response Data : {0} ", data.Response.ResponseBody).Append(Environment.NewLine);
+                    sb.Append("Duration(in Seconds) : ").Append(data.Request.CurrentUTCTime.Subtract(data.Response.CurrentUTCTime).Seconds.ToString());
+                    sb.Append(Environment.NewLine);
+                    if (exCaught != null)
+                    {
+                        sb.Append("Exception :");
+                        sb.Append(exCaught.InnerException.StackTrace);
+                        if (exCaught.InnerException.InnerException != null)
+                        {
+                            sb.Append(exCaught.InnerException.InnerException.ToString());
+                        }
+                    }
+                    sb.Append("----------------------------------------------------------------------------------------------------------");
+                    await sw.WriteAsync(sb.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetData");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+            }
+        }
+
+        public static async void ReqResLogV2(RequestResponseEntity data, string filepath)
+        {
+            try
+            {
+                if (!Directory.Exists(filepath))
+                {
+                    Directory.CreateDirectory(filepath);
+                }
+                //filepath = Path.Combine(filepath, DateTime.Today.ToString("MM-dd-yy") + ".txt");   //Date in running server Time
+                //filepath = Path.Combine(filepath, DateTime.UtcNow.ToString("MM-dd-yy") + ".txt");   //Date in running UTC Time
+                filepath = Path.Combine(filepath, data.Response.CityCurrentTime.ToString("MM-dd-yy") + ".txt");   //Date in Customer Time
+                if (!File.Exists(filepath))
+                {
+                    File.Create(filepath).Dispose();
+                }
+                using (StreamWriter sw = File.AppendText(filepath))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(Environment.NewLine);
+                    sb.Append("Request : ").Append(Environment.NewLine);
+                    sb.AppendFormat("EnfCustomerId : {0}", data.Request.CustomerId).Append("\t");
+                    if (data.Response.CustomerId != "7001")
+                        sb.AppendFormat("MeterId : {0}", data.Request.MeterId).Append("\t");
+                    else
+                        sb.AppendFormat("Meter Name : {0}", data.Request.MeterId).Append("\t");
+                    sb.AppendFormat("SpaceId : {0}", data.Request.SpaceId).Append("\t");
+                    sb.AppendFormat("UTC Time : {0} ", data.Request.CurrentUTCTime.ToString("O")).Append(Environment.NewLine);
+                    sb.AppendFormat("IP Address :{0} ", data.Request.IPAddress).Append(Environment.NewLine);
+                    sb.AppendFormat("Request Data : {0} ", data.Request.RequestBody).Append("\t");
+
+                    sb.Append(Environment.NewLine).Append(Environment.NewLine).Append("Response : ").Append(Environment.NewLine);
+                    sb.AppendFormat("EnfCustomerId : {0}", data.Response.CustomerId).Append("\t");
+                    if (data.Response.CustomerId != "7001")
+                        sb.AppendFormat("MeterId : {0}", data.Response.MeterId).Append("\t");
+                    else
+                        sb.AppendFormat("Meter Name : {0}", data.Response.MeterId).Append("\t");
+                    sb.AppendFormat("SpaceId : {0}", data.Response.SpaceId).Append("\t");
+                    sb.AppendFormat("StallId : {0}", data.Response.StallId).Append("\t");
+                    sb.AppendFormat("Current UTC Time : {0} ", data.Response.CurrentUTCTime.ToString("O")).Append("\t");
+                    sb.AppendFormat("CityCurrentTime : {0} ", data.Response.CityCurrentTime.ToString("O")).Append(Environment.NewLine);
+                    sb.AppendFormat("Response Data : {0} ", data.Response.ResponseBody).Append(Environment.NewLine);
+                    sb.Append("Duration(in Seconds) : ").Append(data.Request.CurrentUTCTime.Subtract(data.Response.CurrentUTCTime).Seconds.ToString());
+                    sb.Append(Environment.NewLine);
+                   
+                    ////////////////////////////////////////////////////////
+                    if (data.VendorData != null)
+                    {
+                        foreach (var item in data.VendorData)
+                        {
+                            switch (item.Key)
+                            {
+                                case VendorNames.Parkeon:
+                                    var vParkeonresponse =  ((VendorResponseEntity)item.Value);
+                                    if (vParkeonresponse != null)
+                                    {
+                                        sb.Append(Environment.NewLine);
+                                        sb.AppendFormat("Vendor  : {0} ", item.Key.ToString()).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Request : {0}", vParkeonresponse.RequestURL).Append(Environment.NewLine);
+                                        sb.AppendFormat("Request Body: {0}", vParkeonresponse.ParkeonRequstBody).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Status : {0}", vParkeonresponse.ResponseHttpStatusCode.ToString()).Append(Environment.NewLine);
+                                        sb.AppendFormat("Response  : {0} ", vParkeonresponse.XmlandJsonData).Append(Environment.NewLine);
+                                        if (vParkeonresponse.GeneralException != null)
+                                        {
+                                            sb.AppendFormat("Exception  : {0} ", vParkeonresponse.GeneralException.Message).Append(Environment.NewLine);
+                                            if (vParkeonresponse.GeneralException.InnerException != null)
+                                            {
+                                                sb.AppendFormat("inner Exception  : {0} ", vParkeonresponse.GeneralException.InnerException.Message).Append(Environment.NewLine);
+                                            }
+                                        }
+                                    }
+                                    break;
+                                case VendorNames.T2Digital:
+                                    var vt2digitalresponse = ((VendorResponseEntity)item.Value);
+                                    if (vt2digitalresponse != null)
+                                    {
+                                        sb.Append(Environment.NewLine);
+                                        sb.AppendFormat("Vendor  : {0} ", item.Key.ToString()).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Request : {0}", vt2digitalresponse.RequestURL).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Request Body : {0}", vt2digitalresponse.T2RequstBody).Append(Environment.NewLine);
+                                        sb.AppendFormat("Response Body: {0}", vt2digitalresponse.T2DitialResponseString).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Status : {0}", vt2digitalresponse.ResponseHttpStatusCode.ToString()).Append(Environment.NewLine);
+                                       
+                                        if (vt2digitalresponse.GeneralException != null)
+                                        {
+                                            sb.AppendFormat("Exception  : {0} ", vt2digitalresponse.GeneralException.Message).Append(Environment.NewLine);
+                                            if (vt2digitalresponse.GeneralException.InnerException != null)
+                                            {
+                                                sb.AppendFormat("inner Exception  : {0} ", vt2digitalresponse.GeneralException.InnerException.Message).Append(Environment.NewLine);
+                                            }
+                                        }
+                                    }
+                                    break;
+                                case VendorNames.Pango:
+                                    var vpanrgoresponse = ((VendorResponseEntity)item.Value);
+                                    if (vpanrgoresponse != null)
+                                    {
+                                        sb.Append(Environment.NewLine);
+                                        sb.AppendFormat("Vendor  : {0} ", item.Key.ToString()).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Request : {0}", vpanrgoresponse.RequestURL).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Request Body : {0}", vpanrgoresponse.PangoRequestData).Append(Environment.NewLine);
+                                        sb.AppendFormat("Response Body: {0}", vpanrgoresponse.PangoResponse).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Status : {0}", vpanrgoresponse.ResponseHttpStatusCode.ToString()).Append(Environment.NewLine);
+
+                                        if (vpanrgoresponse.GeneralException != null)
+                                        {
+                                            sb.AppendFormat("Exception  : {0} ", vpanrgoresponse.GeneralException.Message).Append(Environment.NewLine);
+                                            if (vpanrgoresponse.GeneralException.InnerException != null)
+                                            {
+                                                sb.AppendFormat("inner Exception  : {0} ", vpanrgoresponse.GeneralException.InnerException.Message).Append(Environment.NewLine);
+                                            }
+                                        }
+                                    }
+                                    break;
+                                case VendorNames.ParkMobile:
+                                case VendorNames.PayByPhone:
+                                case VendorNames.PassportMonitoring:
+                                case VendorNames.Cale:
+                                    var vresponse =  ((VendorResponseEntity)item.Value);
+                                    if (vresponse != null)
+                                    {
+                                        sb.Append(Environment.NewLine);
+                                        sb.AppendFormat("Vendor  : {0} ", item.Key.ToString()).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Request : {0}", vresponse.RequestURL).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Status : {0}", vresponse.ResponseHttpStatusCode.ToString()).Append(Environment.NewLine);
+                                        sb.AppendFormat("Response  : {0} ", vresponse.XmlandJsonData).Append(Environment.NewLine);
+                                        if (vresponse.GeneralException != null)
+                                        {
+                                            sb.AppendFormat("Exception  : {0} ", vresponse.GeneralException.Message).Append(Environment.NewLine);
+                                            if (vresponse.GeneralException.InnerException != null)
+                                            {
+                                                sb.AppendFormat("inner Exception  : {0} ", vresponse.GeneralException.InnerException.Message).Append(Environment.NewLine);
+                                            }
+                                        }
+                                    }
+                                    break;
+                                case VendorNames.AceParking:
+                                    var aceParkResponse = ((VendorResponseEntity)item.Value);
+                                    if (aceParkResponse != null)
+                                    {
+                                        sb.Append(Environment.NewLine);
+                                        sb.AppendFormat("Vendor  : {0} ", item.Key.ToString()).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Request : {0}", aceParkResponse.RequestURL).Append(Environment.NewLine);
+                                        sb.AppendFormat("Http Status : {0}", aceParkResponse.ResponseHttpStatusCode.ToString()).Append(Environment.NewLine);
+                                        sb.AppendFormat("Response  : {0} ", aceParkResponse.XmlandJsonData).Append(Environment.NewLine);
+                                        if (aceParkResponse.GeneralException != null)
+                                        {
+                                            sb.AppendFormat("Exception  : {0} ", aceParkResponse.GeneralException.Message).Append(Environment.NewLine);
+                                            if (aceParkResponse.GeneralException.InnerException != null)
+                                            {
+                                                sb.AppendFormat("inner Exception  : {0} ", aceParkResponse.GeneralException.InnerException.Message).Append(Environment.NewLine);
+                                            }
+                                        }
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    }
+                    /////////////////////////////////////////////////////////////
+                    sb.Append("----------------------------------------------------------------------------------------------------------");
+                    await sw.WriteAsync(sb.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetData");
+                ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+            }
+        }
+
+        //public static async void VendorReqResLog(VendorNames vendor, string filepath, VendorRequestResponseEntity data,bool isSuccess,  Exception exception )
+        //{
+        //    try
+        //    {
+        //        //string filepath = vendor.ToString();
+        //        if (!Directory.Exists(filepath))
+        //        {
+        //            Directory.CreateDirectory(filepath);
+        //        }
+
+        //       // filepath = Path.Combine(filepath, data.Response.CityCurrentTime.ToString("MM-dd-yy") + ".txt");   //Date in Customer Time
+        //        if (!File.Exists(filepath))
+        //        {
+        //            File.Create(filepath).Dispose();
+        //        }
+        //        using (StreamWriter sw = File.AppendText(filepath))
+        //        {
+        //            StringBuilder sb = new StringBuilder();
+        //            sb.Append(Environment.NewLine);
+        //            sb.Append("Request : ").Append(Environment.NewLine);
+        //            switch (vendor)
+        //            {
+        //                case VendorNames.Cale:
+
+        //                    break;
+        //                case VendorNames.Pango:
+        //                    break;
+        //                case VendorNames.Parkeon:
+        //                    break;
+        //                case VendorNames.ParkMobile:
+        //                    break;
+        //                case VendorNames.PassportMonitoring:
+        //                    break;
+        //                case VendorNames.PayByPhone:
+        //                    break;
+        //                case VendorNames.T2Digital:
+        //                    break;
+        //                default:
+        //                    break;
+        //            } 
+        //            //sb.Append(Environment.NewLine);
+        //            //sb.Append("Request : ").Append(Environment.NewLine);
+        //            //sb.AppendFormat("EnfCustomerId : {0}", data.Request.CustomerId).Append("\t");
+        //            //if (data.Response.CustomerId != "7001")
+        //            //    sb.AppendFormat("MeterId : {0}", data.Request.MeterId).Append("\t");
+        //            //else
+        //            //    sb.AppendFormat("Meter Name : {0}", data.Request.MeterId).Append("\t");
+        //            //sb.AppendFormat("SpaceId : {0}", data.Request.SpaceId).Append("\t");
+        //            //sb.AppendFormat("UTC Time : {0} ", data.Request.CurrentUTCTime.ToString("O")).Append(Environment.NewLine);
+        //            //sb.AppendFormat("IP Address :{0} ", data.Request.IPAddress).Append(Environment.NewLine);
+        //            //sb.AppendFormat("Request Data : {0} ", data.Request.RequestBody).Append("\t");
+
+        //            //sb.Append(Environment.NewLine).Append(Environment.NewLine).Append("Response : ").Append(Environment.NewLine);
+        //            //sb.AppendFormat("EnfCustomerId : {0}", data.Response.CustomerId).Append("\t");
+        //            //if (data.Response.CustomerId != "7001")
+        //            //    sb.AppendFormat("MeterId : {0}", data.Response.MeterId).Append("\t");
+        //            //else
+        //            //    sb.AppendFormat("Meter Name : {0}", data.Response.MeterId).Append("\t");
+        //            //sb.AppendFormat("SpaceId : {0}", data.Response.SpaceId).Append("\t");
+        //            //sb.AppendFormat("StallId : {0}", data.Response.StallId).Append("\t");
+        //            //sb.AppendFormat("Current UTC Time : {0} ", data.Response.CurrentUTCTime.ToString("O")).Append("\t");
+        //            //sb.AppendFormat("CityCurrentTime : {0} ", data.Response.CityCurrentTime.ToString("O")).Append(Environment.NewLine);
+        //            //sb.AppendFormat("Response Data : {0} ", data.Response.ResponseBody).Append(Environment.NewLine);
+        //            //sb.Append("Duration(in Seconds) : ").Append(data.Request.CurrentUTCTime.Subtract(data.Response.CurrentUTCTime).Seconds.ToString());
+        //            sb.Append(Environment.NewLine);
+        //            sb.Append("----------------------------------------------------------------------------------------------------------");
+        //            await sw.WriteAsync(sb.ToString());
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+        //        string errorPath = Path.Combine(appPath, "GetData");
+        //        ExceptionLogging.SendErrorToText(ex, "GetCitationData", errorPath);
+        //    }
+        //}
+
+        public static async void PlateReqResLog(PlateNoRequestResponse data, string filepath)
+        {
+            try
+            {
+                if (!Directory.Exists(filepath))
+                {
+                    Directory.CreateDirectory(filepath);
+                }
+
+                filepath = Path.Combine(filepath, data.Response.CurrentUTCTime.ToString("MM-dd-yy") + ".txt");   //Date in Customer Time
+                if (!File.Exists(filepath))
+                {
+                    File.Create(filepath).Dispose();
+                }
+                using (StreamWriter sw = File.AppendText(filepath))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(Environment.NewLine);
+                    sb.Append("Request : ").Append(Environment.NewLine);
+
+                    sb.AppendFormat("UTC Time : {0} ", data.Request.CurrentUTCTime.ToString("O")).Append(Environment.NewLine);
+                    sb.AppendFormat("IP Address :{0} ", data.Request.IPAddress).Append(Environment.NewLine);
+                    sb.AppendFormat("Request Data : {0} ", data.Request.RequestURL).Append("\t");
+
+                    sb.Append(Environment.NewLine).Append(Environment.NewLine).Append("Response : ").Append(Environment.NewLine);
+
+                    sb.AppendFormat("Current UTC Time : {0} ", data.Response.CurrentUTCTime.ToString("O")).Append("\t");
+                    sb.AppendFormat("Response Data : {0} ", data.Response.ResponseBody).Append(Environment.NewLine);
+                    sb.Append("Duration(in Seconds) : ").Append(data.Request.CurrentUTCTime.Subtract(data.Response.CurrentUTCTime).Seconds.ToString());
+                    sb.Append(Environment.NewLine);
+                    sb.Append("----------------------------------------------------------------------------------------------------------");
+                    await sw.WriteAsync(sb.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+                string errorPath = Path.Combine(appPath, "GetPlateNo");
+                ExceptionLogging.SendErrorToText(ex, "GetPlateNo", errorPath);
+            }
+        }
+    }
+}

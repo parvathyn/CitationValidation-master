@@ -1,0 +1,7693 @@
+﻿
+namespace DataAccess.Model
+{
+    public static class PrepareKeyParameters
+    {
+        #region CoralGables
+        /// <summary>
+        /// Check Coral Gables key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareCoralGables(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateCoralGablesKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateCoralGablesKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateCoralGablesKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                //Not exist for Coral Gables as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+
+            }
+        }
+        #endregion
+
+        #region Atlanta
+        /// <summary>
+        /// Check Atlanta key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareAtlanta(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = new string[8]; // EnforcementKey.Split('-');
+            /////////////////Re structure the query////////////////////////
+            string[] tempValue = EnforcementKey.Split('-');
+            string NewEnforcementKey = string.Empty;
+            for (int i = 0; i < tempValue.Length - 1; i++)
+            {
+                if (i == 0 || i == 1)
+                    values[i] = tempValue[i];
+                else if (i == 2)
+                    values[2] = tempValue[i];
+                else if (i == 3)
+                    values[2] += "-" + tempValue[i];
+                else
+                    values[i - 1] = tempValue[i];
+
+            }
+
+            //////////////////////////////////////////////////////////////
+
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateAtlantaKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateAtlantaKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateAtlantaKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region South Miami
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareSouthMiami(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateSouthMiamiKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateSouthMiamiKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateSouthMiamiKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                ////Not exist for SouthMiami as of now
+                //param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                //////////////////////////////////////////////////////
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    //param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                    param.MeterName = null;
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+
+            }
+        }
+        #endregion
+
+        #region Raleigh
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareRaleigh(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidatRaleighKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidatRaleighKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidatRaleighKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+                else
+                {
+                    //Always Set PlateNumber and StateName to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+                //Always Set PlateNumber and StateName to null
+                param.PlateNumber = null;
+                param.StateName = null;
+            }
+        }
+        #endregion
+
+        #region BirminghamMI
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareBirminghamMI(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+            string tempKey = EnforcementKey;   //e.g. sample 4194-7901-1-1--Expired
+            string[] tempValues = new string[8];
+            tempValues[0] = values[0];
+            tempValues[1] = values[1];
+            tempValues[2] = string.Format("{0}-{1}", values[2], values[3]);
+            tempValues[3] = null;
+            tempValues[4] = values[4];
+            tempValues[5] = values[5];
+            values = tempValues;
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidatBirminghamMIKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidatBirminghamMIKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidatBirminghamMIKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+
+                //Other cases
+                string constValue = "999999999";
+                if (param.MeterName == constValue || param.MeterName == "0".ToString() || param.MeterName == "9999".ToString())
+                {
+                    param.MeterName = null;
+                    if (param.parkingSpaceID != constValue)
+                    {
+                        param.MeterName = param.parkingSpaceID;
+                        param.parkingSpaceID = null;
+                    }
+                    else
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+                else
+                {
+                    if (param.parkingSpaceID == constValue || param.parkingSpaceID == "0".ToString() || param.parkingSpaceID == "9999".ToString())
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+
+
+                //End Other cases
+                //Ignore Plate and State if present
+                param.PlateNumber = null;
+                param.StateName = null;
+
+            }
+        }
+        #endregion
+
+        #region CrystalLake
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareCrystalLake(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = new string[8]; // EnforcementKey.Split('-');
+            /////////////////Re structure the query////////////////////////
+            string[] tempValue = EnforcementKey.Split('-');
+            string NewEnforcementKey = string.Empty;
+            for (int i = 0; i < tempValue.Length - 1; i++)
+            {
+                if (i == 0 || i == 1)
+                    values[i] = tempValue[i];
+                else if (i == 2)
+                    values[2] = tempValue[i];
+                else if (i == 3)
+                    values[2] += "-" + tempValue[i];
+                else
+                    values[i - 1] = tempValue[i];
+
+            }
+
+            //////////////////////////////////////////////////////////////
+
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidatCrystalLakeKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidatCrystalLakeKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidatCrystalLakeKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region SharjahMunicipality
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareSharjahMunicipality(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateSharjahMunicipalityKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateSharjahMunicipalityKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateSharjahMunicipalityKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+            }
+        }
+        #endregion
+
+        #region IndianaBorough
+        /// <summary>
+        /// Check IndianaBorough key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareIndianaBorough(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateIndianaBoroughKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateIndianaBoroughKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateIndianaBoroughKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Franklin
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareFranklin(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateFranklinKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateFranklinKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateFranklinKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Sunny Isles Beach
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareSunnyIslesBeach(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateSunnyIslesBeachKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateSunnyIslesBeachKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateSunnyIslesBeachKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Surfside
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareSurfside(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateSurfsideKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateSurfsideKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateSurfsideKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region NewOrleans
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareNewOrleans(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateNewOrleansKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateNewOrleansKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateNewOrleansKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Philadelphia
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PreparePhiladelphia(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            ////////////////Zone//
+            int index6 = 6;
+            if (index6 < values.Length)
+            {
+                if (values[6] == null)
+                {
+                    param.ZoneID = null;
+                }
+                else
+                {
+                    param.ZoneID = values[6].ToString();
+                    if (string.IsNullOrEmpty(param.ZoneID))
+                    {
+                        param.ZoneID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.ZoneID = null;
+            }
+
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidatePhiladelphiaKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidatePhiladelphiaKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidatePhiladelphiaKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+
+        #region Philadelphia
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PreparePhiladelphia2(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            ////////////////Zone//
+            int index6 = 6;
+            if (index6 < values.Length)
+            {
+                if (values[6] == null)
+                {
+                    param.ZoneID = null;
+                }
+                else
+                {
+                    param.ZoneID = values[6].ToString();
+                    if (string.IsNullOrEmpty(param.ZoneID))
+                    {
+                        param.ZoneID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.ZoneID = null;
+            }
+
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidatePhiladelphiaKey2(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidatePhiladelphiaKey2(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidatePhiladelphiaKey2(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                if (string.IsNullOrEmpty(param.parkingSpaceID))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                param.PlateNumber = null;
+                param.StateName = null;
+            }
+        }
+        #endregion
+
+        #region Auburn
+        /// <summary>
+        /// Check Coral Gables key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareAuburn(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateAuburnKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateAuburnKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateAuburnKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                //Not exist for Coral Gables as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+
+            }
+        }
+        #endregion
+
+        #region SiouxCity
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareSiouxCity(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayBySpace, ref param);
+                    ValidateSiouxCityKeyByPlate(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayByPlate, ref param);
+                    ValidateSiouxCityKeyByPlate(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateSiouxCityKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    //param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                    param.MeterName = null;
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                    param.parkingSpaceID = null;
+                }
+
+            }
+        }
+        private static void ValidateSiouxCityKeyByPlate(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+
+        public static KeyParameter PrepareSiouxCityZone(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+            ////////////////zonename//
+            int index6 = 6;
+            if (index6 < values.Length)
+            {
+                if (values[6] == null)
+                {
+                    param.ZoneID = null;
+                }
+                else
+                {
+                    param.ZoneID = values[6].ToString();
+                    if (string.IsNullOrEmpty(param.ZoneID))
+                    {
+                        param.ZoneID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.ZoneID = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayBySpace, ref param);
+                    ValidateSiouxCityKeyByPlate(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayByPlate, ref param);
+                    ValidateSiouxCityKeyByPlate(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        #endregion
+
+        #region SanJose
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareSanJose(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayBySpace, ref param);
+                    ValidateSanJoseKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayByPlate, ref param);
+                    ValidateSanJoseKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateSanJoseKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    //param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+
+            }
+        }
+       
+        #endregion
+
+        #region Detroit
+        /// <summary>
+        /// Check Detroit key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareDetroit(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            ////////////////Zone//
+            int index6 = 6;
+            if (index6 < values.Length)
+            {
+                if (values[6] == null)
+                {
+                    param.ZoneID = null;
+                }
+                else
+                {
+                    param.ZoneID = values[6].ToString();
+                    if (string.IsNullOrEmpty(param.ZoneID))
+                    {
+                        param.ZoneID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.ZoneID = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateDetroitKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateDetroitKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateDetroitKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Bay Harbor
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareBayHarbor(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateBayHarborKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateBayHarborKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateBayHarborKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Metro Rail
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareMetroRail(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateMetroRailKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateMetroRailKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+
+        private static void ValidateMetroRailKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Miami Parking Authority
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareMiamiParkingAuthority(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateMiamiParkingAuthorityKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateMiamiParkingAuthorityKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateMiamiParkingAuthorityKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+
+        #region PortHoodRiver
+        /// <summary>
+        /// Check Coral Gables key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PreparePortHoodRiver(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidatePortHoodRiverKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidatePortHoodRiverKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidatePortHoodRiverKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                //Not exist for Coral Gables as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+
+            }
+        }
+        #endregion
+
+        #region Tybee Island
+        /// <summary>
+        /// Check Coral Gables key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareTybeeIsland(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidatePrepareTybeeIslandKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidatePrepareTybeeIslandKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidatePrepareTybeeIslandKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                //Not exist for Coral Gables as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+
+            }
+        }
+        #endregion
+
+        #region RoyalOak
+        /// <summary>
+        /// Check Royal Oak key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareRoyalOak(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateRoyalOakKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateRoyalOakKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateRoyalOakKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber) || string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Tempe
+        /// <summary>
+        /// Check Royal Oak key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareTempe(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = new string[8]; // EnforcementKey.Split('-');
+            /////////////////Re structure the query////////////////////////
+            string[] tempValue = EnforcementKey.Split('-');
+            string NewEnforcementKey = string.Empty;
+            for (int i = 0; i < tempValue.Length - 1; i++)
+            {
+                if (i == 0 || i == 1)
+                    values[i] = tempValue[i];
+                else if (i == 2)
+                    values[2] = tempValue[i];
+                else if (i == 3)
+                    values[2] += "-" + tempValue[i];
+                else
+                    values[i - 1] = tempValue[i];
+
+            }
+           // string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateTempeKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateTempeKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateTempeKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber) || string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region  Abu Dhabi
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareAbuDhabi(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayBySpace, ref param);
+                    ValidateAbuDhabiKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayByPlate, ref param);
+                    ValidateAbuDhabiKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateAbuDhabiKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    //param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                    param.MeterName = null;
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+
+            }
+        }
+        #endregion
+
+
+        #region  Ardsley,NY
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareArdsleyNY(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayBySpace, ref param);
+                    ValidateArdsleyNYKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    //ValidateSiouxCityKey(EnumEnforcementType.PayByPlate, ref param);
+                    ValidateArdsleyNYKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateArdsleyNYKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    //param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                    param.MeterName = null;
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+
+            }
+        }
+        #endregion
+
+      
+
+        #region  Spokane, WA
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareSpokaneWA(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateBayHarborKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateBayHarborKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateSpokaneWAKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+
+        #endregion
+
+        #region Huntsville
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareHuntsville(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateHuntsvilleKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateHuntsvilleKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateHuntsvilleKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region AceParking
+        /// <summary>
+        /// Check Franklin key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareAceParking(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateAceParkingtKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateAceParkingtKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateAceParkingtKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+        #region Generic PayByPlate 3
+        /// <summary>
+        /// Generic PayByPlate
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareGenericPayByPlate3(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+
+            ////////////////State//
+            int index6 = 6;
+            if (index6 < values.Length)
+            {
+                if (values[6] == null)
+                {
+                    param.ZoneID = null;
+                }
+                else
+                {
+                    param.ZoneID = values[6].ToString();
+                    if (string.IsNullOrEmpty(param.ZoneID))
+                    {
+                        param.ZoneID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.ZoneID = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateGenericPayByPlateKey3(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateGenericPayByPlateKey3(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateGenericPayByPlateKey3(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                //Not exist for Coral Gables as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+
+            }
+        }
+        #endregion
+
+
+        #region CityofChester
+        /// <summary>
+        /// GenericBySpace
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareCityofChester(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateCityofChesterKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateCityofChesterKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateCityofChesterKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayBySpace || mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    //param.StateName = null;
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+        #endregion
+
+
+        #region Generic PayByPlate
+        /// <summary>
+        /// Generic PayByPlate
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareGenericPayByPlate(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateGenericPayByPlateKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateGenericPayByPlateKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateGenericPayByPlateKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                //Not exist for Coral Gables as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+
+            }
+        }
+        #endregion
+
+        #region GenericBySpace
+        /// <summary>
+        /// GenericBySpace
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter GenericBySpace(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateGenericBySpaceKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateGenericBySpaceKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateGenericBySpaceKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else if (param.MeterName == "999999999".ToString())
+                {
+                    //Special case ///
+                    //If metername = 999999999 then simply return and no need to check
+                    param.ReturnCode = ((int)ReturnCodeEnum.NoRecordExists).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+            }
+        }
+        #endregion
+
+
+        #region Levenworth
+        /// <summary>
+        /// Check South Miami key
+        /// </summary>
+        /// <param name="EnforcementKey"> <EnforecementMode>-<CustomerId>-<MeterName>-<ParkingSpaceId>-<PlateNumber>-<stateName></param>
+        /// <returns></returns>
+        /// 
+        public static KeyParameter PrepareLevenworthKey(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            switch (values[0].ToLower())
+            {
+                case  "paybyplate":
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    break;
+                case "paybyspace":
+                    param = GenericBySpaceWithMeterNameHypen(EnforcementKey);
+                    break;
+                default:
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    break;
+            }
+
+
+
+            return param;
+        }
+
+        public static KeyParameter GenericBySpaceWithMeterNameHypen(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+            string tempKey = EnforcementKey;   //e.g. sample 4194-7901-1-1--Expired
+            string[] tempValues = new string[8];
+            tempValues[0] = values[0];
+            tempValues[1] = values[1];
+            tempValues[2] = string.Format("{0}-{1}", values[2], values[3]);
+            tempValues[3] = values[4];
+            tempValues[4] = values[5];
+            if (values.Length >= 7)
+                tempValues[5] = values[6];
+            else
+                tempValues[5] = null;
+            //tempValues[6] = values[7];
+
+            values = tempValues;
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+            /*
+            ////////////////Zone//
+            int index6 = 6;
+            if (index6 < values.Length)
+            {
+                if (values[6] == null)
+                {
+                    param.ZoneID = null;
+                }
+                else
+                {
+                    param.ZoneID = values[6].ToString();
+                    if (string.IsNullOrEmpty(param.ZoneID))
+                    {
+                        param.ZoneID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.ZoneID = null;
+            }
+             * */
+
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateGenericBySpaceWithMeterNameHypenKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateGenericBySpaceWithMeterNameHypenKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateGenericBySpaceWithMeterNameHypenKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Not exist for SouthMiami as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                if (string.IsNullOrEmpty(param.parkingSpaceID))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                //Customer MeterName
+                if (string.IsNullOrEmpty(param.MeterName))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.PlateNumber = null;
+                    param.StateName = null;
+                }
+
+            }
+        }
+
+        public static KeyParameter PrepareGenericPayByPlateWithZone(string EnforcementKey)
+        {
+            var param = new KeyParameter();
+            //////////////////////////////////////
+            string[] values = EnforcementKey.Split('-');
+
+            ////////EnforecementMode///////
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.EnforecementMode = values[0].ToString();
+                    if (string.IsNullOrEmpty(param.EnforecementMode))
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////CustomerrId/////////////////
+            int index1 = 1;
+            if (index1 < values.Length)
+            {
+                if (values[1] == null) //CustomerrId
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                    return param;
+                }
+                else
+                {
+                    param.CustomerId = values[1].ToNullableInt();
+                    if (param.CustomerId.HasValue == false)
+                    {
+                        param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                        return param;
+                    }
+                }
+
+            }
+            else
+            {
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                return param;
+            }
+
+            /////Use MeterName/////////////////////////////////////////////
+            int index2 = 2;
+            if (index2 < values.Length)
+            {
+                if (values[2] == null)
+                {
+                    param.MeterName = null;
+                }
+                else
+                {
+                    param.MeterName = values[2].ToString();
+                    if (string.IsNullOrEmpty(param.MeterName))
+                    {
+                        param.MeterName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.MeterName = null;
+            }
+
+
+            ////parkingSpaceID/////////////////////////////////////////////////////////////////
+            int index3 = 3;
+            if (index3 < values.Length)
+            {
+                if (values[3] == null)
+                {
+                    param.parkingSpaceID = null;
+                }
+                else
+                {
+                    param.parkingSpaceID = values[3].ToString();
+                    if (string.IsNullOrEmpty(param.parkingSpaceID))
+                    {
+                        param.parkingSpaceID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.parkingSpaceID = null;
+            }
+
+
+            /// //Plate Number//
+            int index4 = 4;
+            if (index4 < values.Length)
+            {
+                if (values[4] == null)
+                {
+                    param.PlateNumber = null;
+                }
+                else
+                {
+                    param.PlateNumber = values[4].ToString();
+                    if (string.IsNullOrEmpty(param.PlateNumber))
+                    {
+                        param.PlateNumber = null;
+                    }
+                }
+            }
+            else
+            {
+                param.PlateNumber = null;
+            }
+
+            ////////////////State//
+            int index5 = 5;
+            if (index5 < values.Length)
+            {
+                if (values[5] == null)
+                {
+                    param.StateName = null;
+                }
+                else
+                {
+                    param.StateName = values[5].ToString();
+                    if (string.IsNullOrEmpty(param.StateName))
+                    {
+                        param.StateName = null;
+                    }
+                }
+            }
+            else
+            {
+                param.StateName = null;
+            }
+
+            ////////////////Zone//
+            int index6 = 6;
+            if (index6 < values.Length)
+            {
+                if (values[6] == null)
+                {
+                    param.ZoneID = null;
+                }
+                else
+                {
+                    param.ZoneID = values[6].ToString();
+                    if (string.IsNullOrEmpty(param.ZoneID))
+                    {
+                        param.ZoneID = null;
+                    }
+                }
+            }
+            else
+            {
+                param.ZoneID = null;
+            }
+
+
+            //////////////////////////////////////
+            //Check if :  PayBySpace & PayByPlate
+            switch (param.EnforecementMode.ToLower())
+            {
+                case "paybyspace":
+                    ValidateGenericPayByPlateWithZoneKey(EnumEnforcementType.PayBySpace, ref param);
+                    break;
+                case "paybyplate":
+                    ValidateGenericPayByPlateWithZoneKey(EnumEnforcementType.PayByPlate, ref param);
+                    break;
+                default:
+                    break;
+            }
+
+            return param;
+        }
+        private static void ValidateGenericPayByPlateWithZoneKey(EnumEnforcementType mode, ref KeyParameter param)
+        {
+            if (mode == EnumEnforcementType.PayByPlate)
+            {
+                //Customer Id already check. Check PlateNumber
+                if (string.IsNullOrEmpty(param.PlateNumber))
+                {
+                    param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+                }
+                else
+                {
+                    //Set MeterName and SpaceId to null
+                    param.MeterName = null;
+                    param.parkingSpaceID = null;
+                    param.StateName = null;
+                }
+            }
+            if (mode == EnumEnforcementType.PayBySpace)
+            {
+                param.PlateNumber = null;
+                param.StateName = null;
+                // Atlanta as of now
+                param.ReturnCode = ((int)ReturnCodeEnum.InvalidInputParameters).ToString();
+            }
+        }
+
+      
+        #endregion
+
+        public static EnumEnforcementType GetEnforceType(string EnforcementKey)
+        {
+            EnumEnforcementType retValue = EnumEnforcementType.InValid;
+            string[] values = EnforcementKey.Split('-');
+            int index0 = 0;
+            if (index0 < values.Length)
+            {
+                if (values[0] == null)
+                {
+                    return retValue;
+                }
+                else if(string.IsNullOrEmpty(values[0]))
+                {
+                    return retValue;
+                }
+                else
+                {
+                    if (values[0].ToUpper() == "PAYBYSPACE")
+                    {
+                        return EnumEnforcementType.PayBySpace;
+                    }
+                    else if (values[0].ToUpper() == "PAYBYPLATE")
+                    {
+                        return EnumEnforcementType.PayByPlate;
+                    }
+                    else
+                    {
+                        return retValue;
+                    }
+                }
+            }
+            return retValue;
+        }
+    }
+
+    public class KeyParameter
+    {
+        public string EnforecementMode { get; set; }
+        public int? CustomerId { get; set; }
+        public string MeterName { get; set; }
+        public int? MeterId { get; set; }
+        public string parkingSpaceID { get; set; }
+        public string PlateNumber { get; set; }
+        public string StateName { get; set; }
+        public string Status { get; set; }
+        public string ZoneID { get; set; }
+
+        public string ReturnCode { get; set; }
+    }
+}
+
+public enum EnumEnforcementType
+{
+    PayBySpace = 1,
+    PayByPlate = 2,
+    InValid = 3
+}

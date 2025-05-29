@@ -1,0 +1,81 @@
+
+Request : 
+EnfCustomerId : 7025	MeterId : 	SpaceId : 	UTC Time : 2018-02-13T10:01:48.8717835Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-JYP5361-Expired 	
+
+Response : 
+EnfCustomerId : 7025	MeterId : Zone E	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-13T10:01:52.5459936Z 	CityCurrentTime : 2018-02-13T05:01:51.9900000 
+Response Data : {"EnforcementKey":"7025-Zone E-1-JYP5361-Expired-PA-86065966","ExpiredTime":"20180212_T165700Z","IsOccupied":"1","LicensePlate":"JYP5361","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"-1024","MeterID":"7253","MeterLastUpdateTime":"20180212_T155829Z","MeterName":"Zone E","MeterRTC":"20180213_T100151Z","MeterStreet":"","Model":"","ReturnCode":"0","SensorEventTime":"20180212_T155829Z","SpaceNo":"1","State":"PA","ZoneName":"Zone E"} 
+Duration(in Seconds) : -3
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7025	MeterId : 	SpaceId : 	UTC Time : 2018-02-13T10:02:19.4281436Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-3AW5141-Expired 	
+
+Response : 
+EnfCustomerId : 7025	MeterId : Zone 1000	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-13T10:02:21.2652486Z 	CityCurrentTime : 2018-02-13T05:02:20.5700000 
+Response Data : {"EnforcementKey":"7025-Zone 1000-1-3AW5141-Expired-MA-86066784","ExpiredTime":"20180212_T165900Z","IsOccupied":"1","LicensePlate":"3AW5141","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"-1023","MeterID":"10000","MeterLastUpdateTime":"20180212_T160132Z","MeterName":"Zone 1000","MeterRTC":"20180213_T100220Z","MeterStreet":"","Model":"","ReturnCode":"0","SensorEventTime":"20180212_T160132Z","SpaceNo":"1","State":"MA","ZoneName":"Zone 1000"} 
+Duration(in Seconds) : -1
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7025	MeterId : 	SpaceId : 	UTC Time : 2018-02-13T10:02:41.0353583Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-JSC9194-Expired 	
+
+Response : 
+EnfCustomerId : 7025	MeterId : Zone 600	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-13T10:02:42.8954642Z 	CityCurrentTime : 2018-02-13T05:02:42.1900000 
+Response Data : {"EnforcementKey":"7025-Zone 600-1-JSC9194-Expired-PA-86068013","ExpiredTime":"20180212_T180600Z","IsOccupied":"1","LicensePlate":"JSC9194","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"-956","MeterID":"6000","MeterLastUpdateTime":"20180212_T160629Z","MeterName":"Zone 600","MeterRTC":"20180213_T100242Z","MeterStreet":"","Model":"","ReturnCode":"0","SensorEventTime":"20180212_T160629Z","SpaceNo":"1","State":"PA","ZoneName":"Zone 600"} 
+Duration(in Seconds) : -1
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7025	MeterId : 	SpaceId : 	UTC Time : 2018-02-13T10:54:34.1679179Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-JSC9194-Expired 	
+
+Response : 
+EnfCustomerId : 7025	MeterId : Zone 600	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-13T10:54:38.9221899Z 	CityCurrentTime : 2018-02-13T05:54:38.1830000 
+Response Data : {"EnforcementKey":"7025-Zone 600-1-JSC9194-Expired-PA-86068013","ExpiredTime":"20180212_T180600Z","IsOccupied":"1","LicensePlate":"JSC9194","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"-1008","MeterID":"6000","MeterLastUpdateTime":"20180212_T160629Z","MeterName":"Zone 600","MeterRTC":"20180213_T105438Z","MeterStreet":"","Model":"","ReturnCode":"0","SensorEventTime":"20180212_T160629Z","SpaceNo":"1","State":"PA","ZoneName":"Zone 600"} 
+Duration(in Seconds) : -4
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7025	MeterId : 	SpaceId : 	UTC Time : 2018-02-13T10:55:22.9398540Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-FAJ5766-Expired 	
+
+Response : 
+EnfCustomerId : 7025	MeterId : Zone H	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-13T10:55:24.7669579Z 	CityCurrentTime : 2018-02-13T05:55:24.5300000 
+Response Data : {"EnforcementKey":"7025-Zone H-1-FAJ5766-Expired-NC-86081304","ExpiredTime":"20180212_T210400Z","IsOccupied":"1","LicensePlate":"FAJ5766","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"-831","MeterID":"7261","MeterLastUpdateTime":"20180212_T170506Z","MeterName":"Zone H","MeterRTC":"20180213_T105524Z","MeterStreet":"","Model":"","ReturnCode":"0","SensorEventTime":"20180212_T170506Z","SpaceNo":"1","State":"NC","ZoneName":"Zone H"} 
+Duration(in Seconds) : -1
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7025	MeterId : 	SpaceId : 	UTC Time : 2018-02-13T11:45:22.5734965Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-JZC3342-Expired 	
+
+Response : 
+EnfCustomerId : 7025	MeterId : Zone Church	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-13T11:45:26.1837030Z 	CityCurrentTime : 2018-02-13T06:45:26.1230000 
+Response Data : {"EnforcementKey":"7025-Zone Church-1-JZC3342-Expired-PA-86143105","ExpiredTime":"20180212_T225500Z","IsOccupied":"1","LicensePlate":"JZC3342","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"-770","MeterID":"7266","MeterLastUpdateTime":"20180212_T215610Z","MeterName":"Zone Church","MeterRTC":"20180213_T114526Z","MeterStreet":"","Model":"","ReturnCode":"0","SensorEventTime":"20180212_T215610Z","SpaceNo":"1","State":"PA","ZoneName":"Zone Church"} 
+Duration(in Seconds) : -3
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7025	MeterId : 	SpaceId : 	UTC Time : 2018-02-13T11:46:41.4141431Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-JZC3342-Expired 	
+
+Response : 
+EnfCustomerId : 7025	MeterId : Zone Church	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-13T11:46:48.3265385Z 	CityCurrentTime : 2018-02-13T06:46:47.9970000 
+Response Data : {"EnforcementKey":"7025-Zone Church-1-JZC3342-Expired-PA-86143105","ExpiredTime":"20180212_T225500Z","IsOccupied":"1","LicensePlate":"JZC3342","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"-771","MeterID":"7266","MeterLastUpdateTime":"20180212_T215610Z","MeterName":"Zone Church","MeterRTC":"20180213_T114647Z","MeterStreet":"","Model":"","ReturnCode":"0","SensorEventTime":"20180212_T215610Z","SpaceNo":"1","State":"PA","ZoneName":"Zone Church"} 
+Duration(in Seconds) : -6
+----------------------------------------------------------------------------------------------------------
+Request : 
+EnfCustomerId : 7025	MeterId : 	SpaceId : 	UTC Time : 2018-02-13T11:56:28.1073070Z 
+IP Address :::1 
+Request Data : http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-7025-99999-9999-JYP5361-Expired 	
+
+Response : 
+EnfCustomerId : 7025	MeterId : Zone E	SpaceId : 1	StallId : 	Current UTC Time : 2018-02-13T11:56:31.6945121Z 	CityCurrentTime : 2018-02-13T06:56:31.6600000 
+Response Data : {"EnforcementKey":"7025-Zone E-1-JYP5361-Expired-PA-86065966","ExpiredTime":"20180212_T165700Z","IsOccupied":"1","LicensePlate":"JYP5361","METERLOC_BLOCKNUMBER":"","METERLOC_CROSSSTREET1":"","METERLOC_CROSSSTREET2":"","METERLOC_ENFORCEMENTHOURSDESC":"MON-FRI 08:00 AM to 06:00 PM","METERLOC_STREETDIRECTION":"","METERLOC_STREETNAME":"","METERLOC_STREETTYPE":"","Make":"","MeterExpiredMinutes":"-1139","MeterID":"7253","MeterLastUpdateTime":"20180212_T155829Z","MeterName":"Zone E","MeterRTC":"20180213_T115631Z","MeterStreet":"","Model":"","ReturnCode":"0","SensorEventTime":"20180212_T155829Z","SpaceNo":"1","State":"PA","ZoneName":"Zone E"} 
+Duration(in Seconds) : -3
+----------------------------------------------------------------------------------------------------------

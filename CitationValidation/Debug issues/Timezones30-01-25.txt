@@ -1,0 +1,207 @@
+-----------Exception Details on  1/30/2025 8:23:26 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 8:23:26 AM
+
+Error Line No : ne 4307
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetSunnyIslesBeachCitationData(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 1472
+   at DataAccess.Model.TransactionDataValidatioin.GetDataSunnyIslesBeach(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 4307
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 9:09:27 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 9:09:27 AM
+
+Error Line No : ne 4307
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetSunnyIslesBeachCitationData(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 1472
+   at DataAccess.Model.TransactionDataValidatioin.GetDataSunnyIslesBeach(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 4307
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 9:28:19 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 9:28:19 AM
+
+Error Line No : e 11791
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetDataAtlanta
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetHuntsvilleCitationData(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 4011
+   at DataAccess.Model.TransactionDataValidatioin.GetDataHuntsville(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 11791
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 10:18:23 AM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 10:18:23 AM
+
+Error Line No : e 11791
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetDataAtlanta
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetHuntsvilleCitationData(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 4011
+   at DataAccess.Model.TransactionDataValidatioin.GetDataHuntsville(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 11791
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 12:28:07 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 12:28:07 PM
+
+Error Line No : e 11791
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetDataAtlanta
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetHuntsvilleCitationData(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 4011
+   at DataAccess.Model.TransactionDataValidatioin.GetDataHuntsville(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 11791
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 2:33:22 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 2:33:22 PM
+
+Error Line No : e 14610
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetGenericPlateName(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 4469
+   at DataAccess.Model.TransactionDataValidatioin.GetDataGenericPayByPlate(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 14610
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 2:35:06 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 2:35:06 PM
+
+Error Line No : e 14610
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetCitationData
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetGenericPlateName(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 4469
+   at DataAccess.Model.TransactionDataValidatioin.GetDataGenericPayByPlate(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 14610
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 3:35:05 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 3:35:05 PM
+
+Error Line No : e 11791
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetDataAtlanta
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetHuntsvilleCitationData(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 4011
+   at DataAccess.Model.TransactionDataValidatioin.GetDataHuntsville(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 11791
+--------------------------------*End*------------------------------------------
+-----------Exception Details on  1/30/2025 3:35:05 PM-----------------
+-------------------------------------------------------------------------------------
+
+
+
+Log Written Date: 1/30/2025 3:35:05 PM
+
+Error Line No : e 11791
+
+Error Message: InvalidCastException
+
+Exception Type: System.InvalidCastException
+
+Error Location : Unable to cast object of type 'System.Int32' to type 'System.String'.
+
+ Error Page Url: GetDataAtlanta
+
+User Host IP: 
+
+
+   at DataAccess.DataAccess.GetHuntsvilleCitationData(Int32 customerID, String ZoneID, String MeterName, String ParkingSpaceID, String PlateNumber, String stateName, String SpaceStatus) in D:\Projects\CitationValidation\DataAccess\DataAccess.cs:line 4011
+   at DataAccess.Model.TransactionDataValidatioin.GetDataHuntsville(Int32 customerID, String MeterName, String parkingSpaceID, String PlateNumber, String statename, String EnforcementKey, String filePath, RequestResponseEntity logData) in D:\Projects\CitationValidation\DataAccess\Model\TransactionDataValidatioin.cs:line 11791
+--------------------------------*End*------------------------------------------

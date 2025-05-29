@@ -1,0 +1,63 @@
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7014-999999-999-040GJZ-AZ
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetPlateNo/7056/BEXG62
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetPlateNo/4176/BEXG62
+----
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-4337-999999-999-KKM3171- 	
+
+--new LSC for SouixCity
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7028-999999-999-KKM3171-a-3127 
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7028-999999-999-IUW126--3127 
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7028-999999-999-PAR191--574 
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7028-999999-999-NPT167--3127
+
+http://pems.pemsportal.com/CitationValidationTemp/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7028-999999-999-NPT167--3127
+http://pems.pemsportal.com/CitationValidationTemp/CitationValidation.ValidateCitation.svc/GetLogData/7028/12-05-24
+----
+ 7058://Sanibel X3	
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-7058-999999-999-7ZKCA55- 	
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7058-999999-999-KKM3171- 
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7058-999999-999-KKM3171- 
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetLogData/7058/12-19-2022
+http://pems.pemsportal.com/CitationValidationStaging/CitationValidation.ValidateCitation.svc/GetLogData/7058/12-19-22
+	
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetPlateNo/7058/BEXG62
+http://pems.pemsportal.com/MobilePlateStatusv1test/CitationValidation.ValidateCitation.svc/GetPlateNo/7058/BEXG62
+http://pems.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateNo/7058/BEXG62
+
+-----------------Muscat Municipality---------
+http://pems.pemsportal.com/MobilePlateStatusv1test/CitationValidation.ValidateCitation.svc/GetPlateNo/8075/BEXG62
+
+---------------
+--7002-(Coral Gables) -------------
+Request Data : http://www02103066/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7002-144-1-BCNC95-FL 	
+
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7002-144-1-GWPU08-FL
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7002-144-1-GXJX13-FL
+
+
+--7001--------------
+http://pems.pemsportal.com/CitationValidation/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-7002-144-1-115YVM-FL	
+
+-----------------
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PayByPlate-4254-99999-9999-BZYG74-XX
+------------------------------------------
+
+
+http://pems.pemsportal.com/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+
+localhost/MobilePlateStatus/CitationValidation.ValidateCitation.svc/GetPlateNo/7002/BEXG62
+
+-----------
+
+http://pems.pemsportal.com/MobilePlateStatusV3/CitationValidation.ValidateCitation.svc/GetPlateNo/7056/942FQL
+localhost/MobilePlateStatusV3/CitationValidation.ValidateCitation.svc/GetPlateNo/7056/942FQL
+--------------------------------------
+https://pems.pemsportal.com/CitationValidationV2/CitationValidation.ValidateCitation.svc/GetCitationStatus/PAYBYPLATE-4243-999999-999-8TJG667-CA
+https://pems.pemsportal.com/CitationValidationV2/CitationValidation.ValidateCitation.svc/GetCitationStatus/{0}
+https://pems.pemsportal.com/CitationValidationV2/CitationValidation.ValidateCitation.svc/GetCitationStatus/{0}
+
+PAYBYPLATE-4243-999999-999-8TJG667-CA
+
+
+http://localhost:8733/Design_Time_Addresses/CitationValidation/ValidateCitation/GetCitationStatus/PAYBYPLATE-4243-999999-999-8TJG667-CA
