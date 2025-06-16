@@ -144,8 +144,8 @@ namespace CitationValidation
         public PlateNos GetPlateNo(string customerId, string plateNo)
         {
             PlateNos plateNosObj = new PlateNos();
-            var appPath = @"D:\Logs\CitationValidation\Plate";
-            //var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
+            //var appPath = @"D:\Logs\CitationValidation\Plate";
+            var appPath = System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath;
             PlateNoRequestResponse logData = new PlateNoRequestResponse();
             string logFilePath = Path.Combine(appPath, "PlateLogRequestResponse");
             try

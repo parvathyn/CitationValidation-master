@@ -614,8 +614,9 @@ namespace DataAccess.Model
                 //case CustomerIds.Sweetwater:
                 case CustomerIds.SanibelAI:
                 case CustomerIds.RoyalOak:
-                //case CustomerIds.MiamiBeach:
-                    genfact = new CoralGablesFactory(customerID, PlateNumber);
+                    //case CustomerIds.MiamiBeach:
+                    //genfact = new CoralGablesFactory(customerID, PlateNumber);
+                    genfact = new GlendaleFactory(customerID, PlateNumber);
                     break;
                 case CustomerIds.Detroit:
                     genfact = new DetroitFactory(customerID, PlateNumber);
