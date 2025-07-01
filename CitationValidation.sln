@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitationValidation", "CitationValidation\CitationValidation.csproj", "{43D47508-4646-4C55-BE68-731A8F998F3C}"
 EndProject
@@ -9,7 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentInfo", "PaymentInfo\PaymentInfo.csproj", "{D5D70674-7785-4B1E-B481-DD0435664ACB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7A02BF7-4B80-4095-BF48-1E36A1A66FE2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{F7A02BF7-4B80-4095-BF48-1E36A1A66FE2}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Space_Plate_status_Zone_v5_1_1_IPS.sql = Scripts\Space_Plate_status_Zone_v5_1_1_IPS.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

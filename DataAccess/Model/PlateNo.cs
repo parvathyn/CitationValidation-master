@@ -60,7 +60,8 @@ namespace DataAccess.Model
         public const int NOLA = 4176;
         public const int BahrainDemo1 = 8042;
         public const int WestAllis = 7070;
-        public const int SalemOR = 4337;  
+        public const int SalemOR = 4337;
+        public const int Tempe = 7010;
     }
 
     [DataContract]
@@ -660,6 +661,7 @@ namespace DataAccess.Model
                 case CustomerIds.Torrance:
                 case CustomerIds.HyderabadGHMC:
                 case CustomerIds.NOLA:
+                case CustomerIds.Tempe:
                 case CustomerIds.JacksonvilleFl:
                 case CustomerIds.ChillicotheOH:
                 case CustomerIds.SANDIEGOAIRPORT:
@@ -671,6 +673,8 @@ namespace DataAccess.Model
                 case CustomerIds.SalemOR:
                     genfact = new GlendaleFactory(customerID, PlateNumber);
                     break;
+
+
                 case CustomerIds.Philadelphia:
                 case CustomerIds.Leavenworth:
                 case CustomerIds.ColoradoSprings:
